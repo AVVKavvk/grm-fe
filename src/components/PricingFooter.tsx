@@ -39,7 +39,7 @@ const PricingBottomUI = () => {
   return (
     <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4">
       {/* Fixed Bottom Pricing UI - One Line Responsive */}
-      <div className="fixed bottom-0 left-0 right-0 z-50">
+      <div className="fixed bottom-0 left-0 right-0 z-10">
         <div className="bg-white border-t border-gray-200 shadow-2xl">
           <div className="px-2 sm:px-4 py-3">
             <div className="flex items-center justify-between gap-2 sm:gap-4 max-w-7xl mx-auto">
