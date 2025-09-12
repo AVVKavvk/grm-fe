@@ -31,7 +31,7 @@ const App = () => {
 
     const timer = setTimeout(() => {
       setShowPersistentComponents(true);
-    }, 300);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
@@ -105,10 +105,11 @@ const App = () => {
       {showPersistentComponents && (
         <>
           <Footer />
-          {!location.pathname.startsWith("/registration") && <PricingFooter />}
+
           <ChatBot />
         </>
       )}
+      {!location.pathname.startsWith("/registration") && <PricingFooter />}
     </TooltipProvider>
   );
 };
