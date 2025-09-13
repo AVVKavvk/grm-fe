@@ -190,7 +190,7 @@ const ChatBot = () => {
   return (
     <>
       {/* Chat Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-16 right-4 z-50">
         <Button
           onClick={() => setIsOpen(!isOpen)}
           className="w-16 h-16 rounded-full shadow-elegant hover:shadow-strong transition-all bg-gradient-ocean text-primary-foreground hover:scale-110"

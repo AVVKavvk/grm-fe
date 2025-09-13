@@ -103,13 +103,17 @@ const App = () => {
       </Routes>
 
       {showPersistentComponents && (
-        <>
+        <Suspense fallback={<Loader />}>
           <Footer />
-
           <ChatBot />
-        </>
+        </Suspense>
       )}
-      {!location.pathname.startsWith("/registration") && <PricingFooter />}
+
+      {!location.pathname.startsWith("/registration") && (
+        <Suspense fallback={<Loader />}>
+          <PricingFooter />
+        </Suspense>
+      )}
     </TooltipProvider>
   );
 };
