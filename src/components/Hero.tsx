@@ -20,47 +20,39 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-32">
         <div className="max-w-4xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 border border-primary/20">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium">
-              Now with Advanced Technology
-            </span>
-          </div>
-
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="bg-gradient-tech bg-clip-text text-transparent">
-              Goa River
+              SKF Goa River
             </span>
             <br />
             <span className="text-foreground">Marathon 2025</span>
           </h1>
 
+          {/* Vasco Sports Club Badge */}
+          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full mb-10">
+            <span className="text-sm font-medium">
+              Run the River. Feel the Festival
+            </span>
+          </div>
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-            Experience India's most scenic marathon with cutting-edge
-            technology. Run along the pristine Mandovi River with real-time
-            tracking, digital timing, and immersive race analytics.
+            Welcome to India’s most scenic fitness festival. More than just a
+            marathon, Goa River Marathon is a celebration of sport, culture, and
+            community. For over 14 years, we’ve brought together runners from
+            across the world to race, recover, and revel by Goa’s riverside.
           </p>
 
           {/* Event Details */}
           <div className="flex flex-wrap gap-6 mb-6">
             <div className="flex items-center gap-2 text-muted-foreground">
               <Calendar className="w-5 h-5 text-primary" />
-              <span>December 13 & 14, 2025</span>
+              <span>December 14, 2025</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <MapPin className="w-5 h-5 text-primary" />
               <span>Vasco Da Gama, Goa</span>
             </div>
-          </div>
-
-          {/* Vasco Sports Club Badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full mb-10">
-            <span className="text-sm font-medium">
-              An Initiative of Vasco Sports Club
-            </span>
           </div>
 
           {/* CTA Buttons */}
@@ -76,37 +68,11 @@ const Hero = () => {
               className="text-lg px-8 py-4 group"
             >
               <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Watch Preview
+              Explore the Festival
             </Button>
           </div>
 
           {/* Tech Features Preview */}
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="bg-card/80 backdrop-blur-sm p-6 rounded-lg border border-border shadow-soft">
-              <div className="text-2xl font-bold text-primary mb-2">
-                GPS Tracking
-              </div>
-              <div className="text-muted-foreground">
-                Real-time location and pace monitoring
-              </div>
-            </div>
-            <div className="bg-card/80 backdrop-blur-sm p-6 rounded-lg border border-border shadow-soft">
-              <div className="text-2xl font-bold text-primary mb-2">
-                Live Analytics
-              </div>
-              <div className="text-muted-foreground">
-                Instant performance insights and metrics
-              </div>
-            </div>
-            <div className="bg-card/80 backdrop-blur-sm p-6 rounded-lg border border-border shadow-soft">
-              <div className="text-2xl font-bold text-primary mb-2">
-                Digital Timing
-              </div>
-              <div className="text-muted-foreground">
-                Chip-based precision timing system
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
