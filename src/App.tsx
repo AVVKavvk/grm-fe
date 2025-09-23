@@ -16,6 +16,7 @@ const EnhancedSponsors = lazy(
   () => import("@/components/EnhancedSponsorsSection")
 );
 const Shop = lazy(() => import("@/components/ShopSection"));
+const FAQ = lazy(() => import("@/components/FAQ"));
 const ContactForms = lazy(() => import("@/components/ContactFormsSection"));
 const Footer = lazy(() => import("@/components/Footer"));
 const ChatBot = lazy(() => import("@/components/ChatBot"));
@@ -41,66 +42,68 @@ const App = () => {
       <Toaster />
       <Sonner />
       <Header />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route
-          path="/technology"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Technology />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/events"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Events />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/memories"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Memories />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/sponsors"
-          element={
-            <Suspense fallback={<Loader />}>
-              <EnhancedSponsors />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/shop"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Shop />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/registration"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Registration />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/contact-us"
-          element={
-            <Suspense fallback={<Loader />}>
-              <ContactForms />
-            </Suspense>
-          }
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className="mt-24">
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route
+            path="/technology"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Technology />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/events"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Events />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/sponsors"
+            element={
+              <Suspense fallback={<Loader />}>
+                <EnhancedSponsors />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/shop"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Shop />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/faq"
+            element={
+              <Suspense fallback={<Loader />}>
+                <FAQ />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/registration"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Registration />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/contact-us"
+            element={
+              <Suspense fallback={<Loader />}>
+                <ContactForms />
+              </Suspense>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
 
       {showPersistentComponents && (
         <Suspense fallback={<Loader />}>
