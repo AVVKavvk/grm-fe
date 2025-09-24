@@ -92,7 +92,7 @@ const RegistrationSection = () => {
     {
       icon: <Users className="w-6 h-6" />,
       title: "Group Discounts",
-      description: "Register 5+ people together and get additional 10% off",
+      description: "Register 10+ people together and get additional 10% off",
     },
     {
       icon: <Calendar className="w-6 h-6" />,

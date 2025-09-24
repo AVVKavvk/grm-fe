@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import vascoLogo from "@/assets/vasco-sports-club-logo.jpg";
+import skfLogo from "@/assets/SKF_logotype_black_RGB.png";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -10,6 +11,7 @@ const Header = () => {
     { link: "/", label: "Home" },
     { link: "/events", label: "Events" },
     { link: "/sponsors", label: "Sponsors" },
+    { link: "/memories", label: "Gallery" },
     { link: "/contact-us", label: "Contact Us" },
     // { link: "/technology", label: "Technology" },
     { link: "/shop", label: "Shop (Coming Soon)" },
@@ -47,10 +49,8 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">
-              GRM
-            </span>
+          <div className="w-16">
+            <img src={skfLogo} alt="" />
           </div>
           <span className="font-bold text-xl text-foreground">
             Goa River Marathon
@@ -77,6 +77,10 @@ const Header = () => {
               Register Now
             </Button>
           </Link>
+        </div>
+        <div className="flex justify-center font-semibold items-center gap-2">
+          <img src={vascoLogo} width="55px" alt="" />
+          <h1>Vasco Sports Club </h1>
         </div>
 
         {/* Mobile Menu Button */}

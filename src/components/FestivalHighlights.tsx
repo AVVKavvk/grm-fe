@@ -7,7 +7,15 @@ const FestivalHighlights = () => {
       emoji: "🍝",
       title: "Carb-Loading Fiesta – Fuel Meets Flavor",
       description:
-        "Kick off your marathon weekend with a feast designed to power your run. The Carb-Loading Fiesta brings together Goa's top chefs, artisanal bakers, and master mixologists, serving up hearty pastas, wood-fired breads, fresh salads, and high-energy dishes crafted for performance. Pair it with a chilled beer, craft cocktails, or refreshing mocktails as you soak in the pre-race buzz.",
+        "Kick off your marathon weekend with a feast designed to power your run. The Carb-Loading Fiesta brings together Goa's top chefs, artisanal bakers, and nutrition experts, serving up hearty pastas, wood-fired breads, fresh salads, and high-energy dishes crafted for performance. Pair it with protein shakes, recovery smoothies, or refreshing mocktails as you soak in the pre-race buzz.",
+    },
+
+    {
+      icon: Trophy,
+      emoji: "🏆",
+      title: "Finish Line Celebrations – Fun Beyond the Run",
+      description:
+        "Crossing the line is just the beginning. At the Finish Line Celebrations, you'll find a play arena with football kick zones, quick pickleball matches, mini fitness challenges, and family-friendly games. Add in vibrant food stalls, live entertainment, and photo-worthy moments — it's a finish line you won't want to leave.",
     },
     {
       icon: Music,
@@ -15,13 +23,6 @@ const FestivalHighlights = () => {
       title: "Recovery Rave – Dance, Chill & Recharge",
       description:
         "When the run is done, it's time to let loose. The Recovery Rave is where music meets wellness — with live DJs, dance floors under the Goan sky, and a buzzing community vibe. Step into the Ice Bath Zone for a cool plunge, unwind with massage therapists, or stretch it out at dedicated recovery corners. It's the perfect blend of celebration and post-race self-care.",
-    },
-    {
-      icon: Trophy,
-      emoji: "🏆",
-      title: "Finish Line Celebrations – Fun Beyond the Run",
-      description:
-        "Crossing the line is just the beginning. At the Finish Line Celebrations, you'll find a play arena with football kick zones, quick pickleball matches, mini fitness challenges, and family-friendly games. Add in vibrant food stalls, live entertainment, and photo-worthy moments — it's a finish line you won't want to leave.",
     },
   ];
 

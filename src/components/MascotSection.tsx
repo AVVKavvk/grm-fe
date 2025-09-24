@@ -1,5 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Camera, Smile, Users } from "lucide-react";
+import whatsapp from "@/assets/icons8-whatsapp.svg";
+import instagram from "@/assets/icons8-instagram-logo-94.png";
+import facebook from "@/assets/icons8-facebook.svg";
+import twitter from "@/assets/icons8-twitter.svg";
 
 const MascotSection = () => {
   const cracofacts = [
@@ -155,24 +159,34 @@ const MascotSection = () => {
                 Get daily training tips, Goan cultural insights, and tech
                 updates
               </p>
-              <div className="flex justify-center gap-4">
+              <div className="flex justify-center items-center gap-6">
                 <a
                   href="#"
-                  className="text-primary hover:text-primary/80 transition-colors"
+                  className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
                 >
-                  📸 Instagram
+                  <img src={instagram} alt="Instagram" className="w-6 h-6" />
+                  Instagram
                 </a>
                 <a
                   href="#"
-                  className="text-primary hover:text-primary/80 transition-colors"
+                  className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
                 >
-                  🐦 Twitter
+                  <img src={twitter} alt="Twitter" className="w-6 h-6" />
+                  Twitter
                 </a>
                 <a
                   href="#"
-                  className="text-primary hover:text-primary/80 transition-colors"
+                  className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
                 >
-                  📘 Facebook
+                  <img src={facebook} alt="Facebook" className="w-6 h-6" />
+                  Facebook
+                </a>
+                <a
+                  href="#"
+                  className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+                >
+                  <img src={whatsapp} alt="Whatsapp" className="w-6 h-6" />
+                  Whatsapp
                 </a>
               </div>
             </div>

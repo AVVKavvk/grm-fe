@@ -8,7 +8,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import skfLogo from "@/assets/SKF_logotype_black_RGB.png";
 const Footer = () => {
   const socialLinks = [
     { icon: <Facebook className="w-5 h-5" />, link: "#", label: "Facebook" },
@@ -41,13 +41,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">
-                  GRM
-                </span>
+            <div className="flex items-center text-white space-x-2">
+              <div className="w-16 bg-white p-1 rounded">
+                <img src={skfLogo} alt="" />
               </div>
-              <span className="font-bold text-xl">Goa River Marathon</span>
+              <span className="font-bold text-xl ">Goa River Marathon</span>
             </div>
             <p className="text-background/80 leading-relaxed mb-6">
               India's most scenic and technologically advanced marathon
