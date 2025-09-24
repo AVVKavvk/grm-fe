@@ -18,6 +18,7 @@ const EnhancedSponsors = lazy(
 const Shop = lazy(() => import("@/components/ShopSection"));
 const FAQ = lazy(() => import("@/components/FAQ"));
 const ContactForms = lazy(() => import("@/components/ContactFormsSection"));
+const Register = lazy(() => import("@/components/Register"));
 const Footer = lazy(() => import("@/components/Footer"));
 const ChatBot = lazy(() => import("@/components/ChatBot"));
 const PricingFooter = lazy(() => import("@/components/PricingFooter"));
@@ -74,6 +75,22 @@ const App = () => {
             element={
               <Suspense fallback={<Loader />}>
                 <Shop />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/memories"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Memories />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Register />
               </Suspense>
             }
           />

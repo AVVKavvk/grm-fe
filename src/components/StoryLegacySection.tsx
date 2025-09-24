@@ -5,22 +5,32 @@ const StoryLegacySection = () => {
     {
       year: "2010",
       title: "Humble Beginnings",
-      description: "Started as a local community run by Vasco Sports Club",
+      description:
+        "Started as a small community run organized by local volunteers in Vasco, with just a handful of passionate runners coming together for the joy of running.",
+    },
+    {
+      year: "2011",
+      title: "First International Qualifier",
+      description:
+        "Became part of the Abbott World Marathon Majors Wanda Age Group Qualifier Series, marking our first step onto the global stage.",
     },
     {
       year: "2018",
-      title: "International Recognition",
-      description: "AIMS certification and first international participants",
+      title: "AIMS Certification & Global Recognition",
+      description:
+        "Officially certified by AIMS, attracting runners from outside India and establishing credibility in the international marathon community.",
     },
     {
       year: "2023",
-      title: "Global Attraction",
-      description: "Runners from 42 countries joined the celebration",
+      title: "Global Participation",
+      description:
+        "Welcomed runners from 42 countries, turning the marathon into a truly international celebration of sports, culture, and community.",
     },
     {
       year: "2025",
-      title: "Sports Festival Evolution",
-      description: "Expanding into a full-scale sports festival experience",
+      title: "Evolving into a Sports Festival",
+      description:
+        "Expanding beyond running to create a full-scale sports festival experience, combining competition, wellness, and cultural events for all participants.",
     },
   ];
 
@@ -102,20 +112,6 @@ const StoryLegacySection = () => {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-6 bg-card border border-border rounded-xl hover-scale transition-all duration-300">
-                <Users className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-2xl font-bold text-foreground">42</div>
-                <div className="text-sm text-muted-foreground">Countries</div>
-              </div>
-              <div className="text-center p-6 bg-card border border-border rounded-xl hover-scale transition-all duration-300">
-                <Award className="w-8 h-8 text-accent mx-auto mb-3" />
-                <div className="text-2xl font-bold text-foreground">14</div>
-                <div className="text-sm text-muted-foreground">
-                  Years Strong
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

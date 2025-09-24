@@ -1,6 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { Award, Users, Calendar, MapPin, Heart, Leaf } from "lucide-react";
+import {
+  Award,
+  Users,
+  Calendar,
+  MapPin,
+  Heart,
+  Leaf,
+  Globe,
+  TrendingUp,
+} from "lucide-react";
 import StoryLegacySection from "./StoryLegacySection";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
 
 const AboutSection = () => {
   const stats = [
@@ -21,7 +32,7 @@ const AboutSection = () => {
     },
     {
       number: "100%",
-      label: "Festival Spirit",
+      label: "Full of Festive Spirit",
       icon: <Leaf className="w-6 h-6" />,
     },
   ];
@@ -31,13 +42,13 @@ const AboutSection = () => {
       icon: <Award className="w-8 h-8" />,
       title: "AIMS Certified",
       description:
-        "Official certification from Association of International Marathons ensures world-class standards and international recognition.",
+        "Official certification from the Association of International Marathons ensures world-class standards and international recognition.",
     },
     {
-      icon: <Heart className="w-8 h-8" />,
-      title: "Charity Partner",
+      icon: <Globe className="w-8 h-8" />,
+      title: "AbbottWMM Qualifier",
       description:
-        "Supporting local Goan communities and environmental conservation through our dedicated charity partnerships.",
+        "Part of the Abbott World Marathon Majors Wanda Age Group Qualifier Series, marking our first year on the global ranking stage.",
     },
     {
       icon: <Leaf className="w-8 h-8" />,
@@ -46,7 +57,32 @@ const AboutSection = () => {
         "Zero waste policy, eco-friendly materials, and carbon offset initiatives make this a truly green marathon.",
     },
   ];
-
+  const evolutionStats = [
+    {
+      metric: "Participants",
+      from: "1,500 (2010)",
+      to: "25,000+ (2025)",
+      growth: "+566%",
+    },
+    {
+      metric: "Technology Features",
+      from: "0 (2010)",
+      to: "15+ (2025)",
+      growth: "∞",
+    },
+    {
+      metric: "Sponsor Partners",
+      from: "3 (2010)",
+      to: "25+ (2025)",
+      growth: "+733%",
+    },
+    {
+      metric: "Countries Represented",
+      from: "1 (2010)",
+      to: "20+ (2025)",
+      growth: "+1900%",
+    },
+  ];
   return (
     <section id="about" className="py-24">
       <div className="container mx-auto px-4">
@@ -56,11 +92,11 @@ const AboutSection = () => {
             <Award className="w-4 h-4" />
             <span className="text-sm font-medium">Established 2010</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
             India's Most
             <span className="bg-gradient-ocean bg-clip-text text-transparent">
               {" "}
-              Innovative Marathon
+              Pioneering Marathon
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -108,9 +144,44 @@ const AboutSection = () => {
             </div>
           ))}
         </div>
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
+              14 Years of Evolution
+            </span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            From humble beginnings to Goa's premier marathon. Relive the
+            journey, celebrate the growth, and be part of our continuing story.
+          </p>
+        </div>
 
+        {/* Evolution Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {evolutionStats.map((stat, index) => (
+            <Card
+              key={index}
+              className="text-center p-6 shadow-soft hover:shadow-medium transition-all"
+            >
+              <CardContent className="p-0">
+                <div className="flex items-center justify-center mb-3">
+                  <TrendingUp className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="font-bold text-lg mb-2">{stat.metric}</h3>
+                <div className="space-y-1">
+                  <p className="text-sm text-muted-foreground">{stat.from}</p>
+                  <p className="text-sm font-semibold">{stat.to}</p>
+                  <Badge variant="secondary" className="text-xs">
+                    {stat.growth}
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
         {/* CTA */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <div className="bg-gradient-sunset p-8 rounded-2xl shadow-strong max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold text-accent-foreground mb-4">
               Be Part of Marathon History
@@ -128,7 +199,7 @@ const AboutSection = () => {
               Learn More About Our Journey
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
