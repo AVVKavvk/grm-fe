@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, Calendar, MapPin } from "lucide-react";
-import heroImage from "@/assets/hero-goa-marathon.jpg";
+import heroImage from "@/assets/image.png";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -30,13 +30,13 @@ const Hero = () => {
           </h1>
 
           {/* Vasco Sports Club Badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full mb-10">
+          <div className="inline-flex items-center gap-2 bg-accent/10 text-red-500 px-4 py-2 rounded-full mb-10">
             <span className="text-sm font-medium">
               Run the River. Feel the Festival
             </span>
           </div>
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-800 mb-8 max-w-2xl leading-relaxed">
             Welcome to India’s most scenic fitness festival. More than just a
             marathon, Goa River Marathon is a celebration of sport, culture, and
             community. For over 14 years, we’ve brought together runners from
@@ -45,11 +45,11 @@ const Hero = () => {
 
           {/* Event Details */}
           <div className="flex flex-wrap gap-6 mb-6">
-            <div className="flex items-center gap-2 text-muted-foreground">
+            <div className="flex items-center gap-2 text-gray-800">
               <Calendar className="w-5 h-5 text-primary" />
               <span>December 14, 2025</span>
             </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
+            <div className="flex items-center gap-2 text-gray-800">
               <MapPin className="w-5 h-5 text-primary" />
               <span>Vasco Da Gama, Goa</span>
             </div>
