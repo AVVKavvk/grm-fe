@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import vascoLogo from "@/assets/vasco-sports-club-logo.jpg";
-import skfLogo from "@/assets/SKF_logotype_black_RGB.png";
+import vascoLogo from "@/assets/VSG_LOGO.png";
+import skfLogo from "@/assets/SKF_GRM_Logo_removebg.png";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -48,14 +49,11 @@ const Header = () => {
       {/* Navigation */}
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2">
           <div className="w-16">
             <img src={skfLogo} alt="" />
           </div>
-          <span className="font-bold text-xl text-foreground">
-            Goa River Marathon
-          </span>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">

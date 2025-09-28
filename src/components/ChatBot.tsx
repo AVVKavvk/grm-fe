@@ -193,13 +193,9 @@ const ChatBot = () => {
       <div className="fixed bottom-16 right-4 z-50">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 rounded-full shadow-elegant hover:shadow-strong transition-all bg-gradient-ocean text-primary-foreground hover:scale-110"
+          className="w-20 h-20 rounded-full shadow-elegant hover:shadow-strong transition-all bg-gradient-ocean text-primary-foreground hover:scale-110"
         >
-          {isOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <MessageCircle className="w-6 h-6" />
-          )}
+          {isOpen ? <X className="w-6 h-6" /> : <div>Ask Craco</div>}
         </Button>
       </div>
 

@@ -4,8 +4,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Phone, MessageSquare, Building2, Users, ShoppingBag } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Mail,
+  Phone,
+  MessageSquare,
+  Building2,
+  Users,
+  ShoppingBag,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ContactFormsSection = () => {
@@ -19,14 +32,15 @@ const ContactFormsSection = () => {
     message: "",
     category: "",
     budget: "",
-    eventType: ""
+    eventType: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Form Submitted!",
-      description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+      description:
+        "Thank you for your inquiry. We'll get back to you within 24 hours.",
     });
     setFormData({
       name: "",
@@ -36,12 +50,12 @@ const ContactFormsSection = () => {
       message: "",
       category: "",
       budget: "",
-      eventType: ""
+      eventType: "",
     });
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const contactTypes = [
@@ -49,30 +63,34 @@ const ContactFormsSection = () => {
       id: "general",
       title: "General Inquiry",
       icon: MessageSquare,
-      description: "Questions about the marathon, registration, or general information"
+      description:
+        "Questions about the marathon, registration, or general information",
     },
     {
       id: "sponsor",
       title: "Sponsorship Opportunities",
       icon: Building2,
-      description: "Partner with us and reach thousands of health-conscious participants"
+      description:
+        "Partner with us and reach thousands of health-conscious participants",
     },
     {
       id: "vendor",
       title: "Vendor Partnership",
       icon: ShoppingBag,
-      description: "Food vendors, merchandise, or service providers interested in collaboration"
+      description:
+        "Food vendors, merchandise, or service providers interested in collaboration",
     },
     {
       id: "group",
       title: "Group Registration",
       icon: Users,
-      description: "Corporate teams, running clubs, or large group registrations"
-    }
+      description:
+        "Corporate teams, running clubs, or large group registrations",
+    },
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -81,11 +99,15 @@ const ContactFormsSection = () => {
             <span className="text-sm font-medium">Get In Touch</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's 
-            <span className="bg-gradient-ocean bg-clip-text text-transparent"> Connect</span>
+            Let's
+            <span className="bg-gradient-ocean bg-clip-text text-transparent">
+              {" "}
+              Connect
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Have questions or want to be part of our marathon family? We'd love to hear from you!
+            Have questions or want to be part of our marathon family? We'd love
+            to hear from you!
           </p>
         </div>
 
@@ -94,24 +116,34 @@ const ContactFormsSection = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold mb-4">How can we help you?</h3>
             {contactTypes.map((type) => (
-              <Card 
-                key={type.id} 
+              <Card
+                key={type.id}
                 className={`p-4 cursor-pointer transition-smooth hover:shadow-medium ${
-                  activeForm === type.id ? 'border-primary bg-primary/5' : ''
+                  activeForm === type.id ? "border-primary bg-primary/5" : ""
                 }`}
                 onClick={() => setActiveForm(type.id)}
               >
                 <div className="flex items-start gap-3">
-                  <type.icon className={`w-5 h-5 mt-1 ${
-                    activeForm === type.id ? 'text-primary' : 'text-muted-foreground'
-                  }`} />
+                  <type.icon
+                    className={`w-5 h-5 mt-1 ${
+                      activeForm === type.id
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    }`}
+                  />
                   <div>
-                    <h4 className={`font-medium mb-1 ${
-                      activeForm === type.id ? 'text-primary' : 'text-foreground'
-                    }`}>
+                    <h4
+                      className={`font-medium mb-1 ${
+                        activeForm === type.id
+                          ? "text-primary"
+                          : "text-foreground"
+                      }`}
+                    >
                       {type.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground">{type.description}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {type.description}
+                    </p>
                   </div>
                 </div>
               </Card>
@@ -128,7 +160,9 @@ const ContactFormsSection = () => {
                     <Input
                       id="name"
                       value={formData.name}
-                      onChange={(e) => handleInputChange("name", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("name", e.target.value)
+                      }
                       required
                       className="mt-2"
                     />
@@ -139,7 +173,9 @@ const ContactFormsSection = () => {
                       id="email"
                       type="email"
                       value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("email", e.target.value)
+                      }
                       required
                       className="mt-2"
                     />
@@ -152,7 +188,9 @@ const ContactFormsSection = () => {
                     <Input
                       id="phone"
                       value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("phone", e.target.value)
+                      }
                       className="mt-2"
                     />
                   </div>
@@ -162,7 +200,9 @@ const ContactFormsSection = () => {
                       <Input
                         id="company"
                         value={formData.company}
-                        onChange={(e) => handleInputChange("company", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("company", e.target.value)
+                        }
                         className="mt-2"
                       />
                     </div>
@@ -173,13 +213,19 @@ const ContactFormsSection = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="category">Sponsorship Category</Label>
-                      <Select onValueChange={(value) => handleInputChange("category", value)}>
+                      <Select
+                        onValueChange={(value) =>
+                          handleInputChange("category", value)
+                        }
+                      >
                         <SelectTrigger className="mt-2">
                           <SelectValue placeholder="Select category" />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="title">Title Sponsor</SelectItem>
-                          <SelectItem value="platinum">Platinum Partner</SelectItem>
+                          <SelectItem value="platinum">
+                            Platinum Partner
+                          </SelectItem>
                           <SelectItem value="gold">Gold Partner</SelectItem>
                           <SelectItem value="silver">Silver Partner</SelectItem>
                           <SelectItem value="custom">Custom Package</SelectItem>
@@ -188,7 +234,11 @@ const ContactFormsSection = () => {
                     </div>
                     <div>
                       <Label htmlFor="budget">Budget Range</Label>
-                      <Select onValueChange={(value) => handleInputChange("budget", value)}>
+                      <Select
+                        onValueChange={(value) =>
+                          handleInputChange("budget", value)
+                        }
+                      >
                         <SelectTrigger className="mt-2">
                           <SelectValue placeholder="Select budget range" />
                         </SelectTrigger>
@@ -206,14 +256,22 @@ const ContactFormsSection = () => {
                 {activeForm === "group" && (
                   <div>
                     <Label htmlFor="eventType">Group Type</Label>
-                    <Select onValueChange={(value) => handleInputChange("eventType", value)}>
+                    <Select
+                      onValueChange={(value) =>
+                        handleInputChange("eventType", value)
+                      }
+                    >
                       <SelectTrigger className="mt-2">
                         <SelectValue placeholder="Select group type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="corporate">Corporate Team</SelectItem>
+                        <SelectItem value="corporate">
+                          Corporate Team
+                        </SelectItem>
                         <SelectItem value="club">Running Club</SelectItem>
-                        <SelectItem value="charity">Charity Organization</SelectItem>
+                        <SelectItem value="charity">
+                          Charity Organization
+                        </SelectItem>
                         <SelectItem value="friends">Friends Group</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
@@ -226,7 +284,9 @@ const ContactFormsSection = () => {
                   <Textarea
                     id="message"
                     value={formData.message}
-                    onChange={(e) => handleInputChange("message", e.target.value)}
+                    onChange={(e) =>
+                      handleInputChange("message", e.target.value)
+                    }
                     required
                     rows={4}
                     className="mt-2"
@@ -247,23 +307,33 @@ const ContactFormsSection = () => {
           <Card className="p-6 text-center">
             <Mail className="w-8 h-8 text-primary mx-auto mb-4" />
             <h3 className="font-semibold mb-2">Email Us</h3>
-            <p className="text-sm text-muted-foreground mb-2">runnersingoa@gmail.com</p>
-            <p className="text-sm text-muted-foreground">support@skfgoarivermarathon.com</p>
+            <p className="text-sm text-muted-foreground mb-2">
+              runnersingoa@gmail.com
+            </p>
+            <p className="text-sm text-muted-foreground">
+              support@skfgoarivermarathon.com
+            </p>
           </Card>
-          
+
           <Card className="p-6 text-center">
             <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
             <h3 className="font-semibold mb-2">Call Us</h3>
             <p className="text-sm text-muted-foreground mb-2">(832) 251 1333</p>
-            <p className="text-sm text-muted-foreground">WhatsApp: +91 97020 97035</p>
+            <p className="text-sm text-muted-foreground">
+              WhatsApp: +91 97020 97035
+            </p>
           </Card>
-          
+
           <Card className="p-6 text-center">
             <Building2 className="w-8 h-8 text-primary mx-auto mb-4" />
             <h3 className="font-semibold mb-2">Visit Us</h3>
             <p className="text-sm text-muted-foreground">Vasco Sports Club</p>
-            <p className="text-sm text-muted-foreground">Ground Floor, Rukmini Towers</p>
-            <p className="text-sm text-muted-foreground">Opp. Tilak Maidan, Vasco da Gama</p>
+            <p className="text-sm text-muted-foreground">
+              Ground Floor, Rukmini Towers
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Opp. Tilak Maidan, Vasco da Gama
+            </p>
             <p className="text-sm text-muted-foreground">403 802 GOA</p>
           </Card>
         </div>

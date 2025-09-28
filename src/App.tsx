@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound";
 import Header from "@/components/Header";
 import { lazy, Suspense, useEffect, useState } from "react";
 import Loader from "./components/Loader";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Technology = lazy(() => import("@/components/TechnologySection"));
 const Events = lazy(() => import("@/components/EventsSection"));
@@ -40,6 +41,7 @@ const App = () => {
 
   return (
     <TooltipProvider>
+      <ScrollToTop />
       <Toaster />
       <Sonner />
       <Header />

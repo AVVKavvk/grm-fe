@@ -13,11 +13,12 @@ const EventsSection = () => {
   const marathonEvents = [
     {
       name: "Full Marathon",
-      distance: "42.2 KM",
+      distance: "42 KM",
       startTime: "04:00 AM",
-      cutOffTime: "5 Hours",
-      price: "₹2,500",
-      participants: "Limited to 500",
+      cutOffTime: "6 Hours",
+      price: "₹2,676",
+      originalPrice: "₹2,973",
+      participants: "Open for all",
       description: "The ultimate challenge along Goa's most scenic route",
       features: [
         "Finisher Medal",
@@ -27,12 +28,29 @@ const EventsSection = () => {
       ],
     },
     {
+      name: "20 Miler",
+      distance: "32 KM",
+      startTime: "04:30 AM",
+      cutOffTime: "5 Hours",
+      price: "₹2,556",
+      originalPrice: "₹2,840",
+      participants: "Open for all",
+      description: "A challenging distance for experienced runners",
+      features: [
+        "Finisher Medal",
+        "Tech T-Shirt",
+        "Digital Certificate",
+        "GPS Tracking",
+      ],
+    },
+    {
       name: "Half Marathon",
-      distance: "21.1 KM",
-      startTime: "04:45 AM",
-      cutOffTime: "3 Hours",
-      price: "₹1,800",
-      participants: "Limited to 800",
+      distance: "21 KM",
+      startTime: "05:30 AM",
+      cutOffTime: "3.5 Hours",
+      price: "₹2,155",
+      originalPrice: "₹2,395",
+      participants: "Open for all",
       description: "Perfect for intermediate runners seeking a challenge",
       features: [
         "Finisher Medal",
@@ -44,10 +62,11 @@ const EventsSection = () => {
     {
       name: "10K Run",
       distance: "10 KM",
-      startTime: "05:30 AM",
+      startTime: "06:15 AM",
       cutOffTime: "90 Minutes",
-      price: "₹1,200",
-      participants: "Limited to 1000",
+      price: "₹1,491",
+      originalPrice: "₹1,657",
+      participants: "Open for all",
       description: "Ideal for beginners and fitness enthusiasts",
       features: ["Finisher Medal", "Event T-Shirt", "Digital Certificate"],
     },
@@ -56,9 +75,10 @@ const EventsSection = () => {
       distance: "5 KM",
       startTime: "08:00 AM",
       cutOffTime: "60 Minutes",
-      price: "₹800",
+      price: "₹630",
+      originalPrice: "₹700",
       participants: "Open for all",
-      description: "Family-friendly run with stunning river views",
+      description: "Family-friendly run with stunning coastal views",
       features: ["Participation Medal", "Event T-Shirt", "Digital Certificate"],
     },
   ];
@@ -88,7 +108,7 @@ const EventsSection = () => {
       date: "December 15, 2024",
       time: "8:00 PM - 2:00 AM",
       location: "TBD - Beach Club, Anjuna",
-      price: "₹2,000",
+      price: "₹1,500",
       description:
         "Epic post-marathon celebration with world-class DJs and recovery treatments",
       highlights: [
@@ -127,7 +147,7 @@ const EventsSection = () => {
         </div>
 
         {/* Marathon Events Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
           {marathonEvents.map((event, index) => (
             <div
               key={index}
@@ -151,8 +171,8 @@ const EventsSection = () => {
                     <div className="text-2xl font-bold text-accent">
                       {event.price}
                     </div>
-                    <div className="text-sm text-muted-foreground">
-                      Early Bird
+                    <div className="text-sm text-muted-foreground line-through">
+                      {event.originalPrice}
                     </div>
                   </div>
                 </div>
@@ -178,7 +198,7 @@ const EventsSection = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-primary" />
-                    <span className="text-sm">Panaji Start</span>
+                    <span className="text-sm">Chicalim Start</span>
                   </div>
                 </div>
 
@@ -304,26 +324,25 @@ const EventsSection = () => {
             ))}
           </div>
 
-          {/* Combo Package */}
+          {/* Party Combo Package */}
           <div className="bg-gradient-ocean p-8 rounded-2xl shadow-strong text-center">
             <div className="max-w-4xl mx-auto">
               <h4 className="text-3xl font-bold text-primary-foreground mb-4">
-                🎊 Ultimate Marathon Experience Package 🎊
+                🎊 Party Package Deal 🎊
               </h4>
               <p className="text-primary-foreground/90 text-lg mb-6">
-                Get the complete experience: Marathon + Carb Loading Party +
-                Recovery Rave
+                Join both celebrations: Carb Loading Party + Recovery Rave
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 <div className="bg-primary-foreground/10 p-4 rounded-lg">
                   <div className="text-lg font-bold text-primary-foreground">
-                    Regular Price
+                    Individual Price
                   </div>
                   <div className="text-primary-foreground/80 text-sm">
-                    Marathon + Both Events
+                    Both Events Separately
                   </div>
                   <div className="text-2xl font-bold text-primary-foreground line-through">
-                    ₹6,000+
+                    ₹3,000
                   </div>
                 </div>
                 <div className="bg-primary-foreground/20 p-4 rounded-lg border-2 border-primary-foreground/30">
@@ -331,10 +350,10 @@ const EventsSection = () => {
                     Combo Price
                   </div>
                   <div className="text-primary-foreground/80 text-sm">
-                    Save ₹1,500!
+                    Save ₹850!
                   </div>
                   <div className="text-3xl font-bold text-primary-foreground">
-                    ₹4,500
+                    ₹2,150
                   </div>
                 </div>
                 <div className="bg-primary-foreground/10 p-4 rounded-lg">
@@ -345,7 +364,7 @@ const EventsSection = () => {
                     Until Nov 15th
                   </div>
                   <div className="text-2xl font-bold text-primary-foreground">
-                    ₹3,800
+                    ₹1,800
                   </div>
                 </div>
               </div>
@@ -354,11 +373,10 @@ const EventsSection = () => {
                 size="lg"
                 className="bg-background text-foreground hover:bg-background/90"
               >
-                Get Ultimate Experience Package
+                Get Party Package Deal
               </Button>
               <p className="text-primary-foreground/70 text-sm mt-4">
-                Limited to first 200 registrations • Includes all marathon race
-                categories
+                Perfect for the complete marathon weekend experience
               </p>
             </div>
           </div>
@@ -368,41 +386,29 @@ const EventsSection = () => {
         <div className="bg-muted/50 p-8 rounded-xl border border-border">
           <div className="text-center">
             <h3 className="text-xl font-bold mb-4">Important Information</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-muted-foreground">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-muted-foreground">
               <div>
                 <div className="font-semibold text-foreground mb-2">
                   Age Requirements
                 </div>
                 <div>
-                  Full Marathon: 18+ years
+                  42K, 32K, 21K: 18+ years
                   <br />
-                  Half Marathon: 16+ years
+                  10K: 16+ years
                   <br />
-                  10K & 5K: 12+ years
+                  5K: All ages (under 12 needs adult supervision)
                 </div>
               </div>
               <div>
                 <div className="font-semibold text-foreground mb-2">
-                  Registration Deadline
+                  Start & Finish Location
                 </div>
                 <div>
-                  Early Bird: November 15, 2024
+                  All races start and end at
                   <br />
-                  Regular: November 30, 2024
+                  Chicalim Panchayat Ground
                   <br />
-                  No on-spot registration
-                </div>
-              </div>
-              <div>
-                <div className="font-semibold text-foreground mb-2">
-                  Tech Requirements
-                </div>
-                <div>
-                  Smartphone with GPS
-                  <br />
-                  Marathon app download
-                  <br />
-                  RFID chip collection
+                  Easy access with parking facilities
                 </div>
               </div>
             </div>

@@ -42,16 +42,6 @@ const RaceRouteSection = () => {
       image: coastalImage,
       highlights: ["Ocean panoramas", "Sea breeze", "Scenic highways"],
     },
-    {
-      phase: "Beach Finish",
-      location: "Bogmalo Beach Resort",
-      distance: "35-42.2 KM",
-      time: "Victory Lap",
-      description: "Celebration zone with resort facilities",
-      icon: <MapPin className="w-5 h-5" />,
-      image: finishImage,
-      highlights: ["Beach finish", "Resort facilities", "Celebration zone"],
-    },
   ];
 
   const courseSpecs = [
