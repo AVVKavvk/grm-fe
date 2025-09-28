@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import vascoLogo from "@/assets/VSG_LOGO.png";
 import skfLogo from "@/assets/SKF_GRM_Logo_removebg.png";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

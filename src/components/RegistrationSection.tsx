@@ -5,7 +5,6 @@ import {
   Star,
   Users,
   Calendar,
-  Shield,
   Gift,
   Clock,
   AlertTriangle,
@@ -18,9 +17,9 @@ const RegistrationSection = () => {
   const [selectedPlan, setSelectedPlan] = useState("half");
 
   const pricingPhases = [
-    { phase: "Early Bird", endDate: "2024-11-15", discount: "₹500 OFF" },
-    { phase: "Regular", endDate: "2024-12-31", discount: "₹300 OFF" },
-    { phase: "Last Call", endDate: "2025-01-15", discount: "₹100 OFF" },
+    { phase: "Festival Offer", endDate: "2025-10-15", discount: "₹500 OFF" },
+    { phase: "Regular", endDate: "2025-12-31", discount: "₹300 OFF" },
+    { phase: "Last Call", endDate: "2026-01-15", discount: "₹100 OFF" },
   ];
 
   const plans = [
@@ -28,8 +27,8 @@ const RegistrationSection = () => {
       id: "full",
       name: "Full Marathon",
       distance: "42.2 KM",
-      price: "₹2,500",
-      originalPrice: "₹3,000",
+      price: "₹2,676",
+      originalPrice: "₹2,973",
       nextPrice: "₹2,800",
       popular: false,
       features: [
@@ -47,9 +46,9 @@ const RegistrationSection = () => {
       id: "half",
       name: "Half Marathon",
       distance: "21.1 KM",
-      price: "₹1,800",
-      originalPrice: "₹2,200",
-      nextPrice: "₹2,100",
+      price: "₹2,155",
+      originalPrice: "₹2,395",
+      nextPrice: "₹2,200",
       popular: true,
       features: [
         "Professional timing chip",
@@ -66,9 +65,9 @@ const RegistrationSection = () => {
       id: "10k",
       name: "10K Run",
       distance: "10 KM",
-      price: "₹1,200",
-      originalPrice: "₹1,500",
-      nextPrice: "₹1,400",
+      price: "₹1,491",
+      originalPrice: "₹1,657",
+      nextPrice: "₹1,550",
       popular: false,
       features: [
         "Digital timing system",
@@ -85,24 +84,13 @@ const RegistrationSection = () => {
   const benefits = [
     {
       icon: <Star className="w-6 h-6" />,
-      title: "Early Bird Pricing",
-      description:
-        "Save up to ₹500 with our limited-time early registration offer",
+      title: "Festival Offer",
+      description: "Save up to ₹500 with our limited-time festival offer",
     },
     {
       icon: <Users className="w-6 h-6" />,
       title: "Group Discounts",
       description: "Register 10+ people together and get additional 10% off",
-    },
-    {
-      icon: <Calendar className="w-6 h-6" />,
-      title: "Flexible Payment",
-      description: "Pay in installments or full amount - your choice",
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Insurance Included",
-      description: "Comprehensive race day insurance for all participants",
     },
     {
       icon: <Gift className="w-6 h-6" />,
@@ -135,8 +123,8 @@ const RegistrationSection = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Join the tech revolution in marathon running. Early bird pricing
-            ends soon - don't miss out on this incredible opportunity.
+            Join the tech revolution in marathon running. Festival offer pricing
+            ends soon – don’t miss out on this incredible opportunity.
           </p>
 
           {/* Pricing Urgency Timer */}
@@ -144,12 +132,12 @@ const RegistrationSection = () => {
             <div className="flex items-center justify-center gap-2 mb-4">
               <Clock className="w-5 h-5 text-red-600" />
               <span className="text-lg font-bold text-red-600">
-                Early Bird Ends In:
+                Festival Offer Ends In:
               </span>
             </div>
-            <CountdownTimer targetDate="2024-11-15T23:59:59" />
+            <CountdownTimer targetDate="2025-10-15T23:59:59" />
             <div className="mt-4 text-sm text-red-600/80">
-              Prices increase by ₹300-500 after November 15th
+              Prices increase by ₹300–500 after October 15th
             </div>
           </div>
         </div>
@@ -192,10 +180,10 @@ const RegistrationSection = () => {
                   </span>
                 </div>
                 <div className="text-sm text-accent font-semibold mb-2">
-                  Early Bird Price
+                  Festival Offer Price
                 </div>
                 <div className="text-xs text-red-600 font-medium">
-                  Next: {plan.nextPrice} (After Nov 15)
+                  Next: {plan.nextPrice} (After Oct 15)
                 </div>
               </div>
 
