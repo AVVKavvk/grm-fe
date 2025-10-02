@@ -37,15 +37,6 @@ const EnhancedSponsorsSection = () => {
         website: "skf.com",
         isImage: true,
       },
-      {
-        name: "Vasco Sports Club",
-        logo: vascoLogo,
-        tier: "Organizing Partner",
-        description:
-          "India's oldest registered sports club - 15 years of marathon excellence",
-        website: "vascosportsclub.com",
-        isImage: true,
-      },
     ],
     platinum: [
       {
@@ -162,9 +153,11 @@ const EnhancedSponsorsSection = () => {
           <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
             Title Sponsors
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-4xl mx-auto">
             {realSponsors.title.map((sponsor, index) => (
-              <div
+              <a
+                href="https://www.skf.com/"
+                target="_blank"
                 key={index}
                 className="bg-card p-8 rounded-xl border-2 border-primary/20 shadow-strong hover:shadow-elegant transition-smooth text-center group"
               >
@@ -173,7 +166,7 @@ const EnhancedSponsorsSection = () => {
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="w-20 h-20 mx-auto object-contain rounded-lg"
+                      className="w-48 mx-auto object-contain rounded-lg"
                     />
                   ) : (
                     <div className="text-6xl">{sponsor.logo}</div>
@@ -189,7 +182,7 @@ const EnhancedSponsorsSection = () => {
                   <Star className="w-3 h-3" />
                   {sponsor.tier}
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -257,17 +250,17 @@ const EnhancedSponsorsSection = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">50K+</div>
+              <div className="text-3xl font-bold text-primary mb-2">10K+</div>
               <div className="text-sm text-muted-foreground">Total Reach</div>
             </Card>
             <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">15</div>
+              <div className="text-3xl font-bold text-primary mb-2">14+</div>
               <div className="text-sm text-muted-foreground">
                 Years Experience
               </div>
             </Card>
             <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">20+</div>
+              <div className="text-3xl font-bold text-primary mb-2">42+</div>
               <div className="text-sm text-muted-foreground">Countries</div>
             </Card>
             <Card className="p-6 text-center">
@@ -330,7 +323,7 @@ const EnhancedSponsorsSection = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <span>+91-9876543210</span>
+                <span>+91 97020 97035</span>
               </div>
             </div>
           </div>

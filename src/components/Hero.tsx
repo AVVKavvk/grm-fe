@@ -37,17 +37,17 @@ const Hero = () => {
           </div>
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-800 mb-8 max-w-2xl leading-relaxed">
-            Welcome to India’s most scenic fitness festival. More than just a
+            Welcome to India's most scenic fitness festival. More than just a
             marathon, Goa River Marathon is a celebration of sport, culture, and
-            community. For over 14 years, we’ve brought together runners from
-            across the world to race, recover, and revel by Goa’s riverside.
+            community. For over 14 years, we've brought together runners from
+            across the world to race, recover, and revel by Goa's riverside.
           </p>
 
           {/* Event Details */}
           <div className="flex flex-wrap gap-6 mb-6">
             <div className="flex items-center gap-2 text-gray-800">
               <Calendar className="w-5 h-5 text-primary" />
-              <span>December 14, 2025</span>
+              <span>December 13th and 14th, 2025</span>
             </div>
             <div className="flex items-center gap-2 text-gray-800">
               <MapPin className="w-5 h-5 text-primary" />
@@ -57,18 +57,18 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/registration">
+            <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
               <Button variant="hero" size="lg" className="text-lg px-8 py-4">
                 Register Now
               </Button>
-            </Link>
+            </a>
             <Button
               variant="outline"
               size="lg"
               className="text-lg px-8 py-4 group"
             >
               <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Explore the Festival
+              Watch Glimpses
             </Button>
           </div>
 

@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import { lazy, Suspense, useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import ScrollToTop from "./components/ScrollToTop";
+import { initGA, logPageView } from "@/lib/analytics";
 
 const Technology = lazy(() => import("@/components/TechnologySection"));
 const Events = lazy(() => import("@/components/EventsSection"));
@@ -23,6 +24,7 @@ const Register = lazy(() => import("@/components/Register"));
 const Footer = lazy(() => import("@/components/Footer"));
 const ChatBot = lazy(() => import("@/components/ChatBot"));
 const PricingFooter = lazy(() => import("@/components/PricingFooter"));
+const TermsConditions = lazy(() => import("@/components/TermsConditions"));
 
 const App = () => {
   const [showPersistentComponents, setShowPersistentComponents] =
@@ -38,6 +40,14 @@ const App = () => {
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
+  useEffect(() => {
+    // Initialize GA4 with your Measurement ID
+    initGA("'G-H6YR6HD36E");
+  }, []);
+  useEffect(() => {
+    // Track page views on route change
+    logPageView();
+  }, [location]);
 
   return (
     <TooltipProvider>
@@ -45,7 +55,7 @@ const App = () => {
       <Toaster />
       <Sonner />
       <Header />
-      <div className="mt-24">
+      <div className="">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route
@@ -117,6 +127,14 @@ const App = () => {
             element={
               <Suspense fallback={<Loader />}>
                 <ContactForms />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/term-and-conditions"
+            element={
+              <Suspense fallback={<Loader />}>
+                <TermsConditions />
               </Suspense>
             }
           />

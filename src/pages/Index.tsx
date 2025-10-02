@@ -35,12 +35,13 @@ const Index = () => {
             year. Secure your spot now and be part of this unforgettable
             experience.
           </p>
-          <Link
-            to="/registration"
+          <a
+            href="https://www.ifinish.in/running/SKF2025"
+            target="_blank"
             className="inline-block bg-yellow-400 text-blue-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-yellow-300 transition-colors text-lg md:text-xl"
           >
             Book Your Slot Now
-          </Link>
+          </a>
         </div>
       </section>
     </div>

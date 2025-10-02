@@ -190,12 +190,12 @@ const FAQ = () => {
       title: "Festival Add-Ons",
       items: [
         {
-          question: "What is the Pasta Party?",
+          question: "What is the Carb Loading Fiesta?",
           answer:
             "A pre-race evening of carb-loading and community! Enjoy pasta, music, and motivation. Separate registration required.",
         },
         {
-          question: "What is the Fitness Festival?",
+          question: "What is the Recovery Rave?",
           answer:
             "Our post-race celebration: ice baths, recovery rave, wellness workshops, live music, and food stalls. Open to all with a separate entry pass.",
         },

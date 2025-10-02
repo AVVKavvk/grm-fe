@@ -13,26 +13,21 @@ const Footer = () => {
   const socialLinks = [
     { icon: <Facebook className="w-5 h-5" />, link: "#", label: "Facebook" },
     { icon: <Instagram className="w-5 h-5" />, link: "#", label: "Instagram" },
-    { icon: <Twitter className="w-5 h-5" />, link: "#", label: "Twitter" },
     { icon: <Youtube className="w-5 h-5" />, link: "#", label: "YouTube" },
   ];
 
   const quickLinks = [
     { label: "About Marathon", link: "/" },
-    { label: "Technology", link: "/technology" },
     { label: "Events & Timing", link: "/events" },
     { label: "Registration", link: "/registration" },
-    { label: "Training Plans", link: "#" },
-    { label: "FAQs", link: "#" },
+    { label: "FAQs", link: "/faq" },
   ];
 
   const supportLinks = [
     { label: "Contact Us", link: "/contact-us" },
-    { label: "Volunteer", link: "#" },
-    { label: "Sponsorship", link: "#" },
-    { label: "Media Kit", link: "#" },
-    { label: "Terms & Conditions", link: "#" },
-    { label: "Privacy Policy", link: "#" },
+    { label: "Sponsorship", link: "/sponsors" },
+
+    { label: "Terms & Conditions", link: "/term-and-conditions" },
   ];
 
   return (
@@ -119,10 +114,10 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary" />
                 <a
-                  href="tel:+91-9876543210"
+                  href="tel:+91 97020 97035"
                   className="text-background/80 hover:text-primary transition-colors"
                 >
-                  +91-9876543210
+                  +91 97020 97035
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -142,11 +137,9 @@ const Footer = () => {
         <div className="border-t border-background/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-background/60 text-sm mb-4 md:mb-0">
-              © 2024 Goa River Marathon. All rights reserved.
+              © 2025 Goa River Marathon. All rights reserved.
             </div>
             <div className="flex flex-wrap gap-6 text-sm text-background/60">
-              <span>Powered by cutting-edge technology</span>
-              <span>•</span>
               <span>AIMS Certified Course</span>
               <span>•</span>
               <span>Eco-friendly Event</span>
