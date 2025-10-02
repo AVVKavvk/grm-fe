@@ -77,7 +77,7 @@ const PricingBottomUI = () => {
               </div>
 
               {/* CTA Button */}
-              <Link to="/registration">
+              <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
                 <button className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold py-2 sm:py-3 px-3 sm:px-6 rounded-lg sm:rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 active:scale-95 flex-shrink-0">
                   <div className="flex items-center gap-1 sm:gap-2">
                     <span className="text-sm sm:text-base">Register</span>
@@ -96,7 +96,7 @@ const PricingBottomUI = () => {
                     </svg>
                   </div>
                 </button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

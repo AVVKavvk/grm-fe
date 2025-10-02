@@ -6,10 +6,37 @@ import {
   Medal,
   Calendar,
   CheckCircle,
+  Trophy,
+  Zap,
 } from "lucide-react";
 import { lazy, Suspense } from "react";
 const Festival = lazy(() => import("@/components/FestivalSection"));
+
 const EventsSection = () => {
+  const heroEvents = [
+    {
+      name: "Full Marathon",
+      distance: "42 KM",
+      time: "04:00 AM",
+      icon: Trophy,
+      gradient: "from-yellow-500 to-orange-600",
+    },
+    {
+      name: "Half Marathon",
+      distance: "21 KM",
+      time: "05:30 AM",
+      icon: Medal,
+      gradient: "from-blue-500 to-purple-600",
+    },
+    {
+      name: "10K Run",
+      distance: "10 KM",
+      time: "06:15 AM",
+      icon: Zap,
+      gradient: "from-green-500 to-teal-600",
+    },
+  ];
+
   const marathonEvents = [
     {
       name: "Full Marathon",
@@ -18,13 +45,15 @@ const EventsSection = () => {
       cutOffTime: "6 Hours",
       price: "₹2,676",
       originalPrice: "₹2,973",
-      participants: "Open for all",
+      participants: "18+ years",
       description: "The ultimate challenge along Goa's most scenic route",
       features: [
         "Finisher Medal",
         "Tech T-Shirt",
         "Digital Certificate",
-        "GPS Tracking",
+        "Electronic Timing Chip",
+        "Free Beer",
+        "Nourishment",
       ],
     },
     {
@@ -34,13 +63,15 @@ const EventsSection = () => {
       cutOffTime: "5 Hours",
       price: "₹2,556",
       originalPrice: "₹2,840",
-      participants: "Open for all",
+      participants: "18+ years",
       description: "A challenging distance for experienced runners",
       features: [
         "Finisher Medal",
         "Tech T-Shirt",
         "Digital Certificate",
-        "GPS Tracking",
+        "Electronic Timing Chip",
+        "Free Beer",
+        "Nourishment",
       ],
     },
     {
@@ -50,13 +81,15 @@ const EventsSection = () => {
       cutOffTime: "3.5 Hours",
       price: "₹2,155",
       originalPrice: "₹2,395",
-      participants: "Open for all",
+      participants: "18+ years",
       description: "Perfect for intermediate runners seeking a challenge",
       features: [
         "Finisher Medal",
         "Tech T-Shirt",
         "Digital Certificate",
-        "Live Analytics",
+        "Electronic Timing Chip",
+        "Free Beer",
+        "Nourishment",
       ],
     },
     {
@@ -66,9 +99,16 @@ const EventsSection = () => {
       cutOffTime: "90 Minutes",
       price: "₹1,491",
       originalPrice: "₹1,657",
-      participants: "Open for all",
+      participants: "16+ years",
       description: "Ideal for beginners and fitness enthusiasts",
-      features: ["Finisher Medal", "Event T-Shirt", "Digital Certificate"],
+      features: [
+        "Finisher Medal",
+        "Event T-Shirt",
+        "Digital Certificate",
+        "Electronic Timing Chip",
+        "Free Beer",
+        "Nourishment",
+      ],
     },
     {
       name: "5K Fun Run",
@@ -79,19 +119,24 @@ const EventsSection = () => {
       originalPrice: "₹700",
       participants: "Open for all",
       description: "Family-friendly run with stunning coastal views",
-      features: ["Participation Medal", "Event T-Shirt", "Digital Certificate"],
+      features: [
+        "Participation Medal",
+        "Event T-Shirt",
+        "Digital Certificate",
+        "Nourishment",
+      ],
     },
   ];
 
   const specialEvents = [
     {
       name: "Carb Loading Party",
-      date: "December 14, 2024",
+      date: "December 14, 2025",
       time: "7:00 PM - 11:00 PM",
-      location: "TBD - Beachfront Venue, North Goa",
-      price: "₹1,500",
+      location: "Beachfront Venue, North Goa",
+      price: "₹750",
       description:
-        "The ultimate pre-race celebration with traditional Goan feast and pasta party",
+        "The ultimate pre-race celebration with traditional Goan feast and Carb Loading Fiesta",
       highlights: [
         "Gourmet pasta station with 8 varieties",
         "Traditional Goan carb-rich dishes",
@@ -100,14 +145,15 @@ const EventsSection = () => {
         "Meet fellow runners",
         "Race day briefing by experts",
         "Craco's nutrition workshop",
+        "Cash-free event* (Purchase card required)",
       ],
       icon: "🍝",
     },
     {
       name: "Recovery Rave",
-      date: "December 15, 2024",
+      date: "December 15, 2025",
       time: "8:00 PM - 2:00 AM",
-      location: "TBD - Beach Club, Anjuna",
+      location: "Beach Club, Anjuna",
       price: "₹1,500",
       description:
         "Epic post-marathon celebration with world-class DJs and recovery treatments",
@@ -119,6 +165,7 @@ const EventsSection = () => {
         "Dance floor on the beach",
         "Winner recognition ceremony",
         "Exclusive marathon finisher perks",
+        "Cash-free event* (Purchase card required)",
       ],
       icon: "🎉",
     },
@@ -126,6 +173,47 @@ const EventsSection = () => {
 
   return (
     <section id="events" className="py-24">
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 mb-24">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Experience Three
+            <span className="bg-gradient-sunset bg-clip-text text-transparent">
+              {" "}
+              Epic Events
+            </span>
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            A complete marathon weekend celebration combining world-class racing
+            with unforgettable Goan experiences
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {heroEvents.map((event, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-2xl bg-card border border-border p-8 hover:shadow-strong transition-all duration-300"
+            >
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-5 group-hover:opacity-10 transition-opacity`}
+              ></div>
+              <div className="relative text-center">
+                <event.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
+                <h3 className="text-2xl font-bold mb-2">{event.name}</h3>
+                <div className="text-4xl font-bold text-primary mb-2">
+                  {event.distance}
+                </div>
+                <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                  <Clock className="w-4 h-4" />
+                  <span>{event.time}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -192,13 +280,9 @@ const EventsSection = () => {
                     <Clock className="w-4 h-4 text-primary" />
                     <span className="text-sm">Cut-off: {event.cutOffTime}</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 col-span-2">
                     <Users className="w-4 h-4 text-primary" />
                     <span className="text-sm">{event.participants}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-primary" />
-                    <span className="text-sm">Chicalim Start</span>
                   </div>
                 </div>
 
@@ -333,38 +417,27 @@ const EventsSection = () => {
               <p className="text-primary-foreground/90 text-lg mb-6">
                 Join both celebrations: Carb Loading Party + Recovery Rave
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <div className="bg-primary-foreground/10 p-4 rounded-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-2xl mx-auto">
+                <div className="bg-primary-foreground/10 p-6 rounded-lg">
                   <div className="text-lg font-bold text-primary-foreground">
                     Individual Price
                   </div>
-                  <div className="text-primary-foreground/80 text-sm">
+                  <div className="text-primary-foreground/80 text-sm mb-2">
                     Both Events Separately
                   </div>
-                  <div className="text-2xl font-bold text-primary-foreground line-through">
-                    ₹3,000
+                  <div className="text-3xl font-bold text-primary-foreground line-through">
+                    ₹2,250
                   </div>
                 </div>
-                <div className="bg-primary-foreground/20 p-4 rounded-lg border-2 border-primary-foreground/30">
+                <div className="bg-primary-foreground/20 p-6 rounded-lg border-2 border-primary-foreground/30">
                   <div className="text-lg font-bold text-primary-foreground">
                     Combo Price
                   </div>
-                  <div className="text-primary-foreground/80 text-sm">
-                    Save ₹850!
+                  <div className="text-primary-foreground/80 text-sm mb-2">
+                    Save ₹200!
                   </div>
-                  <div className="text-3xl font-bold text-primary-foreground">
-                    ₹2,150
-                  </div>
-                </div>
-                <div className="bg-primary-foreground/10 p-4 rounded-lg">
-                  <div className="text-lg font-bold text-primary-foreground">
-                    Early Bird
-                  </div>
-                  <div className="text-primary-foreground/80 text-sm">
-                    Until Nov 15th
-                  </div>
-                  <div className="text-2xl font-bold text-primary-foreground">
-                    ₹1,800
+                  <div className="text-4xl font-bold text-primary-foreground">
+                    ₹2,050
                   </div>
                 </div>
               </div>

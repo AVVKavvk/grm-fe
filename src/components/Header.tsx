@@ -20,7 +20,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <header className="top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg">
       {/* Top Banner */}
       <div className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6 py-3 flex flex-col sm:flex-row items-center justify-between shadow-lg">
         <div className="flex items-center gap-3">
@@ -39,19 +39,19 @@ const Header = () => {
             </span>
           </p>
         </div>
-        <Link to="/registration">
+        <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
           <Button variant="cta" size="lg">
             Register Now
           </Button>
-        </Link>
+        </a>
       </div>
 
       {/* Navigation */}
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <div className="w-16">
-            <img src={skfLogo} alt="" />
+          <div className="w-32 md:w-40">
+            <img src={skfLogo} alt="SKF Logo" className="w-full h-auto" />
           </div>
         </Link>
 
@@ -70,15 +70,14 @@ const Header = () => {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Link to="/registration">
+          <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
             <Button variant="cta" size="lg">
               Register Now
             </Button>
-          </Link>
+          </a>
         </div>
         <div className="flex justify-center font-semibold items-center gap-2">
-          <img src={vascoLogo} width="55px" alt="" />
-          <h1>Vasco Sports Club </h1>
+          <img src={vascoLogo} width="90px" alt="Vasco Logo" />
         </div>
 
         {/* Mobile Menu Button */}

@@ -10,11 +10,21 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Users, MapPin } from "lucide-react";
+import {
+  captureUTMParams,
+  buildTrackingURL,
+  logRegistrationClick,
+} from "@/lib/tracking";
 
 const Register = () => {
   const [searchParams] = useSearchParams();
-  const source = searchParams.get("source") || "direct";
+  const source = searchParams.get("utm_source") || "direct";
   const [isRedirecting, setIsRedirecting] = useState(false);
+
+  // Capture UTM parameters when component mounts
+  useEffect(() => {
+    captureUTMParams();
+  }, []);
 
   const getSourceConfig = (source: string) => {
     switch (source.toLowerCase()) {
@@ -22,35 +32,35 @@ const Register = () => {
         return {
           name: "Zomato",
           color: "bg-red-500",
-          redirectUrl: "https://zomato.com/",
+          redirectUrl: "https://www.ifinish.in/running/SKF2025",
           description: "Register through Zomato Events",
         };
       case "swiggy":
         return {
           name: "Swiggy",
           color: "bg-orange-500",
-          redirectUrl: "https://swiggy.com/",
+          redirectUrl: "https://www.ifinish.in/running/SKF2025",
           description: "Register through Swiggy Events",
         };
       case "playo":
         return {
           name: "Playo",
           color: "bg-green-500",
-          redirectUrl: "https://playo.co/",
+          redirectUrl: "https://www.ifinish.in/running/SKF2025",
           description: "Register through our mobile app",
         };
       case "district":
         return {
           name: "District",
           color: "bg-blue-500",
-          redirectUrl: "https://district.com",
+          redirectUrl: "https://www.ifinish.in/running/SKF2025",
           description: "Register through District",
         };
       default:
         return {
           name: "Direct",
           color: "bg-primary",
-          redirectUrl: "/registration",
+          redirectUrl: "https://www.ifinish.in/running/SKF2025",
           description: "Register directly on our website",
         };
     }
@@ -60,8 +70,17 @@ const Register = () => {
 
   const handleRegister = () => {
     setIsRedirecting(true);
+
+    // Build URL with UTM parameters
+    const trackingUrl = buildTrackingURL(sourceConfig.redirectUrl, {
+      referrer: "skf_website",
+    });
+
+    // Log the registration click
+    logRegistrationClick(sourceConfig.name);
+
     setTimeout(() => {
-      window.open(sourceConfig.redirectUrl, "_blank");
+      window.open(trackingUrl, "_blank");
       setIsRedirecting(false);
     }, 1000);
   };
@@ -92,7 +111,7 @@ const Register = () => {
           <div className="bg-secondary/50 rounded-lg p-4 space-y-3">
             <div className="flex items-center gap-2 text-sm">
               <MapPin className="h-4 w-4 text-primary" />
-              <span>December 14, 2025 • Chicalim, Goa</span>
+              <span>December 13th and 14th, 2025 • Chicalim, Goa</span>
             </div>
 
             <div className="flex items-center gap-2 text-sm">

@@ -32,7 +32,7 @@ const TestimonialsSection = () => {
       location: "Delhi",
       race: "Full Marathon 2023",
       rating: 5,
-      text: "As a first-time participant, I was amazed by the professionalism. Medical support, water stations, and route management were top-notch. The GPS tracking was very helpful too.",
+      text: "As a first-time participant, I was amazed by the professionalism. Medical support, water stations, and route management were top-notch.",
       avatar: "👨‍⚕️",
     },
     {
@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
       location: "Goa",
       race: "5K Fun Run 2024",
       rating: 5,
-      text: "Being a local, I loved how this marathon highlights Goa’s culture. The community feel, music, and the Craco mascot made it truly enjoyable for everyone.",
+      text: "Being a local, I loved how this marathon highlights Goa’s culture. The community feel and the music it truly enjoyable for everyone.",
       avatar: "👩‍🦱",
     },
     {
@@ -120,13 +120,13 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Overall Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {/* <div className="text-center">
             <div className="text-3xl font-bold text-foreground mb-2">4.9/5</div>
             <div className="text-sm text-muted-foreground">Average Rating</div>
           </div> */}
           <div className="text-center">
-            <div className="text-3xl font-bold text-foreground mb-2">25K+</div>
+            <div className="text-3xl font-bold text-foreground mb-2">10K+</div>
             <div className="text-sm text-muted-foreground">
               Total Participants
             </div>

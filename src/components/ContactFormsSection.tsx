@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,12 +18,16 @@ import {
   Building2,
   Users,
   ShoppingBag,
+  Heart,
+  Loader2,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ContactFormsSection = () => {
   const { toast } = useToast();
   const [activeForm, setActiveForm] = useState("general");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,25 +37,109 @@ const ContactFormsSection = () => {
     category: "",
     budget: "",
     eventType: "",
+    volunteerArea: "",
+    availability: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Load reCAPTCHA script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://www.google.com/recaptcha/api.js?render=6LfX4NsrAAAAAEgmJaY9hCBEoF3by5k6sRNl-Rfq";
+    script.async = true;
+    script.defer = true;
+    script.onload = () => setRecaptchaLoaded(true);
+    document.body.appendChild(script);
+
+    return () => {
+      const existingScript = document.querySelector(
+        'script[src*="recaptcha/api.js"]'
+      );
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Form Submitted!",
-      description:
-        "Thank you for your inquiry. We'll get back to you within 24 hours.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-      category: "",
-      budget: "",
-      eventType: "",
-    });
+
+    if (!recaptchaLoaded) {
+      toast({
+        title: "Error",
+        description: "reCAPTCHA not loaded yet. Please try again.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Prepare email data
+      const emailData = {
+        to: "info@skfgoarivermarathon.com",
+        subject: `${getFormTitle(activeForm)} - ${formData.name}`,
+        formType: activeForm,
+        ...formData,
+      };
+
+      // Send to your backend API endpoint
+      // const response = await fetch("/api/contact", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(emailData),
+      // });
+
+      // if (response.ok) {
+      //   toast({
+      //     title: "Form Submitted Successfully!",
+      //     description:
+      //       "Thank you for your inquiry. We'll get back to you within 24 hours.",
+      //   });
+
+      //   // Reset form
+      //   setFormData({
+      //     name: "",
+      //     email: "",
+      //     phone: "",
+      //     company: "",
+      //     message: "",
+      //     category: "",
+      //     budget: "",
+      //     eventType: "",
+      //     volunteerArea: "",
+      //     availability: "",
+      //   });
+
+      //   // Reset reCAPTCHA
+      //   (window as any).grecaptcha?.reset();
+      // } else {
+      //   throw new Error("Failed to submit form");
+      // }
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description:
+          "There was an error submitting your form. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const getFormTitle = (formType: string) => {
+    const titles: { [key: string]: string } = {
+      general: "General Inquiry",
+      sponsor: "Sponsorship Inquiry",
+      vendor: "Vendor Partnership Inquiry",
+      group: "Group Registration Inquiry",
+      volunteer: "Volunteer Application",
+    };
+    return titles[formType] || "Contact Form";
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -86,6 +174,13 @@ const ContactFormsSection = () => {
       icon: Users,
       description:
         "Corporate teams, running clubs, or large group registrations",
+    },
+    {
+      id: "volunteer",
+      title: "Volunteer with Us",
+      icon: Heart,
+      description:
+        "Join our team and be part of creating an unforgettable marathon experience",
     },
   ];
 
@@ -279,6 +374,75 @@ const ContactFormsSection = () => {
                   </div>
                 )}
 
+                {activeForm === "volunteer" && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="volunteerArea">
+                        Preferred Volunteer Area
+                      </Label>
+                      <Select
+                        onValueChange={(value) =>
+                          handleInputChange("volunteerArea", value)
+                        }
+                      >
+                        <SelectTrigger className="mt-2">
+                          <SelectValue placeholder="Select area" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="registration">
+                            Registration & Check-in
+                          </SelectItem>
+                          <SelectItem value="hydration">
+                            Hydration Stations
+                          </SelectItem>
+                          <SelectItem value="course">Course Marshal</SelectItem>
+                          <SelectItem value="medical">
+                            Medical Support
+                          </SelectItem>
+                          <SelectItem value="finish">
+                            Finish Line Support
+                          </SelectItem>
+                          <SelectItem value="photography">
+                            Photography/Media
+                          </SelectItem>
+                          <SelectItem value="events">
+                            Event Management
+                          </SelectItem>
+                          <SelectItem value="any">
+                            Any Area (Flexible)
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div>
+                      <Label htmlFor="availability">Availability</Label>
+                      <Select
+                        onValueChange={(value) =>
+                          handleInputChange("availability", value)
+                        }
+                      >
+                        <SelectTrigger className="mt-2">
+                          <SelectValue placeholder="Select availability" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="race-day">
+                            Race Day Only (Dec 15)
+                          </SelectItem>
+                          <SelectItem value="full-weekend">
+                            Full Weekend (Dec 14-15)
+                          </SelectItem>
+                          <SelectItem value="pre-event">
+                            Pre-Event Setup (Dec 13-14)
+                          </SelectItem>
+                          <SelectItem value="all-days">
+                            All Days (Dec 13-16)
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                )}
+
                 <div>
                   <Label htmlFor="message">Message *</Label>
                   <Textarea
@@ -294,9 +458,51 @@ const ContactFormsSection = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full">
-                  Send Message
+                {/* Google reCAPTCHA */}
+                <div className="flex justify-center">
+                  <div
+                    className="g-recaptcha"
+                    data-sitekey="6LfX4NsrAAAAAEgmJaY9hCBEoF3by5k6sRNl-Rfq"
+                  ></div>
+                </div>
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full"
+                  disabled={isSubmitting || !recaptchaLoaded}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
                 </Button>
+
+                <p className="text-xs text-muted-foreground text-center">
+                  This site is protected by reCAPTCHA and the Google{" "}
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Privacy Policy
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Terms of Service
+                  </a>{" "}
+                  apply.
+                </p>
               </form>
             </Card>
           </div>
@@ -311,14 +517,16 @@ const ContactFormsSection = () => {
               runnersingoa@gmail.com
             </p>
             <p className="text-sm text-muted-foreground">
-              support@skfgoarivermarathon.com
+              info@skfgoarivermarathon.com
             </p>
           </Card>
 
           <Card className="p-6 text-center">
             <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
             <h3 className="font-semibold mb-2">Call Us</h3>
-            <p className="text-sm text-muted-foreground mb-2">(832) 251 1333</p>
+            <p className="text-sm text-muted-foreground mb-2">
+              +91 97020 97035
+            </p>
             <p className="text-sm text-muted-foreground">
               WhatsApp: +91 97020 97035
             </p>

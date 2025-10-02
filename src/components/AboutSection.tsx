@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
   Award,
   Users,
@@ -12,6 +11,8 @@ import {
 import StoryLegacySection from "./StoryLegacySection";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
+import aimsLogo from "@/assets/AIMS_logo.jpg";
+import abbottLogo from "@/assets/Abbott_World_Marathon_Majors_logo_blue.svg";
 
 const AboutSection = () => {
   const stats = [
@@ -21,7 +22,7 @@ const AboutSection = () => {
       icon: <Calendar className="w-6 h-6" />,
     },
     {
-      number: "25,000+",
+      number: "10,000+",
       label: "Total Runners",
       icon: <Users className="w-6 h-6" />,
     },
@@ -39,29 +40,43 @@ const AboutSection = () => {
 
   const highlights = [
     {
-      icon: <Award className="w-8 h-8" />,
+      icon: (
+        <img
+          src={aimsLogo}
+          alt="AIMS"
+          className="w-72 rounded object-contain"
+        />
+      ),
       title: "AIMS Certified",
+      link: "https://aims-worldrunning.org/aims.html",
       description:
         "Official certification from the Association of International Marathons ensures world-class standards and international recognition.",
     },
     {
-      icon: <Globe className="w-8 h-8" />,
+      icon: (
+        <img
+          src={abbottLogo}
+          alt="Abbott WMM"
+          className="w-24  object-contain"
+        />
+      ),
       title: "AbbottWMM Qualifier",
+      link: "https://www.worldmarathonmajors.com/",
       description:
         "Part of the Abbott World Marathon Majors Wanda Age Group Qualifier Series, marking our first year on the global ranking stage.",
     },
-    {
-      icon: <Leaf className="w-8 h-8" />,
-      title: "Sustainable Event",
-      description:
-        "Zero waste policy, eco-friendly materials, and carbon offset initiatives make this a truly green marathon.",
-    },
+    // {
+    //   icon: <Leaf className="w-8 h-8" />,
+    //   title: "Sustainable Event",
+    //   description:
+    //     "Zero waste policy, eco-friendly materials, and carbon offset initiatives make this a truly green marathon.",
+    // },
   ];
   const evolutionStats = [
     {
       metric: "Participants",
       from: "1,500 (2010)",
-      to: "25,000+ (2025)",
+      to: "10,000+ (2025)",
       growth: "+566%",
     },
     {
@@ -96,7 +111,7 @@ const AboutSection = () => {
             India's Most
             <span className="bg-gradient-ocean bg-clip-text text-transparent">
               {" "}
-              Pioneering Marathon
+              Festive Marathon
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -122,14 +137,92 @@ const AboutSection = () => {
           ))}
         </div>
 
+        <section className="relative py-16 bg-gradient-to-b rounded-md shadow from-blue-50 via-white to-blue-100">
+          <div className="container mx-auto px-6 lg:px-12">
+            {/* Heading */}
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+                The Scenic Route –{" "}
+                <span className="text-blue-600">A Run Like No Other</span>
+              </h2>
+              <p className="mt-6 text-lg text-gray-700 leading-relaxed">
+                Recognised as one of the most scenic marathon routes in India,
+                the Goa River Marathon winds along the Zuari River, where
+                breathtaking views meet the rhythm of Goa’s culture. Every step
+                takes you past riverscapes, villages, and cheering crowds that
+                make the journey as rewarding as the finish.
+              </p>
+              <p className="mt-4 text-lg text-gray-700 leading-relaxed">
+                Choose your challenge: the{" "}
+                <span className="font-semibold">42K Full Marathon</span>, the
+                <span className="font-semibold">
+                  {" "}
+                  32K “in-between” distance
+                </span>{" "}
+                — perfectly balanced between endurance and speed, the{" "}
+                <span className="font-semibold">21K Half Marathon</span>, the
+                <span className="font-semibold">10K Run</span>, or the{" "}
+                <span className="font-semibold">5K Fun Walk</span>. Whatever
+                your pace, the experience will stay with you long after you
+                cross the line.
+              </p>
+            </div>
+
+            {/* Festival Add-ons */}
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold text-gray-900 text-center">
+                Festival Add-ons
+              </h3>
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {/* Card 1 */}
+                <div className="flex flex-col items-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
+                  <span className="text-4xl">🍝</span>
+                  <h4 className="mt-3 text-lg font-semibold text-gray-800">
+                    Carb-Loading Fiesta
+                  </h4>
+                </div>
+                {/* Card 2 */}
+                <div className="flex flex-col items-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
+                  <span className="text-4xl">🎶</span>
+                  <h4 className="mt-3 text-lg font-semibold text-gray-800">
+                    Recovery Rave
+                  </h4>
+                </div>
+                {/* Card 3 */}
+                <div className="flex flex-col items-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
+                  <span className="text-4xl">❄️</span>
+                  <h4 className="mt-3 text-lg font-semibold text-gray-800">
+                    Ice Bath
+                  </h4>
+                </div>
+                {/* Card 4 */}
+                <div className="flex flex-col items-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
+                  <span className="text-4xl">🥁</span>
+                  <h4 className="mt-3 text-lg font-semibold text-gray-800">
+                    Cheering Zones
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Main Content */}
         {<StoryLegacySection />}
 
         {/* Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {highlights.map((highlight, index) => (
-            <div
+            <a
               key={index}
+              {...(highlight.link
+                ? {
+                    href: highlight.link,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  }
+                : {
+                    href: "#",
+                  })}
               className="text-center p-8 bg-card rounded-xl border border-border shadow-soft hover:shadow-medium transition-smooth group"
             >
               <div className="text-primary mb-4 flex justify-center group-hover:scale-110 transition-transform">
@@ -141,7 +234,7 @@ const AboutSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 {highlight.description}
               </p>
-            </div>
+            </a>
           ))}
         </div>
         {/* Header */}

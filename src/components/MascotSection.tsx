@@ -167,13 +167,7 @@ const MascotSection = () => {
                   <img src={instagram} alt="Instagram" className="w-6 h-6" />
                   Instagram
                 </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
-                >
-                  <img src={twitter} alt="Twitter" className="w-6 h-6" />
-                  Twitter
-                </a>
+
                 <a
                   href="#"
                   className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"

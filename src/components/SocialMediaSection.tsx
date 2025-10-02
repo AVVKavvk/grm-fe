@@ -29,6 +29,14 @@ const SocialMediaSection = () => {
       color: "bg-blue-600",
       description: "Event updates, community discussions",
     },
+    {
+      name: "YouTube",
+      handle: "@GoaRiverMarathon",
+      followers: "12.5K",
+      icon: Youtube,
+      color: "bg-red-600",
+      description: "Race highlights, training videos, runner stories",
+    },
   ];
 
   const trendingHashtags = [
@@ -38,33 +46,6 @@ const SocialMediaSection = () => {
     "#GoaRunning",
     "#MarathonMemories",
     "#FutureOfRunning",
-  ];
-
-  const contentIdeas = [
-    {
-      type: "Training Tips",
-      frequency: "Daily",
-      platforms: ["Instagram", "Facebook"],
-      engagement: "High",
-    },
-    {
-      type: "Runner Spotlights",
-      frequency: "Weekly",
-      platforms: ["Instagram", "YouTube"],
-      engagement: "Very High",
-    },
-    {
-      type: "Tech Features",
-      frequency: "Bi-weekly",
-      platforms: ["Twitter", "LinkedIn"],
-      engagement: "Medium",
-    },
-    {
-      type: "Behind the Scenes",
-      frequency: "Weekly",
-      platforms: ["Instagram Stories", "YouTube"],
-      engagement: "High",
-    },
   ];
 
   return (
@@ -88,7 +69,7 @@ const SocialMediaSection = () => {
         </div>
 
         {/* Social Platforms Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {socialPlatforms.map((platform, index) => {
             const IconComponent = platform.icon;
             return (
@@ -147,7 +128,7 @@ const SocialMediaSection = () => {
         </Card>
 
         {/* Share Your Story CTA */}
-        <Card className="shadow-medium bg-gradient-ocean mb-16">
+        {/* <Card className="shadow-medium bg-gradient-ocean mb-16">
           <CardContent className="p-8 text-white text-center">
             <h3 className="text-2xl font-bold mb-4">
               Share Your Marathon Journey
@@ -168,10 +149,10 @@ const SocialMediaSection = () => {
               </Button>
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
 
         {/* Social Proof */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <h3 className="text-2xl font-bold mb-6">
             Join 100,000+ Marathon Enthusiasts
           </h3>
@@ -183,7 +164,7 @@ const SocialMediaSection = () => {
               Download Media Kit
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
