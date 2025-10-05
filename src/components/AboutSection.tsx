@@ -17,12 +17,12 @@ import abbottLogo from "@/assets/Abbott_World_Marathon_Majors_logo_blue.svg";
 const AboutSection = () => {
   const stats = [
     {
-      number: "14+",
+      number: "14",
       label: "Years Running",
       icon: <Calendar className="w-6 h-6" />,
     },
     {
-      number: "10,000+",
+      number: "50,000+",
       label: "Total Runners",
       icon: <Users className="w-6 h-6" />,
     },
@@ -76,7 +76,7 @@ const AboutSection = () => {
     {
       metric: "Participants",
       from: "1,500 (2010)",
-      to: "10,000+ (2025)",
+      to: "50,000+ (2025)",
       growth: "+566%",
     },
     {
@@ -94,7 +94,7 @@ const AboutSection = () => {
     {
       metric: "Countries Represented",
       from: "1 (2010)",
-      to: "20+ (2025)",
+      to: "42 (2025)",
       growth: "+1900%",
     },
   ];
@@ -115,7 +115,7 @@ const AboutSection = () => {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            15 years of inspiring runners worldwide with cutting-edge technology
+            14 years of inspiring runners worldwide with cutting-edge technology
             and Goa's stunning landscapes.
           </p>
         </div>
@@ -161,7 +161,7 @@ const AboutSection = () => {
                 </span>{" "}
                 — perfectly balanced between endurance and speed, the{" "}
                 <span className="font-semibold">21K Half Marathon</span>, the
-                <span className="font-semibold">10K Run</span>, or the{" "}
+                <span className="font-semibold"> 10K Run</span>, or the{" "}
                 <span className="font-semibold">5K Fun Walk</span>. Whatever
                 your pace, the experience will stay with you long after you
                 cross the line.

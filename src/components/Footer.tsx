@@ -45,7 +45,7 @@ const Footer = () => {
             <p className="text-background/80 leading-relaxed mb-6">
               India's most scenic and technologically advanced marathon
               experience. Join us for an unforgettable journey along the
-              beautiful Mandovi River.
+              beautiful Zuari River.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link, index) => (
@@ -105,7 +105,9 @@ const Footer = () => {
                   <div className="text-background/80">
                     Vasco Sports Club
                     <br />
-                    Panaji, Goa 403001
+                    Rukmini Towers, Opp. Tilak Maidan
+                    <br />
+                    Vasco da Gama, 403802 GOA.
                     <br />
                     India
                   </div>
@@ -117,7 +119,14 @@ const Footer = () => {
                   href="tel:+91 97020 97035"
                   className="text-background/80 hover:text-primary transition-colors"
                 >
-                  +91 97020 97035
+                  +91 9702097035 ,
+                </a>
+
+                <a
+                  href="tel:+91 8322511333"
+                  className="text-background/80 hover:text-primary transition-colors"
+                >
+                  +91 8322511333
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -140,6 +149,14 @@ const Footer = () => {
               © 2025 Goa River Marathon. All rights reserved.
             </div>
             <div className="flex flex-wrap gap-6 text-sm text-background/60">
+              <a
+                href="https://vascosportsclub.com"
+                target="_blank"
+                className="hover:text-blue-600 hover:underline"
+              >
+                Vasco Sports Club
+              </a>
+              <span>•</span>
               <span>AIMS Certified Course</span>
               <span>•</span>
               <span>Eco-friendly Event</span>

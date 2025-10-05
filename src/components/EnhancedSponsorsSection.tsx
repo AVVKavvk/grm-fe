@@ -312,14 +312,13 @@ const EnhancedSponsorsSection = () => {
           <div>
             <h3 className="text-2xl font-bold mb-6">Become a Partner</h3>
             <p className="text-muted-foreground mb-6">
-              Join India's most innovative marathon and reach thousands of
-              health-conscious, tech-savvy participants while supporting a
-              sustainable future.
+              India's most scenic and fun focused marathon experience. Join us
+              for an unforgettable journey along the beautiful ZUARI River .
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span>partnerships@skfgoarivermarathon.com</span>
+                <span>info@goarivermarathon.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary" />
