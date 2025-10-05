@@ -1,22 +1,20 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Calendar,
-  Users,
-  MapPin,
-  Camera,
-  Heart,
-  TrendingUp,
-} from "lucide-react";
+import { useState } from "react";
+import { Camera, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Images2022, Images2023, Images2024 } from "@/utils/loadImages";
 
 const MemoriesSection = () => {
+  const [selectedYear, setSelectedYear] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const yearlyData = [
     {
       year: 2024,
       theme: "Tech Revolution",
       participants: 8500,
-      image: "/placeholder.svg",
+      images: Images2024,
       highlights: [
         "First RFID timing",
         "Live streaming",
@@ -30,7 +28,7 @@ const MemoriesSection = () => {
       year: 2023,
       theme: "Green Marathon",
       participants: 7200,
-      image: "/placeholder.svg",
+      images: Images2023,
       highlights: [
         "Zero waste initiative",
         "Eco medals",
@@ -44,7 +42,7 @@ const MemoriesSection = () => {
       year: 2022,
       theme: "Unity Run",
       participants: 6800,
-      image: "/placeholder.svg",
+      images: Images2022,
       highlights: [
         "International runners",
         "Virtual participation",
@@ -58,7 +56,7 @@ const MemoriesSection = () => {
       year: 2021,
       theme: "Resilience Run",
       participants: 5500,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "COVID protocols",
         "Health screening",
@@ -72,7 +70,7 @@ const MemoriesSection = () => {
       year: 2020,
       theme: "Virtual Connect",
       participants: 4200,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "First virtual marathon",
         "Mobile timing app",
@@ -86,7 +84,7 @@ const MemoriesSection = () => {
       year: 2019,
       theme: "Decade Complete",
       participants: 6500,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "10th anniversary",
         "International participation",
@@ -100,7 +98,7 @@ const MemoriesSection = () => {
       year: 2018,
       theme: "Innovation Drive",
       participants: 5800,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "Digital registration",
         "Chip timing",
@@ -114,7 +112,7 @@ const MemoriesSection = () => {
       year: 2017,
       theme: "River Heritage",
       participants: 5200,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "Heritage route",
         "Cultural performances",
@@ -128,7 +126,7 @@ const MemoriesSection = () => {
       year: 2016,
       theme: "Fitness Focus",
       participants: 4800,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "Health checkups",
         "Nutrition workshops",
@@ -142,7 +140,7 @@ const MemoriesSection = () => {
       year: 2015,
       theme: "Youth Power",
       participants: 4200,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "School participation",
         "Youth categories",
@@ -156,7 +154,7 @@ const MemoriesSection = () => {
       year: 2014,
       theme: "Community Spirit",
       participants: 3800,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "Local business support",
         "Village participation",
@@ -170,7 +168,7 @@ const MemoriesSection = () => {
       year: 2013,
       theme: "Growth Path",
       participants: 3200,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "Increased categories",
         "Better organization",
@@ -184,7 +182,7 @@ const MemoriesSection = () => {
       year: 2012,
       theme: "Building Momentum",
       participants: 2800,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "Professional timing",
         "Medal ceremonies",
@@ -198,7 +196,7 @@ const MemoriesSection = () => {
       year: 2011,
       theme: "Foundation Strength",
       participants: 2200,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "Route optimization",
         "Volunteer training",
@@ -212,7 +210,7 @@ const MemoriesSection = () => {
       year: 2010,
       theme: "The Beginning",
       participants: 1500,
-      image: "/placeholder.svg",
+      images: [],
       highlights: [
         "First marathon",
         "Vasco Sports Club initiative",
@@ -224,9 +222,44 @@ const MemoriesSection = () => {
     },
   ];
 
+  const openGallery = (year) => {
+    setSelectedYear(year);
+    setCurrentImageIndex(0);
+  };
+
+  const closeGallery = () => {
+    setSelectedYear(null);
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = () => {
+    if (selectedYear && selectedYear.images.length > 0) {
+      setCurrentImageIndex((prev) =>
+        prev === selectedYear.images.length - 1 ? 0 : prev + 1
+      );
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedYear && selectedYear.images.length > 0) {
+      setCurrentImageIndex((prev) =>
+        prev === 0 ? selectedYear.images.length - 1 : prev - 1
+      );
+    }
+  };
+
   return (
     <section className="py-24 bg-gradient-to-b from-background to-secondary/10">
       <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4">Marathon Memories</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Relive the incredible moments from 15 years of the Goa River
+            Marathon
+          </p>
+        </div>
+
         {/* Yearly Timeline */}
         <div className="space-y-12 mb-16">
           {Array.from(
@@ -238,14 +271,18 @@ const MemoriesSection = () => {
               >
                 {yearlyData
                   .slice(rowIndex * 5, (rowIndex + 1) * 5)
-                  .map((year, index) => (
+                  .map((year) => (
                     <Card
                       key={year.year}
-                      className="group hover:shadow-medium transition-all duration-300 overflow-hidden"
+                      className="group hover:shadow-lg transition-all duration-300 overflow-hidden"
                     >
                       <div className="relative">
                         <img
-                          src={year.image}
+                          src={
+                            year.images.length > 0
+                              ? year.images[0]
+                              : "/placeholder.svg"
+                          }
                           alt={`${year.year} Marathon`}
                           className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
@@ -254,6 +291,13 @@ const MemoriesSection = () => {
                             {year.year}
                           </Badge>
                         </div>
+                        {year.images.length > 0 && (
+                          <div className="absolute top-2 right-2">
+                            <Badge variant="secondary" className="text-xs">
+                              {year.images.length} photos
+                            </Badge>
+                          </div>
+                        )}
                       </div>
                       <CardContent className="p-4">
                         <h3 className="text-lg font-bold mb-1">{year.theme}</h3>
@@ -275,8 +319,12 @@ const MemoriesSection = () => {
                           variant="outline"
                           size="sm"
                           className="w-full text-xs"
+                          onClick={() => openGallery(year)}
+                          disabled={year.images.length === 0}
                         >
-                          View Gallery
+                          {year.images.length > 0
+                            ? "View Gallery"
+                            : "Coming Soon"}
                         </Button>
                       </CardContent>
                     </Card>
@@ -288,7 +336,7 @@ const MemoriesSection = () => {
 
         {/* Memory Upload CTA */}
         <div className="text-center">
-          <Card className="inline-block p-8 bg-gradient-ocean shadow-glow">
+          <Card className="inline-block p-8 bg-gradient-to-br from-blue-600 to-cyan-500 shadow-xl">
             <CardContent className="p-0">
               <Camera className="w-12 h-12 text-white mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-4">
@@ -314,6 +362,78 @@ const MemoriesSection = () => {
           </Card>
         </div>
       </div>
+
+      {/* Image Gallery Modal */}
+      {selectedYear && selectedYear.images.length > 0 && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute top-4 right-4 text-white hover:bg-white/20"
+            onClick={closeGallery}
+          >
+            <X className="w-6 h-6" />
+          </Button>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute left-4 text-white hover:bg-white/20"
+            onClick={prevImage}
+          >
+            <ChevronLeft className="w-8 h-8" />
+          </Button>
+
+          <div className="max-w-5xl w-full">
+            <div className="text-center mb-4">
+              <h3 className="text-2xl font-bold text-white mb-2">
+                {selectedYear.year} - {selectedYear.theme}
+              </h3>
+              <p className="text-white/80">
+                Photo {currentImageIndex + 1} of {selectedYear.images.length}
+              </p>
+            </div>
+
+            <img
+              src={selectedYear.images[currentImageIndex]}
+              alt={`${selectedYear.year} Marathon Memory ${
+                currentImageIndex + 1
+              }`}
+              className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
+            />
+
+            {/* Thumbnail Strip */}
+            <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+              {selectedYear.images.map((img, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentImageIndex(idx)}
+                  className={`flex-shrink-0 w-20 h-20 rounded border-2 overflow-hidden ${
+                    idx === currentImageIndex
+                      ? "border-white"
+                      : "border-transparent opacity-60"
+                  }`}
+                >
+                  <img
+                    src={img}
+                    alt={`Thumbnail ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute right-4 text-white hover:bg-white/20"
+            onClick={nextImage}
+          >
+            <ChevronRight className="w-8 h-8" />
+          </Button>
+        </div>
+      )}
     </section>
   );
 };

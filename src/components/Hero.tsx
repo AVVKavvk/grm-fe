@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, Calendar, MapPin, X } from "lucide-react";
-import heroImage from "@/assets/image.png";
+import heroImage from "@/assets/hero-goa-marathon.jpg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -41,10 +41,14 @@ const Hero = () => {
           </div>
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-800 mb-8 max-w-2xl leading-relaxed">
-            Welcome to India's most scenic fitness festival. More than just a
-            marathon, Goa River Marathon is a celebration of sport, culture, and
-            community. For over 14 years, we've brought together runners from
-            across the world to race, recover, and revel by Goa's riverside.
+            Experience India’s most stunning fitness festival - where adrenaline
+            meets elegance. For 14 years, runners from across the globe have
+            raced, recovered, and reveled by Goa’s Zuari river. This 15th Goa
+            River Marathon takes it to another level: electrifying runs, live
+            music, recovery and wellness zones, fitness challenges, culinary
+            experiences by top chefs, and signature cocktails from the best
+            mixologists. It’s where sport, wellness, and community collide - and
+            you don't want to miss it!
           </p>
 
           {/* Event Details */}
@@ -62,7 +66,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
-              <Button variant="hero" size="lg" className="text-lg px-8 py-4">
+              <Button variant="cta" size="lg" className="text-lg px-8 py-4">
                 Register Now
               </Button>
             </a>

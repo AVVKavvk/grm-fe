@@ -45,7 +45,7 @@ const Footer = () => {
             <p className="text-background/80 leading-relaxed mb-6">
               India's most scenic and technologically advanced marathon
               experience. Join us for an unforgettable journey along the
-              beautiful Mandovi River.
+              beautiful Zuari River.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link, index) => (

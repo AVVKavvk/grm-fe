@@ -61,8 +61,10 @@ const MascotSection = () => {
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Meet Craco - our spirited mascot, inspired by Goa’s famous crabs!
-              Craco is a fitness enthusiast, a motivator, and your companion
-              from the moment you register until you cross the finish line.
+              Craco is a fitness enthusiast, a motivator, and your personal
+              companion from the moment you dream of joining, through every step
+              of the race, and well beyond the finish line - into recovery,
+              celebrations, and the unforgettable post-race vibe.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">

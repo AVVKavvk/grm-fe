@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import vascoLogo from "@/assets/VSG_LOGO.png";
 import skfLogo from "@/assets/SKF_GRM_Logo_removebg.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [weeksLeft, setWeeksLeft] = useState(0);
 
   const navItems = [
     { link: "/", label: "Home" },
@@ -18,6 +19,21 @@ const Header = () => {
     { link: "/shop", label: "Shop (Coming Soon)" },
     { link: "/faq", label: "FAQ" },
   ];
+
+  useEffect(() => {
+    const calculateWeeksLeft = () => {
+      const now = new Date();
+      const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+      const daysLeft = lastDay.getDate() - now.getDate();
+      const weeks = Math.ceil(daysLeft / 7);
+      setWeeksLeft(weeks);
+    };
+
+    calculateWeeksLeft();
+    // Update daily
+    const interval = setInterval(calculateWeeksLeft, 24 * 60 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <header className="top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg">
@@ -35,7 +51,11 @@ const Header = () => {
           <p className="text-sm sm:text-base font-semibold">
             Register Now –{" "}
             <span className="font-bold text-yellow-300">
-              Prices Set to Rise Soon!
+              {weeksLeft > 0
+                ? `Prices Set to Rise in ${weeksLeft} ${
+                    weeksLeft === 1 ? "Week" : "Weeks"
+                  }!`
+                : "Last Week - Prices Rising Soon!"}
             </span>
           </p>
         </div>

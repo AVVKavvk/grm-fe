@@ -1,4 +1,5 @@
 import { Utensils, Music, Trophy } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FestivalHighlights = () => {
   const highlights = [
@@ -44,7 +45,8 @@ const FestivalHighlights = () => {
           {highlights.map((highlight, index) => {
             const Icon = highlight.icon;
             return (
-              <div
+              <Link
+                to="/events"
                 key={index}
                 className="group relative bg-card border border-border rounded-xl p-6 hover-scale transition-all duration-300 hover:shadow-lg hover:border-primary/20"
               >
@@ -72,7 +74,7 @@ const FestivalHighlights = () => {
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary rounded-b-xl transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              </div>
+              </Link>
             );
           })}
         </div>

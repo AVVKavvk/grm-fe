@@ -291,10 +291,10 @@ const ChatBot = () => {
 
   return (
     <>
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-16 right-6  z-40">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-20 h-20 rounded-full shadow-lg hover:shadow-xl transition-all bg-gradient-to-br from-orange-400 via-red-500 to-pink-500 text-white hover:scale-110 flex flex-col items-center justify-center"
+          className="w-[70px] h-[70px] md:w-20 md:h-20 rounded-full shadow-lg hover:shadow-xl transition-all bg-gradient-to-br from-orange-400 via-red-500 to-pink-500 text-white hover:scale-110 flex flex-col items-center justify-center"
         >
           {isOpen ? (
             <X className="w-6 h-6" />
@@ -307,7 +307,7 @@ const ChatBot = () => {
       </div>
 
       {isOpen && (
-        <div className="fixed bottom-28 right-6 w-96 max-w-[calc(100vw-3rem)] h-[600px] bg-white border-2 border-orange-200 rounded-2xl shadow-2xl z-40 flex flex-col overflow-hidden">
+        <div className="fixed bottom-28 right-6 w-96 max-w-[calc(100vw-3rem)] h-[600px] bg-white border-2 border-orange-200 rounded-2xl shadow-2xl z-30 flex flex-col overflow-hidden">
           {/* Header with Craco */}
           <div className="p-4 bg-gradient-to-br from-orange-400 via-red-500 to-pink-500 text-white">
             <div className="flex items-center justify-between">

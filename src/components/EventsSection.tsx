@@ -11,8 +11,10 @@ import {
   Utensils,
   Music,
   ChevronDown,
+  AlertTriangle,
 } from "lucide-react";
 import { lazy, Suspense } from "react";
+import CountdownTimer from "./CountdownTimer";
 const Festival = lazy(() => import("@/components/FestivalSection"));
 
 const EventsSection = () => {
@@ -51,6 +53,7 @@ const EventsSection = () => {
       cutOffTime: "6 Hours",
       price: "₹2,676",
       originalPrice: "₹2,973",
+      nextPrice: "₹2,800",
       participants: "18+ years",
       description: "The ultimate challenge along Goa's most scenic route",
       features: [
@@ -58,7 +61,7 @@ const EventsSection = () => {
         "Tech T-Shirt",
         "Digital Certificate",
         "Electronic Timing Chip",
-        "Free Beer",
+
         "Nourishment",
       ],
     },
@@ -69,14 +72,16 @@ const EventsSection = () => {
       cutOffTime: "5 Hours",
       price: "₹2,556",
       originalPrice: "₹2,840",
+      nextPrice: "₹2,620",
       participants: "18+ years",
-      description: "A challenging distance for experienced runners",
+      description:
+        "A challenging distance for experienced runners on most scenic route",
       features: [
         "Finisher Medal",
         "Tech T-Shirt",
         "Digital Certificate",
         "Electronic Timing Chip",
-        "Free Beer",
+
         "Nourishment",
       ],
     },
@@ -87,6 +92,7 @@ const EventsSection = () => {
       cutOffTime: "3.5 Hours",
       price: "₹2,155",
       originalPrice: "₹2,395",
+      nextPrice: "₹2,200",
       participants: "18+ years",
       description: "Perfect for intermediate runners seeking a challenge",
       features: [
@@ -94,7 +100,7 @@ const EventsSection = () => {
         "Tech T-Shirt",
         "Digital Certificate",
         "Electronic Timing Chip",
-        "Free Beer",
+
         "Nourishment",
       ],
     },
@@ -105,6 +111,7 @@ const EventsSection = () => {
       cutOffTime: "90 Minutes",
       price: "₹1,491",
       originalPrice: "₹1,657",
+      nextPrice: "₹1,540",
       participants: "16+ years",
       description: "Ideal for beginners and fitness enthusiasts",
       features: [
@@ -112,7 +119,7 @@ const EventsSection = () => {
         "Event T-Shirt",
         "Digital Certificate",
         "Electronic Timing Chip",
-        "Free Beer",
+
         "Nourishment",
       ],
     },
@@ -123,6 +130,7 @@ const EventsSection = () => {
       cutOffTime: "60 Minutes",
       price: "₹630",
       originalPrice: "₹700",
+      nextPrice: "₹6,60",
       participants: "Open for all",
       description: "Family-friendly run with stunning coastal views",
       features: [
@@ -142,7 +150,39 @@ const EventsSection = () => {
   };
 
   return (
-    <section id="events" className="py-24">
+    <section id="events" className="">
+      {/* Pricing Urgency Timer */}
+      <div className="text-center mb-16">
+        <div className="inline-flex items-center gap-2 bg-red-500/10 text-red-600 px-4 py-2 rounded-full mb-6">
+          <AlertTriangle className="w-4 h-4" />
+          <span className="text-sm font-medium">Price Increases Soon!</span>
+        </div>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          Secure Your
+          <span className="bg-gradient-sunset bg-clip-text text-transparent">
+            {" "}
+            Spot Today
+          </span>
+        </h2>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          Join the tech revolution in marathon running. Festival offer pricing
+          ends soon – don’t miss out on this incredible opportunity.
+        </p>
+
+        {/* Pricing Urgency Timer */}
+        <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20 p-6 rounded-xl border border-red-200 dark:border-red-800 max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Clock className="w-5 h-5 text-red-600" />
+            <span className="text-lg font-bold text-red-600">
+              Festival Offer Ends In:
+            </span>
+          </div>
+          <CountdownTimer targetDate="2025-10-15T23:59:59" />
+          <div className="mt-4 text-sm text-red-600/80">
+            Prices increase by ₹300–900 after October 15th
+          </div>
+        </div>
+      </div>
       {/* Hero Section - 3 Epic Events */}
       <div className="container mx-auto px-4 mb-24">
         <div className="text-center mb-12">
@@ -250,9 +290,11 @@ const EventsSection = () => {
               </div>
             </div>
 
-            <Button variant="hero" className="w-full md:w-auto">
-              Register for Carb Loading Fiesta
-            </Button>
+            <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
+              <Button variant="hero" className="w-full md:w-auto">
+                Register for Carb Loading Fiesta
+              </Button>
+            </a>
           </div>
         </div>
 
@@ -302,6 +344,9 @@ const EventsSection = () => {
                       <div className="text-sm text-muted-foreground line-through">
                         {event.originalPrice}
                       </div>
+                      <div className="text-xs text-red-600 font-medium">
+                        Next: {event.nextPrice} (After Oct 15)
+                      </div>
                     </div>
                   </div>
 
@@ -342,12 +387,17 @@ const EventsSection = () => {
                     </div>
                   </div>
 
-                  <Button
-                    variant={index === 0 ? "hero" : "default"}
-                    className="w-full group-hover:scale-[1.02] transition-transform"
+                  <a
+                    href="https://www.ifinish.in/running/SKF2025"
+                    target="_blank"
                   >
-                    Register for {event.name}
-                  </Button>
+                    <Button
+                      variant={index === 0 ? "hero" : "default"}
+                      className="w-full group-hover:scale-[1.02] transition-transform"
+                    >
+                      Register for {event.name}
+                    </Button>
+                  </a>
                 </div>
               </div>
             ))}
@@ -402,7 +452,7 @@ const EventsSection = () => {
                   "Professional massage stations",
                   "Recovery smoothie bar",
                   "Celebration cocktails",
-                  "Dance floor on the beach",
+                  "Dance floor",
                   "Winner recognition ceremony",
                   "Exclusive marathon finisher perks",
                   "Cash-free event* (Purchase card required)",
@@ -417,9 +467,11 @@ const EventsSection = () => {
               </div>
             </div>
 
-            <Button variant="hero" className="w-full md:w-auto">
-              Register for Recovery Rave
-            </Button>
+            <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
+              <Button variant="hero" className="w-full md:w-auto">
+                Register for Recovery Rave
+              </Button>
+            </a>
           </div>
 
           {/* Party Combo Package */}
@@ -470,7 +522,7 @@ const EventsSection = () => {
         </div>
 
         {/* Additional Info */}
-        <div className="bg-muted/50 p-8 rounded-xl border border-border">
+        <div className="bg-muted/50 p-8 rounded-xl border border-border mb-8">
           <div className="text-center">
             <h3 className="text-xl font-bold mb-4">Important Information</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-muted-foreground">
@@ -502,9 +554,9 @@ const EventsSection = () => {
           </div>
         </div>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
+      {/* <Suspense fallback={<div>Loading...</div>}>
         <Festival />
-      </Suspense>
+      </Suspense> */}
     </section>
   );
 };
