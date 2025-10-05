@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Play, Calendar, MapPin } from "lucide-react";
+import { Play, Calendar, MapPin, X } from "lucide-react";
 import heroImage from "@/assets/image.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Hero = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <section
       id="home"
@@ -21,12 +23,14 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-32">
         <div className="max-w-4xl">
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="bg-gradient-tech bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
+            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-md">
               SKF Goa River
             </span>
             <br />
-            <span className="text-foreground">Marathon 2025</span>
+            <span className="text-foreground font-extrabold italic tracking-wide">
+              Marathon 2025
+            </span>
           </h1>
 
           {/* Vasco Sports Club Badge */}
@@ -66,10 +70,44 @@ const Hero = () => {
               variant="outline"
               size="lg"
               className="text-lg px-8 py-4 group"
+              onClick={() => setIsOpen(true)}
             >
               <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Watch Glimpses
             </Button>
+
+            {isOpen && (
+              <div
+                className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 animate-in fade-in"
+                onClick={() => setIsOpen(false)}
+              >
+                <div
+                  className="relative w-full max-w-5xl bg-background rounded-lg overflow-hidden shadow-2xl animate-in zoom-in-95"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+
+                  {/* Video Container */}
+                  <div
+                    className="relative w-full"
+                    style={{ paddingBottom: "56.25%" }}
+                  >
+                    <iframe
+                      src="https://drive.google.com/file/d/1y59jYDiGUkOTR_qxt5P9Gl5Wls5c1DxQ/preview"
+                      className="absolute inset-0 w-full h-full"
+                      allow="autoplay"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Tech Features Preview */}

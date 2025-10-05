@@ -8,6 +8,9 @@ import {
   CheckCircle,
   Trophy,
   Zap,
+  Utensils,
+  Music,
+  ChevronDown,
 } from "lucide-react";
 import { lazy, Suspense } from "react";
 const Festival = lazy(() => import("@/components/FestivalSection"));
@@ -15,25 +18,28 @@ const Festival = lazy(() => import("@/components/FestivalSection"));
 const EventsSection = () => {
   const heroEvents = [
     {
-      name: "Full Marathon",
-      distance: "42 KM",
-      time: "04:00 AM",
+      name: "Carb Loading Fiesta",
+      description: "Pre-race celebration & feast",
+      date: "Dec 13, 2025",
+      icon: Utensils,
+      gradient: "from-orange-500 to-red-600",
+      link: "#carb-loading",
+    },
+    {
+      name: "The Marathon Experience",
+      description: "5 distances to choose from",
+      date: "Dec 14, 2025",
       icon: Trophy,
-      gradient: "from-yellow-500 to-orange-600",
-    },
-    {
-      name: "Half Marathon",
-      distance: "21 KM",
-      time: "05:30 AM",
-      icon: Medal,
       gradient: "from-blue-500 to-purple-600",
+      link: "#marathon",
     },
     {
-      name: "10K Run",
-      distance: "10 KM",
-      time: "06:15 AM",
-      icon: Zap,
+      name: "Recovery Rave",
+      description: "Post-race celebration party",
+      date: "Dec 14, 2025",
+      icon: Music,
       gradient: "from-green-500 to-teal-600",
+      link: "#recovery-rave",
     },
   ];
 
@@ -128,56 +134,20 @@ const EventsSection = () => {
     },
   ];
 
-  const specialEvents = [
-    {
-      name: "Carb Loading Party",
-      date: "December 14, 2025",
-      time: "7:00 PM - 11:00 PM",
-      location: "Beachfront Venue, North Goa",
-      price: "₹750",
-      description:
-        "The ultimate pre-race celebration with traditional Goan feast and Carb Loading Fiesta",
-      highlights: [
-        "Gourmet pasta station with 8 varieties",
-        "Traditional Goan carb-rich dishes",
-        "Nutritionist-approved menu",
-        "Live DJ & entertainment",
-        "Meet fellow runners",
-        "Race day briefing by experts",
-        "Craco's nutrition workshop",
-        "Cash-free event* (Purchase card required)",
-      ],
-      icon: "🍝",
-    },
-    {
-      name: "Recovery Rave",
-      date: "December 15, 2025",
-      time: "8:00 PM - 2:00 AM",
-      location: "Beach Club, Anjuna",
-      price: "₹1,500",
-      description:
-        "Epic post-marathon celebration with world-class DJs and recovery treatments",
-      highlights: [
-        "International & local DJs",
-        "Professional massage stations",
-        "Recovery smoothie bar",
-        "Celebration cocktails",
-        "Dance floor on the beach",
-        "Winner recognition ceremony",
-        "Exclusive marathon finisher perks",
-        "Cash-free event* (Purchase card required)",
-      ],
-      icon: "🎉",
-    },
-  ];
+  const scrollToSection = (id) => {
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <section id="events" className="py-24">
-      {/* Hero Section */}
+      {/* Hero Section - 3 Epic Events */}
       <div className="container mx-auto px-4 mb-24">
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Experience Three
+            Three
             <span className="bg-gradient-sunset bg-clip-text text-transparent">
               {" "}
               Epic Events
@@ -191,214 +161,189 @@ const EventsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {heroEvents.map((event, index) => (
-            <div
+            <button
               key={index}
-              className="group relative overflow-hidden rounded-2xl bg-card border border-border p-8 hover:shadow-strong transition-all duration-300"
+              onClick={() => scrollToSection(event.link)}
+              className="group relative overflow-hidden rounded-2xl bg-card border border-border p-8 hover:shadow-strong transition-all duration-300 text-center cursor-pointer"
             >
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-5 group-hover:opacity-10 transition-opacity`}
               ></div>
-              <div className="relative text-center">
+              <div className="relative">
                 <event.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
                 <h3 className="text-2xl font-bold mb-2">{event.name}</h3>
-                <div className="text-4xl font-bold text-primary mb-2">
-                  {event.distance}
+                <p className="text-muted-foreground mb-2">
+                  {event.description}
+                </p>
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
+                  <Calendar className="w-4 h-4" />
+                  <span>{event.date}</span>
                 </div>
-                <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                  <Clock className="w-4 h-4" />
-                  <span>{event.time}</span>
-                </div>
+                <ChevronDown className="w-5 h-5 mx-auto text-primary animate-bounce" />
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>
 
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full mb-6">
-            <Medal className="w-4 h-4" />
-            <span className="text-sm font-medium">Multiple Categories</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Choose Your
-            <span className="bg-gradient-sunset bg-clip-text text-transparent">
-              {" "}
-              Challenge
-            </span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From seasoned marathoners to first-time runners, we have the perfect
-            distance for every fitness level and running goal.
-          </p>
-        </div>
-
-        {/* Marathon Events Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
-          {marathonEvents.map((event, index) => (
-            <div
-              key={index}
-              className="bg-card p-8 rounded-xl border border-border shadow-soft hover:shadow-medium transition-smooth group relative overflow-hidden"
-            >
-              {/* Background Pattern */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-primary/5 rounded-full -translate-y-16 translate-x-16"></div>
-
-              <div className="relative">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-6">
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">
-                      {event.name}
-                    </h3>
-                    <div className="text-3xl font-bold text-primary">
-                      {event.distance}
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-accent">
-                      {event.price}
-                    </div>
-                    <div className="text-sm text-muted-foreground line-through">
-                      {event.originalPrice}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {event.description}
-                </p>
-
-                {/* Event Details */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
+        {/* Carb Loading Fiesta Section */}
+        <div id="carb-loading" className="mb-24 scroll-mt-20">
+          <div className="bg-card p-8 rounded-xl border border-border shadow-soft">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="text-4xl">🍝</div>
+              <div className="flex-1">
+                <h2 className="text-3xl font-bold text-foreground mb-2">
+                  Carb Loading Fiesta
+                </h2>
+                <div className="space-y-1 text-sm text-muted-foreground mb-4">
                   <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-primary" />
-                    <span className="text-sm">Start: {event.startTime}</span>
+                    <Calendar className="w-4 h-4" />
+                    <span>December 13, 2025</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-primary" />
-                    <span className="text-sm">Cut-off: {event.cutOffTime}</span>
+                    <Clock className="w-4 h-4" />
+                    <span>5:00 PM - 8:00 PM</span>
                   </div>
-                  <div className="flex items-center gap-2 col-span-2">
-                    <Users className="w-4 h-4 text-primary" />
-                    <span className="text-sm">{event.participants}</span>
-                  </div>
-                </div>
-
-                {/* Features */}
-                <div className="mb-6">
-                  <div className="text-sm font-semibold text-foreground mb-2">
-                    What's Included:
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {event.features.map((feature, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
-                      >
-                        {feature}
-                      </span>
-                    ))}
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4" />
+                    <span>Chicalim Ground</span>
                   </div>
                 </div>
-
-                {/* CTA */}
-                <Button
-                  variant={index === 0 ? "hero" : "default"}
-                  className="w-full group-hover:scale-[1.02] transition-transform"
-                >
-                  Register for {event.name}
-                </Button>
+              </div>
+              <div className="text-right">
+                <div className="text-2xl font-bold text-accent">₹750</div>
+                <div className="text-xs text-muted-foreground">per person</div>
               </div>
             </div>
-          ))}
+
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Kick off your marathon weekend with a feast designed to power your
+              run. The Carb-Loading Fiesta brings together Goa's top chefs,
+              artisanal bakers, and nutrition experts, serving up hearty pastas,
+              wood-fired breads, fresh salads, and high-energy dishes crafted
+              for performance.
+            </p>
+
+            <div className="mb-6">
+              <div className="text-sm font-semibold text-foreground mb-3">
+                Event Highlights:
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {[
+                  "Gourmet pasta station with 8 varieties",
+                  "Traditional Goan carb-rich dishes",
+                  "Nutritionist-approved menu",
+                  "Live DJ & entertainment",
+                  "Meet fellow runners",
+                  "Race day briefing by experts",
+                  "Craco's nutrition workshop",
+                  "Cash-free event* (Purchase card required)",
+                ].map((highlight, idx) => (
+                  <div key={idx} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">
+                      {highlight}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <Button variant="hero" className="w-full md:w-auto">
+              Register for Carb Loading Fiesta
+            </Button>
+          </div>
         </div>
 
-        {/* Special Events */}
-        <div className="mb-16">
+        {/* Marathon Experience Section */}
+        <div id="marathon" className="mb-24 scroll-mt-20">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4">
-              Revolutionary Marathon
+            <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full mb-6">
+              <Medal className="w-4 h-4" />
+              <span className="text-sm font-medium">Multiple Categories</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              The Marathon
               <span className="bg-gradient-sunset bg-clip-text text-transparent">
                 {" "}
                 Experience
               </span>
-            </h3>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We're not just hosting a marathon - we're creating a 3-day
-              celebration of running, technology, and Goan culture that will
-              transform how you experience racing.
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              From seasoned marathoners to first-time runners, we have the
+              perfect distance for every fitness level and running goal.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            {specialEvents.map((event, index) => (
+          {/* Marathon Events Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {marathonEvents.map((event, index) => (
               <div
                 key={index}
                 className="bg-card p-8 rounded-xl border border-border shadow-soft hover:shadow-medium transition-smooth group relative overflow-hidden"
               >
-                {/* Background Pattern */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-primary/5 rounded-full -translate-y-12 translate-x-12"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-primary/5 rounded-full -translate-y-16 translate-x-16"></div>
 
                 <div className="relative">
-                  {/* Header */}
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="text-4xl">{event.icon}</div>
-                    <div className="flex-1">
-                      <h4 className="text-2xl font-bold text-foreground mb-2">
+                  <div className="flex items-start justify-between mb-6">
+                    <div>
+                      <h3 className="text-2xl font-bold text-foreground mb-2">
                         {event.name}
-                      </h4>
-                      <div className="space-y-1 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" />
-                          <span>{event.date}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Clock className="w-4 h-4" />
-                          <span>{event.time}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4" />
-                          <span>{event.location}</span>
-                        </div>
+                      </h3>
+                      <div className="text-3xl font-bold text-primary">
+                        {event.distance}
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-xl font-bold text-accent">
+                      <div className="text-2xl font-bold text-accent">
                         {event.price}
                       </div>
-                      <div className="text-xs text-muted-foreground">
-                        per person
+                      <div className="text-sm text-muted-foreground line-through">
+                        {event.originalPrice}
                       </div>
                     </div>
                   </div>
 
-                  {/* Description */}
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {event.description}
                   </p>
 
-                  {/* Highlights */}
-                  <div className="mb-6">
-                    <div className="text-sm font-semibold text-foreground mb-3">
-                      Event Highlights:
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-primary" />
+                      <span className="text-sm">Start: {event.startTime}</span>
                     </div>
-                    <div className="grid grid-cols-1 gap-2">
-                      {event.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span className="text-xs text-muted-foreground">
-                            {highlight}
-                          </span>
-                        </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-primary" />
+                      <span className="text-sm">
+                        Cut-off: {event.cutOffTime}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 col-span-2">
+                      <Users className="w-4 h-4 text-primary" />
+                      <span className="text-sm">{event.participants}</span>
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <div className="text-sm font-semibold text-foreground mb-2">
+                      What's Included:
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {event.features.map((feature, idx) => (
+                        <span
+                          key={idx}
+                          className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
+                        >
+                          {feature}
+                        </span>
                       ))}
                     </div>
                   </div>
 
-                  {/* CTA */}
                   <Button
-                    variant="default"
+                    variant={index === 0 ? "hero" : "default"}
                     className="w-full group-hover:scale-[1.02] transition-transform"
                   >
                     Register for {event.name}
@@ -407,15 +352,84 @@ const EventsSection = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Recovery Rave Section */}
+        <div id="recovery-rave" className="mb-16 scroll-mt-20">
+          <div className="bg-card p-8 rounded-xl border border-border shadow-soft">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="text-4xl">🎉</div>
+              <div className="flex-1">
+                <h2 className="text-3xl font-bold text-foreground mb-2">
+                  Recovery Rave
+                </h2>
+                <div className="space-y-1 text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>December 14, 2025</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4" />
+                    <span>4:00 PM - 10:00 PM</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4" />
+                    <span>Jubilate, Goa</span>
+                  </div>
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="text-2xl font-bold text-accent">₹1,500</div>
+                <div className="text-xs text-muted-foreground">per person</div>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              When the run is done, it's time to let loose. The Recovery Rave is
+              where music meets wellness — with live DJs, dance floors under the
+              Goan sky, and a buzzing community vibe. Step into the Ice Bath
+              Zone for a cool plunge, unwind with massage therapists, or stretch
+              it out at dedicated recovery corners.
+            </p>
+
+            <div className="mb-6">
+              <div className="text-sm font-semibold text-foreground mb-3">
+                Event Highlights:
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {[
+                  "International & local DJs",
+                  "Professional massage stations",
+                  "Recovery smoothie bar",
+                  "Celebration cocktails",
+                  "Dance floor on the beach",
+                  "Winner recognition ceremony",
+                  "Exclusive marathon finisher perks",
+                  "Cash-free event* (Purchase card required)",
+                ].map((highlight, idx) => (
+                  <div key={idx} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">
+                      {highlight}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <Button variant="hero" className="w-full md:w-auto">
+              Register for Recovery Rave
+            </Button>
+          </div>
 
           {/* Party Combo Package */}
-          <div className="bg-gradient-ocean p-8 rounded-2xl shadow-strong text-center">
+          <div className="bg-gradient-ocean p-8 rounded-2xl shadow-strong text-center mt-8">
             <div className="max-w-4xl mx-auto">
               <h4 className="text-3xl font-bold text-primary-foreground mb-4">
                 🎊 Party Package Deal 🎊
               </h4>
               <p className="text-primary-foreground/90 text-lg mb-6">
-                Join both celebrations: Carb Loading Party + Recovery Rave
+                Join both celebrations: Carb Loading Fiesta + Recovery Rave
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-2xl mx-auto">
                 <div className="bg-primary-foreground/10 p-6 rounded-lg">
