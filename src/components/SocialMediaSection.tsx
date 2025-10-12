@@ -15,7 +15,8 @@ const SocialMediaSection = () => {
   const socialPlatforms = [
     {
       name: "Instagram",
-      handle: "https://www.instagram.com/skfgoarivermarathon/",
+      handle: "skfgoarivermarathon",
+      link: "https://www.instagram.com/skfgoarivermarathon/",
       followers: "2.2K+",
       icon: Instagram,
       color: "bg-gradient-to-r from-purple-500 to-pink-500",
@@ -23,7 +24,8 @@ const SocialMediaSection = () => {
     },
     {
       name: "Facebook",
-      handle: "https://www.facebook.com/SKF.Goa.River.Marathon",
+      handle: "SKF.Goa.River.Marathon",
+      link: "https://www.facebook.com/SKF.Goa.River.Marathon",
       followers: "7.9K+",
       icon: Facebook,
       color: "bg-blue-600",
@@ -31,7 +33,8 @@ const SocialMediaSection = () => {
     },
     {
       name: "YouTube",
-      handle: "https://www.youtube.com/@SkfGoaRiverMarathon",
+      handle: "@SkfGoaRiverMarathon",
+      link: "https://www.youtube.com/@SkfGoaRiverMarathon",
       followers: "112+",
       icon: Youtube,
       color: "bg-red-600",
@@ -92,13 +95,15 @@ const SocialMediaSection = () => {
                     <p className="text-sm text-muted-foreground mb-4">
                       {platform.description}
                     </p>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                    >
-                      Follow
-                    </Button>
+                    <a href={platform.link} target="_blank">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                      >
+                        Follow
+                      </Button>
+                    </a>
                   </div>
                 </CardContent>
               </Card>
