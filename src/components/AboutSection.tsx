@@ -13,6 +13,7 @@ import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import aimsLogo from "@/assets/AIMS_logo.jpg";
 import abbottLogo from "@/assets/Abbott_World_Marathon_Majors_logo_blue.svg";
+import RaceRouteSection from "./RaceRouteSection";
 
 const AboutSection = () => {
   const stats = [
@@ -169,33 +170,32 @@ const AboutSection = () => {
             </div>
 
             {/* Festival Add-ons */}
-            <div className="mt-12">
+            {/* <div className="mt-12">
               <h3 className="text-2xl font-bold text-gray-900 text-center">
                 Festival Add-ons
               </h3>
               <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                {/* Card 1 */}
                 <div className="flex flex-col items-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
                   <span className="text-4xl">🍝</span>
                   <h4 className="mt-3 text-lg font-semibold text-gray-800">
                     Carb-Loading Fiesta
                   </h4>
                 </div>
-                {/* Card 2 */}
+
                 <div className="flex flex-col items-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
                   <span className="text-4xl">🎶</span>
                   <h4 className="mt-3 text-lg font-semibold text-gray-800">
                     Recovery Rave
                   </h4>
                 </div>
-                {/* Card 3 */}
+
                 <div className="flex flex-col items-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
                   <span className="text-4xl">❄️</span>
                   <h4 className="mt-3 text-lg font-semibold text-gray-800">
                     Ice Bath
                   </h4>
                 </div>
-                {/* Card 4 */}
+
                 <div className="flex flex-col items-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
                   <span className="text-4xl">🥁</span>
                   <h4 className="mt-3 text-lg font-semibold text-gray-800">
@@ -203,8 +203,9 @@ const AboutSection = () => {
                   </h4>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
+          {<RaceRouteSection />}
         </section>
         {/* Main Content */}
         {<StoryLegacySection />}

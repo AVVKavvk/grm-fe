@@ -15,9 +15,11 @@ import {
 } from "lucide-react";
 import { lazy, Suspense } from "react";
 import CountdownTimer from "./CountdownTimer";
+import getLastDateOfMonth from "@/lib/getDate";
 const Festival = lazy(() => import("@/components/FestivalSection"));
 
 const EventsSection = () => {
+  const { date, day, month, year } = getLastDateOfMonth();
   const heroEvents = [
     {
       name: "Carb Loading Fiesta",
@@ -177,7 +179,7 @@ const EventsSection = () => {
               Festival Offer Ends In:
             </span>
           </div>
-          <CountdownTimer targetDate="2025-10-15T23:59:59" />
+          <CountdownTimer targetDate={date} />
           <div className="mt-4 text-sm text-red-600/80">
             Prices increase by ₹300–900 after October 15th
           </div>
@@ -271,7 +273,7 @@ const EventsSection = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {[
-                  "Gourmet pasta station with 8 varieties",
+                  "Gourmet pasta",
                   "Traditional Goan carb-rich dishes",
                   "Nutritionist-approved menu",
                   "Live DJ & entertainment",
@@ -345,7 +347,7 @@ const EventsSection = () => {
                         {event.originalPrice}
                       </div>
                       <div className="text-xs text-red-600 font-medium">
-                        Next: {event.nextPrice} (After Oct 15)
+                        Next: {event.nextPrice} (After {day}/{month}/{year})
                       </div>
                     </div>
                   </div>
@@ -451,10 +453,9 @@ const EventsSection = () => {
                   "International & local DJs",
                   "Professional massage stations",
                   "Recovery smoothie bar",
-                  "Celebration cocktails",
-                  "Dance floor",
-                  "Winner recognition ceremony",
-                  "Exclusive marathon finisher perks",
+                  "Flavorful Cocktails",
+                  "Ice Bath Zone",
+                  "Food from best chefs",
                   "Cash-free event* (Purchase card required)",
                 ].map((highlight, idx) => (
                   <div key={idx} className="flex items-start gap-2">
@@ -473,6 +474,31 @@ const EventsSection = () => {
               </Button>
             </a>
           </div>
+          <section className="mt-16 bg-gradient-to-t from-primary/30 to-primary/20 text-foreground py-12 px-6 rounded-2xl text-center border border-primary/30">
+            <div className="max-w-3xl mx-auto">
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                Limited Seats Available!
+              </h3>
+              <p className="text-lg md:text-xl mb-6 text-muted-foreground">
+                The{" "}
+                <span className="font-semibold text-primary">
+                  Carb-Loading Fiesta
+                </span>{" "}
+                and{" "}
+                <span className="font-semibold text-primary">
+                  Recovery Rave
+                </span>{" "}
+                have limited capacity. Book your festival pass now to guarantee
+                your spot at these exclusive events and make the most of your
+                marathon weekend.
+              </p>
+              <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
+                <Button variant="cta" size="lg">
+                  Register Now
+                </Button>
+              </a>
+            </div>
+          </section>
 
           {/* Party Combo Package */}
           <div className="bg-gradient-ocean p-8 rounded-2xl shadow-strong text-center mt-8">

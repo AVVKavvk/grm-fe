@@ -1,5 +1,6 @@
 import { Utensils, Music, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "./ui/button";
 
 const FestivalHighlights = () => {
   const highlights = [
@@ -79,6 +80,29 @@ const FestivalHighlights = () => {
           })}
         </div>
       </div>
+      <section className="mt-16 bg-gradient-to-t from-primary/30 to-primary/20 text-foreground py-12 px-6 rounded-2xl text-center border border-primary/30">
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            Limited Seats Available!
+          </h3>
+          <p className="text-lg md:text-xl mb-6 text-muted-foreground">
+            The{" "}
+            <span className="font-semibold text-primary">
+              Carb-Loading Fiesta
+            </span>{" "}
+            and{" "}
+            <span className="font-semibold text-primary">Recovery Rave</span>{" "}
+            have limited capacity. Book your festival pass now to guarantee your
+            spot at these exclusive events and make the most of your marathon
+            weekend.
+          </p>
+          <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
+            <Button variant="cta" size="lg">
+              Register Now
+            </Button>
+          </a>
+        </div>
+      </section>
     </div>
   );
 };
