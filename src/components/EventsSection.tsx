@@ -187,7 +187,7 @@ const EventsSection = () => {
           </div>
           <CountdownTimer targetDate={date} />
           <div className="mt-4 text-sm text-red-600/80">
-            Prices increase by ₹300–900 after October 15th
+            Prices increase by ₹300–900 after {day}/{month}/{year}
           </div>
         </div>
       </div>
