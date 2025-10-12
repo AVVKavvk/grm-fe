@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, Calendar, MapPin, X } from "lucide-react";
-import heroImage from "@/assets/hero-goa-marathon.jpg";
+import heroImage from "@/assets/hero-image.jpeg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 

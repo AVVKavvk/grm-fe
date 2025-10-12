@@ -1,10 +1,14 @@
 import { Utensils, Music, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import { Button } from "./ui/button";
+import recoveryRave from "@/assets/recovery-rave.jpeg";
+import carbLoading from "@/assets/carb-loading.jpeg";
+import finishLine from "@/assets/finish-line.jpeg";
 const FestivalHighlights = () => {
   const highlights = [
     {
       icon: Utensils,
+      image: carbLoading,
       emoji: "🍝",
       title: "Carb-Loading Fiesta – Fuel Meets Flavor",
       description:
@@ -13,6 +17,7 @@ const FestivalHighlights = () => {
     },
     {
       icon: Trophy,
+      image: finishLine,
       emoji: "🏆",
       title: "Finish Line Celebrations – Fun Beyond the Run",
       description:
@@ -21,6 +26,7 @@ const FestivalHighlights = () => {
     },
     {
       icon: Music,
+      image: recoveryRave,
       emoji: "🎶",
       title: "Recovery Rave – Dance, Chill & Recharge",
       description:
@@ -60,6 +66,12 @@ const FestivalHighlights = () => {
                     <span className="text-2xl">{highlight.emoji}</span>
                   </div>
 
+                  <img
+                    src={highlight.image}
+                    alt={highlight.title}
+                    className="w-full h-48 object-cover rounded-md mb-4"
+                  />
+
                   <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                     {highlight.title}
                   </h3>
@@ -79,6 +91,29 @@ const FestivalHighlights = () => {
           })}
         </div>
       </div>
+      <section className="mt-16 bg-gradient-to-t from-primary/30 to-primary/20 text-foreground py-12 px-6 rounded-2xl text-center border border-primary/30">
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            Limited Seats Available!
+          </h3>
+          <p className="text-lg md:text-xl mb-6 text-muted-foreground">
+            The{" "}
+            <span className="font-semibold text-primary">
+              Carb-Loading Fiesta
+            </span>{" "}
+            and{" "}
+            <span className="font-semibold text-primary">Recovery Rave</span>{" "}
+            have limited capacity. Book your festival pass now to guarantee your
+            spot at these exclusive events and make the most of your marathon
+            weekend.
+          </p>
+          <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
+            <Button variant="cta" size="lg">
+              Register Now
+            </Button>
+          </a>
+        </div>
+      </section>
     </div>
   );
 };

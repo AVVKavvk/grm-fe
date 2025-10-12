@@ -15,24 +15,27 @@ const SocialMediaSection = () => {
   const socialPlatforms = [
     {
       name: "Instagram",
-      handle: "@goarivermarathon",
-      followers: "45.2K",
+      handle: "skfgoarivermarathon",
+      link: "https://www.instagram.com/skfgoarivermarathon/",
+      followers: "2.2K+",
       icon: Instagram,
       color: "bg-gradient-to-r from-purple-500 to-pink-500",
       description: "Daily training tips, behind-the-scenes content",
     },
     {
       name: "Facebook",
-      handle: "@GoaRiverMarathon",
-      followers: "38.9K",
+      handle: "SKF.Goa.River.Marathon",
+      link: "https://www.facebook.com/SKF.Goa.River.Marathon",
+      followers: "7.9K+",
       icon: Facebook,
       color: "bg-blue-600",
       description: "Event updates, community discussions",
     },
     {
       name: "YouTube",
-      handle: "@GoaRiverMarathon",
-      followers: "12.5K",
+      handle: "@SkfGoaRiverMarathon",
+      link: "https://www.youtube.com/@SkfGoaRiverMarathon",
+      followers: "112+",
       icon: Youtube,
       color: "bg-red-600",
       description: "Race highlights, training videos, runner stories",
@@ -92,13 +95,15 @@ const SocialMediaSection = () => {
                     <p className="text-sm text-muted-foreground mb-4">
                       {platform.description}
                     </p>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                    >
-                      Follow
-                    </Button>
+                    <a href={platform.link} target="_blank">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                      >
+                        Follow
+                      </Button>
+                    </a>
                   </div>
                 </CardContent>
               </Card>

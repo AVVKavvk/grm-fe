@@ -16,7 +16,14 @@ import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import vascoLogo from "@/assets/vasco-sports-club-logo.jpg";
 import skfLogo from "@/assets/SKF_logotype_black_RGB.png";
-
+import burraLogo from "@/assets/images/burraa-logo.png";
+import playoLogo from "@/assets/images/playo-logo.png";
+import districtLogo from "@/assets/images/ditrict-logo.jpg";
+import bmsLogo from "@/assets/images/bms.jpg";
+import ifinishLogo from "@/assets/images/ifinish-logo.png";
+import originLogo from "@/assets/images/origin-logo.webp";
+import gatacaLogo from "@/assets/images/Gataca_logo.webp";
+import usanaLogo from "@/assets/images/USANA_logo_black.svg";
 const EnhancedSponsorsSection = () => {
   const { toast } = useToast();
   const [sponsorForm, setSponsorForm] = useState({
@@ -76,6 +83,74 @@ const EnhancedSponsorsSection = () => {
         logo: "🍺",
         tier: "Celebration Partner",
         description: "Local craft brewery for post-race celebrations",
+      },
+    ],
+    registration: [
+      {
+        name: "Burra",
+        logo: burraLogo,
+        tier: "Registration Sponsor",
+        description: "Running and fitness community platform",
+        website: "https://www.burraa.com/",
+        isImage: true,
+      },
+      {
+        name: "Playo",
+        logo: playoLogo,
+        tier: "Registration Sponsor",
+        description: "Sports venue booking and community platform",
+        website: "https://www.playo.co",
+        isImage: true,
+      },
+      {
+        name: "District",
+        logo: districtLogo,
+        tier: "Registration Sponsor",
+        description: "Athletic performance and training platform",
+        website: "https://www.district.in/",
+        isImage: true,
+      },
+      {
+        name: "Book My Show",
+        logo: bmsLogo,
+        tier: "Registration Sponsor",
+        description: "Event ticketing and registration platform",
+        website: "https://in.bookmyshow.com",
+        isImage: true,
+      },
+      {
+        name: "IFinish",
+        logo: ifinishLogo,
+        tier: "Registration Sponsor",
+        description: "Marathon timing and event management services",
+        website: "https://www.ifinish.in",
+        isImage: true,
+      },
+    ],
+    wellness: [
+      {
+        name: "Origin",
+        logo: originLogo,
+        tier: "Wellness Sponsor",
+        description: "Health and wellness products",
+        website: "https://originwellnessco.co/",
+        isImage: true,
+      },
+      {
+        name: "Gataca",
+        logo: gatacaLogo,
+        tier: "Wellness Sponsor",
+        description: "Sports nutrition and supplements",
+        website: "https://gataca.in/",
+        isImage: true,
+      },
+      {
+        name: "Usana",
+        logo: usanaLogo,
+        tier: "Wellness Sponsor",
+        description: "Premium nutritional supplements and wellness products",
+        website: "https://www.usana.com",
+        isImage: true,
       },
     ],
   };
@@ -242,6 +317,72 @@ const EnhancedSponsorsSection = () => {
             ))}
           </div>
         </div>
+        {/* Registration Sponsors */}
+        <div className="mb-16">
+          <h3 className="text-lg font-bold text-center mb-8 text-foreground">
+            Registration Partners
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {realSponsors.registration.map((sponsor, index) => (
+              <a
+                href={sponsor.website}
+                target="_blank"
+                key={index}
+                className="bg-card p-4 rounded-lg border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
+              >
+                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="w-12 mx-auto object-contain rounded-lg"
+                  />
+                </div>
+                <h4 className="text-sm font-semibold text-foreground mb-1">
+                  {sponsor.name}
+                </h4>
+                <p className="text-xs text-muted-foreground mb-2">
+                  {sponsor.description}
+                </p>
+                <div className="text-xs text-muted-foreground">
+                  {sponsor.tier}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+        {/* Wellness Sponsors */}
+        <div className="mb-16">
+          <h3 className="text-lg font-bold text-center mb-8 text-foreground">
+            Wellness Partners
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {realSponsors.wellness.map((sponsor, index) => (
+              <a
+                href={sponsor.website}
+                target="_blank"
+                key={index}
+                className="bg-card p-4 rounded-lg border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
+              >
+                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="w-16 mx-auto object-contain rounded-lg"
+                  />
+                </div>
+                <h4 className="text-sm font-semibold text-foreground mb-1">
+                  {sponsor.name}
+                </h4>
+                <p className="text-xs text-muted-foreground mb-2">
+                  {sponsor.description}
+                </p>
+                <div className="text-xs text-muted-foreground">
+                  {sponsor.tier}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
 
         {/* Why Partner With Us */}
         <div className="mb-16">
@@ -250,7 +391,7 @@ const EnhancedSponsorsSection = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">10K+</div>
+              <div className="text-3xl font-bold text-primary mb-2">30K+</div>
               <div className="text-sm text-muted-foreground">Total Reach</div>
             </Card>
             <Card className="p-6 text-center">
@@ -273,7 +414,7 @@ const EnhancedSponsorsSection = () => {
         </div>
 
         {/* Sponsorship Packages */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h3 className="text-2xl font-bold text-center mb-8">
             Partnership Packages
           </h3>
@@ -305,7 +446,7 @@ const EnhancedSponsorsSection = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Partnership Inquiry Form */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">

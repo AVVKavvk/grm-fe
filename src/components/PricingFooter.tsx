@@ -1,7 +1,14 @@
 import CountdownTimerForFooter from "./countDownForFooter";
 import { Button } from "./ui/button";
-
+import getLastDateOfMonth from "@/lib/getDate";
 const PricingBottomUI = () => {
+  const { date } = getLastDateOfMonth();
+  const originalPrice = 700;
+  const discountedPrice = 630;
+
+  const discountPercentage = Math.round(
+    ((originalPrice - discountedPrice) / originalPrice) * 100
+  );
   return (
     <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-4">
       {/* Fixed Bottom Pricing UI - One Line Responsive */}
@@ -12,19 +19,19 @@ const PricingBottomUI = () => {
               {/* Price Section */}
               <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                 <span className="text-xl sm:text-2xl font-bold text-emerald-600">
-                  ₹1800
+                  ₹{discountedPrice}
                 </span>
                 <span className="text-sm sm:text-base text-gray-500 line-through">
-                  ₹2200
+                  ₹{originalPrice}
                 </span>
                 <span className="bg-red-500 text-white text-xs px-1.5 py-0.5 rounded font-semibold hidden sm:inline">
-                  18% OFF
+                  {discountPercentage}% OFF
                 </span>
               </div>
 
               {/* Timer Section */}
               <div className="">
-                <CountdownTimerForFooter targetDate="2025-10-15T23:59:59" />
+                <CountdownTimerForFooter targetDate={date} />
               </div>
 
               {/* CTA Button */}

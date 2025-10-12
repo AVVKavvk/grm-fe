@@ -70,17 +70,17 @@ const RaceRouteSection = () => {
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        {/* <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Scenic Marathon Route + What Awaits You
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             42.2km journey from historic Vasco port to pristine Bogmalo Beach
           </p>
-        </div>
+        </div> */}
 
         {/* Course Specifications */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+        {/* <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
           {courseSpecs.map((spec, index) => (
             <div
               key={index}
@@ -93,43 +93,7 @@ const RaceRouteSection = () => {
               <div className="text-sm text-muted-foreground">{spec.label}</div>
             </div>
           ))}
-        </div>
-
-        <div className="mb-10">
-          <a
-            href="https://www.google.com/maps/d/u/0/viewer?mid=1nVQQTK0cUgL-puPU3SHTGs8m4ArJbYE&ll=15.396277154068239%2C73.88005525&z=14"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block relative group"
-          >
-            <img
-              src="https://skfgoarivermarathon.com/images/42-Km-Route-map.jpg?v=0"
-              alt="SKF Goa River Marathon Route Map"
-              className="w-full  object-cover rounded group-hover:shadow-glow transition-smooth"
-            />
-            {/* Overlay with "View Interactive Map" */}
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-smooth rounded-xl flex items-center justify-center">
-              <div className="text-white text-center">
-                <svg
-                  className="w-12 h-12 mx-auto mb-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                  />
-                </svg>
-                <span className="text-lg font-semibold">
-                  View Interactive Map
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {routeDetails.map((phase, index) => (
@@ -175,6 +139,41 @@ const RaceRouteSection = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+        <div className="mt-10">
+          <a
+            href="https://www.google.com/maps/d/u/0/viewer?mid=1nVQQTK0cUgL-puPU3SHTGs8m4ArJbYE&ll=15.396277154068239%2C73.88005525&z=14"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block relative group"
+          >
+            <img
+              src="https://skfgoarivermarathon.com/images/42-Km-Route-map.jpg?v=0"
+              alt="SKF Goa River Marathon Route Map"
+              className="w-full  object-cover rounded group-hover:shadow-glow transition-smooth"
+            />
+            {/* Overlay with "View Interactive Map" */}
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-smooth rounded-xl flex items-center justify-center">
+              <div className="text-white text-center">
+                <svg
+                  className="w-12 h-12 mx-auto mb-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                  />
+                </svg>
+                <span className="text-lg font-semibold">
+                  View Interactive Map
+                </span>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>

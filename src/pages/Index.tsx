@@ -9,6 +9,7 @@ import MemorySection from "@/components/MemoriesSection";
 import FestivalHighlights from "@/components/FestivalHighlights";
 import { Link } from "react-router-dom";
 import Sponsorship from "@/components/Sponsorship";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   return (
@@ -17,7 +18,7 @@ const Index = () => {
       <FestivalHighlights />
       <AboutSection />
       <MascotSection />
-      <RaceRouteSection />
+      {/* <RaceRouteSection /> */}
       {/* <MemorySection /> */}
       <TestimonialsSection />
       {/* <AnalyticsSection /> */}
@@ -35,12 +36,10 @@ const Index = () => {
             year. Secure your spot now and be part of this unforgettable
             experience.
           </p>
-          <a
-            href="https://www.ifinish.in/running/SKF2025"
-            target="_blank"
-            className="inline-block bg-yellow-400 text-blue-900 font-bold px-8 py-4 rounded-full shadow-lg hover:bg-yellow-300 transition-colors text-lg md:text-xl"
-          >
-            Book Your Slot Now
+          <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
+            <Button variant="cta" size="lg">
+              Register Now
+            </Button>
           </a>
         </div>
       </section>
