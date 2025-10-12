@@ -16,6 +16,9 @@ import {
 import { lazy, Suspense } from "react";
 import CountdownTimer from "./CountdownTimer";
 import getLastDateOfMonth from "@/lib/getDate";
+import recoveryRave from "@/assets/recovery-rave.jpeg";
+import carbLoading from "@/assets/carb-loading.jpeg";
+import finishLine from "@/assets/finish-line.jpeg";
 const Festival = lazy(() => import("@/components/FestivalSection"));
 
 const EventsSection = () => {
@@ -150,6 +153,9 @@ const EventsSection = () => {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+  const handleImageClick = (image) => {
+    window.open(image, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <section id="events" className="">
@@ -253,42 +259,53 @@ const EventsSection = () => {
                   </div>
                 </div>
               </div>
+
               <div className="text-right">
                 <div className="text-2xl font-bold text-accent">₹750</div>
                 <div className="text-xs text-muted-foreground">per person</div>
               </div>
             </div>
 
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Kick off your marathon weekend with a feast designed to power your
-              run. The Carb-Loading Fiesta brings together Goa's top chefs,
-              artisanal bakers, and nutrition experts, serving up hearty pastas,
-              wood-fired breads, fresh salads, and high-energy dishes crafted
-              for performance.
-            </p>
+            <div className="mb-6 flex flex-col md:flex-row justify-center gap-7">
+              <img
+                src={carbLoading}
+                onClick={() => handleImageClick(carbLoading)}
+                alt="Carb Loading Fiesta"
+                className="h-[300px] object-contain p-2 md:p-0 cursor-pointer rounded-md mb-4"
+              />
 
-            <div className="mb-6">
-              <div className="text-sm font-semibold text-foreground mb-3">
-                Event Highlights:
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {[
-                  "Gourmet pasta",
-                  "Traditional Goan carb-rich dishes",
-                  "Nutritionist-approved menu",
-                  "Live DJ & entertainment",
-                  "Meet fellow runners",
-                  "Race day briefing by experts",
-                  "Craco's nutrition workshop",
-                  "Cash-free event* (Purchase card required)",
-                ].map((highlight, idx) => (
-                  <div key={idx} className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">
-                      {highlight}
-                    </span>
+              <div className="flex flex-col">
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Kick off your marathon weekend with a feast designed to power
+                  your run. The Carb-Loading Fiesta brings together Goa's top
+                  chefs, artisanal bakers, and nutrition experts, serving up
+                  hearty pastas, wood-fired breads, fresh salads, and
+                  high-energy dishes crafted for performance.
+                </p>
+                <div className="mb-6">
+                  <div className="text-sm font-semibold text-foreground mb-3">
+                    Event Highlights:
                   </div>
-                ))}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {[
+                      "Gourmet pasta",
+                      "Traditional Goan carb-rich dishes",
+                      "Nutritionist-approved menu",
+                      "Live DJ & entertainment",
+                      "Meet fellow runners",
+                      "Race day briefing by experts",
+                      "Craco's nutrition workshop",
+                      "Cash-free event* (Purchase card required)",
+                    ].map((highlight, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">
+                          {highlight}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -435,36 +452,46 @@ const EventsSection = () => {
                 <div className="text-xs text-muted-foreground">per person</div>
               </div>
             </div>
+            <div className="mb-6 flex flex-col md:flex-row justify-center gap-7">
+              <img
+                src={recoveryRave}
+                onClick={() => handleImageClick(recoveryRave)}
+                alt="Recovery Rave"
+                className="h-[300px] object-contain p-2 md:p-0 cursor-pointer rounded-md mb-4"
+              />
 
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              When the run is done, it's time to let loose. The Recovery Rave is
-              where music meets wellness — with live DJs, dance floors under the
-              Goan sky, and a buzzing community vibe. Step into the Ice Bath
-              Zone for a cool plunge, unwind with massage therapists, or stretch
-              it out at dedicated recovery corners.
-            </p>
+              <div className="flex flex-col">
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  When the run is done, it's time to let loose. The Recovery
+                  Rave is where music meets wellness — with live DJs, dance
+                  floors under the Goan sky, and a buzzing community vibe. Step
+                  into the Ice Bath Zone for a cool plunge, unwind with massage
+                  therapists, or stretch it out at dedicated recovery corners.
+                </p>
 
-            <div className="mb-6">
-              <div className="text-sm font-semibold text-foreground mb-3">
-                Event Highlights:
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {[
-                  "International & local DJs",
-                  "Professional massage stations",
-                  "Recovery smoothie bar",
-                  "Flavorful Cocktails",
-                  "Ice Bath Zone",
-                  "Food from best chefs",
-                  "Cash-free event* (Purchase card required)",
-                ].map((highlight, idx) => (
-                  <div key={idx} className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">
-                      {highlight}
-                    </span>
+                <div className="mb-6">
+                  <div className="text-sm font-semibold text-foreground mb-3">
+                    Event Highlights:
                   </div>
-                ))}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {[
+                      "International & local DJs",
+                      "Professional massage stations",
+                      "Recovery smoothie bar",
+                      "Flavorful Cocktails",
+                      "Ice Bath Zone",
+                      "Food from best chefs",
+                      "Cash-free event* (Purchase card required)",
+                    ].map((highlight, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">
+                          {highlight}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
