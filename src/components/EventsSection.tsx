@@ -506,7 +506,7 @@ const EventsSection = () => {
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
                 Limited Seats Available!
               </h3>
-              <p className="text-lg md:text-xl mb-6 text-muted-foreground">
+              <p className="text-lg md:text-xl mb-6 text-muted-foreground leading-relaxed">
                 The{" "}
                 <span className="font-semibold text-primary">
                   Carb-Loading Fiesta
@@ -515,12 +515,12 @@ const EventsSection = () => {
                 <span className="font-semibold text-primary">
                   Recovery Rave
                 </span>{" "}
-                have limited capacity. We can accommodate only{" "}
-                <span className=" font-bold text-red-400">1,500</span> of the{" "}
-                <span className=" font-bold text-red-400">10,000 </span>
-                runners expected this year. Book your festival pass now to
-                guarantee your spot at these exclusive events and make the most
-                of your marathon weekend.
+                have limited capacity. With{" "}
+                <span className="font-bold text-red-500">10,000 </span> runners
+                expected this year, we can only accommodate{" "}
+                <span className="font-bold text-red-500">1,500 </span> at these
+                exclusive events. Book your festival pass now to secure your
+                spot and make the most of your marathon weekend.
               </p>
               <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
                 <Button variant="cta" size="lg">
