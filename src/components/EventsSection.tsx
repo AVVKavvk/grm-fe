@@ -515,9 +515,12 @@ const EventsSection = () => {
                 <span className="font-semibold text-primary">
                   Recovery Rave
                 </span>{" "}
-                have limited capacity. Book your festival pass now to guarantee
-                your spot at these exclusive events and make the most of your
-                marathon weekend.
+                have limited capacity. We can accommodate only{" "}
+                <span className=" font-bold text-red-400">1,500</span> of the{" "}
+                <span className=" font-bold text-red-400">10,000 </span>
+                runners expected this year. Book your festival pass now to
+                guarantee your spot at these exclusive events and make the most
+                of your marathon weekend.
               </p>
               <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
                 <Button variant="cta" size="lg">
