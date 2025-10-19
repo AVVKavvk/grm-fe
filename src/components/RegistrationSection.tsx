@@ -257,10 +257,10 @@ const RegistrationSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="tel:+91 97020 97035"
+              href="tel:+91 7020142370"
               className="text-primary hover:underline"
             >
-              📞 +91 97020 97035
+              📞 +91 7020142370
             </a>
             <a
               href="mailto:register@goarivermarathon.com"

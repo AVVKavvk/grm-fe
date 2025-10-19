@@ -78,7 +78,7 @@ const ContactFormsSection = () => {
     try {
       // Prepare email data
       const emailData = {
-        to: "info@skfgoarivermarathon.com",
+        to: "support@skfgoarivermarathon.com",
         subject: `${getFormTitle(activeForm)} - ${formData.name}`,
         formType: activeForm,
         ...formData,
@@ -517,18 +517,16 @@ const ContactFormsSection = () => {
               runnersingoa@gmail.com
             </p>
             <p className="text-sm text-muted-foreground">
-              info@skfgoarivermarathon.com
+              support@skfgoarivermarathon.com
             </p>
           </Card>
 
           <Card className="p-6 text-center">
             <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
             <h3 className="font-semibold mb-2">Call Us</h3>
-            <p className="text-sm text-muted-foreground mb-2">
-              +91 97020 97035
-            </p>
+            <p className="text-sm text-muted-foreground mb-2">+91 7020142370</p>
             <p className="text-sm text-muted-foreground">
-              WhatsApp: +91 97020 97035
+              WhatsApp: +91 7020142370
             </p>
           </Card>
 

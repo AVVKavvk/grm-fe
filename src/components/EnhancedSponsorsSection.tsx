@@ -463,7 +463,7 @@ const EnhancedSponsorsSection = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <span>+91 97020 97035</span>
+                <span>+91 7020142370</span>
               </div>
             </div>
           </div>

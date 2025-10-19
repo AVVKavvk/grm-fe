@@ -116,26 +116,19 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary" />
                 <a
-                  href="tel:+91 97020 97035"
+                  href="tel:+91 7020142370"
                   className="text-background/80 hover:text-primary transition-colors"
                 >
-                  +91 9702097035 ,
-                </a>
-
-                <a
-                  href="tel:+91 8322511333"
-                  className="text-background/80 hover:text-primary transition-colors"
-                >
-                  +91 8322511333
+                  +91 7020142370
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
                 <a
-                  href="mailto:info@goarivermarathon.com"
+                  href="mailto:support@skfgoarivermarathon.com"
                   className="text-background/80 hover:text-primary transition-colors"
                 >
-                  info@goarivermarathon.com
+                  support@skfgoarivermarathon.com
                 </a>
               </div>
             </div>
