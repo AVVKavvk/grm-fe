@@ -11,15 +11,27 @@ import { Link } from "react-router-dom";
 import skfLogo from "@/assets/SKF_logotype_black_RGB.png";
 const Footer = () => {
   const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, link: "#", label: "Facebook" },
-    { icon: <Instagram className="w-5 h-5" />, link: "#", label: "Instagram" },
-    { icon: <Youtube className="w-5 h-5" />, link: "#", label: "YouTube" },
+    {
+      icon: <Facebook className="w-5 h-5" />,
+      link: "https://www.facebook.com/SKF.Goa.River.Marathon",
+      label: "Facebook",
+    },
+    {
+      icon: <Instagram className="w-5 h-5" />,
+      link: "https://www.instagram.com/skfgoarivermarathon/",
+      label: "Instagram",
+    },
+    {
+      icon: <Youtube className="w-5 h-5" />,
+      link: "https://www.youtube.com/@SkfGoaRiverMarathon",
+      label: "YouTube",
+    },
   ];
 
   const quickLinks = [
     { label: "About Marathon", link: "/" },
     { label: "Events & Timing", link: "/events" },
-    { label: "Registration", link: "/registration" },
+    // { label: "Registration", link: "/register" },
     { label: "FAQs", link: "/faq" },
   ];
 
@@ -49,14 +61,15 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link, index) => (
-                <Link
+                <a
                   key={index}
-                  to={link.link}
+                  href={link.link}
+                  target="_blank"
                   aria-label={link.label}
                   className="text-background/60 hover:text-primary transition-colors"
                 >
                   {link.icon}
-                </Link>
+                </a>
               ))}
             </div>
           </div>
