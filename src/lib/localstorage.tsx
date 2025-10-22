@@ -20,42 +20,50 @@ export const getSourceConfig = (source: string) => {
       return {
         name: "Zomato",
         redirectUrl: "https://www.zomato.com",
+        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
       };
     case "swiggy":
       return {
         name: "Swiggy",
         redirectUrl: "https://www.swiggy.com/",
+        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
       };
     case "playo":
       return {
         name: "Playo",
         redirectUrl: "https://playo.co/",
+        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
       };
     case "burraa":
       return {
         name: "Burraa",
         redirectUrl:
           "https://www.burraa.com/activities/skf-goa-river-marathon-2025",
+        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
       };
     case "hudle":
       return {
         name: "Hudle",
         redirectUrl: "https://hudle.in/events/goa-river-marathon/649260",
+        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
       };
     case "ifinish":
       return {
         name: "IFinish",
         redirectUrl: "https://www.ifinish.in/running/SKF2025",
+        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
       };
     case "district":
       return {
         name: "District",
         redirectUrl: "https://www.district.in/",
+        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
       };
     default:
       return {
         name: "Direct",
         redirectUrl: "https://www.ifinish.in/running/SKF2025",
+        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
       };
   }
 };
@@ -78,7 +86,7 @@ export const GetRegisterButtonForCarbLoadingFiesta = () => {
   const sourceConfig = getSourceConfig(source);
 
   return (
-    <a href={sourceConfig.redirectUrl} target="_blank">
+    <a href={sourceConfig.carbLoadingLink} target="_blank">
       <Button variant="cta" size="lg">
         Register for Carb Loading Fiesta
       </Button>
@@ -91,7 +99,7 @@ export const GetRegisterButtonForRecoveryRave = () => {
   const sourceConfig = getSourceConfig(source);
 
   return (
-    <a href={sourceConfig.redirectUrl} target="_blank">
+    <a href={sourceConfig.carbLoadingLink} target="_blank">
       <Button variant="cta" size="lg">
         Register for Recovery Rave
       </Button>

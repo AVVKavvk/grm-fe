@@ -291,7 +291,7 @@ const ChatBot = () => {
 
   return (
     <>
-      <div className="fixed bottom-16 right-6  z-40">
+      <div className="fixed bottom-20 right-6  z-40">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="w-[70px] h-[70px] md:w-20 md:h-20 rounded-full shadow-lg hover:shadow-xl transition-all bg-gradient-to-br from-orange-400 via-red-500 to-pink-500 text-white hover:scale-110 flex flex-col items-center justify-center"

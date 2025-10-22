@@ -63,7 +63,7 @@ const EventsSection = () => {
       startTime: "04:00 AM",
       cutOffTime: "6 Hours",
       price: "₹3,096",
-      originalPrice: "₹3,900",
+      originalPrice: "₹3,440",
       nextPrice: "₹3,510",
       participants: "18+ years",
       description: "The ultimate challenge along Goa's most scenic route",
@@ -82,7 +82,7 @@ const EventsSection = () => {
       startTime: "04:30 AM",
       cutOffTime: "5 Hours",
       price: "₹2,853",
-      originalPrice: "₹3,500",
+      originalPrice: "₹3,170",
       nextPrice: "₹3,150",
       participants: "18+ years",
       description:
@@ -102,7 +102,7 @@ const EventsSection = () => {
       startTime: "05:30 AM",
       cutOffTime: "3.5 Hours",
       price: "₹2,385",
-      originalPrice: "₹2,900",
+      originalPrice: "₹2,650",
       nextPrice: "₹2,610",
       participants: "18+ years",
       description: "Perfect for intermediate runners seeking a challenge",
@@ -121,7 +121,7 @@ const EventsSection = () => {
       startTime: "06:15 AM",
       cutOffTime: "90 Minutes",
       price: "₹1,575",
-      originalPrice: "₹1,850",
+      originalPrice: "₹1,750",
       nextPrice: "₹1,665",
       participants: "16+ years",
       description: "Ideal for beginners and fitness enthusiasts",
@@ -140,7 +140,7 @@ const EventsSection = () => {
       startTime: "08:00 AM",
       cutOffTime: "60 Minutes",
       price: "₹675",
-      originalPrice: "₹800",
+      originalPrice: "₹750",
       nextPrice: "₹7,20",
       participants: "Open for all",
       description: "Family-friendly run with stunning coastal views",
@@ -259,10 +259,16 @@ const EventsSection = () => {
                     <Clock className="w-4 h-4" />
                     <span>5:00 PM - 8:00 PM</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4" />
-                    <span>Chicalim Ground</span>
-                  </div>
+                  <a
+                    href="https://maps.app.goo.gl/GyFPPhbDonhNZRaD9"
+                    target="_blank"
+                    title="Location"
+                  >
+                    <div className="flex items-center gap-2 hover:text-blue-500">
+                      <MapPin className="w-4 h-4" />
+                      <span>Chicalim Panchayat Ground</span>
+                    </div>
+                  </a>
                 </div>
               </div>
 
@@ -365,9 +371,9 @@ const EventsSection = () => {
                       <div className="text-sm text-muted-foreground line-through">
                         {event.originalPrice}
                       </div>
-                      <div className="text-xs text-red-600 font-medium">
+                      {/* <div className="text-xs text-red-600 font-medium">
                         Next: {event.nextPrice} (After {day}/{month}/{year})
-                      </div>
+                      </div> */}
                     </div>
                   </div>
 
@@ -433,10 +439,16 @@ const EventsSection = () => {
                     <Clock className="w-4 h-4" />
                     <span>4:00 PM - 10:00 PM</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4" />
-                    <span>Jubilate, Goa</span>
-                  </div>
+                  <a
+                    href="https://maps.app.goo.gl/qtVUskjrbXwtTNsE8"
+                    title="Location"
+                    target="_blank"
+                  >
+                    <div className="flex items-center gap-2 hover:text-blue-500">
+                      <MapPin className="w-4 h-4" />
+                      <span>Jubilate Outdoor Community Hall</span>
+                    </div>
+                  </a>
                 </div>
               </div>
               <div className="text-right">
