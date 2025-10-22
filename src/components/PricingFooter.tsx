@@ -4,8 +4,8 @@ import { Button } from "./ui/button";
 import getLastDateOfMonth from "@/lib/getDate";
 const PricingBottomUI = () => {
   const { date } = getLastDateOfMonth();
-  const originalPrice = 700;
-  const discountedPrice = 630;
+  const originalPrice = 800;
+  const discountedPrice = 675;
 
   const discountPercentage = Math.round(
     ((originalPrice - discountedPrice) / originalPrice) * 100
