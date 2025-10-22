@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, Calendar, MapPin, X } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpeg";
+import heroImage from "@/assets/bg-img.jpeg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { GetRegisterButton } from "@/lib/localstorage";
