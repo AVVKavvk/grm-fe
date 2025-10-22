@@ -1,3 +1,4 @@
+import { GetRegisterButton } from "@/lib/localstorage";
 import CountdownTimerForFooter from "./countDownForFooter";
 import { Button } from "./ui/button";
 import getLastDateOfMonth from "@/lib/getDate";
@@ -35,11 +36,7 @@ const PricingBottomUI = () => {
               </div>
 
               {/* CTA Button */}
-              <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
-                <Button variant="cta" size="lg">
-                  Register Now
-                </Button>
-              </a>
+              <GetRegisterButton />
             </div>
           </div>
         </div>

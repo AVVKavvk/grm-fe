@@ -60,7 +60,7 @@ const ShopSection = () => {
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Marathon
-            <span className="bg-gradient-sunset bg-clip-text text-transparent">
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
               {" "}
               Merchandise
             </span>

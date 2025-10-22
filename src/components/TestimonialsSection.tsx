@@ -64,7 +64,7 @@ const TestimonialsSection = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             What Our
-            <span className="bg-gradient-sunset bg-clip-text text-transparent">
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
               {" "}
               Runners Say
             </span>

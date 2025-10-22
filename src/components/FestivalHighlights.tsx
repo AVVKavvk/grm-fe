@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import recoveryRave from "@/assets/recovery-rave.jpeg";
 import carbLoading from "@/assets/carb-loading.jpeg";
 import finishLine from "@/assets/finish-line.jpeg";
+import { GetRegisterButton } from "@/lib/localstorage";
 const FestivalHighlights = () => {
   const highlights = [
     {
@@ -110,11 +111,7 @@ const FestivalHighlights = () => {
             exclusive events. Book your festival pass now to secure your spot
             and make the most of your marathon weekend.
           </p>
-          <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
-            <Button variant="cta" size="lg">
-              Register Now
-            </Button>
-          </a>
+          <GetRegisterButton />
         </div>
       </section>
     </div>

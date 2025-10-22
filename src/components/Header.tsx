@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import vascoLogo from "@/assets/VSG_LOGO.png";
 import skfLogo from "@/assets/SKF_GRM_Logo_removebg.png";
 import getLastDateOfMonth from "@/lib/getDate";
+import { GetRegisterButton } from "@/lib/localstorage";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,11 +44,7 @@ const Header = () => {
             </span>
           </p>
         </div>
-        <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
-          <Button variant="cta" size="lg">
-            Register Now
-          </Button>
-        </a>
+        <GetRegisterButton />
       </div>
 
       {/* Navigation */}
@@ -74,11 +71,7 @@ const Header = () => {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
-            <Button variant="cta" size="lg">
-              Register Now
-            </Button>
-          </a>
+          <GetRegisterButton />
         </div>
         <div className="flex justify-center font-semibold items-center gap-2">
           <img src={vascoLogo} width="90px" alt="Vasco Logo" />
@@ -111,9 +104,7 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-            <Button variant="cta" className="mt-4">
-              Register Now
-            </Button>
+            <GetRegisterButton />
           </div>
         </nav>
       )}

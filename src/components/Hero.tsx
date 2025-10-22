@@ -3,6 +3,7 @@ import { Play, Calendar, MapPin, X } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpeg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { GetRegisterButton } from "@/lib/localstorage";
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,11 +66,7 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
-              <Button variant="cta" size="lg" className="text-lg px-8 py-4">
-                Register Now
-              </Button>
-            </a>
+            <GetRegisterButton />
             <Button
               variant="outline"
               size="lg"
