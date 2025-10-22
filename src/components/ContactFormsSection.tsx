@@ -41,14 +41,17 @@ const ContactFormsSection = () => {
     availability: "",
   });
 
-  // Load reCAPTCHA script
+  // Load reCAPTCHA v3 script
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
       "https://www.google.com/recaptcha/api.js?render=6LfX4NsrAAAAAEgmJaY9hCBEoF3by5k6sRNl-Rfq";
     script.async = true;
     script.defer = true;
-    script.onload = () => setRecaptchaLoaded(true);
+    script.onload = () => {
+      setRecaptchaLoaded(true);
+      console.log("reCAPTCHA v3 loaded successfully");
+    };
     document.body.appendChild(script);
 
     return () => {
@@ -76,6 +79,10 @@ const ContactFormsSection = () => {
     setIsSubmitting(true);
 
     try {
+      const token = await (window as any).grecaptcha.execute(
+        "6LfX4NsrAAAAAEgmJaY9hCBEoF3by5k6sRNl-Rfq",
+        { action: "submit_contact_form" }
+      );
       // Prepare email data
       const emailData = {
         to: "support@skfgoarivermarathon.com",
@@ -459,12 +466,12 @@ const ContactFormsSection = () => {
                 </div>
 
                 {/* Google reCAPTCHA */}
-                <div className="flex justify-center">
+                {/* <div className="flex justify-center">
                   <div
                     className="g-recaptcha"
                     data-sitekey="6LfX4NsrAAAAAEgmJaY9hCBEoF3by5k6sRNl-Rfq"
                   ></div>
-                </div>
+                </div> */}
 
                 <Button
                   type="submit"

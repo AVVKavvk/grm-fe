@@ -1,87 +1,26 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Users, MapPin } from "lucide-react";
-import {
-  captureUTMParams,
-  buildTrackingURL,
-  logRegistrationClick,
-} from "@/lib/tracking";
+import { setSource, getSource, getSourceConfig } from "@/lib/localstorage";
 
 const Register = () => {
   const [searchParams] = useSearchParams();
-  const source = searchParams.get("utm_source") || "direct";
+  const source = searchParams.get("source") || "direct";
+  console.log(source);
+
+  setSource(source);
   const [isRedirecting, setIsRedirecting] = useState(false);
 
-  // Capture UTM parameters when component mounts
-  useEffect(() => {
-    captureUTMParams();
-  }, []);
-
-  const getSourceConfig = (source: string) => {
-    switch (source.toLowerCase()) {
-      case "zomato":
-        return {
-          name: "Zomato",
-          color: "bg-red-500",
-          redirectUrl: "https://www.ifinish.in/running/SKF2025",
-          description: "Register through Zomato Events",
-        };
-      case "swiggy":
-        return {
-          name: "Swiggy",
-          color: "bg-orange-500",
-          redirectUrl: "https://www.ifinish.in/running/SKF2025",
-          description: "Register through Swiggy Events",
-        };
-      case "playo":
-        return {
-          name: "Playo",
-          color: "bg-green-500",
-          redirectUrl: "https://www.ifinish.in/running/SKF2025",
-          description: "Register through our mobile app",
-        };
-      case "district":
-        return {
-          name: "District",
-          color: "bg-blue-500",
-          redirectUrl: "https://www.ifinish.in/running/SKF2025",
-          description: "Register through District",
-        };
-      default:
-        return {
-          name: "Direct",
-          color: "bg-primary",
-          redirectUrl: "https://www.ifinish.in/running/SKF2025",
-          description: "Register directly on our website",
-        };
-    }
-  };
-
-  const sourceConfig = getSourceConfig(source);
+  const localStorageSource = getSource();
+  const sourceConfig = getSourceConfig(localStorageSource);
 
   const handleRegister = () => {
     setIsRedirecting(true);
-
-    // Build URL with UTM parameters
-    const trackingUrl = buildTrackingURL(sourceConfig.redirectUrl, {
-      referrer: "skf_website",
-    });
-
-    // Log the registration click
-    logRegistrationClick(sourceConfig.name);
-
     setTimeout(() => {
-      window.open(trackingUrl, "_blank");
-      setIsRedirecting(false);
+      window.location.href = sourceConfig.redirectUrl;
     }, 1000);
   };
 
@@ -90,21 +29,12 @@ const Register = () => {
       <Card className="w-full max-w-md mx-auto">
         <CardHeader className="text-center space-y-4">
           <div className="flex items-center justify-center gap-2">
-            <Badge
-              variant="secondary"
-              className={`${sourceConfig.color} text-white`}
-            >
-              Referred from {sourceConfig.name}
-            </Badge>
+            <Badge variant="secondary">Referred from {sourceConfig.name}</Badge>
           </div>
 
           <CardTitle className="text-2xl font-bold">
             SKF Goa River Marathon
           </CardTitle>
-
-          <CardDescription className="text-center">
-            {sourceConfig.description}
-          </CardDescription>
         </CardHeader>
 
         <CardContent className="space-y-6">

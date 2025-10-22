@@ -10,6 +10,7 @@ import FestivalHighlights from "@/components/FestivalHighlights";
 import { Link } from "react-router-dom";
 import Sponsorship from "@/components/Sponsorship";
 import { Button } from "@/components/ui/button";
+import { GetRegisterButton } from "@/lib/localstorage";
 
 const Index = () => {
   return (
@@ -36,11 +37,7 @@ const Index = () => {
             year. Secure your spot now and be part of this unforgettable
             experience.
           </p>
-          <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
-            <Button variant="cta" size="lg">
-              Register Now
-            </Button>
-          </a>
+          <GetRegisterButton />
         </div>
       </section>
     </div>

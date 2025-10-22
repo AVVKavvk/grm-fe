@@ -19,6 +19,12 @@ import getLastDateOfMonth from "@/lib/getDate";
 import recoveryRave from "@/assets/recovery-rave.jpeg";
 import carbLoading from "@/assets/carb-loading.jpeg";
 import finishLine from "@/assets/finish-line.jpeg";
+import {
+  GetRegisterButton,
+  GetRegisterButtonForCarbLoadingFiesta,
+  GetRegisterButtonForEvent,
+  GetRegisterButtonForRecoveryRave,
+} from "@/lib/localstorage";
 const Festival = lazy(() => import("@/components/FestivalSection"));
 
 const EventsSection = () => {
@@ -167,7 +173,7 @@ const EventsSection = () => {
         </div>
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
           Secure Your
-          <span className="bg-gradient-sunset bg-clip-text text-transparent">
+          <span className="bg-gradient-primary bg-clip-text text-transparent">
             {" "}
             Spot Today
           </span>
@@ -196,7 +202,7 @@ const EventsSection = () => {
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Three
-            <span className="bg-gradient-sunset bg-clip-text text-transparent">
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
               {" "}
               Epic Events
             </span>
@@ -309,11 +315,7 @@ const EventsSection = () => {
               </div>
             </div>
 
-            <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
-              <Button variant="hero" className="w-full md:w-auto">
-                Register for Carb Loading Fiesta
-              </Button>
-            </a>
+            <GetRegisterButtonForCarbLoadingFiesta />
           </div>
         </div>
 
@@ -326,7 +328,7 @@ const EventsSection = () => {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               The Marathon
-              <span className="bg-gradient-sunset bg-clip-text text-transparent">
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
                 {" "}
                 Experience
               </span>
@@ -406,17 +408,7 @@ const EventsSection = () => {
                     </div>
                   </div>
 
-                  <a
-                    href="https://www.ifinish.in/running/SKF2025"
-                    target="_blank"
-                  >
-                    <Button
-                      variant={index === 0 ? "hero" : "default"}
-                      className="w-full group-hover:scale-[1.02] transition-transform"
-                    >
-                      Register for {event.name}
-                    </Button>
-                  </a>
+                  {GetRegisterButtonForEvent(event.name as string)}
                 </div>
               </div>
             ))}
@@ -495,11 +487,7 @@ const EventsSection = () => {
               </div>
             </div>
 
-            <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
-              <Button variant="hero" className="w-full md:w-auto">
-                Register for Recovery Rave
-              </Button>
-            </a>
+            <GetRegisterButtonForRecoveryRave />
           </div>
           <section className="mt-16 bg-gradient-to-t from-primary/30 to-primary/20 text-foreground py-12 px-6 rounded-2xl text-center border border-primary/30">
             <div className="max-w-3xl mx-auto">
@@ -522,11 +510,7 @@ const EventsSection = () => {
                 exclusive events. Book your festival pass now to secure your
                 spot and make the most of your marathon weekend.
               </p>
-              <a href="https://www.ifinish.in/running/SKF2025" target="_blank">
-                <Button variant="cta" size="lg">
-                  Register Now
-                </Button>
-              </a>
+              <GetRegisterButton />
             </div>
           </section>
 

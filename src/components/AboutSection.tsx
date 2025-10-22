@@ -138,13 +138,15 @@ const AboutSection = () => {
           ))}
         </div>
 
-        <section className="relative py-16 bg-gradient-to-b rounded-md shadow from-blue-50 via-white to-blue-100">
+        <section className="relative py-16 bg-gradient-to-b rounded-md">
           <div className="container mx-auto px-6 lg:px-12">
             {/* Heading */}
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 The Scenic Route –{" "}
-                <span className="text-blue-600">A Run Like No Other</span>
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  A Run Like No Other
+                </span>
               </h2>
               <p className="mt-6 text-lg text-gray-700 leading-relaxed">
                 Recognised as one of the most scenic marathon routes in India,

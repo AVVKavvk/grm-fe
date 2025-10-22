@@ -16,6 +16,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import vascoLogo from "@/assets/vasco-sports-club-logo.jpg";
 import skfLogo from "@/assets/SKF_logotype_black_RGB.png";
+import hudleLogo from "@/assets/hudle_logo.webp";
 import burraLogo from "@/assets/images/burraa-logo.png";
 import playoLogo from "@/assets/images/playo-logo.png";
 import districtLogo from "@/assets/images/ditrict-logo.jpg";
@@ -102,14 +103,15 @@ const EnhancedSponsorsSection = () => {
         website: "https://www.playo.co",
         isImage: true,
       },
-      {
-        name: "District",
-        logo: districtLogo,
-        tier: "Registration Sponsor",
-        description: "Athletic performance and training platform",
-        website: "https://www.district.in/",
-        isImage: true,
-      },
+      // {
+      //   name: "District",
+      //   logo: districtLogo,
+      //   tier: "Registration Sponsor",
+      //   description: "Athletic performance and training platform",
+      //   website: "https://www.district.in/",
+      //   isImage: true,
+      // },
+
       {
         name: "Book My Show",
         logo: bmsLogo,
@@ -124,6 +126,14 @@ const EnhancedSponsorsSection = () => {
         tier: "Registration Sponsor",
         description: "Marathon timing and event management services",
         website: "https://www.ifinish.in",
+        isImage: true,
+      },
+      {
+        name: "Hudle",
+        logo: hudleLogo,
+        tier: "Registration Sponsor",
+        description: "Athletic performance and training platform",
+        website: "https://www.hudle.in/",
         isImage: true,
       },
     ],
@@ -214,7 +224,7 @@ const EnhancedSponsorsSection = () => {
             <span className="text-sm font-medium">Powered By</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="bg-gradient-sunset bg-clip-text text-transparent">
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
               Official Sponsors
             </span>
           </h2>

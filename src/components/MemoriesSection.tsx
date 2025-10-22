@@ -253,7 +253,12 @@ const MemoriesSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Marathon Memories</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="bg-gradient-primary bg-clip-text text-transparent">
+              Marathon Memories
+            </span>
+          </h2>
+
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Relive the incredible moments from 15 years of the Goa River
             Marathon
