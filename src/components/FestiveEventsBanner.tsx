@@ -3,7 +3,7 @@ import { Sparkles, UtensilsCrossed, Music, ArrowRight } from "lucide-react";
 
 export default function FestiveEventsBanner() {
   return (
-    <div className="bg-gradient-ocean p-8 rounded-2xl shadow-strong text-center mt-8 ">
+    <div className="bg-gradient-ocean rounded-2xl text-center mt-16 ">
       <div className=" rounded-xl p-8 md:p-10">
         <div className="text-center">
           {/* Header with emoji and sparkle effect */}
@@ -22,7 +22,7 @@ export default function FestiveEventsBanner() {
           </p>
 
           {/* Main message */}
-          <div className="rounded-xl p-6 mb-6 border-2 border-purple-200">
+          <div className="rounded-xl p-6 mb-6 ">
             <p className="text-xl md:text-2xl font-bold text-gray-800 mb-4">
               You can now book your spot for our events separately!
             </p>
