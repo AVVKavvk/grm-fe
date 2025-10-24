@@ -266,9 +266,9 @@ const EventsSection = () => {
             </span>
           </div>
           <CountdownTimer targetDate={date} />
-          <div className="mt-4 text-sm text-red-600/80">
+          {/* <div className="mt-4 text-sm text-red-600/80">
             Prices increase by ₹300–900 after {day}/{month}/{year}
-          </div>
+          </div> */}
         </div>
       </div>
       {/* Hero Section - 3 Epic Events */}
@@ -662,13 +662,18 @@ const EventsSection = () => {
                   </div>
                 </div>
               </div>
-              <Button
-                variant="hero"
-                size="lg"
-                className="bg-background text-foreground hover:bg-background/90"
+              <a
+                href="https://www.ifinish.in/entertainment/skfppa"
+                target="_blank"
               >
-                Get Party Package Deal
-              </Button>
+                <Button
+                  variant="hero"
+                  size="lg"
+                  className="bg-background text-foreground hover:bg-background/90"
+                >
+                  Get Party Package Deal
+                </Button>
+              </a>
               <p className="text-primary-foreground/70 text-sm mt-4">
                 Perfect for the complete marathon weekend experience
               </p>
