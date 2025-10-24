@@ -12,8 +12,10 @@ import {
   Music,
   ChevronDown,
   AlertTriangle,
+  ExternalLink,
+  Waypoints,
 } from "lucide-react";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import CountdownTimer from "./CountdownTimer";
 import getLastDateOfMonth from "@/lib/getDate";
 import recoveryRave from "@/assets/recovery-rave.jpeg";
@@ -25,10 +27,46 @@ import {
   GetRegisterButtonForEvent,
   GetRegisterButtonForRecoveryRave,
 } from "@/lib/localstorage";
+import FestiveEventsBanner from "./FestiveEventsBanner";
 const Festival = lazy(() => import("@/components/FestivalSection"));
 
 const EventsSection = () => {
   const { date, day, month, year } = getLastDateOfMonth();
+
+  const RouteDropdown = ({ routes }) => {
+    const [selectedRoute, setSelectedRoute] = useState("");
+
+    const handleRouteChange = (e) => {
+      const routeType = e.target.value;
+      setSelectedRoute(routeType);
+      if (routeType && routes[routeType]) {
+        window.open(routes[routeType], "_blank");
+      }
+    };
+
+    return (
+      <div className="mb-4">
+        <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+          <MapPin className="w-4 h-4 text-blue-600" />
+          View Route
+        </label>
+        <div className="relative">
+          <select
+            value={selectedRoute}
+            onChange={handleRouteChange}
+            className="w-full px-4 py-2 bg-white border-2 border-gray-200 rounded-lg appearance-none cursor-pointer hover:border-blue-400 focus:border-blue-600 focus:outline-none transition-colors text-sm"
+          >
+            <option value="">Select a route view...</option>
+            <option value="live">Live Route</option>
+            <option value="google">Google Route</option>
+            <option value="interactive">Interactive Route</option>
+          </select>
+          <ExternalLink className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+        </div>
+      </div>
+    );
+  };
+
   const heroEvents = [
     {
       name: "Carb Loading Fiesta",
@@ -72,9 +110,16 @@ const EventsSection = () => {
         "Tech T-Shirt",
         "Digital Certificate",
         "Electronic Timing Chip",
-
         "Nourishment",
       ],
+      googleMapRoute:
+        "https://www.google.com/maps/d/u/0/viewer?mid=1nVQQTK0cUgL-puPU3SHTGs8m4ArJbYE&ll=15.396277154068239%2C73.88005525&z=14",
+      routes: {
+        live: "https://www.relive.com/view/vXOnkYEpj56/explore",
+        google:
+          "https://www.google.com/maps/d/u/0/viewer?mid=1nVQQTK0cUgL-puPU3SHTGs8m4ArJbYE&ll=15.396277154068239%2C73.88005525&z=14",
+        interactive: "https://www.youtube.com/watch?v=gXYogR1xdT8",
+      },
     },
     {
       name: "20 Miler",
@@ -92,9 +137,16 @@ const EventsSection = () => {
         "Tech T-Shirt",
         "Digital Certificate",
         "Electronic Timing Chip",
-
         "Nourishment",
       ],
+      googleMapRoute:
+        "https://www.google.com/maps/d/u/0/viewer?mid=1L-psiHymBmmVFVbHTen5zpMRUPcU33E&ll=15.396293653242111%2C73.880219&z=14",
+      routes: {
+        live: "https://www.relive.com/view/vXvLoVk4P1q/explore",
+        google:
+          "https://www.google.com/maps/d/u/0/viewer?mid=1L-psiHymBmmVFVbHTen5zpMRUPcU33E&ll=15.396293653242111%2C73.880219&z=14",
+        interactive: "https://www.youtube.com/watch?v=byyMELsLt5I",
+      },
     },
     {
       name: "Half Marathon",
@@ -111,9 +163,16 @@ const EventsSection = () => {
         "Tech T-Shirt",
         "Digital Certificate",
         "Electronic Timing Chip",
-
         "Nourishment",
       ],
+      googleMapRoute:
+        "https://www.google.com/maps/d/u/0/viewer?mid=1bpKbKdIYLmpWemuFpnGHYBsqHHrJVXU&ll=15.396277154068239%2C73.88005525&z=14",
+      routes: {
+        live: "https://www.relive.com/view/v1vjYWzMZJq/explore",
+        google:
+          "https://www.google.com/maps/d/u/0/viewer?mid=1bpKbKdIYLmpWemuFpnGHYBsqHHrJVXU&ll=15.396277154068239%2C73.88005525&z=14",
+        interactive: "https://www.youtube.com/watch?v=zgG2EMtSzkg",
+      },
     },
     {
       name: "10K Run",
@@ -130,9 +189,16 @@ const EventsSection = () => {
         "Event T-Shirt",
         "Digital Certificate",
         "Electronic Timing Chip",
-
         "Nourishment",
       ],
+      googleMapRoute:
+        "https://www.google.com/maps/d/u/0/viewer?mid=1A_TQR5XbxyTLIklbS0qBXfoggiQIbBQ&ll=15.400010543611549%2C73.85704799999998&z=15",
+      routes: {
+        live: "https://www.relive.com/view/vrqDNVJLALO/explore",
+        google:
+          "https://www.google.com/maps/d/u/0/viewer?mid=1A_TQR5XbxyTLIklbS0qBXfoggiQIbBQ&ll=15.400010543611549%2C73.85704799999998&z=15",
+        interactive: "https://www.youtube.com/watch?v=sfZmuPeRRRY",
+      },
     },
     {
       name: "5K Fun Run",
@@ -141,7 +207,7 @@ const EventsSection = () => {
       cutOffTime: "60 Minutes",
       price: "₹675",
       originalPrice: "₹750",
-      nextPrice: "₹7,20",
+      nextPrice: "₹720",
       participants: "Open for all",
       description: "Family-friendly run with stunning coastal views",
       features: [
@@ -150,6 +216,14 @@ const EventsSection = () => {
         "Digital Certificate",
         "Nourishment",
       ],
+      googleMapRoute:
+        "https://www.google.com/maps/d/u/0/viewer?mid=1h0quijIubF_ySNyBheS50udviL9tQJel&ll=15.398721335979129%2C73.85153924973754&z=16",
+      routes: {
+        live: "https://www.google.com/maps/d/u/0/viewer?mid=1h0quijIubF_ySNyBheS50udviL9tQJel&ll=15.398721335979129%2C73.85153924973754&z=16",
+        google:
+          "https://www.google.com/maps/d/u/0/viewer?mid=1h0quijIubF_ySNyBheS50udviL9tQJel&ll=15.398721335979129%2C73.85153924973754&z=16",
+        interactive: "https://www.youtube.com/watch?v=KLipDTrRznw",
+      },
     },
   ];
 
@@ -242,7 +316,7 @@ const EventsSection = () => {
 
       <div className="container mx-auto px-4">
         {/* Carb Loading Fiesta Section */}
-        <div id="carb-loading" className="mb-24 scroll-mt-20">
+        <div id="carb-loading" className="mb-24  scroll-mt-20">
           <div className="bg-card p-8 rounded-xl border border-border shadow-soft">
             <div className="flex items-start gap-4 mb-6">
               <div className="text-4xl">🍝</div>
@@ -396,6 +470,32 @@ const EventsSection = () => {
                       <Users className="w-4 h-4 text-primary" />
                       <span className="text-sm">{event.participants}</span>
                     </div>
+                    <div className="flex items-center gap-2 col-span-2">
+                      <a
+                        href="https://maps.app.goo.gl/GyFPPhbDonhNZRaD9"
+                        target="_blank"
+                        title="Location"
+                      >
+                        <div className="flex items-center gap-2 hover:text-blue-500">
+                          <MapPin className="w-4 h-4 text-primary" />
+                          <span className="text-sm">
+                            Chicalim Panchayat Ground
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2 col-span-2">
+                      <a
+                        href={(event?.googleMapRoute as string) || "#"}
+                        target="_blank"
+                        title="View Route"
+                      >
+                        <div className="flex items-center gap-2 hover:text-blue-500">
+                          <Waypoints className="w-4 h-4 text-primary" />
+                          <span className="text-sm">View Route</span>
+                        </div>
+                      </a>
+                    </div>
                   </div>
 
                   <div className="mb-6">
@@ -413,6 +513,7 @@ const EventsSection = () => {
                       ))}
                     </div>
                   </div>
+                  {/* <RouteDropdown routes={event.routes} /> */}
 
                   {GetRegisterButtonForEvent(event.name as string)}
                 </div>
@@ -571,6 +672,7 @@ const EventsSection = () => {
               </p>
             </div>
           </div>
+          <FestiveEventsBanner />
         </div>
 
         {/* Additional Info */}
