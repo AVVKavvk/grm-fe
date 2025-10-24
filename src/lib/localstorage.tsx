@@ -80,6 +80,18 @@ export const GetRegisterButton = () => {
     </a>
   );
 };
+export const GetBookNowButtonForCarbAndRecovery = () => {
+  const source = getSource() || "direct";
+  const sourceConfig = getSourceConfig(source);
+
+  return (
+    <a href={sourceConfig.carbLoadingLink} target="_blank">
+      <Button variant="cta" className="px-6" size="lg">
+        Book Now
+      </Button>
+    </a>
+  );
+};
 
 export const GetRegisterButtonForCarbLoadingFiesta = () => {
   const source = getSource() || "direct";
