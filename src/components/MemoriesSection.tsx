@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { Camera, X, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { useGalleryStore } from "@/store/galleryStore";
 
@@ -9,16 +9,27 @@ const MemoriesSection = () => {
   const [selectedYear, setSelectedYear] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [lastFetchTime, setLastFetchTime] = useState(null);
   const { allImages, getAllImages } = useGalleryStore();
 
-  useEffect(() => {
-    const fetchImages = async () => {
+  const fetchImages = useCallback(async () => {
+    const now = Date.now();
+    const fifteenMinutes = 15 * 60 * 1000;
+
+    // Check if we need to fetch (no last fetch or more than 15 minutes passed)
+    if (!lastFetchTime || now - lastFetchTime > fifteenMinutes) {
       setLoading(true);
       await getAllImages();
+      setLastFetchTime(now);
       setLoading(false);
-    };
+    } else {
+      setLoading(false);
+    }
+  }, [lastFetchTime, getAllImages]);
+
+  useEffect(() => {
     fetchImages();
-  }, [getAllImages]);
+  }, [fetchImages]);
 
   const yearlyData = [
     {
@@ -218,19 +229,29 @@ const MemoriesSection = () => {
     },
   ];
 
-  // Get images for a specific year from the backend data
-  const getImagesByYear = (year) => {
-    if (!allImages) return [];
-    return allImages
-      .filter((img) => img.year === year.toString())
-      .map((img) => img.metadata.url);
-  };
+  // Memoize images by year to avoid recalculation
+  const imagesByYear = useMemo(() => {
+    if (!allImages) return {};
 
-  // Merge yearly data with backend images
-  const mergedYearlyData = yearlyData.map((year) => ({
-    ...year,
-    images: getImagesByYear(year.year),
-  }));
+    const grouped = {};
+    allImages.forEach((img) => {
+      const year = img.year;
+      if (!grouped[year]) {
+        grouped[year] = [];
+      }
+      grouped[year].push(img.metadata.url);
+    });
+
+    return grouped;
+  }, [allImages]);
+
+  // Merge yearly data with backend images - memoized
+  const mergedYearlyData = useMemo(() => {
+    return yearlyData.map((year) => ({
+      ...year,
+      images: imagesByYear[year.year.toString()] || [],
+    }));
+  }, [imagesByYear]);
 
   const openGallery = (year) => {
     setSelectedYear(year);
