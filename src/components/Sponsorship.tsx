@@ -50,15 +50,11 @@ const sponsorshipSchema = z.object({
     .string()
     .min(10, "Phone number must be at least 10 digits")
     .max(15, "Phone number must be less than 15 digits"),
-  website: z
-    .string()
-    .url("Please enter a valid URL")
-    .optional()
-    .or(z.literal("")),
+  website: z.string().optional().or(z.literal("")),
   sponsorshipCategories: z
     .array(z.string())
     .min(1, "Please select at least one sponsorship category"),
-  amountRange: z.string().min(1, "Please select an amount range"),
+  amountRange: z.string().optional(),
   additionalInfo: z
     .string()
     .max(1000, "Message must be less than 1000 characters")
