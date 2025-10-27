@@ -196,12 +196,12 @@ const ContactFormsSection = () => {
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      toast({
-        title: "Submission Failed",
-        description:
-          "There was an error submitting your form. Please try again or contact us directly.",
-        variant: "destructive",
-      });
+      // toast({
+      //   title: "Submission Failed",
+      //   description:
+      //     "There was an error submitting your form. Please try again or contact us directly.",
+      //   variant: "destructive",
+      // });
     } finally {
       setIsSubmitting(false);
     }

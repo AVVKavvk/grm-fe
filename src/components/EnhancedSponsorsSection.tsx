@@ -253,12 +253,12 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
       }
     } catch (error) {
       console.error("Partnership inquiry submission error:", error);
-      toast({
-        title: "Submission Failed",
-        description:
-          "There was an error submitting your inquiry. Please try again or contact us directly.",
-        variant: "destructive",
-      });
+      // toast({
+      //   title: "Submission Failed",
+      //   description:
+      //     "There was an error submitting your inquiry. Please try again or contact us directly.",
+      //   variant: "destructive",
+      // });
     } finally {
       setIsSubmitting(false);
     }
