@@ -1,20 +1,41 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
-import { Camera, X, ChevronLeft, ChevronRight } from "lucide-react";
-import { Images2022, Images2023, Images2024 } from "@/utils/loadImages";
+import { useEffect, useState, useMemo, useCallback } from "react";
+import { Camera, X, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
+import { useGalleryStore } from "@/store/galleryStore";
 
 const MemoriesSection = () => {
   const [selectedYear, setSelectedYear] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [lastFetchTime, setLastFetchTime] = useState(null);
+  const { allImages, getAllImages } = useGalleryStore();
+
+  const fetchImages = useCallback(async () => {
+    const now = Date.now();
+    const fifteenMinutes = 15 * 60 * 1000;
+
+    // Check if we need to fetch (no last fetch or more than 15 minutes passed)
+    if (!lastFetchTime || now - lastFetchTime > fifteenMinutes) {
+      setLoading(true);
+      await getAllImages();
+      setLastFetchTime(now);
+      setLoading(false);
+    } else {
+      setLoading(false);
+    }
+  }, [lastFetchTime, getAllImages]);
+
+  useEffect(() => {
+    fetchImages();
+  }, [fetchImages]);
 
   const yearlyData = [
     {
       year: 2024,
       theme: "Tech Revolution",
       participants: 8500,
-      images: Images2024,
       highlights: [
         "First RFID timing",
         "Live streaming",
@@ -28,7 +49,6 @@ const MemoriesSection = () => {
       year: 2023,
       theme: "Green Marathon",
       participants: 7200,
-      images: Images2023,
       highlights: [
         "Zero waste initiative",
         "Eco medals",
@@ -42,7 +62,6 @@ const MemoriesSection = () => {
       year: 2022,
       theme: "Unity Run",
       participants: 6800,
-      images: Images2022,
       highlights: [
         "International runners",
         "Virtual participation",
@@ -56,7 +75,6 @@ const MemoriesSection = () => {
       year: 2021,
       theme: "Resilience Run",
       participants: 5500,
-      images: [],
       highlights: [
         "COVID protocols",
         "Health screening",
@@ -70,7 +88,6 @@ const MemoriesSection = () => {
       year: 2020,
       theme: "Virtual Connect",
       participants: 4200,
-      images: [],
       highlights: [
         "First virtual marathon",
         "Mobile timing app",
@@ -84,7 +101,6 @@ const MemoriesSection = () => {
       year: 2019,
       theme: "Decade Complete",
       participants: 6500,
-      images: [],
       highlights: [
         "10th anniversary",
         "International participation",
@@ -98,7 +114,6 @@ const MemoriesSection = () => {
       year: 2018,
       theme: "Innovation Drive",
       participants: 5800,
-      images: [],
       highlights: [
         "Digital registration",
         "Chip timing",
@@ -112,7 +127,6 @@ const MemoriesSection = () => {
       year: 2017,
       theme: "River Heritage",
       participants: 5200,
-      images: [],
       highlights: [
         "Heritage route",
         "Cultural performances",
@@ -126,7 +140,6 @@ const MemoriesSection = () => {
       year: 2016,
       theme: "Fitness Focus",
       participants: 4800,
-      images: [],
       highlights: [
         "Health checkups",
         "Nutrition workshops",
@@ -140,7 +153,6 @@ const MemoriesSection = () => {
       year: 2015,
       theme: "Youth Power",
       participants: 4200,
-      images: [],
       highlights: [
         "School participation",
         "Youth categories",
@@ -154,7 +166,6 @@ const MemoriesSection = () => {
       year: 2014,
       theme: "Community Spirit",
       participants: 3800,
-      images: [],
       highlights: [
         "Local business support",
         "Village participation",
@@ -168,7 +179,6 @@ const MemoriesSection = () => {
       year: 2013,
       theme: "Growth Path",
       participants: 3200,
-      images: [],
       highlights: [
         "Increased categories",
         "Better organization",
@@ -182,7 +192,6 @@ const MemoriesSection = () => {
       year: 2012,
       theme: "Building Momentum",
       participants: 2800,
-      images: [],
       highlights: [
         "Professional timing",
         "Medal ceremonies",
@@ -196,7 +205,6 @@ const MemoriesSection = () => {
       year: 2011,
       theme: "Foundation Strength",
       participants: 2200,
-      images: [],
       highlights: [
         "Route optimization",
         "Volunteer training",
@@ -210,7 +218,6 @@ const MemoriesSection = () => {
       year: 2010,
       theme: "The Beginning",
       participants: 1500,
-      images: [],
       highlights: [
         "First marathon",
         "Vasco Sports Club initiative",
@@ -221,6 +228,30 @@ const MemoriesSection = () => {
       socialPosts: 150,
     },
   ];
+
+  // Memoize images by year to avoid recalculation
+  const imagesByYear = useMemo(() => {
+    if (!allImages) return {};
+
+    const grouped = {};
+    allImages.forEach((img) => {
+      const year = img.year;
+      if (!grouped[year]) {
+        grouped[year] = [];
+      }
+      grouped[year].push(img.metadata.url);
+    });
+
+    return grouped;
+  }, [allImages]);
+
+  // Merge yearly data with backend images - memoized
+  const mergedYearlyData = useMemo(() => {
+    return yearlyData.map((year) => ({
+      ...year,
+      images: imagesByYear[year.year.toString()] || [],
+    }));
+  }, [imagesByYear]);
 
   const openGallery = (year) => {
     setSelectedYear(year);
@@ -248,13 +279,28 @@ const MemoriesSection = () => {
     }
   };
 
+  if (loading) {
+    return (
+      <section className="py-24 bg-gradient-to-b from-background to-secondary/10">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center min-h-[400px]">
+            <div className="text-center">
+              <Loader2 className="w-12 h-12 animate-spin text-primary mx-auto mb-4" />
+              <p className="text-muted-foreground">Loading memories...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-24 bg-gradient-to-b from-background to-secondary/10">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Marathon Memories
             </span>
           </h2>
@@ -268,13 +314,13 @@ const MemoriesSection = () => {
         {/* Yearly Timeline */}
         <div className="space-y-12 mb-16">
           {Array.from(
-            { length: Math.ceil(yearlyData.length / 5) },
+            { length: Math.ceil(mergedYearlyData.length / 5) },
             (_, rowIndex) => (
               <div
                 key={rowIndex}
                 className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4"
               >
-                {yearlyData
+                {mergedYearlyData
                   .slice(rowIndex * 5, (rowIndex + 1) * 5)
                   .map((year) => (
                     <Card
