@@ -6,6 +6,7 @@ import {
   ArrowRight,
   Mail,
   Phone,
+  Loader2,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -25,6 +26,7 @@ import ifinishLogo from "@/assets/images/ifinish-logo.png";
 import originLogo from "@/assets/images/origin-logo.webp";
 import gatacaLogo from "@/assets/images/Gataca_logo.webp";
 import usanaLogo from "@/assets/images/USANA_logo_black.svg";
+import { useEmailStore } from "@/store/emailStore";
 const EnhancedSponsorsSection = () => {
   const { toast } = useToast();
   const [sponsorForm, setSponsorForm] = useState({
@@ -33,6 +35,8 @@ const EnhancedSponsorsSection = () => {
     company: "",
     message: "",
   });
+  const { sendEmail } = useEmailStore();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const realSponsors = {
     title: [
@@ -203,15 +207,61 @@ const EnhancedSponsorsSection = () => {
       ],
     },
   ];
+  const formatEmailBody = () => {
+    return `New Partnership Inquiry - SKF Goa River Marathon
 
-  const handleSponsorSubmit = (e: React.FormEvent) => {
+Contact Information:
+- Name: ${sponsorForm.name}
+- Email: ${sponsorForm.email}
+- Company/Organization: ${sponsorForm.company}
+
+Message:
+${sponsorForm.message || "No additional message provided."}
+
+---
+This email was automatically generated from the SKF Goa River Marathon partnership form.`;
+  };
+
+  const handleSponsorSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Sponsorship Inquiry Submitted!",
-      description:
-        "Thank you for your interest. Our partnerships team will contact you within 24 hours.",
-    });
-    setSponsorForm({ name: "", email: "", company: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      // Prepare email data
+      const emailData = {
+        client_email:
+          import.meta.env.VITE_DEFAULT_EMAIL ||
+          "support@skfgoarivermarathon.com",
+        subject: `Partnership Inquiry from ${sponsorForm.company} - ${sponsorForm.name}`,
+        body: formatEmailBody(),
+      };
+
+      // Send email using your email store
+      const result = await sendEmail(emailData);
+
+      if (result) {
+        toast({
+          title: "Sponsorship Inquiry Submitted!",
+          description:
+            "Thank you for your interest. Our partnerships team will contact you within 24 hours.",
+        });
+
+        // Reset form
+        setSponsorForm({ name: "", email: "", company: "", message: "" });
+      } else {
+        throw new Error("Failed to submit inquiry");
+      }
+    } catch (error) {
+      console.error("Partnership inquiry submission error:", error);
+      toast({
+        title: "Submission Failed",
+        description:
+          "There was an error submitting your inquiry. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -492,6 +542,7 @@ const EnhancedSponsorsSection = () => {
                     }))
                   }
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -507,6 +558,7 @@ const EnhancedSponsorsSection = () => {
                     }))
                   }
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -521,6 +573,7 @@ const EnhancedSponsorsSection = () => {
                     }))
                   }
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -536,10 +589,18 @@ const EnhancedSponsorsSection = () => {
                   }
                   rows={3}
                   placeholder="Tell us about your sponsorship interests..."
+                  disabled={isSubmitting}
                 />
               </div>
-              <Button type="submit" className="w-full">
-                Send Partnership Inquiry
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  "Send Partnership Inquiry"
+                )}
               </Button>
             </form>
           </Card>
