@@ -31,6 +31,7 @@ import { Badge } from "@/components/ui/badge";
 import { Building2, Mail, Phone, Globe, Trophy, Heart } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { useEmailStore } from "@/store/emailStore";
 
 const sponsorshipSchema = z.object({
   companyName: z
@@ -91,6 +92,7 @@ const Sponsorship = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [showOtherField, setShowOtherField] = useState(false);
   const { toast } = useToast();
+  const { sendEmail } = useEmailStore();
 
   const form = useForm<SponsorshipFormData>({
     resolver: zodResolver(sponsorshipSchema),
@@ -120,26 +122,72 @@ const Sponsorship = () => {
     form.setValue("sponsorshipCategories", updatedCategories);
   };
 
+  const formatEmailBody = (data: SponsorshipFormData) => {
+    const categories = data.sponsorshipCategories.join(", ");
+    const otherCategoryText = data.otherCategory
+      ? `\nOther Category Details: ${data.otherCategory}`
+      : "";
+    const websiteText = data.website ? `\nWebsite: ${data.website}` : "";
+    const additionalInfoText = data.additionalInfo
+      ? `\n\nAdditional Information:\n${data.additionalInfo}`
+      : "";
+
+    return `New Sponsorship Request for SKF Goa River Marathon
+
+Company Information:
+- Company Name: ${data.companyName}
+- Contact Person: ${data.contactPerson}
+- Email: ${data.email}
+- Phone: ${data.phone}${websiteText}
+
+Sponsorship Details:
+- Categories: ${categories}${otherCategoryText}
+- Budget Range: ${data.amountRange}${additionalInfoText}
+
+---
+This email was automatically generated from the SKF Goa River Marathon sponsorship form.`;
+  };
+
   const onSubmit = async (data: SponsorshipFormData) => {
     setIsSubmitting(true);
 
     try {
-      // Here you would typically send the data to your backend/API
-      console.log("Sponsorship form data:", data);
+      // Format the email data
+      const emailData = {
+        client_email:
+          import.meta.env.VITE_DEFAULT_EMAIL ||
+          "support@skfgoarivermarathon.com",
+        subject: `Sponsorship Request from ${data.companyName} - SKF Goa River Marathon`,
+        body: formatEmailBody(data),
+      };
 
-      toast({
-        title: "Thank you for your interest!",
-        description:
-          "We'll review your sponsorship request and get back to you within 2-3 business days.",
-      });
+      // Send email
+      const result = await sendEmail(emailData);
 
-      form.reset();
-      setSelectedCategories([]);
-      setShowOtherField(false);
+      if (result) {
+        toast({
+          title: "Thank you for your interest!",
+          description:
+            "We've received your sponsorship request and will get back to you within 2-3 business days.",
+        });
+
+        // Reset form
+        form.reset();
+        setSelectedCategories([]);
+        setShowOtherField(false);
+      } else {
+        toast({
+          title: "Submission Error",
+          description:
+            "Failed to submit your sponsorship request. Please try again.",
+          variant: "destructive",
+        });
+      }
     } catch (error) {
+      console.error("Sponsorship submission error:", error);
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again.",
+        description: "Something went wrong. Please try again later.",
         variant: "destructive",
       });
     } finally {
