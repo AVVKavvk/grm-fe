@@ -22,9 +22,11 @@ import {
   Loader2,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useEmailStore } from "@/store/emailStore";
 
 const ContactFormsSection = () => {
   const { toast } = useToast();
+  const { sendEmail } = useEmailStore();
   const [activeForm, setActiveForm] = useState("general");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
@@ -64,80 +66,6 @@ const ContactFormsSection = () => {
     };
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!recaptchaLoaded) {
-      toast({
-        title: "Error",
-        description: "reCAPTCHA not loaded yet. Please try again.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const token = await (window as any).grecaptcha.execute(
-        "6LfX4NsrAAAAAEgmJaY9hCBEoF3by5k6sRNl-Rfq",
-        { action: "submit_contact_form" }
-      );
-      // Prepare email data
-      const emailData = {
-        to: "support@skfgoarivermarathon.com",
-        subject: `${getFormTitle(activeForm)} - ${formData.name}`,
-        formType: activeForm,
-        ...formData,
-      };
-
-      // Send to your backend API endpoint
-      // const response = await fetch("/api/contact", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(emailData),
-      // });
-
-      // if (response.ok) {
-      //   toast({
-      //     title: "Form Submitted Successfully!",
-      //     description:
-      //       "Thank you for your inquiry. We'll get back to you within 24 hours.",
-      //   });
-
-      //   // Reset form
-      //   setFormData({
-      //     name: "",
-      //     email: "",
-      //     phone: "",
-      //     company: "",
-      //     message: "",
-      //     category: "",
-      //     budget: "",
-      //     eventType: "",
-      //     volunteerArea: "",
-      //     availability: "",
-      //   });
-
-      //   // Reset reCAPTCHA
-      //   (window as any).grecaptcha?.reset();
-      // } else {
-      //   throw new Error("Failed to submit form");
-      // }
-    } catch (error) {
-      toast({
-        title: "Submission Failed",
-        description:
-          "There was an error submitting your form. Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   const getFormTitle = (formType: string) => {
     const titles: { [key: string]: string } = {
       general: "General Inquiry",
@@ -147,6 +75,136 @@ const ContactFormsSection = () => {
       volunteer: "Volunteer Application",
     };
     return titles[formType] || "Contact Form";
+  };
+
+  const formatEmailBody = () => {
+    const formTypeTitle = getFormTitle(activeForm);
+    let emailBody = `New ${formTypeTitle} Submission\n\n`;
+    emailBody += `Contact Information:\n`;
+    emailBody += `- Name: ${formData.name}\n`;
+    emailBody += `- Email: ${formData.email}\n`;
+
+    if (formData.phone) {
+      emailBody += `- Phone: ${formData.phone}\n`;
+    }
+
+    if (
+      formData.company &&
+      (activeForm === "sponsor" || activeForm === "vendor")
+    ) {
+      emailBody += `- Company/Organization: ${formData.company}\n`;
+    }
+
+    emailBody += `\n`;
+
+    // Add form-specific details
+    if (activeForm === "sponsor") {
+      if (formData.category) {
+        emailBody += `Sponsorship Details:\n`;
+        emailBody += `- Category: ${formData.category}\n`;
+      }
+      if (formData.budget) {
+        emailBody += `- Budget Range: ${formData.budget}\n`;
+      }
+      emailBody += `\n`;
+    }
+
+    if (activeForm === "group" && formData.eventType) {
+      emailBody += `Group Details:\n`;
+      emailBody += `- Group Type: ${formData.eventType}\n\n`;
+    }
+
+    if (activeForm === "volunteer") {
+      if (formData.volunteerArea) {
+        emailBody += `Volunteer Preferences:\n`;
+        emailBody += `- Preferred Area: ${formData.volunteerArea}\n`;
+      }
+      if (formData.availability) {
+        emailBody += `- Availability: ${formData.availability}\n`;
+      }
+      emailBody += `\n`;
+    }
+
+    emailBody += `Message:\n${formData.message}\n\n`;
+    emailBody += `---\n`;
+    emailBody += `This email was automatically generated from the SKF Goa River Marathon contact form.\n`;
+    emailBody += `Form Type: ${formTypeTitle}`;
+
+    return emailBody;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // if (!recaptchaLoaded) {
+    //   toast({
+    //     title: "Error",
+    //     description: "reCAPTCHA not loaded yet. Please try again.",
+    //     variant: "destructive",
+    //   });
+    //   return;
+    // }
+
+    setIsSubmitting(true);
+
+    try {
+      // Execute reCAPTCHA
+      // const token = await (window as any).grecaptcha.execute(
+      //   "6LfX4NsrAAAAAEgmJaY9hCBEoF3by5k6sRNl-Rfq",
+      //   { action: "submit_contact_form" }
+      // );
+
+      // console.log("reCAPTCHA token obtained:", token);
+
+      // Prepare email data
+      const emailData = {
+        client_email:
+          import.meta.env.VITE_DEFAULT_EMAIL ||
+          "support@skfgoarivermarathon.com",
+        subject: `${getFormTitle(activeForm)} - ${formData.name}`,
+        body: formatEmailBody(),
+      };
+
+      // Send email using your email store
+      const result = await sendEmail(emailData);
+
+      if (result) {
+        toast({
+          title: "Form Submitted Successfully!",
+          description:
+            "Thank you for your inquiry. We'll get back to you within 24 hours.",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+          category: "",
+          budget: "",
+          eventType: "",
+          volunteerArea: "",
+          availability: "",
+        });
+
+        // Reset reCAPTCHA
+        // (window as any).grecaptcha?.reset();
+      } else {
+        throw new Error("Failed to submit form");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission Failed",
+        description:
+          "There was an error submitting your form. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -319,6 +377,7 @@ const ContactFormsSection = () => {
                         onValueChange={(value) =>
                           handleInputChange("category", value)
                         }
+                        value={formData.category}
                       >
                         <SelectTrigger className="mt-2">
                           <SelectValue placeholder="Select category" />
@@ -340,6 +399,7 @@ const ContactFormsSection = () => {
                         onValueChange={(value) =>
                           handleInputChange("budget", value)
                         }
+                        value={formData.budget}
                       >
                         <SelectTrigger className="mt-2">
                           <SelectValue placeholder="Select budget range" />
@@ -362,6 +422,7 @@ const ContactFormsSection = () => {
                       onValueChange={(value) =>
                         handleInputChange("eventType", value)
                       }
+                      value={formData.eventType}
                     >
                       <SelectTrigger className="mt-2">
                         <SelectValue placeholder="Select group type" />
@@ -391,6 +452,7 @@ const ContactFormsSection = () => {
                         onValueChange={(value) =>
                           handleInputChange("volunteerArea", value)
                         }
+                        value={formData.volunteerArea}
                       >
                         <SelectTrigger className="mt-2">
                           <SelectValue placeholder="Select area" />
@@ -427,6 +489,7 @@ const ContactFormsSection = () => {
                         onValueChange={(value) =>
                           handleInputChange("availability", value)
                         }
+                        value={formData.availability}
                       >
                         <SelectTrigger className="mt-2">
                           <SelectValue placeholder="Select availability" />
@@ -464,14 +527,6 @@ const ContactFormsSection = () => {
                     placeholder="Tell us more about your inquiry..."
                   />
                 </div>
-
-                {/* Google reCAPTCHA */}
-                {/* <div className="flex justify-center">
-                  <div
-                    className="g-recaptcha"
-                    data-sitekey="6LfX4NsrAAAAAEgmJaY9hCBEoF3by5k6sRNl-Rfq"
-                  ></div>
-                </div> */}
 
                 <Button
                   type="submit"
