@@ -172,20 +172,20 @@ This email was automatically generated from the SKF Goa River Marathon sponsorsh
         setSelectedCategories([]);
         setShowOtherField(false);
       } else {
-        toast({
-          title: "Submission Error",
-          description:
-            "Failed to submit your sponsorship request. Please try again.",
-          variant: "destructive",
-        });
+        //   toast({
+        //     title: "Submission Error",
+        //     description:
+        //       "Failed to submit your sponsorship request. Please try again.",
+        //     variant: "destructive",
+        //   });
       }
     } catch (error) {
       console.error("Sponsorship submission error:", error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again later.",
-        variant: "destructive",
-      });
+      // toast({
+      //   title: "Error",
+      //   description: "Something went wrong. Please try again later.",
+      //   variant: "destructive",
+      // });
     } finally {
       setIsSubmitting(false);
     }
