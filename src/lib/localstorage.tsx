@@ -31,7 +31,7 @@ export const getSourceConfig = (source: string) => {
     case "playo":
       return {
         name: "Playo",
-        redirectUrl: "https://playo.co/",
+        redirectUrl: "http://go.playo.app/PLAYOO/IzFCk",
         carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
       };
     case "burraa":

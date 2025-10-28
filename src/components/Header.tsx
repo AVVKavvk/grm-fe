@@ -18,7 +18,7 @@ const Header = () => {
     { link: "/memories", label: "Gallery" },
     { link: "/contact-us", label: "Contact Us" },
     // { link: "/technology", label: "Technology" },
-    { link: "/shop", label: "Shop (Coming Soon)" },
+    { link: "/shop", label: "Shop" },
     { link: "/faq", label: "FAQ" },
   ];
 

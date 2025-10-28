@@ -2,8 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShoppingCart, Star, Truck, Shield, Heart } from "lucide-react";
 import CracoMerchandiseSection from "./CracoMerchandiseSection";
+import { useEffect } from "react";
 
 const ShopSection = () => {
+  useEffect(() => {
+    window.location.href = "https://goarivermarathon.com/Shop/";
+  }, []);
+  return <></>;
   const featuredProducts = [
     {
       name: "Craco Limited Edition T-Shirt",
