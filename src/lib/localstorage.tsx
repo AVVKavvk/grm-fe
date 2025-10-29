@@ -62,7 +62,7 @@ export const getSourceConfig = (source: string) => {
     default:
       return {
         name: "Direct",
-        redirectUrl: "https://www.ifinish.in/running/SKF2025",
+        redirectUrl: "https://www.burraa.com/activities/skf-goa-river-marathon-2025",
         carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
       };
   }
