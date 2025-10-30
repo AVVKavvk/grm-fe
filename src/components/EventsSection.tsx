@@ -381,7 +381,6 @@ const EventsSection = () => {
                       "Meet fellow runners",
                       "Race day briefing by experts",
                       "Craco's nutrition workshop",
-                      "Cash-free event* (Purchase card required)",
                     ].map((highlight, idx) => (
                       <div key={idx} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
@@ -390,6 +389,18 @@ const EventsSection = () => {
                         </span>
                       </div>
                     ))}
+                  </div>
+                  <div className="flex items-start gap-2 mt-2">
+                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground flex items-center gap-1">
+                      Cash-free event* (Purchase card required)
+                      <span
+                        className="inline-flex items-center justify-center w-4 h-4 text-xs bg-primary/20 text-primary rounded-full cursor-help"
+                        title="Includes ₹400 redeemable credits, additional purchase by reloading card/band at top-up counters."
+                      >
+                        i
+                      </span>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -586,7 +597,6 @@ const EventsSection = () => {
                       "Flavorful Cocktails",
                       "Ice Bath Zone",
                       "Food from best chefs",
-                      "Cash-free event* (Purchase card required)",
                     ].map((highlight, idx) => (
                       <div key={idx} className="flex items-start gap-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
@@ -595,6 +605,18 @@ const EventsSection = () => {
                         </span>
                       </div>
                     ))}
+                  </div>
+                  <div className="flex items-start gap-2 mt-2">
+                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground flex items-center gap-1">
+                      Cash-free event* (Purchase card required)
+                      <span
+                        className="inline-flex items-center justify-center w-4 h-4 text-xs bg-primary/20 text-primary rounded-full cursor-help"
+                        title="Includes ₹700 redeemable credits, additional purchase by reloading card/band at top-up counters."
+                      >
+                        i
+                      </span>
+                    </span>
                   </div>
                 </div>
               </div>
