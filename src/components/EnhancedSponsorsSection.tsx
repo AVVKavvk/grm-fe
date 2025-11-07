@@ -107,14 +107,14 @@ const EnhancedSponsorsSection = () => {
         website: "https://www.playo.co",
         isImage: true,
       },
-      // {
-      //   name: "District",
-      //   logo: districtLogo,
-      //   tier: "Registration Sponsor",
-      //   description: "Athletic performance and training platform",
-      //   website: "https://www.district.in/",
-      //   isImage: true,
-      // },
+      {
+        name: "District",
+        logo: districtLogo,
+        tier: "Registration Sponsor",
+        description: "Athletic performance and training platform",
+        website: "https://www.district.in/",
+        isImage: true,
+      },
 
       {
         name: "Book My Show",
