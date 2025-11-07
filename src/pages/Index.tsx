@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Sponsorship from "@/components/Sponsorship";
 import { Button } from "@/components/ui/button";
 import { GetRegisterButton } from "@/lib/localstorage";
+import ServicesSection from "@/components/ServicesSection";
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
       <MascotSection />
       {/* <RaceRouteSection /> */}
       {/* <MemorySection /> */}
+      <ServicesSection />
       <TestimonialsSection />
       {/* <AnalyticsSection /> */}
       <SocialMediaSection />

@@ -35,10 +35,15 @@ const Hero = () => {
           </h1>
 
           {/* Vasco Sports Club Badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/10 text-red-500 px-4 py-2 rounded-full mb-10">
+          <div className="inline-flex flex-col justify-center  gap-2 text-red-500 px-4 py-2 rounded-full mb-10">
             <span className="text-sm font-medium">
               Run the River. Feel the Festival
             </span>
+
+            <div className="font-bold flex gap-2 items-center justify-between text-red-500 text-3xl">
+              {/* <Calendar className="w-7 h-7 text-red-500" /> */}
+              <span>December 14th, Sunday</span>
+            </div>
           </div>
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-800 mb-8 max-w-2xl leading-relaxed">

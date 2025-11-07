@@ -20,32 +20,33 @@ export const getSourceConfig = (source: string) => {
       return {
         name: "Zomato",
         redirectUrl: "https://www.zomato.com",
-        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
+        carbLoadingLink: "https://www.zomato.com",
       };
     case "swiggy":
       return {
         name: "Swiggy",
         redirectUrl: "https://www.swiggy.com/",
-        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
+        carbLoadingLink: "https://www.swiggy.com/",
       };
     case "playo":
       return {
         name: "Playo",
         redirectUrl: "http://go.playo.app/PLAYOO/IzFCk",
-        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
+        carbLoadingLink: "http://go.playo.app/PLAYOO/IzFCk",
       };
     case "burraa":
       return {
         name: "Burraa",
         redirectUrl:
           "https://www.burraa.com/activities/skf-goa-river-marathon-2025",
-        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
+        carbLoadingLink:
+          "https://www.burraa.com/activities/skf-goa-river-marathon-2025",
       };
     case "hudle":
       return {
         name: "Hudle",
         redirectUrl: "https://hudle.in/events/goa-river-marathon/649260",
-        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
+        carbLoadingLink: "https://hudle.in/events/goa-river-marathon/649260",
       };
     case "ifinish":
       return {
@@ -57,13 +58,15 @@ export const getSourceConfig = (source: string) => {
       return {
         name: "District",
         redirectUrl: "https://www.district.in/",
-        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
+        carbLoadingLink: "https://www.district.in/",
       };
     default:
       return {
         name: "Direct",
-        redirectUrl: "https://www.burraa.com/activities/skf-goa-river-marathon-2025",
-        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
+        redirectUrl:
+          "https://www.burraa.com/activities/skf-goa-river-marathon-2025",
+        carbLoadingLink:
+          "https://www.burraa.com/activities/skf-goa-river-marathon-2025",
       };
   }
 };
@@ -101,6 +104,18 @@ export const GetRegisterButtonForCarbLoadingFiesta = () => {
     <a href={sourceConfig.carbLoadingLink} target="_blank">
       <Button variant="cta" size="lg">
         Register for Carb Loading Fiesta
+      </Button>
+    </a>
+  );
+};
+export const GetRegisterButtonForPackageDeal = () => {
+  const source = getSource() || "direct";
+  const sourceConfig = getSourceConfig(source);
+
+  return (
+    <a href={sourceConfig.carbLoadingLink} target="_blank">
+      <Button variant="cta" size="lg">
+        Get Party Package Deal
       </Button>
     </a>
   );

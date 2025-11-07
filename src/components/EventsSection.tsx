@@ -25,6 +25,7 @@ import {
   GetRegisterButton,
   GetRegisterButtonForCarbLoadingFiesta,
   GetRegisterButtonForEvent,
+  GetRegisterButtonForPackageDeal,
   GetRegisterButtonForRecoveryRave,
 } from "@/lib/localstorage";
 import FestiveEventsBanner from "./FestiveEventsBanner";
@@ -331,16 +332,16 @@ const EventsSection = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    <span>5:00 PM - 8:00 PM</span>
+                    <span>6:00 PM - 9:00 PM</span>
                   </div>
                   <a
-                    href="https://maps.app.goo.gl/GyFPPhbDonhNZRaD9"
+                    href="https://maps.app.goo.gl/XbfczAwVL6tRzrN56"
                     target="_blank"
                     title="Location"
                   >
                     <div className="flex items-center gap-2 hover:text-blue-500">
                       <MapPin className="w-4 h-4" />
-                      <span>Chicalim Panchayat Ground</span>
+                      <span>Hotel HQ, Vasco</span>
                     </div>
                   </a>
                 </div>
@@ -390,7 +391,7 @@ const EventsSection = () => {
                       </div>
                     ))}
                   </div>
-                  <div className="flex items-start gap-2 mt-2">
+                  {/* <div className="flex items-start gap-2 mt-2">
                     <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-muted-foreground flex items-center gap-1">
                       Cash-free event* (Purchase card required)
@@ -401,7 +402,7 @@ const EventsSection = () => {
                         i
                       </span>
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -684,18 +685,7 @@ const EventsSection = () => {
                   </div>
                 </div>
               </div>
-              <a
-                href="https://www.ifinish.in/entertainment/skfppa"
-                target="_blank"
-              >
-                <Button
-                  variant="hero"
-                  size="lg"
-                  className="bg-background text-foreground hover:bg-background/90"
-                >
-                  Get Party Package Deal
-                </Button>
-              </a>
+              <GetRegisterButtonForPackageDeal />
               <p className="text-primary-foreground/70 text-sm mt-4">
                 Perfect for the complete marathon weekend experience
               </p>
