@@ -15,18 +15,35 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import vascoLogo from "@/assets/vasco-sports-club-logo.jpg";
-import skfLogo from "@/assets/SKF_logotype_black_RGB.png";
-import hudleLogo from "@/assets/hudle_logo.webp";
-import burraLogo from "@/assets/images/burraa-logo.png";
+import vascoLogo from "@/assets/Logo/VascoSportsClub.png";
+import skfLogo from "@/assets//Logo/SKF.png";
+import hudleLogo from "@/assets/Logo/Hudle.png";
+import burraLogo from "@/assets/Logo/Burraa.png";
 import playoLogo from "@/assets/images/playo-logo.png";
-import districtLogo from "@/assets/images/ditrict-logo.jpg";
-import bmsLogo from "@/assets/images/bms.jpg";
-import ifinishLogo from "@/assets/images/ifinish-logo.png";
-import originLogo from "@/assets/images/origin-logo.webp";
-import gatacaLogo from "@/assets/images/Gataca_logo.webp";
-import usanaLogo from "@/assets/images/USANA_logo_black.svg";
+import districtLogo from "@/assets/Logo/District.avif";
+import bmsLogo from "@/assets/Logo/BMS.png";
+import ifinishLogo from "@/assets/Logo/iFinish.png";
+import originLogo from "@/assets/Logo/Origin.png";
+import gatacaLogo from "@/assets/Logo/gataca.webp";
+import usanaLogo from "@/assets/Logo/Usana.png";
+import sport1919Logo from "@/assets/Logo/Sport.jpg";
+import zanduLogo from "@/assets/Logo/Zandu.jpeg";
+import fastAndUpLogo from "@/assets/Logo/Fast-up.png";
+import victorHospitalLogo from "@/assets/Logo/VictorHospital.png";
+import timingLogo from "@/assets/Logo/timing.png";
+import AddCityLogo from "@/assets/Logo/Ad-City.png";
+import royalAquvaGlobalLogo from "@/assets/Logo/RoyalAquaGlobal.jpg";
+import teachersLogo from "@/assets/Logo/Teachers.png";
+import goaBrewingLogo from "@/assets/Logo/Goa-Brewing-Co.png";
+import curamosLogo from "@/assets/Logo/Curamos.png";
+import AWMMLogo from "@/assets/Logo/Abbot-World-Marathon.png";
+import AIMSLogo from "@/assets/Logo/AIMS.png";
+import GoaTorisumLogo from "@/assets/Logo/Goa-Tourism.png";
+import GCCILogo from "@/assets/Logo/GCCI.png";
+import RotaryLogo from "@/assets/Logo/Rotary.png";
+
 import { useEmailStore } from "@/store/emailStore";
+
 const EnhancedSponsorsSection = () => {
   const { toast } = useToast();
   const [sponsorForm, setSponsorForm] = useState({
@@ -46,26 +63,44 @@ const EnhancedSponsorsSection = () => {
         tier: "Title Sponsor",
         description:
           "Global technology leader in bearings and industrial solutions",
-        website: "skf.com",
+        website: "https://www.skf.com",
+        isImage: true,
+      },
+    ],
+    featured: [
+      {
+        name: "Zandu",
+        logo: zanduLogo,
+        tier: "Pain Relief Partner",
+        description: "Trusted healthcare and pain management solutions",
+        website: "https://zanducare.com/",
+        isImage: true,
+      },
+      {
+        name: "1919 Sportz",
+        logo: sport1919Logo,
+        tier: "Sports Partner",
+        description: "Premium sports equipment and athletic gear",
+        website: "#",
         isImage: true,
       },
     ],
     platinum: [
       {
         name: "Fast & Up",
-        logo: "⚡",
+        logo: fastAndUpLogo,
         tier: "Energy Partner",
         description: "Premium sports nutrition and wellness brand",
       },
       {
         name: "Victor Hospital",
-        logo: "🏥",
+        logo: victorHospitalLogo,
         tier: "Medical Partner",
         description: "Leading healthcare provider ensuring runner safety",
       },
       {
         name: "Timing Technologies",
-        logo: "⏱️",
+        logo: timingLogo,
         tier: "Timing Partner",
         description: "Professional race timing and chip technology",
       },
@@ -73,71 +108,76 @@ const EnhancedSponsorsSection = () => {
     gold: [
       {
         name: "Ad City",
-        logo: "📢",
+        logo: AddCityLogo,
         tier: "Outdoor Media Partner",
         description: "Creative advertising and media solutions",
       },
       {
         name: "Royal Aqua Global",
-        logo: "💧",
+        logo: royalAquvaGlobalLogo,
         tier: "Hydration Partner",
         description: "Premium water solutions for hydration stations",
       },
       {
+        name: "Teachers",
+        logo: teachersLogo,
+        tier: "Official Water Partner",
+        description: "Premium packaged drinking water",
+      },
+      {
         name: "Goa Brewing Co.",
-        logo: "🍺",
-        tier: "Celebration Partner",
+        logo: goaBrewingLogo,
+        tier: "Beverage Partner",
         description: "Local craft brewery for post-race celebrations",
       },
     ],
     registration: [
       {
-        name: "Burra",
-        logo: burraLogo,
-        tier: "Registration Sponsor",
-        description: "Running and fitness community platform",
-        website: "https://www.burraa.com/",
-        isImage: true,
-      },
-      {
-        name: "Playo",
-        logo: playoLogo,
-        tier: "Registration Sponsor",
-        description: "Sports venue booking and community platform",
-        website: "https://www.playo.co",
-        isImage: true,
-      },
-      {
-        name: "District",
-        logo: districtLogo,
-        tier: "Registration Sponsor",
-        description: "Athletic performance and training platform",
-        website: "https://www.district.in/",
-        isImage: true,
-      },
-
-      {
-        name: "Book My Show",
-        logo: bmsLogo,
-        tier: "Registration Sponsor",
-        description: "Event ticketing and registration platform",
-        website: "https://in.bookmyshow.com",
-        isImage: true,
-      },
-      {
         name: "IFinish",
         logo: ifinishLogo,
-        tier: "Registration Sponsor",
+        tier: "Registration Partner",
         description: "Marathon timing and event management services",
         website: "https://www.ifinish.in",
         isImage: true,
       },
       {
+        name: "Burraa",
+        logo: burraLogo,
+        tier: "Celebration Partner",
+        description: "Running and fitness community platform",
+        website: "https://www.burraa.com/",
+        isImage: true,
+      },
+      {
         name: "Hudle",
         logo: hudleLogo,
-        tier: "Registration Sponsor",
+        tier: "Technology Partner",
         description: "Athletic performance and training platform",
         website: "https://www.hudle.in/",
+        isImage: true,
+      },
+      {
+        name: "Playo",
+        logo: playoLogo,
+        tier: "Platform Partner",
+        description: "Sports venue booking and community platform",
+        website: "https://www.playo.co",
+        isImage: true,
+      },
+      {
+        name: "Book My Show",
+        logo: bmsLogo,
+        tier: "Going Out Partner",
+        description: "Event ticketing and registration platform",
+        website: "https://in.bookmyshow.com",
+        isImage: true,
+      },
+      {
+        name: "District by Zomato",
+        logo: districtLogo,
+        tier: "Engagement Partner",
+        description: "Social dining and entertainment experiences",
+        website: "https://www.district.in/",
         isImage: true,
       },
     ],
@@ -153,7 +193,7 @@ const EnhancedSponsorsSection = () => {
       {
         name: "Gataca",
         logo: gatacaLogo,
-        tier: "Wellness Sponsor",
+        tier: "Nutrition Sponsor",
         description: "Sports nutrition and supplements",
         website: "https://gataca.in/",
         isImage: true,
@@ -161,52 +201,66 @@ const EnhancedSponsorsSection = () => {
       {
         name: "Usana",
         logo: usanaLogo,
-        tier: "Wellness Sponsor",
+        tier: "Performance Nutrition Partner",
         description: "Premium nutritional supplements and wellness products",
         website: "https://www.usana.com",
         isImage: true,
       },
+      {
+        name: "Curamos",
+        logo: curamosLogo,
+        tier: "Physiotherapy Partners",
+        description: "Professional physiotherapy and sports recovery",
+        website: "#",
+      },
+    ],
+    institutional: [
+      {
+        name: "Abbott World Marathon Majors",
+        logo: AWMMLogo,
+        tier: "International Marathon Alliance Partner",
+        description: "Global marathon series partnership",
+        website: "#",
+      },
+      {
+        name: "AIMS",
+        logo: AIMSLogo,
+        tier: "Accreditation Partner",
+        description:
+          "Association of International Marathons and Distance Races",
+        website: "#",
+      },
+      {
+        name: "Goa Tourism",
+        logo: GoaTorisumLogo,
+        tier: "Tourism Partner",
+        description: "Official tourism promotion partner",
+        website: "#",
+      },
+      {
+        name: "GCCI",
+        logo: GCCILogo,
+        tier: "Industry Partner",
+        description: "Goa Chamber of Commerce & Industry",
+        website: "#",
+      },
+      {
+        name: "Rotary Club of Vasco Port Town",
+        logo: RotaryLogo,
+        tier: "Community Partner",
+        description: "Local community service organization",
+        website: "#",
+      },
+      {
+        name: "Vasco Sports Club",
+        logo: vascoLogo,
+        tier: "Sports Partner",
+        description: "Premier local sports facility and community hub",
+        website: "#",
+        isImage: true,
+      },
     ],
   };
-
-  const sponsorshipBenefits = [
-    {
-      category: "Title Sponsor",
-      price: "₹25+ Lakhs",
-      benefits: [
-        "Primary logo on all marathon materials",
-        "Naming rights to the event",
-        "Exclusive hospitality tent",
-        "50 complimentary entries",
-        "Year-round brand association",
-        "Media coverage and PR opportunities",
-      ],
-    },
-    {
-      category: "Platinum Partner",
-      price: "₹10-25 Lakhs",
-      benefits: [
-        "Premium logo placement",
-        "Dedicated booth space",
-        "25 complimentary entries",
-        "Social media promotion",
-        "Newsletter mentions",
-        "Runner engagement activities",
-      ],
-    },
-    {
-      category: "Gold Partner",
-      price: "₹5-10 Lakhs",
-      benefits: [
-        "Logo on race materials",
-        "Booth space allocation",
-        "10 complimentary entries",
-        "Digital promotion",
-        "Certificate of partnership",
-        "Networking opportunities",
-      ],
-    },
-  ];
   const formatEmailBody = () => {
     return `New Partnership Inquiry - SKF Goa River Marathon
 
@@ -283,16 +337,17 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           </p>
         </div>
 
-        {/* Title Sponsors */}
+        {/* Title Sponsor */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
-            Title Sponsors
+            Title Sponsor
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-4xl mx-auto">
             {realSponsors.title.map((sponsor, index) => (
               <a
-                href="https://www.skf.com/"
+                href={sponsor.website}
                 target="_blank"
+                rel="noopener noreferrer"
                 key={index}
                 className="bg-card p-8 rounded-xl border-2 border-primary/20 shadow-strong hover:shadow-elegant transition-smooth text-center group"
               >
@@ -322,6 +377,47 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           </div>
         </div>
 
+        {/* Featured Partners */}
+
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
+            Featured Partners
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {realSponsors.featured.map((sponsor, index) => (
+              <a
+                href={sponsor.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={index}
+                className="bg-card p-6 rounded-xl border border-primary/20 shadow-medium hover:shadow-strong transition-smooth text-center group"
+              >
+                <div className="mb-4 group-hover:scale-110 transition-transform">
+                  {sponsor.isImage ? (
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="w-32 mx-auto object-contain rounded-lg"
+                    />
+                  ) : (
+                    <div className="text-5xl">{sponsor.logo}</div>
+                  )}
+                </div>
+                <h4 className="text-xl font-bold text-foreground mb-2">
+                  {sponsor.name}
+                </h4>
+                <p className="text-sm text-muted-foreground mb-3">
+                  {sponsor.description}
+                </p>
+                <div className="inline-flex items-center gap-1 bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold">
+                  <Star className="w-3 h-3" />
+                  {sponsor.tier}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Platinum Sponsors */}
         <div className="mb-16">
           <h3 className="text-xl font-bold text-center mb-8 text-foreground">
@@ -334,7 +430,11 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                 className="bg-card p-6 rounded-xl border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
               >
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
-                  {sponsor.logo}
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="w-32 mx-auto object-contain rounded-lg"
+                  />
                 </div>
                 <h4 className="text-lg font-bold text-foreground mb-2">
                   {sponsor.name}
@@ -355,14 +455,18 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           <h3 className="text-lg font-bold text-center mb-8 text-foreground">
             Gold Partners
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {realSponsors.gold.map((sponsor, index) => (
               <div
                 key={index}
                 className="bg-card p-4 rounded-lg border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
               >
                 <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
-                  {sponsor.logo}
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="w-32 mx-auto object-contain rounded-lg"
+                  />
                 </div>
                 <h4 className="text-sm font-semibold text-foreground mb-1">
                   {sponsor.name}
@@ -377,16 +481,18 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
             ))}
           </div>
         </div>
-        {/* Registration Sponsors */}
+
+        {/* Registration & Platform Partners */}
         <div className="mb-16">
           <h3 className="text-lg font-bold text-center mb-8 text-foreground">
-            Registration Partners
+            Registration & Platform Partners
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {realSponsors.registration.map((sponsor, index) => (
               <a
                 href={sponsor.website}
                 target="_blank"
+                rel="noopener noreferrer"
                 key={index}
                 className="bg-card p-4 rounded-lg border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
               >
@@ -410,16 +516,18 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
             ))}
           </div>
         </div>
-        {/* Wellness Sponsors */}
+
+        {/* Wellness Partners */}
         <div className="mb-16">
           <h3 className="text-lg font-bold text-center mb-8 text-foreground">
-            Wellness Partners
+            Wellness & Nutrition Partners
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {realSponsors.wellness.map((sponsor, index) => (
               <a
                 href={sponsor.website}
                 target="_blank"
+                rel="noopener noreferrer"
                 key={index}
                 className="bg-card p-4 rounded-lg border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
               >
@@ -427,7 +535,42 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                   <img
                     src={sponsor.logo}
                     alt={sponsor.name}
-                    className="w-16 mx-auto object-contain rounded-lg"
+                    className="w-12 mx-auto object-contain rounded-lg"
+                  />
+                </div>
+                <h4 className="text-sm font-semibold text-foreground mb-1">
+                  {sponsor.name}
+                </h4>
+                <p className="text-xs text-muted-foreground mb-2">
+                  {sponsor.description}
+                </p>
+                <div className="text-xs text-muted-foreground">
+                  {sponsor.tier}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Institutional Partners */}
+        <div className="mb-16">
+          <h3 className="text-lg font-bold text-center mb-8 text-foreground">
+            Institutional & Community Partners
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {realSponsors.institutional.map((sponsor, index) => (
+              <a
+                href={sponsor.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={index}
+                className="bg-card p-4 rounded-lg border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
+              >
+                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="w-12 mx-auto object-contain rounded-lg"
                   />
                 </div>
                 <h4 className="text-sm font-semibold text-foreground mb-1">
