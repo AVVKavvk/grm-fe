@@ -25,6 +25,7 @@ const Footer = lazy(() => import("@/components/Footer"));
 const ChatBot = lazy(() => import("@/components/ChatBot"));
 const PricingFooter = lazy(() => import("@/components/PricingFooter"));
 const TermsConditions = lazy(() => import("@/components/TermsConditions"));
+const GettingThere = lazy(() => import("@/components/GettingThere"));
 
 const App = () => {
   const [showPersistentComponents, setShowPersistentComponents] =
@@ -71,6 +72,14 @@ const App = () => {
             element={
               <Suspense fallback={<Loader />}>
                 <Events />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/getting-there"
+            element={
+              <Suspense fallback={<Loader />}>
+                <GettingThere />
               </Suspense>
             }
           />
