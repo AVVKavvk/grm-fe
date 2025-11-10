@@ -22,7 +22,7 @@ const Index = () => {
       <MascotSection />
       {/* <RaceRouteSection /> */}
       {/* <MemorySection /> */}
-      <ServicesSection />
+      {/* <ServicesSection /> */}
       <TestimonialsSection />
       {/* <AnalyticsSection /> */}
       <SocialMediaSection />
