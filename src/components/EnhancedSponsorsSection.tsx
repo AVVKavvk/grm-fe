@@ -27,7 +27,7 @@ import originLogo from "@/assets/Logo/Origin.png";
 import gatacaLogo from "@/assets/Logo/gataca.webp";
 import usanaLogo from "@/assets/Logo/Usana.png";
 import sport1919Logo from "@/assets/Logo/Sport.jpg";
-import zanduLogo from "@/assets/Logo/Zandu.jpeg";
+import zanduLogo from "@/assets/Logo/zando-logo.jpeg";
 import fastAndUpLogo from "@/assets/Logo/Fast-up.png";
 import victorHospitalLogo from "@/assets/Logo/VictorHospital.png";
 import timingLogo from "@/assets/Logo/timing.png";
@@ -390,28 +390,30 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                 target="_blank"
                 rel="noopener noreferrer"
                 key={index}
-                className="bg-card p-6 rounded-xl border border-primary/20 shadow-medium hover:shadow-strong transition-smooth text-center group"
+                className="bg-card p-8 rounded-xl border border-primary/20 shadow-medium hover:shadow-strong transition-smooth text-center group flex flex-col items-center justify-between min-h-[320px]"
               >
-                <div className="mb-4 group-hover:scale-110 transition-transform">
+                <div className="flex-1 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   {sponsor.isImage ? (
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="w-32 mx-auto object-contain rounded-lg"
+                      className="w-40 h-32 object-contain rounded-lg"
                     />
                   ) : (
-                    <div className="text-5xl">{sponsor.logo}</div>
+                    <div className="text-6xl">{sponsor.logo}</div>
                   )}
                 </div>
-                <h4 className="text-xl font-bold text-foreground mb-2">
-                  {sponsor.name}
-                </h4>
-                <p className="text-sm text-muted-foreground mb-3">
-                  {sponsor.description}
-                </p>
-                <div className="inline-flex items-center gap-1 bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold">
-                  <Star className="w-3 h-3" />
-                  {sponsor.tier}
+                <div className="flex-shrink-0 space-y-3">
+                  <h4 className="text-xl font-bold text-foreground">
+                    {sponsor.name}
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    {sponsor.description}
+                  </p>
+                  <div className="inline-flex items-center gap-1 bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold">
+                    <Star className="w-3 h-3" />
+                    {sponsor.tier}
+                  </div>
                 </div>
               </a>
             ))}
