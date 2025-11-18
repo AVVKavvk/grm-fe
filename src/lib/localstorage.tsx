@@ -57,8 +57,18 @@ export const getSourceConfig = (source: string) => {
     case "district":
       return {
         name: "District",
-        redirectUrl: "https://www.district.in/",
-        carbLoadingLink: "https://www.district.in/",
+        redirectUrl:
+          "https://www.district.in/events/goa-river-marathon-2025-buy-tickets",
+        carbLoadingLink:
+          "https://www.district.in/events/goa-river-marathon-2025-buy-tickets",
+      };
+    case "bms":
+      return {
+        name: "BookMyShow",
+        redirectUrl:
+          "https://in.bookmyshow.com/sports/skf-goa-river-marathon-2025/ET00468714",
+        carbLoadingLink:
+          "https://in.bookmyshow.com/sports/skf-goa-river-marathon-2025/ET00468714",
       };
     default:
       return {
