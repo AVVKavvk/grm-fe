@@ -1,8 +1,20 @@
-import { Bus, Hotel } from "lucide-react";
+import { Bus, Hotel, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ServicesSection = () => {
   const hotels = {
+    featured: [
+      {
+        name: "Planet Hollywood",
+        description:
+          "Write to ados@planethollywoodgoa.com for exciting deals during your stay in Goa",
+      },
+      {
+        name: "The Fern Kesarval Hotel",
+        description:
+          "Please call +91-7796633402 or write to sales.fr.kesarval@fernhotels.com for exciting offers",
+      },
+    ],
     within5km: [
       "The HQ",
       "Hotel La Paz Gardens",
@@ -82,6 +94,27 @@ const ServicesSection = () => {
               Convenient accommodation options at various distances from the
               start point
             </p>
+
+            {/* Featured Hotels */}
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4 text-primary flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-yellow-500" />
+                Featured Hotels
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {hotels.featured.map((hotel, index) => (
+                  <div
+                    key={index}
+                    className="p-4 rounded-lg bg-primary/5 border border-primary/20 hover:border-primary/50 transition-colors"
+                  >
+                    <p className="font-bold text-lg mb-2">{hotel.name}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {hotel.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             {/* Within 5 kms */}
             <div className="mb-8">

@@ -1,5 +1,5 @@
 // src =  "https://www.google.com/maps/d/embed?mid=19zpso9toitORxUXrjYfA-ZvHjEVjakc&ehbc=2E312F";
-import { Bus, Hotel, Plane, Train, Car, MapPin } from "lucide-react";
+import { Bus, Hotel, Plane, Train, Car, MapPin, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const GettingThere = () => {
@@ -14,6 +14,45 @@ const GettingThere = () => {
   ];
 
   const hotels = {
+    featured: [
+      {
+        name: "Planet Hollywood",
+        content: (
+          <>
+            Write to{" "}
+            <a
+              href="mailto:ados@planethollywoodgoa.com"
+              className="text-primary font-medium hover:underline"
+            >
+              ados@planethollywoodgoa.com
+            </a>{" "}
+            for exciting deals during your stay in Goa
+          </>
+        ),
+      },
+      {
+        name: "The Fern Kesarval Hotel",
+        content: (
+          <>
+            Please call{" "}
+            <a
+              href="tel:+917796633402"
+              className="text-primary font-medium hover:underline"
+            >
+              +91-7796633402
+            </a>{" "}
+            or write to{" "}
+            <a
+              href="mailto:sales.fr.kesarval@fernhotels.com"
+              className="text-primary font-medium hover:underline"
+            >
+              sales.fr.kesarval@fernhotels.com
+            </a>{" "}
+            for exciting offers
+          </>
+        ),
+      },
+    ],
     within5km: [
       "The HQ",
       "Hotel La Paz Gardens",
@@ -180,6 +219,29 @@ const GettingThere = () => {
                 Convenient accommodation options at various distances from the
                 start point
               </p>
+
+              {/* Featured Hotels */}
+              <div className="mb-10">
+                <h3 className="text-2xl font-semibold mb-6 text-primary flex items-center gap-2">
+                  <Sparkles className="h-6 w-6 text-yellow-500" />
+                  Featured Hotels
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {hotels.featured.map((hotel, index) => (
+                    <div
+                      key={index}
+                      className="p-6 rounded-lg bg-primary/5 border border-primary/20 hover:border-primary/50 transition-all hover:shadow-md"
+                    >
+                      <p className="font-bold text-xl mb-3 text-primary/90">
+                        {hotel.name}
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {hotel.content}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               {/* Within 5 kms */}
               <div className="mb-10">
