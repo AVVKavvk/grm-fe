@@ -34,7 +34,7 @@ import timingLogo from "@/assets/Logo/timing.png";
 import AddCityLogo from "@/assets/Logo/Ad-City.png";
 import royalAquvaGlobalLogo from "@/assets/Logo/RoyalAquaGlobal.jpg";
 import teachersLogo from "@/assets/Logo/Teachers.png";
-import goaBrewingLogo from "@/assets/Logo/Goa-Brewing-Co.png";
+import kingfisher from "@/assets/Logo/kingfisherLogo.jpeg";
 import curamosLogo from "@/assets/Logo/Curamos.png";
 import AWMMLogo from "@/assets/Logo/Abbot-World-Marathon.png";
 import AIMSLogo from "@/assets/Logo/AIMS.png";
@@ -125,8 +125,8 @@ const EnhancedSponsorsSection = () => {
         description: "Premium packaged drinking water",
       },
       {
-        name: "Goa Brewing Co.",
-        logo: goaBrewingLogo,
+        name: "Kingfisher",
+        logo: kingfisher,
         tier: "Beverage Partner",
         description: "Local craft brewery for post-race celebrations",
       },
@@ -218,6 +218,7 @@ const EnhancedSponsorsSection = () => {
       {
         name: "Abbott World Marathon Majors",
         logo: AWMMLogo,
+        isBigLogo: false,
         tier: "International Marathon Alliance Partner",
         description: "Global marathon series partnership",
         website: "#",
@@ -225,6 +226,7 @@ const EnhancedSponsorsSection = () => {
       {
         name: "AIMS",
         logo: AIMSLogo,
+        isBigLogo: false,
         tier: "Accreditation Partner",
         description:
           "Association of International Marathons and Distance Races",
@@ -233,6 +235,7 @@ const EnhancedSponsorsSection = () => {
       {
         name: "Goa Tourism",
         logo: GoaTorisumLogo,
+        isBigLogo: false,
         tier: "Tourism Partner",
         description: "Official tourism promotion partner",
         website: "#",
@@ -240,6 +243,7 @@ const EnhancedSponsorsSection = () => {
       {
         name: "GCCI",
         logo: GCCILogo,
+        isBigLogo: false,
         tier: "Industry Partner",
         description: "Goa Chamber of Commerce & Industry",
         website: "#",
@@ -247,6 +251,7 @@ const EnhancedSponsorsSection = () => {
       {
         name: "Rotary Club of Vasco Port Town",
         logo: RotaryLogo,
+        isBigLogo: true,
         tier: "Community Partner",
         description: "Local community service organization",
         website: "#",
@@ -254,6 +259,7 @@ const EnhancedSponsorsSection = () => {
       {
         name: "Vasco Sports Club",
         logo: vascoLogo,
+        isBigLogo: false,
         tier: "Sports Partner",
         description: "Premier local sports facility and community hub",
         website: "#",
@@ -569,11 +575,19 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                 className="bg-card p-4 rounded-lg border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
               >
                 <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="w-12 mx-auto object-contain rounded-lg"
-                  />
+                  {sponsor.isBigLogo ? (
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="w-32 mx-auto object-contain rounded-lg"
+                    />
+                  ) : (
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="w-12 mx-auto object-contain rounded-lg"
+                    />
+                  )}
                 </div>
                 <h4 className="text-sm font-semibold text-foreground mb-1">
                   {sponsor.name}
