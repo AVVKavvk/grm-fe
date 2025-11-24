@@ -25,15 +25,15 @@ const FestivalHighlights = () => {
         "Crossing the line is just the beginning. At the Finish Line Celebrations, you'll find a play arena with football kick zones, quick pickleball matches, mini fitness challenges, and family-friendly games. Add in vibrant food stalls, live entertainment, and photo-worthy moments — it's a finish line you won't want to leave.",
       details: "📅 Dec 14th | 📍 Chicalim Ground",
     },
-    {
-      icon: Music,
-      image: recoveryRave,
-      emoji: "🎶",
-      title: "Recovery Rave – Dance, Chill & Recharge",
-      description:
-        "When the run is done, it's time to let loose. The Recovery Rave is where music meets wellness — with live DJs, dance floors under the Goan sky, and a buzzing community vibe. Step into the Ice Bath Zone for a cool plunge, unwind with massage therapists, or stretch it out at dedicated recovery corners. It's the perfect blend of celebration and post-race self-care.",
-      details: "📅 Dec 14th, 4 pm – 10 pm | 📍 Jubilate, Goa",
-    },
+    // {
+    //   icon: Music,
+    //   image: recoveryRave,
+    //   emoji: "🎶",
+    //   title: "Recovery Rave – Dance, Chill & Recharge",
+    //   description:
+    //     "When the run is done, it's time to let loose. The Recovery Rave is where music meets wellness — with live DJs, dance floors under the Goan sky, and a buzzing community vibe. Step into the Ice Bath Zone for a cool plunge, unwind with massage therapists, or stretch it out at dedicated recovery corners. It's the perfect blend of celebration and post-race self-care.",
+    //   details: "📅 Dec 14th, 4 pm – 10 pm | 📍 Jubilate, Goa",
+    // },
   ];
 
   return (
@@ -48,7 +48,7 @@ const FestivalHighlights = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {highlights.map((highlight, index) => {
             const Icon = highlight.icon;
             return (
@@ -102,8 +102,6 @@ const FestivalHighlights = () => {
             <span className="font-semibold text-primary">
               Carb-Loading Fiesta
             </span>{" "}
-            and{" "}
-            <span className="font-semibold text-primary">Recovery Rave</span>{" "}
             have limited capacity. With{" "}
             <span className="font-bold text-red-500">10,000 </span> runners
             expected this year, we can only accommodate{" "}
