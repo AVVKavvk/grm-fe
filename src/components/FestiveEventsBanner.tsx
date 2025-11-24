@@ -28,7 +28,7 @@ export default function FestiveEventsBanner() {
             </p>
 
             {/* Event cards */}
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
+            <div className="grid md:grid-cols-1 gap-4 mb-6">
               <div className="bg-white rounded-lg p-5 shadow-md border-2 border-orange-200 hover:border-orange-400 transition-all">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <UtensilsCrossed className="w-6 h-6 text-orange-600" />
@@ -42,7 +42,7 @@ export default function FestiveEventsBanner() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg p-5 shadow-md border-2 border-purple-200 hover:border-purple-400 transition-all">
+              {/* <div className="bg-white rounded-lg p-5 shadow-md border-2 border-purple-200 hover:border-purple-400 transition-all">
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <Music className="w-6 h-6 text-purple-600" />
                   <h3 className="text-xl font-bold text-purple-600">
@@ -53,7 +53,7 @@ export default function FestiveEventsBanner() {
                 <p className="text-gray-600 text-sm">
                   Dance and celebrate your achievement!
                 </p>
-              </div>
+              </div> */}
             </div>
 
             <p className="text-lg text-gray-700 font-semibold">

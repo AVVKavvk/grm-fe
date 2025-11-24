@@ -85,14 +85,14 @@ const EventsSection = () => {
       gradient: "from-blue-500 to-purple-600",
       link: "#marathon",
     },
-    {
-      name: "Recovery Rave",
-      description: "Post-race celebration party",
-      date: "Dec 14, 2025",
-      icon: Music,
-      gradient: "from-green-500 to-teal-600",
-      link: "#recovery-rave",
-    },
+    // {
+    //   name: "Recovery Rave",
+    //   description: "Post-race celebration party",
+    //   date: "Dec 14, 2025",
+    //   icon: Music,
+    //   gradient: "from-green-500 to-teal-600",
+    //   link: "#recovery-rave",
+    // },
   ];
 
   const marathonEvents = [
@@ -276,7 +276,7 @@ const EventsSection = () => {
       <div className="container mx-auto px-4 mb-24">
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Three
+            Two
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               {" "}
               Epic Events
@@ -288,7 +288,7 @@ const EventsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {heroEvents.map((event, index) => (
             <button
               key={index}
@@ -536,7 +536,7 @@ const EventsSection = () => {
 
         {/* Recovery Rave Section */}
         <div id="recovery-rave" className="mb-16 scroll-mt-20">
-          <div className="bg-card p-8 rounded-xl border border-border shadow-soft">
+          {/* <div className="bg-card p-8 rounded-xl border border-border shadow-soft">
             <div className="flex items-start gap-4 mb-6">
               <div className="text-4xl">🎉</div>
               <div className="flex-1">
@@ -624,7 +624,7 @@ const EventsSection = () => {
             </div>
 
             <GetRegisterButtonForRecoveryRave />
-          </div>
+          </div> */}
           <FestiveEventsBanner />
 
           <section className="mt-16 bg-gradient-to-t from-primary/30 to-primary/20 text-foreground py-12 px-6 rounded-2xl text-center border border-primary/30">
@@ -636,10 +636,6 @@ const EventsSection = () => {
                 The{" "}
                 <span className="font-semibold text-primary">
                   Carb-Loading Fiesta
-                </span>{" "}
-                and{" "}
-                <span className="font-semibold text-primary">
-                  Recovery Rave
                 </span>{" "}
                 have limited capacity. With{" "}
                 <span className="font-bold text-red-500">10,000 </span> runners
@@ -659,7 +655,7 @@ const EventsSection = () => {
                 🎊 Party Package Deal 🎊
               </h4>
               <p className="text-primary-foreground/90 text-lg mb-6">
-                Join both celebrations: Carb Loading Fiesta + Recovery Rave
+                Join celebrations: Carb Loading Fiesta
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 max-w-2xl mx-auto">
                 <div className="bg-primary-foreground/10 p-6 rounded-lg">
