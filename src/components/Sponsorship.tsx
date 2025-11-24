@@ -452,7 +452,9 @@ This email was automatically generated from the SKF Goa River Marathon sponsorsh
           </p>
           <p>
             For urgent inquiries, please contact us directly at{" "}
-            <span className="text-primary">sponsors@goarivermarathon.com</span>
+            <span className="text-primary">
+              sponsors@skfgoarivermarathon.com
+            </span>
           </p>
         </div>
       </div>

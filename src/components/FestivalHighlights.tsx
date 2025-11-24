@@ -14,7 +14,7 @@ const FestivalHighlights = () => {
       title: "Carb-Loading Fiesta – Fuel Meets Flavor",
       description:
         "Kick off your marathon weekend with a feast designed to power your run. The Carb-Loading Fiesta brings together Goa's top chefs, artisanal bakers, and nutrition experts, serving up hearty pastas, wood-fired breads, fresh salads, and high-energy dishes crafted for performance. Pair it with protein shakes, recovery smoothies, or refreshing mocktails as you soak in the pre-race buzz.",
-      details: "📅 Dec 13th, 5 pm – 8 pm | 📍 Chicalim Ground",
+      details: "📅 Dec 13th, 5 pm – 8 pm | 📍 Hotel HQ, Vasco",
     },
     {
       icon: Trophy,
