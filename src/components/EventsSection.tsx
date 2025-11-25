@@ -649,7 +649,7 @@ const EventsSection = () => {
           </section>
 
           {/* Party Combo Package */}
-          <div className="bg-gradient-ocean p-8 rounded-2xl shadow-strong text-center mt-8">
+          {/* <div className="bg-gradient-ocean p-8 rounded-2xl shadow-strong text-center mt-8">
             <div className="max-w-4xl mx-auto">
               <h4 className="text-3xl font-bold text-primary-foreground mb-4">
                 🎊 Party Package Deal 🎊
@@ -686,7 +686,7 @@ const EventsSection = () => {
                 Perfect for the complete marathon weekend experience
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Additional Info */}
