@@ -101,8 +101,7 @@ const EventsSection = () => {
       distance: "42 KM",
       startTime: "04:00 AM",
       cutOffTime: "6 Hours",
-      price: "₹3,096",
-      originalPrice: "₹3,440",
+      price: "₹3,440",
       nextPrice: "₹3,510",
       participants: "18+ years",
       description: "The ultimate challenge along Goa's most scenic route",
@@ -127,8 +126,8 @@ const EventsSection = () => {
       distance: "32 KM",
       startTime: "04:30 AM",
       cutOffTime: "5 Hours",
-      price: "₹2,853",
-      originalPrice: "₹3,170",
+      price: "₹3,170",
+
       nextPrice: "₹3,150",
       participants: "18+ years",
       description:
@@ -154,8 +153,8 @@ const EventsSection = () => {
       distance: "21 KM",
       startTime: "05:30 AM",
       cutOffTime: "3.5 Hours",
-      price: "₹2,385",
-      originalPrice: "₹2,650",
+      price: "₹2,650",
+
       nextPrice: "₹2,610",
       participants: "18+ years",
       description: "Perfect for intermediate runners seeking a challenge",
@@ -180,8 +179,8 @@ const EventsSection = () => {
       distance: "10 KM",
       startTime: "06:15 AM",
       cutOffTime: "90 Minutes",
-      price: "₹1,575",
-      originalPrice: "₹1,750",
+      price: "₹1,750",
+
       nextPrice: "₹1,665",
       participants: "16+ years",
       description: "Ideal for beginners and fitness enthusiasts",
@@ -206,8 +205,8 @@ const EventsSection = () => {
       distance: "5 KM",
       startTime: "08:00 AM",
       cutOffTime: "60 Minutes",
-      price: "₹675",
-      originalPrice: "₹750",
+      price: "₹750",
+
       nextPrice: "₹720",
       participants: "Open for all",
       description: "Family-friendly run with stunning coastal views",
@@ -244,7 +243,7 @@ const EventsSection = () => {
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-2 bg-red-500/10 text-red-600 px-4 py-2 rounded-full mb-6">
           <AlertTriangle className="w-4 h-4" />
-          <span className="text-sm font-medium">Price Increases Soon!</span>
+          <span className="text-sm font-medium">Festival Ends Soon!</span>
         </div>
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
           Secure Your
@@ -263,7 +262,7 @@ const EventsSection = () => {
           <div className="flex items-center justify-center gap-2 mb-4">
             <Clock className="w-5 h-5 text-red-600" />
             <span className="text-lg font-bold text-red-600">
-              Festival Offer Ends In:
+              Festival Ends In:
             </span>
           </div>
           <CountdownTimer targetDate={date} />
@@ -454,9 +453,9 @@ const EventsSection = () => {
                       <div className="text-2xl font-bold text-accent">
                         {event.price}
                       </div>
-                      <div className="text-sm text-muted-foreground line-through">
+                      {/* <div className="text-sm text-muted-foreground line-through">
                         {event.originalPrice}
-                      </div>
+                      </div> */}
                       {/* <div className="text-xs text-red-600 font-medium">
                         Next: {event.nextPrice} (After {day}/{month}/{year})
                       </div> */}

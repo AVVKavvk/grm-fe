@@ -6,7 +6,7 @@ import getLastDateOfMonth from "@/lib/getDate";
 const PricingBottomUI = () => {
   const { date } = getLastDateOfMonth();
   const originalPrice = 800;
-  const discountedPrice = 675;
+  const discountedPrice = 750;
 
   const discountPercentage = Math.round(
     ((originalPrice - discountedPrice) / originalPrice) * 100
@@ -20,19 +20,9 @@ const PricingBottomUI = () => {
           <span className="text-2xl sm:text-3xl font-extrabold text-emerald-600 drop-shadow-sm">
             ₹{discountedPrice}
           </span>
-          <span className="text-sm sm:text-base text-gray-500 line-through">
-            ₹{originalPrice}
-          </span>
-          <span className="hidden sm:inline-block bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs sm:text-sm px-2 py-0.5 rounded-full font-semibold shadow-md">
-            {discountPercentage}% OFF
-          </span>
         </div>
 
         {/* Countdown Section */}
-        <div className="flex flex-col md:flex-row items-center gap-2 sm:gap-3 text-gray-700 text-sm sm:text-base font-medium">
-          <span className="inline">Offer ends in</span>
-          <CountdownTimerForFooter targetDate={date} />
-        </div>
 
         {/* CTA Button */}
         <div className="flex-shrink-0">

@@ -40,8 +40,8 @@ const Header = () => {
             Register Now –{" "}
             <span className="font-bold text-yellow-300">
               {daysRemaining > 0
-                ? `Prices Set to Rise in ${daysRemaining} days!`
-                : "Last day - Prices Rising Soon!"}
+                ? `Festival ends in ${daysRemaining} days!`
+                : "Festival has ended!"}
             </span>
           </p>
         </div>

@@ -13,7 +13,7 @@ const getLastDateOfMonth = () => {
   // Get last day of current month
   // Create date for next month's 0th day (which is last day of current month)
   const lastDayOfMonth = new Date(year, istDate.getMonth() + 1, 0);
-  const day = lastDayOfMonth.getDate();
+  const day = 14;
 
   // Full date string in ISO format with time set to 23:59:59
   const date = `${year}-${month.toString().padStart(2, "0")}-${day
