@@ -52,6 +52,21 @@ const GettingThere = () => {
           </>
         ),
       },
+      {
+        name: "TELES WESTEND HOTEL, VASCO DA GAMA",
+        content: (
+          <>
+            Please call{" "}
+            <a
+              href="tel:+917796633402"
+              className="text-primary font-medium hover:underline"
+            >
+              +919158101122
+            </a>{" "}
+            for exciting offers
+          </>
+        ),
+      },
     ],
     within5km: [
       "The HQ",
@@ -63,6 +78,7 @@ const GettingThere = () => {
       "The Flora Grand",
       "Royal Altis",
       "Sanman Hotels",
+      "TELES WESTEND HOTEL",
     ],
     within10km: [
       "Mushrooms, Goa",
