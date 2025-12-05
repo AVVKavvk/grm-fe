@@ -136,11 +136,6 @@ const faqData = [
     emoji: "🚌",
     items: [
       {
-        question: "Is transport provided?",
-        answer:
-          "Shuttle buses run from Panaji, Margao, and Vasco between 3:00–5:30 AM, with return services post-race.",
-      },
-      {
         question: "Will roads be closed?",
         answer: "Yes. The route will be closed to traffic until 10:00 AM.",
       },
