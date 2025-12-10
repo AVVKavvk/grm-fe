@@ -9,6 +9,7 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import ScrollToTop from "./components/ScrollToTop";
 import { initGA, logPageView } from "@/lib/analytics";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
 
 const Technology = lazy(() => import("@/components/TechnologySection"));
 const Events = lazy(() => import("@/components/EventsSection"));
@@ -55,6 +56,7 @@ const App = () => {
       <ScrollToTop />
       <Toaster />
       <Sonner />
+      <AnnouncementBanner />
       <Header />
       <div className="">
         <Routes>
