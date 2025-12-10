@@ -24,9 +24,9 @@ const Header = () => {
   ];
 
   return (
-    <header className="top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg">
+    <header className=" mt-6 z-50 bg-background/80 backdrop-blur-lg">
       {/* Top Banner */}
-      <div className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6 py-3 flex flex-col sm:flex-row items-center justify-between shadow-lg">
+      {/* <div className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6 py-3 flex flex-col sm:flex-row items-center justify-between shadow-lg">
         <div className="flex items-center gap-3">
           <svg
             className="w-6 h-6 text-yellow-300"
@@ -46,7 +46,7 @@ const Header = () => {
           </p>
         </div>
         <GetRegisterButton />
-      </div>
+      </div> */}
 
       {/* Navigation */}
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
