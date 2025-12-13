@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { CheckCircle } from "lucide-react";
+// Assuming these imports exist in your project structure
 import { FeedbackFormData } from "@/schema/feedbackSchema";
 import { useFeedbackStore } from "@/store/feedbackStore";
 
 interface FormErrors {
   email?: string;
-  bibNo?: string;
 }
 
 const Feedback: React.FC = () => {
@@ -104,14 +104,11 @@ const Feedback: React.FC = () => {
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
+    // ONLY Email is required
     if (!formData.email) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Invalid email format";
-    }
-
-    if (formData.bibNo && formData.bibNo.length !== 10) {
-      newErrors.bibNo = "Bib number must be 10 digits";
     }
 
     setErrors(newErrors);
@@ -122,6 +119,8 @@ const Feedback: React.FC = () => {
     e.preventDefault();
 
     if (!validateForm()) {
+      // Show popup if validation fails
+      alert("Please provide a valid email address to submit the form.");
       return;
     }
 
@@ -135,6 +134,7 @@ const Feedback: React.FC = () => {
       setIsSubmitted(true);
     } catch (error) {
       console.error("Submission error:", error);
+      alert("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -242,7 +242,8 @@ const Feedback: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Run Type
+                  Run Type{" "}
+                  {/* <span className="text-gray-400 font-normal">(Optional)</span> */}
                 </label>
                 <select
                   value={formData.runType}
@@ -262,7 +263,8 @@ const Feedback: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Bib No (10 digits)
+                  Bib No{" "}
+                  {/* <span className="text-gray-400 font-normal">(Optional)</span> */}
                 </label>
                 <input
                   type="text"
@@ -270,15 +272,10 @@ const Feedback: React.FC = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, bibNo: e.target.value })
                   }
-                  maxLength={10}
-                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                    errors.bibNo ? "border-red-500" : "border-gray-300"
-                  }`}
-                  placeholder="1234567890"
+                  // maxLength removed to allow any length
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Enter Bib Number"
                 />
-                {errors.bibNo && (
-                  <p className="text-red-500 text-sm mt-1">{errors.bibNo}</p>
-                )}
               </div>
             </div>
           </div>
@@ -286,7 +283,10 @@ const Feedback: React.FC = () => {
           {/* Rating Table */}
           <div className="space-y-4">
             <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">
-              Event Ratings
+              Event Ratings{" "}
+              {/* <span className="text-sm font-normal text-gray-500 ml-2">
+                (Optional)
+              </span> */}
             </h2>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
@@ -351,7 +351,10 @@ const Feedback: React.FC = () => {
           {/* Yes/No Questions */}
           <div className="space-y-4">
             <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">
-              Additional Questions
+              Additional Questions{" "}
+              {/* <span className="text-sm font-normal text-gray-500 ml-2">
+                (Optional)
+              </span> */}
             </h2>
 
             <div>
@@ -439,7 +442,8 @@ const Feedback: React.FC = () => {
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                What could be improved for future events?
+                What could be improved for future events?{" "}
+                {/* <span className="text-gray-400 font-normal">(Optional)</span> */}
               </label>
               <textarea
                 value={formData.improvements}
@@ -454,7 +458,8 @@ const Feedback: React.FC = () => {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Do you have any additional comments or suggestions?
+                Do you have any additional comments or suggestions?{" "}
+                {/* <span className="text-gray-400 font-normal">(Optional)</span> */}
               </label>
               <textarea
                 value={formData.additionalComments}
