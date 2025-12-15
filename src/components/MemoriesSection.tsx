@@ -389,26 +389,37 @@ const MemoriesSection = () => {
         <div className="text-center">
           <Card className="inline-block p-8 bg-gradient-to-br from-blue-600 to-cyan-500 shadow-xl">
             <CardContent className="p-0">
-              <Camera className="w-12 h-12 text-white mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Share Your Marathon Memories
-              </h3>
-              <p className="text-white/90 mb-6 max-w-md">
-                Upload photos, videos, and stories from your marathon
-                experience. Help us build the ultimate memory collection!
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button variant="secondary" size="lg">
-                  Upload Memories
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white hover:text-primary"
-                >
-                  Browse Gallery
-                </Button>
+              {/* <Camera className="w-12 h-12 text-white mx-auto mb-4" /> */}
+              {/* Info Card */}
+              <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8 border border-gray-100 mb-8">
+                <div className="flex items-center justify-center gap-3 text-blue-600 mb-4">
+                  <Camera className="w-6 h-6" />
+                  <span className="font-semibold text-lg">
+                    How to Find Your Photos
+                  </span>
+                </div>
+                <ol className="text-left text-gray-600 leading-relaxed space-y-2 list-decimal list-inside">
+                  <li>Click the button below to visit the photo portal</li>
+                  <li>
+                    Select <strong>SKF Goa River Marathon 2025</strong>
+                  </li>
+                  <li>
+                    Search by your <strong>Bib Number</strong> or upload a{" "}
+                    <strong>selfie</strong>
+                  </li>
+                  <li>View and purchase your race photos</li>
+                </ol>
               </div>
+
+              {/* CTA Button */}
+              <a
+                href="https://ifinish.in/photos/searchPhotos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block  text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+              >
+                View Your Photos
+              </a>
             </CardContent>
           </Card>
         </div>
