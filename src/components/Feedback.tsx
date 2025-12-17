@@ -6,6 +6,7 @@ import { useFeedbackStore } from "@/store/feedbackStore";
 
 interface FormErrors {
   email?: string;
+  ratings?: string;
 }
 
 const Feedback: React.FC = () => {
@@ -104,11 +105,21 @@ const Feedback: React.FC = () => {
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
-    // ONLY Email is required
+    // Email validation
     if (!formData.email) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Invalid email format";
+    }
+
+    // Rating validation - check if all ratings are filled
+    const unfilledRatings = ratingCategories.filter(
+      (category) =>
+        formData.ratings[category.key as keyof typeof formData.ratings] === 0
+    );
+
+    if (unfilledRatings.length > 0) {
+      newErrors.ratings = `Please provide ratings for all ${unfilledRatings.length} categories`;
     }
 
     setErrors(newErrors);
@@ -120,7 +131,11 @@ const Feedback: React.FC = () => {
 
     if (!validateForm()) {
       // Show popup if validation fails
-      alert("Please provide a valid email address to submit the form.");
+      const errorMessages = [];
+      if (errors.email) errorMessages.push(errors.email);
+      if (errors.ratings) errorMessages.push(errors.ratings);
+
+      alert(errorMessages.join("\n") || "Please fill in all required fields.");
       return;
     }
 
@@ -151,6 +166,10 @@ const Feedback: React.FC = () => {
         [category]: value,
       },
     });
+    // Clear rating error when user selects a rating
+    if (errors.ratings) {
+      setErrors({ ...errors, ratings: undefined });
+    }
   };
 
   if (isSubmitted) {
@@ -242,8 +261,7 @@ const Feedback: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Run Type{" "}
-                  {/* <span className="text-gray-400 font-normal">(Optional)</span> */}
+                  Run Type
                 </label>
                 <select
                   value={formData.runType}
@@ -263,8 +281,7 @@ const Feedback: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Bib No{" "}
-                  {/* <span className="text-gray-400 font-normal">(Optional)</span> */}
+                  Bib No
                 </label>
                 <input
                   type="text"
@@ -272,7 +289,6 @@ const Feedback: React.FC = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, bibNo: e.target.value })
                   }
-                  // maxLength removed to allow any length
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter Bib Number"
                 />
@@ -283,11 +299,11 @@ const Feedback: React.FC = () => {
           {/* Rating Table */}
           <div className="space-y-4">
             <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">
-              Event Ratings{" "}
-              {/* <span className="text-sm font-normal text-gray-500 ml-2">
-                (Optional)
-              </span> */}
+              Event Ratings <span className="text-red-500">*</span>
             </h2>
+            {errors.ratings && (
+              <p className="text-red-500 text-sm">{errors.ratings}</p>
+            )}
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
@@ -351,10 +367,7 @@ const Feedback: React.FC = () => {
           {/* Yes/No Questions */}
           <div className="space-y-4">
             <h2 className="text-xl font-semibold text-gray-800 border-b pb-2">
-              Additional Questions{" "}
-              {/* <span className="text-sm font-normal text-gray-500 ml-2">
-                (Optional)
-              </span> */}
+              Additional Questions
             </h2>
 
             <div>
@@ -442,8 +455,7 @@ const Feedback: React.FC = () => {
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                What could be improved for future events?{" "}
-                {/* <span className="text-gray-400 font-normal">(Optional)</span> */}
+                What could be improved for future events?
               </label>
               <textarea
                 value={formData.improvements}
@@ -458,8 +470,7 @@ const Feedback: React.FC = () => {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Do you have any additional comments or suggestions?{" "}
-                {/* <span className="text-gray-400 font-normal">(Optional)</span> */}
+                Do you have any additional comments or suggestions?
               </label>
               <textarea
                 value={formData.additionalComments}
