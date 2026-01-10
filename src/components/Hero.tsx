@@ -30,7 +30,7 @@ const Hero = () => {
             </span>
             <br />
             <span className="text-foreground font-extrabold italic tracking-wide">
-              Marathon 2025
+              Marathon 2026
             </span>
           </h1>
 
@@ -42,13 +42,13 @@ const Hero = () => {
 
             <div className="font-bold flex gap-2 items-center justify-between text-red-500 text-3xl">
               {/* <Calendar className="w-7 h-7 text-red-500" /> */}
-              <span>December 14th, Sunday</span>
+              <span>December 13th, Sunday</span>
             </div>
           </div>
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-800 mb-8 max-w-2xl leading-relaxed">
             Experience India’s most stunning fitness festival - where adrenaline
-            meets elegance. For 14 years, runners from across the globe have
+            meets elegance. For 15 years, runners from across the globe have
             raced, recovered, and reveled by Goa’s Zuari river. This 15th Goa
             River Marathon takes it to another level: electrifying runs, live
             music, recovery and wellness zones, fitness challenges, culinary
@@ -61,7 +61,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-6 mb-6">
             <div className="flex items-center gap-2 text-gray-800">
               <Calendar className="w-5 h-5 text-primary" />
-              <span>December 13th and 14th, 2025</span>
+              <span>December 13th, 2026</span>
             </div>
             <div className="flex items-center gap-2 text-gray-800">
               <MapPin className="w-5 h-5 text-primary" />

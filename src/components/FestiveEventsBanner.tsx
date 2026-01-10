@@ -10,7 +10,7 @@ export default function FestiveEventsBanner() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <Sparkles className="w-8 h-8 text-yellow-500" />
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Join the Festive Side of Goa River Marathon 2025!
+              Join the Festive Side of Goa River Marathon 2026!
             </h2>
             <Sparkles className="w-8 h-8 text-yellow-500" />
           </div>

@@ -16,64 +16,64 @@ export const removeSource = () => {
 
 export const getSourceConfig = (source: string) => {
   switch (source.toLowerCase()) {
-    case "zomato":
-      return {
-        name: "Zomato",
-        redirectUrl: "https://www.zomato.com",
-        carbLoadingLink: "https://www.zomato.com",
-      };
-    case "swiggy":
-      return {
-        name: "Swiggy",
-        redirectUrl: "https://www.swiggy.com/",
-        carbLoadingLink: "https://www.swiggy.com/",
-      };
-    case "playo":
-      return {
-        name: "Playo",
-        redirectUrl: "http://go.playo.app/PLAYOO/IzFCk",
-        carbLoadingLink: "http://go.playo.app/PLAYOO/IzFCk",
-      };
-    case "burraa":
-      return {
-        name: "Burraa",
-        redirectUrl:
-          "https://www.burraa.com/activities/skf-goa-river-marathon-2025",
-        carbLoadingLink:
-          "https://www.burraa.com/activities/skf-goa-river-marathon-2025",
-      };
-    case "hudle":
-      return {
-        name: "Hudle",
-        redirectUrl: "https://hudle.in/events/goa-river-marathon/649260",
-        carbLoadingLink: "https://hudle.in/events/goa-river-marathon/649260",
-      };
-    case "ifinish":
-      return {
-        name: "IFinish",
-        redirectUrl: "https://www.ifinish.in/running/SKF2025",
-        carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
-      };
-    case "district":
-      return {
-        name: "District",
-        redirectUrl:
-          "https://www.district.in/events/goa-river-marathon-2025-buy-tickets",
-        carbLoadingLink:
-          "https://www.district.in/events/goa-river-marathon-2025-buy-tickets",
-      };
-    case "bms":
-      return {
-        name: "BookMyShow",
-        redirectUrl:
-          "https://in.bookmyshow.com/sports/skf-goa-river-marathon-2025/ET00468714",
-        carbLoadingLink:
-          "https://in.bookmyshow.com/sports/skf-goa-river-marathon-2025/ET00468714",
-      };
+    // case "zomato":
+    //   return {
+    //     name: "Zomato",
+    //     redirectUrl: "https://www.zomato.com",
+    //     carbLoadingLink: "https://www.zomato.com",
+    //   };
+    // case "swiggy":
+    //   return {
+    //     name: "Swiggy",
+    //     redirectUrl: "https://www.swiggy.com/",
+    //     carbLoadingLink: "https://www.swiggy.com/",
+    //   };
+    // case "playo":
+    //   return {
+    //     name: "Playo",
+    //     redirectUrl: "http://go.playo.app/PLAYOO/IzFCk",
+    //     carbLoadingLink: "http://go.playo.app/PLAYOO/IzFCk",
+    //   };
+    // case "burraa":
+    //   return {
+    //     name: "Burraa",
+    //     redirectUrl:
+    //       "https://www.burraa.com/activities/skf-goa-river-marathon-2025",
+    //     carbLoadingLink:
+    //       "https://www.burraa.com/activities/skf-goa-river-marathon-2025",
+    //   };
+    // case "hudle":
+    //   return {
+    //     name: "Hudle",
+    //     redirectUrl: "https://hudle.in/events/goa-river-marathon/649260",
+    //     carbLoadingLink: "https://hudle.in/events/goa-river-marathon/649260",
+    //   };
+    // case "ifinish":
+    //   return {
+    //     name: "IFinish",
+    //     redirectUrl: "https://www.ifinish.in/running/SKF2025",
+    //     carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
+    //   };
+    // case "district":
+    //   return {
+    //     name: "District",
+    //     redirectUrl:
+    //       "https://www.district.in/events/goa-river-marathon-2025-buy-tickets",
+    //     carbLoadingLink:
+    //       "https://www.district.in/events/goa-river-marathon-2025-buy-tickets",
+    //   };
+    // case "bms":
+    //   return {
+    //     name: "BookMyShow",
+    //     redirectUrl:
+    //       "https://in.bookmyshow.com/sports/skf-goa-river-marathon-2025/ET00468714",
+    //     carbLoadingLink:
+    //       "https://in.bookmyshow.com/sports/skf-goa-river-marathon-2025/ET00468714",
+    //   };
     default:
       return {
         name: "Direct",
-        redirectUrl: "https://www.ifinish.in/running/SKF2025",
+        redirectUrl: "https://ifinish.in/running/SKF_2026",
         carbLoadingLink: "https://www.ifinish.in/entertainment/skfppa",
       };
   }

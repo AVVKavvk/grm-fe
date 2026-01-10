@@ -691,7 +691,7 @@ const TermsConditions = () => {
 
               <div className="mt-12 p-6 bg-muted rounded-lg">
                 <p className="text-sm text-center text-muted-foreground">
-                  Last updated: 2025
+                  Last updated: 2026
                 </p>
               </div>
             </div>

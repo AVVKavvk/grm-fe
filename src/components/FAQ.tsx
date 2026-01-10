@@ -21,7 +21,7 @@ const FAQ = () => {
           question:
             "When and where is this year's SKF Goa River Marathon taking place?",
           answer:
-            "The 14th edition of the SKF Goa River Marathon is happening on Sunday, 14th December 2025, in Chicalim village, Vasco da Gama, Goa — right by the Zuari River.",
+            "The 14th edition of the SKF Goa River Marathon is happening on Sunday, 13th December 2026, in Chicalim village, Vasco da Gama, Goa — right by the Zuari River.",
         },
         {
           question: "What race categories can I register for?",

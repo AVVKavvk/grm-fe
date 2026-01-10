@@ -29,6 +29,7 @@ const TermsConditions = lazy(() => import("@/components/TermsConditions"));
 const GettingThere = lazy(() => import("@/components/GettingThere"));
 const Photos = lazy(() => import("@/components/Photos"));
 const Feedback = lazy(() => import("@/components/Feedback"));
+const Prizes = lazy(() => import("@/components/Prizes"));
 
 const App = () => {
   const [showPersistentComponents, setShowPersistentComponents] =
@@ -92,6 +93,14 @@ const App = () => {
             element={
               <Suspense fallback={<Loader />}>
                 <Feedback />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/prizes"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Prizes />
               </Suspense>
             }
           />

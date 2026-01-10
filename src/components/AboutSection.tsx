@@ -18,12 +18,12 @@ import RaceRouteSection from "./RaceRouteSection";
 const AboutSection = () => {
   const stats = [
     {
-      number: "14",
+      number: "15",
       label: "Years Running",
       icon: <Calendar className="w-6 h-6" />,
     },
     {
-      number: "50,000+",
+      number: "75,000+",
       label: "Total Runners",
       icon: <Users className="w-6 h-6" />,
     },
@@ -77,25 +77,25 @@ const AboutSection = () => {
     {
       metric: "Participants",
       from: "1,500 (2010)",
-      to: "50,000+ (2025)",
+      to: "50,000+ (2026)",
       growth: "+566%",
     },
     {
       metric: "Technology Features",
       from: "0 (2010)",
-      to: "15+ (2025)",
+      to: "15+ (2026)",
       growth: "∞",
     },
     {
       metric: "Sponsor Partners",
       from: "3 (2010)",
-      to: "25+ (2025)",
+      to: "25+ (2026)",
       growth: "+733%",
     },
     {
       metric: "Countries Represented",
       from: "1 (2010)",
-      to: "42 (2025)",
+      to: "42 (2026)",
       growth: "+1900%",
     },
   ];
@@ -116,7 +116,7 @@ const AboutSection = () => {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            14 years of inspiring runners worldwide with cutting-edge technology
+            15 years of inspiring runners worldwide with cutting-edge technology
             and Goa's stunning landscapes.
           </p>
         </div>
@@ -244,7 +244,7 @@ const AboutSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              14 Years of Evolution
+              15 Years of Evolution
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

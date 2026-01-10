@@ -16,12 +16,6 @@ import CountdownTimer from "./CountdownTimer";
 const RegistrationSection = () => {
   const [selectedPlan, setSelectedPlan] = useState("half");
 
-  const pricingPhases = [
-    { phase: "Festival Offer", endDate: "2025-10-15", discount: "₹500 OFF" },
-    { phase: "Regular", endDate: "2025-12-31", discount: "₹300 OFF" },
-    { phase: "Last Call", endDate: "2026-01-15", discount: "₹100 OFF" },
-  ];
-
   const plans = [
     {
       id: "full",
@@ -135,7 +129,7 @@ const RegistrationSection = () => {
                 Festival Offer Ends In:
               </span>
             </div>
-            <CountdownTimer targetDate="2025-10-15T23:59:59" />
+            <CountdownTimer targetDate="2026-10-15T23:59:59" />
             <div className="mt-4 text-sm text-red-600/80">
               Prices increase by ₹300–500 after October 15th
             </div>

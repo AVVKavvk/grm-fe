@@ -152,7 +152,7 @@ const Footer = () => {
         <div className="border-t border-background/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-background/60 text-sm mb-4 md:mb-0">
-              © 2025 Goa River Marathon. All rights reserved.
+              © 2026 Goa River Marathon. All rights reserved.
             </div>
             <div className="flex flex-wrap gap-6 text-sm text-background/60">
               <a

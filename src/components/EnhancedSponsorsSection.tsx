@@ -491,7 +491,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
         </div>
 
         {/* Registration & Platform Partners */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h3 className="text-lg font-bold text-center mb-8 text-foreground">
             Registration & Platform Partners
           </h3>
@@ -523,10 +523,10 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
               </a>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Wellness Partners */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h3 className="text-lg font-bold text-center mb-8 text-foreground">
             Wellness & Nutrition Partners
           </h3>
@@ -558,10 +558,10 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
               </a>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Institutional Partners */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h3 className="text-lg font-bold text-center mb-8 text-foreground">
             Institutional & Community Partners
           </h3>
@@ -601,7 +601,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
               </a>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Why Partner With Us */}
         <div className="mb-16">
@@ -614,7 +614,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
               <div className="text-sm text-muted-foreground">Total Reach</div>
             </Card>
             <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">14+</div>
+              <div className="text-3xl font-bold text-primary mb-2">15+</div>
               <div className="text-sm text-muted-foreground">
                 Years Experience
               </div>
