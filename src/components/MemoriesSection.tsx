@@ -33,6 +33,14 @@ const MemoriesSection = () => {
 
   const yearlyData = [
     {
+      year: 2025,
+      theme: "Fitness Festival",
+      participants: 10000,
+      highlights: ["Cultural performances", "Nutrition workshops"],
+      memories: 1500,
+      socialPosts: 3800,
+    },
+    {
       year: 2024,
       theme: "Tech Revolution",
       participants: 8500,
@@ -295,7 +303,9 @@ const MemoriesSection = () => {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-secondary/10">
+    <section className="py-24 md:py-16 bg-gradient-to-b from-background to-secondary/10">
+      {/* Main Content */}
+
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -309,6 +319,41 @@ const MemoriesSection = () => {
             Relive the incredible moments from 15 years of the Goa River
             Marathon
           </p>
+        </div>
+
+        <div className="text-center mb-16">
+          {/* Icon Container */}
+
+          {/* Info Card */}
+          <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8 border border-gray-100 mb-4">
+            <div className="flex items-center justify-center gap-3 text-blue-600 mb-4">
+              <Camera className="w-6 h-6" />
+              <span className="font-semibold text-lg">
+                How to Find Your Photos
+              </span>
+            </div>
+            <ol className="text-left text-gray-600 leading-relaxed space-y-2 list-decimal list-inside">
+              <li>Click the button below to visit the photo portal</li>
+              <li>
+                Select <strong>SKF Goa River Marathon 2025</strong>
+              </li>
+              <li>
+                Search by your <strong>Bib Number</strong> or upload a{" "}
+                <strong>selfie</strong>
+              </li>
+              <li>View and purchase your race photos</li>
+            </ol>
+          </div>
+
+          {/* CTA Button */}
+          <a
+            href="https://ifinish.in/photos/searchPhotos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gradient-to-r from-blue-600 to-orange-600 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+          >
+            View Your Photos
+          </a>
         </div>
 
         {/* Yearly Timeline */}
@@ -383,45 +428,6 @@ const MemoriesSection = () => {
               </div>
             )
           )}
-        </div>
-
-        {/* Memory Upload CTA */}
-        <div className="text-center">
-          <Card className="inline-block p-8 bg-gradient-to-br from-blue-600 to-cyan-500 shadow-xl">
-            <CardContent className="p-0">
-              {/* <Camera className="w-12 h-12 text-white mx-auto mb-4" /> */}
-              {/* Info Card */}
-              <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8 border border-gray-100 mb-8">
-                <div className="flex items-center justify-center gap-3 text-blue-600 mb-4">
-                  <Camera className="w-6 h-6" />
-                  <span className="font-semibold text-lg">
-                    How to Find Your Photos
-                  </span>
-                </div>
-                <ol className="text-left text-gray-600 leading-relaxed space-y-2 list-decimal list-inside">
-                  <li>Click the button below to visit the photo portal</li>
-                  <li>
-                    Select <strong>SKF Goa River Marathon 2025</strong>
-                  </li>
-                  <li>
-                    Search by your <strong>Bib Number</strong> or upload a{" "}
-                    <strong>selfie</strong>
-                  </li>
-                  <li>View and purchase your race photos</li>
-                </ol>
-              </div>
-
-              {/* CTA Button */}
-              <a
-                href="https://ifinish.in/photos/searchPhotos"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block  text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-              >
-                View Your Photos
-              </a>
-            </CardContent>
-          </Card>
         </div>
       </div>
 

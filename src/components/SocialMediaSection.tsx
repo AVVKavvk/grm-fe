@@ -43,7 +43,7 @@ const SocialMediaSection = () => {
   ];
 
   const trendingHashtags = [
-    "#GoaRiverMarathon2025",
+    "#GoaRiverMarathon2026",
     "#RunWithCraco",
     "#TechMarathon",
     "#GoaRunning",

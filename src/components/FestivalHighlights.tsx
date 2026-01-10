@@ -14,7 +14,7 @@ const FestivalHighlights = () => {
       title: "Carb-Loading Fiesta – Fuel Meets Flavor",
       description:
         "Kick off your marathon weekend with a feast designed to power your run. The Carb-Loading Fiesta brings together Goa's top chefs, artisanal bakers, and nutrition experts, serving up hearty pastas, wood-fired breads, fresh salads, and high-energy dishes crafted for performance. Pair it with protein shakes, recovery smoothies, or refreshing mocktails as you soak in the pre-race buzz.",
-      details: "📅 Dec 13th, 5 pm – 8 pm | 📍 Hotel HQ, Vasco",
+      details: "📅 Dec 12th, 5 pm – 8 pm | 📍 Hotel HQ, Vasco",
     },
     {
       icon: Trophy,
@@ -23,7 +23,7 @@ const FestivalHighlights = () => {
       title: "Finish Line Celebrations – Fun Beyond the Run",
       description:
         "Crossing the line is just the beginning. At the Finish Line Celebrations, you'll find a play arena with football kick zones, quick pickleball matches, mini fitness challenges, and family-friendly games. Add in vibrant food stalls, live entertainment, and photo-worthy moments — it's a finish line you won't want to leave.",
-      details: "📅 Dec 14th | 📍 Chicalim Ground",
+      details: "📅 Dec 13th | 📍 Chicalim Ground",
     },
     // {
     //   icon: Music,
@@ -103,7 +103,7 @@ const FestivalHighlights = () => {
               Carb-Loading Fiesta
             </span>{" "}
             have limited capacity. With{" "}
-            <span className="font-bold text-red-500">10,000 </span> runners
+            <span className="font-bold text-red-500">7,500 </span> runners
             expected this year, we can only accommodate{" "}
             <span className="font-bold text-red-500">1,500 </span> at these
             exclusive events. Book your festival pass now to secure your spot

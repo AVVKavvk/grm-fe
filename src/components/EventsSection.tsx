@@ -32,7 +32,8 @@ import FestiveEventsBanner from "./FestiveEventsBanner";
 const Festival = lazy(() => import("@/components/FestivalSection"));
 
 const EventsSection = () => {
-  const { date, day, month, year } = getLastDateOfMonth();
+  // const { date, day, month, year } = getLastDateOfMonth();
+  const date = "2026-12-13T23:59:59";
 
   const RouteDropdown = ({ routes }) => {
     const [selectedRoute, setSelectedRoute] = useState("");
@@ -72,7 +73,7 @@ const EventsSection = () => {
     {
       name: "Carb Loading Fiesta",
       description: "Pre-race celebration & feast",
-      date: "Dec 13, 2025",
+      date: "Dec 12, 2026",
       icon: Utensils,
       gradient: "from-orange-500 to-red-600",
       link: "#carb-loading",
@@ -80,7 +81,7 @@ const EventsSection = () => {
     {
       name: "The Marathon Experience",
       description: "5 distances to choose from",
-      date: "Dec 14, 2025",
+      date: "Dec 13, 2026",
       icon: Trophy,
       gradient: "from-blue-500 to-purple-600",
       link: "#marathon",
@@ -327,13 +328,13 @@ const EventsSection = () => {
                 <div className="space-y-1 text-sm text-muted-foreground mb-4">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
-                    <span>December 13, 2025</span>
+                    <span>December 12, 2026</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
                     <span>6:00 PM - 9:00 PM</span>
                   </div>
-                  <a
+                  {/* <a
                     href="https://maps.app.goo.gl/XbfczAwVL6tRzrN56"
                     target="_blank"
                     title="Location"
@@ -342,14 +343,14 @@ const EventsSection = () => {
                       <MapPin className="w-4 h-4" />
                       <span>Hotel HQ, Vasco</span>
                     </div>
-                  </a>
+                  </a> */}
                 </div>
               </div>
 
-              <div className="text-right">
+              {/* <div className="text-right">
                 <div className="text-2xl font-bold text-accent">₹750</div>
                 <div className="text-xs text-muted-foreground">per person</div>
-              </div>
+              </div> */}
             </div>
 
             <div className="mb-6 flex flex-col md:flex-row justify-center gap-7">
@@ -637,7 +638,7 @@ const EventsSection = () => {
                   Carb-Loading Fiesta
                 </span>{" "}
                 have limited capacity. With{" "}
-                <span className="font-bold text-red-500">10,000 </span> runners
+                <span className="font-bold text-red-500">7,500 </span> runners
                 expected this year, we can only accommodate{" "}
                 <span className="font-bold text-red-500">1,500 </span> at these
                 exclusive events. Book your festival pass now to secure your

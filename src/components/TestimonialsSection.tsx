@@ -126,7 +126,7 @@ const TestimonialsSection = () => {
             <div className="text-sm text-muted-foreground">Average Rating</div>
           </div> */}
           <div className="text-center">
-            <div className="text-3xl font-bold text-foreground mb-2">10K+</div>
+            <div className="text-3xl font-bold text-foreground mb-2">7.5K+</div>
             <div className="text-sm text-muted-foreground">
               Total Participants
             </div>
