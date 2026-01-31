@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import vascoLogo from "@/assets/VSG_LOGO.png";
-import skfLogo from "@/assets/SKF_GRM_Logo_removebg.png";
+import skfLogo from "@/assets/grm-2026.jpeg";
 import getLastDateOfMonth from "@/lib/getDate";
 import { GetRegisterButton } from "@/lib/localstorage";
 
@@ -55,7 +55,11 @@ const Header = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <div className="w-32 md:w-40">
-            <img src={skfLogo} alt="SKF Logo" className="w-full h-auto" />
+            <img
+              src={skfLogo}
+              alt="SKF Logo"
+              className="w-full max-w-[80px] rounded h-auto"
+            />
           </div>
         </Link>
 

@@ -84,6 +84,15 @@ const EnhancedSponsorsSection = () => {
         website: "#",
         isImage: true,
       },
+      {
+        name: "Goa Tourism",
+        logo: GoaTorisumLogo,
+
+        tier: "Tourism Partner",
+        description: "Official tourism promotion partner",
+        website: "#",
+        isImage: true,
+      },
     ],
     platinum: [
       {
@@ -389,7 +398,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
             Featured Partners
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {realSponsors.featured.map((sponsor, index) => (
               <a
                 href={sponsor.website}
