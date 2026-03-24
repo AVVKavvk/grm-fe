@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="max-w-4xl">
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-md">
+            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               SKF Goa River
             </span>
             <br />
