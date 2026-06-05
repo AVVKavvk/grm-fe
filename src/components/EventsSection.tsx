@@ -14,6 +14,7 @@ import {
   AlertTriangle,
   ExternalLink,
   Waypoints,
+  Info,
 } from "lucide-react";
 import { lazy, Suspense, useState } from "react";
 import CountdownTimer from "./CountdownTimer";
@@ -121,6 +122,7 @@ const EventsSection = () => {
           "https://www.google.com/maps/d/u/0/viewer?mid=1nVQQTK0cUgL-puPU3SHTGs8m4ArJbYE&ll=15.396277154068239%2C73.88005525&z=14",
         interactive: "https://www.youtube.com/watch?v=gXYogR1xdT8",
       },
+      disclaimer: "It needs previous running experience.",
     },
     {
       name: "20 Miler",
@@ -148,6 +150,7 @@ const EventsSection = () => {
           "https://www.google.com/maps/d/u/0/viewer?mid=1L-psiHymBmmVFVbHTen5zpMRUPcU33E&ll=15.396293653242111%2C73.880219&z=14",
         interactive: "https://www.youtube.com/watch?v=byyMELsLt5I",
       },
+      disclaimer: null,
     },
     {
       name: "Half Marathon",
@@ -174,6 +177,7 @@ const EventsSection = () => {
           "https://www.google.com/maps/d/u/0/viewer?mid=1bpKbKdIYLmpWemuFpnGHYBsqHHrJVXU&ll=15.396277154068239%2C73.88005525&z=14",
         interactive: "https://www.youtube.com/watch?v=zgG2EMtSzkg",
       },
+      disclaimer: null,
     },
     {
       name: "10K Run",
@@ -200,6 +204,7 @@ const EventsSection = () => {
           "https://www.google.com/maps/d/u/0/viewer?mid=1A_TQR5XbxyTLIklbS0qBXfoggiQIbBQ&ll=15.400010543611549%2C73.85704799999998&z=15",
         interactive: "https://www.youtube.com/watch?v=sfZmuPeRRRY",
       },
+      disclaimer: null,
     },
     {
       name: "5K Fun Run",
@@ -225,6 +230,7 @@ const EventsSection = () => {
           "https://www.google.com/maps/d/u/0/viewer?mid=1h0quijIubF_ySNyBheS50udviL9tQJel&ll=15.398721335979129%2C73.85153924973754&z=16",
         interactive: "https://www.youtube.com/watch?v=KLipDTrRznw",
       },
+      disclaimer: null,
     },
   ];
 
@@ -407,7 +413,14 @@ const EventsSection = () => {
               </div>
             </div>
 
-            <GetRegisterButtonForCarbLoadingFiesta />
+            {/* <GetRegisterButtonForCarbLoadingFiesta />
+             */}
+            <div className="mt-12 text-center pb-8">
+              <div className="inline-flex bg-orange-100 items-center gap-2 px-6 py-3 text-amber-500 rounded-full text-sm font-medium border border-orange-200 shadow-sm">
+                <span>✨</span>
+                Stay tuned for more exciting events!
+              </div>
+            </div>
           </div>
         </div>
 
@@ -528,6 +541,15 @@ const EventsSection = () => {
                   {/* <RouteDropdown routes={event.routes} /> */}
 
                   {GetRegisterButtonForEvent(event.name as string)}
+
+                  {event.disclaimer && (
+                    <div className=" mt-4 bg-amber-50 border border-amber-200 rounded-md px-4 py-1 flex gap-3 text-amber-800 shadow-sm">
+                      <AlertTriangle className="w-5 h-5 flex-shrink-0 text-amber-500" />
+                      <div className="text-sm leading-relaxed">
+                        {event.disclaimer}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -625,7 +647,7 @@ const EventsSection = () => {
 
             <GetRegisterButtonForRecoveryRave />
           </div> */}
-          <FestiveEventsBanner />
+          {/* <FestiveEventsBanner /> */}
 
           <section className="mt-16 bg-gradient-to-t from-primary/30 to-primary/20 text-foreground py-12 px-6 rounded-2xl text-center border border-primary/30">
             <div className="max-w-3xl mx-auto">

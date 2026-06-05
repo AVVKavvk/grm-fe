@@ -22,7 +22,7 @@ const FAQ = lazy(() => import("@/components/FAQ"));
 const ContactForms = lazy(() => import("@/components/ContactFormsSection"));
 const Register = lazy(() => import("@/components/Register"));
 const Footer = lazy(() => import("@/components/Footer"));
-const ChatBot = lazy(() => import("@/components/ChatBot"));
+// const ChatBot = lazy(() => import("@/components/ChatBot"));
 const PricingFooter = lazy(() => import("@/components/PricingFooter"));
 const TermsConditions = lazy(() => import("@/components/TermsConditions"));
 const GettingThere = lazy(() => import("@/components/GettingThere"));
@@ -191,7 +191,7 @@ const App = () => {
       {showPersistentComponents && (
         <Suspense fallback={<Loader />}>
           <Footer />
-          <ChatBot />
+          {/* <ChatBot /> */}
         </Suspense>
       )}
 
