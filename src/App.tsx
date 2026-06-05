@@ -9,14 +9,13 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import ScrollToTop from "./components/ScrollToTop";
 import { initGA, logPageView } from "@/lib/analytics";
-import AnnouncementBanner from "@/components/AnnouncementBanner";
 
 const Technology = lazy(() => import("@/components/TechnologySection"));
 const Events = lazy(() => import("@/components/EventsSection"));
 const Memories = lazy(() => import("@/components/MemoriesSection"));
 const Registration = lazy(() => import("@/components/RegistrationSection"));
 const EnhancedSponsors = lazy(
-  () => import("@/components/EnhancedSponsorsSection")
+  () => import("@/components/EnhancedSponsorsSection"),
 );
 const Shop = lazy(() => import("@/components/ShopSection"));
 const FAQ = lazy(() => import("@/components/FAQ"));
@@ -30,6 +29,7 @@ const GettingThere = lazy(() => import("@/components/GettingThere"));
 const Photos = lazy(() => import("@/components/Photos"));
 const Feedback = lazy(() => import("@/components/Feedback"));
 const Prizes = lazy(() => import("@/components/Prizes"));
+const Results = lazy(() => import("@/pages/Results"));
 
 const App = () => {
   const [showPersistentComponents, setShowPersistentComponents] =
@@ -59,7 +59,7 @@ const App = () => {
       <ScrollToTop />
       <Toaster />
       <Sonner />
-      <AnnouncementBanner />
+      {/* <AnnouncementBanner /> */}
       <Header />
       <div className="">
         <Routes>
@@ -101,6 +101,14 @@ const App = () => {
             element={
               <Suspense fallback={<Loader />}>
                 <Prizes />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/results"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Results />
               </Suspense>
             }
           />

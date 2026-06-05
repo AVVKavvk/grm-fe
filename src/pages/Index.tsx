@@ -19,7 +19,7 @@ const Index = () => {
       <Hero />
       <FestivalHighlights />
       <AboutSection />
-      <MascotSection />
+      {/* <MascotSection /> */}
       {/* <RaceRouteSection /> */}
       {/* <MemorySection /> */}
       {/* <ServicesSection /> */}

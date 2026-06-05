@@ -58,7 +58,7 @@ const ContactFormsSection = () => {
 
     return () => {
       const existingScript = document.querySelector(
-        'script[src*="recaptcha/api.js"]'
+        'script[src*="recaptcha/api.js"]',
       );
       if (existingScript) {
         document.body.removeChild(existingScript);
@@ -159,8 +159,7 @@ const ContactFormsSection = () => {
       // Prepare email data
       const emailData = {
         client_email:
-          import.meta.env.VITE_DEFAULT_EMAIL ||
-          "support@skfgoarivermarathon.com",
+          import.meta.env.VITE_DEFAULT_EMAIL || "runnersingoa@gmail.com",
         subject: `${getFormTitle(activeForm)} - ${formData.name}`,
         body: formatEmailBody(),
       };

@@ -151,8 +151,7 @@ This email was automatically generated from the SKF Goa River Marathon sponsorsh
       // Format the email data
       const emailData = {
         client_email:
-          import.meta.env.VITE_DEFAULT_EMAIL ||
-          "support@skfgoarivermarathon.com",
+          import.meta.env.VITE_DEFAULT_EMAIL || "runnersingoa@gmail.com",
         subject: `Sponsorship Request from ${data.companyName} - SKF Goa River Marathon`,
         body: formatEmailBody(data),
       };

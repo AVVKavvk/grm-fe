@@ -20,7 +20,8 @@ const Header = () => {
     { link: "/contact-us", label: "Contact Us" },
     { link: "/prizes", label: "Prizes" },
     // { link: "/shop", label: "Shop" },
-    { link: "/feedback", label: "Feedback" },
+    // { link: "/feedback", label: "Feedback" },
+    { link: "/results", label: "Results" },
     { link: "/getting-there", label: "Getting There" },
     { link: "/faq", label: "FAQ" },
   ];
