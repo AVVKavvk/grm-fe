@@ -1,7 +1,6 @@
 import {
   Facebook,
   Instagram,
-  Twitter,
   Youtube,
   Mail,
   Phone,
@@ -9,20 +8,21 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import skfLogo from "@/assets/SKF_logotype_black_RGB.png";
+
 const Footer = () => {
   const socialLinks = [
     {
-      icon: <Facebook className="w-5 h-5" />,
+      icon: <Facebook className="w-4 h-4" />,
       link: "https://www.facebook.com/SKF.Goa.River.Marathon",
       label: "Facebook",
     },
     {
-      icon: <Instagram className="w-5 h-5" />,
+      icon: <Instagram className="w-4 h-4" />,
       link: "https://www.instagram.com/skfgoarivermarathon/",
       label: "Instagram",
     },
     {
-      icon: <Youtube className="w-5 h-5" />,
+      icon: <Youtube className="w-4 h-4" />,
       link: "https://www.youtube.com/@SkfGoaRiverMarathon",
       label: "YouTube",
     },
@@ -31,143 +31,356 @@ const Footer = () => {
   const quickLinks = [
     { label: "About Marathon", link: "/" },
     { label: "Events & Timing", link: "/events" },
-    // { label: "Registration", link: "/register" },
     { label: "FAQs", link: "/faq" },
   ];
 
   const supportLinks = [
     { label: "Contact Us", link: "/contact-us" },
     { label: "Sponsorship", link: "/sponsors" },
-
     { label: "Terms & Conditions", link: "/term-and-conditions" },
   ];
 
   return (
-    <footer className="bg-foreground text-background">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand Section */}
+    <footer
+      className="border-t"
+      style={{
+        background: "var(--navy)",
+        borderColor: "var(--border)",
+        fontFamily: "var(--font-body)",
+      }}
+    >
+      {/* Main Grid */}
+      <div
+        className="mx-auto px-[var(--gutter)] pt-16 pb-12"
+        style={{ maxWidth: "var(--max-w)" }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* ── Brand ── */}
           <div className="lg:col-span-1">
-            <div className="flex items-center text-white space-x-2">
-              <div className="w-16 bg-white p-1 rounded">
-                <img src={skfLogo} alt="" />
-              </div>
-              <span className="font-bold text-xl ">Goa River Marathon</span>
-            </div>
-            <p className="text-background/80 leading-relaxed mb-6">
-              India's most scenic and technologically advanced marathon
-              experience. Join us for an unforgettable journey along the
-              beautiful Zuari River.
-            </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.link}
-                  target="_blank"
-                  aria-label={link.label}
-                  className="text-background/60 hover:text-primary transition-colors"
+            {/* Logo */}
+            <div className="flex items-center gap-3 mb-5">
+              {/* <div
+                className="w-14 p-1.5 flex-shrink-0"
+                style={{
+                  background: "var(--white)",
+                  borderRadius: "var(--radius)",
+                }}
+              >
+                <img src={skfLogo} alt="SKF Logo" className="w-full" />
+              </div> */}
+              <div>
+                <div
+                  className="text-[0.6rem] tracking-[0.18em] uppercase mb-0.5"
+                  style={{
+                    fontFamily: "var(--font-head)",
+                    fontWeight: 700,
+                    color: "var(--sky)",
+                  }}
                 >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-bold text-lg mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.link}
-                    className="text-background/80 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h4 className="font-bold text-lg mb-6">Support</h4>
-            <ul className="space-y-3">
-              {supportLinks.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.link}
-                    className="text-background/80 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-bold text-lg mb-6">Contact Info</h4>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary mt-0.5" />
-                <div>
-                  <div className="text-background/80">
-                    Vasco Sports Club
-                    <br />
-                    Rukmini Towers, Opp. Tilak Maidan
-                    <br />
-                    Vasco da Gama, 403802 GOA.
-                    <br />
-                    India
-                  </div>
+                  SKF Presents
+                </div>
+                <div
+                  className="text-sm leading-tight"
+                  style={{
+                    fontFamily: "var(--font-head)",
+                    fontWeight: 800,
+                    color: "var(--white)",
+                  }}
+                >
+                  Goa River Marathon
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary" />
+            </div>
+
+            {/* Tagline */}
+            <p
+              className="text-[0.82rem] leading-[1.7] mb-6 max-w-[280px]"
+              style={{ color: "var(--text-muted)" }}
+            >
+              India's most scenic and technologically advanced marathon. 16
+              years running along the Zuari River, Chicalim, South Goa.
+            </p>
+
+            {/* Social Icons */}
+            <div className="flex gap-2.5">
+              {socialLinks.map((s, i) => (
                 <a
-                  href="tel:+91 7020142370"
-                  className="text-background/80 hover:text-primary transition-colors"
+                  key={i}
+                  href={s.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="flex items-center justify-center w-9 h-9 transition-all duration-200"
+                  style={{
+                    borderRadius: "var(--radius)",
+                    background: "rgba(255,255,255,0.06)",
+                    border: "1px solid var(--border)",
+                    color: "rgba(255,255,255,0.5)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "var(--blue)";
+                    e.currentTarget.style.borderColor = "var(--blue)";
+                    e.currentTarget.style.color = "var(--white)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.06)";
+                    e.currentTarget.style.borderColor = "var(--border)";
+                    e.currentTarget.style.color = "rgba(255,255,255,0.5)";
+                  }}
                 >
-                  +91 7020142370
+                  {s.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Quick Links ── */}
+          <div>
+            <h4
+              className="text-[0.65rem] tracking-[0.18em] uppercase mb-5"
+              style={{
+                fontFamily: "var(--font-head)",
+                fontWeight: 700,
+                color: "rgba(255,255,255,0.35)",
+              }}
+            >
+              Quick Links
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {quickLinks.map((l, i) => (
+                <li key={i}>
+                  <Link
+                    to={l.link}
+                    className="text-[0.82rem] transition-colors duration-200"
+                    style={{ color: "rgba(255,255,255,0.5)" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "var(--sky)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "rgba(255,255,255,0.5)")
+                    }
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ── Support ── */}
+          <div>
+            <h4
+              className="text-[0.65rem] tracking-[0.18em] uppercase mb-5"
+              style={{
+                fontFamily: "var(--font-head)",
+                fontWeight: 700,
+                color: "rgba(255,255,255,0.35)",
+              }}
+            >
+              Support
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {supportLinks.map((l, i) => (
+                <li key={i}>
+                  <Link
+                    to={l.link}
+                    className="text-[0.82rem] transition-colors duration-200"
+                    style={{ color: "rgba(255,255,255,0.5)" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "var(--sky)")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "rgba(255,255,255,0.5)")
+                    }
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ── Contact ── */}
+          <div>
+            <h4
+              className="text-[0.65rem] tracking-[0.18em] uppercase mb-5"
+              style={{
+                fontFamily: "var(--font-head)",
+                fontWeight: 700,
+                color: "rgba(255,255,255,0.35)",
+              }}
+            >
+              Contact
+            </h4>
+            <div className="flex flex-col gap-3.5">
+              {/* Address */}
+              <div className="flex items-start gap-2.5">
+                <span
+                  className="flex items-center justify-center w-5 h-5 flex-shrink-0 mt-0.5"
+                  style={{
+                    borderRadius: "4px",
+                    background: "rgba(26,111,180,0.2)",
+                    color: "var(--sky)",
+                  }}
+                >
+                  <MapPin className="w-3 h-3" />
+                </span>
+                <span
+                  className="text-[0.8rem] leading-relaxed"
+                  style={{ color: "rgba(255,255,255,0.5)" }}
+                >
+                  Vasco Sports Club, Rukmini Towers,
+                  <br />
+                  Opp. Tilak Maidan, Vasco da Gama,
+                  <br />
+                  Goa 403 802
+                </span>
+              </div>
+
+              {/* Phone 1 */}
+              <div className="flex items-center gap-2.5">
+                <span
+                  className="flex items-center justify-center w-5 h-5 flex-shrink-0"
+                  style={{
+                    borderRadius: "4px",
+                    background: "rgba(26,111,180,0.2)",
+                    color: "var(--sky)",
+                  }}
+                >
+                  <Phone className="w-3 h-3" />
+                </span>
+                <a
+                  href="tel:+918322511333"
+                  className="text-[0.8rem] transition-colors duration-200"
+                  style={{ color: "rgba(255,255,255,0.5)" }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "var(--sky)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "rgba(255,255,255,0.5)")
+                  }
+                >
+                  +91 (832) 251 1333
                 </a>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary" />
-                <a
-                  href="mailto:support@skfgoarivermarathon.com"
-                  className="text-background/80 hover:text-primary transition-colors"
+
+              {/* Phone 2 */}
+              <div className="flex items-center gap-2.5">
+                <span
+                  className="flex items-center justify-center w-5 h-5 flex-shrink-0"
+                  style={{
+                    borderRadius: "4px",
+                    background: "rgba(26,111,180,0.2)",
+                    color: "var(--sky)",
+                  }}
                 >
-                  support@skfgoarivermarathon.com
+                  <Phone className="w-3 h-3" />
+                </span>
+                <a
+                  href="tel:+919022174688"
+                  className="text-[0.8rem] transition-colors duration-200"
+                  style={{ color: "rgba(255,255,255,0.5)" }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "var(--sky)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "rgba(255,255,255,0.5)")
+                  }
+                >
+                  +91 9022 174 688
                 </a>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-center gap-2.5">
+                <span
+                  className="flex items-center justify-center w-5 h-5 flex-shrink-0"
+                  style={{
+                    borderRadius: "4px",
+                    background: "rgba(26,111,180,0.2)",
+                    color: "var(--sky)",
+                  }}
+                >
+                  <Mail className="w-3 h-3" />
+                </span>
+                <a
+                  href="mailto:runnersingoa@gmail.com"
+                  className="text-[0.8rem] transition-colors duration-200"
+                  style={{ color: "rgba(255,255,255,0.5)" }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "var(--sky)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "rgba(255,255,255,0.5)")
+                  }
+                >
+                  runnersingoa@gmail.com
+                </a>
+              </div>
+
+              {/* Hashtag pill */}
+              <div className="mt-1">
+                <span
+                  className="inline-block text-[0.7rem] px-3 py-1 tracking-wider"
+                  style={{
+                    fontFamily: "var(--font-head)",
+                    fontWeight: 700,
+                    borderRadius: "20px",
+                    background: "rgba(91,184,245,0.12)",
+                    color: "var(--sky)",
+                    border: "1px solid rgba(91,184,245,0.25)",
+                  }}
+                >
+                  #RunGoa
+                </span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-background/20 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-background/60 text-sm mb-4 md:mb-0">
-              © 2026 Goa River Marathon. All rights reserved.
-            </div>
-            <div className="flex flex-wrap gap-6 text-sm text-background/60">
-              <a
-                href="https://vascosportsclub.com"
-                target="_blank"
-                className="hover:text-blue-600 hover:underline"
+        {/* ── Bottom Bar ── */}
+        <div
+          className="mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 flex-wrap text-[0.72rem]"
+          style={{
+            borderTop: "1px solid rgba(255,255,255,0.06)",
+            color: "rgba(255,255,255,0.25)",
+          }}
+        >
+          <span>© 2027 SKF Goa River Marathon. All rights reserved.</span>
+
+          <div className="flex flex-wrap gap-5">
+            {[
+              { label: "Privacy Policy", link: "#" },
+              { label: "Terms & Conditions", link: "/term-and-conditions" },
+              { label: "Refund Policy", link: "#" },
+              { label: "Sitemap", link: "#" },
+            ].map((l, i) => (
+              <Link
+                key={i}
+                to={l.link}
+                className="transition-colors duration-200"
+                style={{ color: "rgba(255,255,255,0.3)" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "rgba(255,255,255,0.55)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "rgba(255,255,255,0.3)")
+                }
               >
-                Vasco Sports Club
-              </a>
-              <span>•</span>
-              <span>AIMS Certified Course</span>
-              <span>•</span>
-              <span>Eco-friendly Event</span>
-            </div>
+                {l.label}
+              </Link>
+            ))}
           </div>
+
+          <span
+            style={{
+              fontFamily: "var(--font-head)",
+              fontWeight: 700,
+              color: "var(--orange)",
+            }}
+          >
+            #RunGoa
+          </span>
         </div>
       </div>
     </footer>

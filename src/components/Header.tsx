@@ -1,118 +1,139 @@
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import vascoLogo from "@/assets/VSG_LOGO.png";
 import skfLogo from "@/assets/grm-2026.jpeg";
 import getLastDateOfMonth from "@/lib/getDate";
 import { GetRegisterButton } from "@/lib/localstorage";
 
+const navItems = [
+  { link: "/", label: "Home" },
+  { link: "/events", label: "Events" },
+  { link: "/sponsors", label: "Sponsors" },
+  { link: "/memories", label: "Gallery" },
+  { link: "/contact-us", label: "Contact Us" },
+  { link: "/prizes", label: "Prizes" },
+  { link: "/results", label: "Results" },
+  { link: "/getting-there", label: "Getting There" },
+  { link: "/faq", label: "FAQ" },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { daysRemaining } = getLastDateOfMonth();
-
-  const navItems = [
-    { link: "/", label: "Home" },
-    { link: "/events", label: "Events" },
-    { link: "/sponsors", label: "Sponsors" },
-    { link: "/memories", label: "Gallery" },
-    // { link: "/photos", label: "Photos" },
-    { link: "/contact-us", label: "Contact Us" },
-    { link: "/prizes", label: "Prizes" },
-    // { link: "/shop", label: "Shop" },
-    // { link: "/feedback", label: "Feedback" },
-    { link: "/results", label: "Results" },
-    { link: "/getting-there", label: "Getting There" },
-    { link: "/faq", label: "FAQ" },
-  ];
+  const location = useLocation();
 
   return (
-    <header className=" mt-6 z-50 bg-background/80 backdrop-blur-lg">
-      {/* Top Banner */}
-      {/* <div className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6 py-3 flex flex-col sm:flex-row items-center justify-between shadow-lg">
-        <div className="flex items-center gap-3">
-          <svg
-            className="w-6 h-6 text-yellow-300"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm.75 4a.75.75 0 01.75.75v4.19l2.22 1.3a.75.75 0 11-.75 1.3l-2.72-1.59a.75.75 0 01-.37-.65V6.75a.75.75 0 01.75-.75z" />
-          </svg>
-          <p className="text-sm sm:text-base font-semibold">
-            Register Now –{" "}
-            <span className="font-bold text-yellow-300">
-              {daysRemaining > 0
-                ? `Festival ends in ${daysRemaining} days!`
-                : "Festival has ended!"}
-            </span>
-          </p>
-        </div>
-        <GetRegisterButton />
-      </div> */}
-
-      {/* Navigation */}
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+    <header className="fixed  top-0 left-0 right-0 z-[500] h-[100px] flex items-center bg-[rgba(11,30,61,0.96)] backdrop-blur-[20px] border-b border-white/10">
+      {/* Nav inner */}
+      <div className="w-full max-w-[1400px] mx-auto  flex items-center justify-between gap-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="w-32 md:w-40">
-            <img
-              src={skfLogo}
-              alt="SKF Logo"
-              className="w-full max-w-[80px] rounded h-auto"
-            />
+        <Link to="/" className="flex items-center gap-[0.9rem] shrink-0">
+          <img
+            src={skfLogo}
+            alt="GRM 2026"
+            className="w-[40px]   object-cover"
+          />
+
+          {/* Text block */}
+          <div className="font-['Montserrat'] leading-[1.25]">
+            <p className="text-[0.65rem] font-semibold tracking-[0.14em] uppercase text-[#5BB8F5]">
+              SKF Presents
+            </p>
+            <p className="text-[0.95rem] font-extrabold text-white">
+              Goa River Marathon
+            </p>
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.link}
-              to={item.link}
-              className="text-muted-foreground hover:text-primary transition-smooth"
-            >
-              {item.label}
-            </Link>
-          ))}
+        {/* Desktop nav links */}
+        <nav className="hidden lg:flex items-center gap-[0.3rem] list-none">
+          {navItems.map((item) => {
+            const isActive = location.pathname === item.link;
+            return (
+              <Link
+                key={item.link}
+                to={item.link}
+                className={`
+                  font-['Montserrat'] text-[0.75rem] font-semibold
+                  tracking-[0.08em] uppercase px-[0.85rem] py-[0.5rem]
+                  rounded-[5px] transition-all duration-150
+                  ${
+                    isActive
+                      ? "text-white bg-white/[0.07]"
+                      : "text-white/65 hover:text-white hover:bg-white/[0.07]"
+                  }
+                `}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden md:block">
+        {/* Right actions */}
+        <div className="hidden lg:flex items-center gap-[0.8rem] shrink-0">
+          {/* Days counter */}
+          <div className="font-['Montserrat'] text-[0.65rem] font-bold tracking-[0.08em] uppercase text-[#5BB8F5]">
+            <span className="text-[1rem] font-extrabold text-white">
+              {daysRemaining}
+            </span>{" "}
+            days to go
+          </div>
+
           <GetRegisterButton />
         </div>
-        <div className="flex justify-center font-semibold items-center gap-2">
-          <img src={vascoLogo} width="90px" alt="Vasco Logo" />
-        </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2"
+          className="lg:hidden ml-auto p-2 rounded-md text-white/70 hover:text-white hover:bg-white/[0.07] transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
         >
           {isMenuOpen ? (
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5" />
           ) : (
-            <Menu className="w-6 h-6" />
+            <Menu className="w-5 h-5" />
           )}
         </button>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile drawer */}
       {isMenuOpen && (
-        <nav className="md:hidden px-4 pb-4 border-t border-border pt-4">
-          <div className="flex flex-col space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.link}
-                to={item.link}
-                className="text-muted-foreground hover:text-primary transition-smooth"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <GetRegisterButton />
+        <nav className="lg:hidden absolute top-[70px] left-0 right-0 bg-[rgba(11,30,61,0.98)] border-b border-white/10 px-[5vw] py-4">
+          <div className="flex flex-col gap-1">
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.link;
+              return (
+                <Link
+                  key={item.link}
+                  to={item.link}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`
+                    font-['Montserrat'] text-[0.75rem] font-semibold
+                    tracking-[0.08em] uppercase px-[0.85rem] py-[0.6rem]
+                    rounded-[5px] transition-all duration-150
+                    ${
+                      isActive
+                        ? "text-white bg-white/[0.07]"
+                        : "text-white/65 hover:text-white hover:bg-white/[0.07]"
+                    }
+                  `}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+
+            <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-between">
+              <div className="font-['Montserrat'] text-[0.65rem] font-bold tracking-[0.08em] uppercase text-[#5BB8F5]">
+                <span className="text-[1rem] font-extrabold text-white">
+                  {daysRemaining}
+                </span>{" "}
+                days to go
+              </div>
+              <GetRegisterButton />
+            </div>
           </div>
         </nav>
       )}

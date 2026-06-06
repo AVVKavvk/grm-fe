@@ -1,17 +1,15 @@
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
-import MascotSection from "@/components/MascotSection";
-import RaceRouteSection from "@/components/RaceRouteSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import SocialMediaSection from "@/components/SocialMediaSection";
-// import AnalyticsSection from "@/components/AnalyticsSection";
-import MemorySection from "@/components/MemoriesSection";
 import FestivalHighlights from "@/components/FestivalHighlights";
-import { Link } from "react-router-dom";
 import Sponsorship from "@/components/Sponsorship";
-import { Button } from "@/components/ui/button";
-import { GetRegisterButton } from "@/lib/localstorage";
-import ServicesSection from "@/components/ServicesSection";
+import RaceRouteSection from "@/components/RaceRouteSection";
+import StoryLegacySection from "@/components/StoryLegacySection";
+import ExperienceStrip from "@/components/ExperienceStrip";
+import HomePrizesSection from "@/components/HomePrizesSection";
+import RaceDayTimeline from "@/components/RaceDayTimeline";
+import HomeFAQSection from "@/components/HomeFAQSection";
 
 const Index = () => {
   return (
@@ -19,13 +17,15 @@ const Index = () => {
       <Hero />
       <FestivalHighlights />
       <AboutSection />
-      {/* <MascotSection /> */}
-      {/* <RaceRouteSection /> */}
-      {/* <MemorySection /> */}
-      {/* <ServicesSection /> */}
+      <RaceRouteSection />
+      <StoryLegacySection />
+      <ExperienceStrip />
       <TestimonialsSection />
       {/* <AnalyticsSection /> */}
       <SocialMediaSection />
+      <HomePrizesSection />
+      <RaceDayTimeline />
+      <HomeFAQSection />
       <Sponsorship />
     </div>
   );

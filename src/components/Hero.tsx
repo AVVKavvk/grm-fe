@@ -1,124 +1,199 @@
-import { Button } from "@/components/ui/button";
-import { Play, Calendar, MapPin, X } from "lucide-react";
+import { Play, Calendar, MapPin, Medal, X } from "lucide-react";
 import heroImage from "@/assets/bg-img.jpeg";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GetRegisterButton } from "@/lib/localstorage";
+import { Link } from "react-router-dom";
+
+const useCountdown = (targetDate: string) => {
+  const calculate = () => {
+    const diff = new Date(targetDate).getTime() - Date.now();
+    if (diff <= 0) return { days: 0, hrs: 0, min: 0, sec: 0 };
+    return {
+      days: Math.floor(diff / 86400000),
+      hrs: Math.floor((diff % 86400000) / 3600000),
+      min: Math.floor((diff % 3600000) / 60000),
+      sec: Math.floor((diff % 60000) / 1000),
+    };
+  };
+  const [time, setTime] = useState(calculate);
+  useEffect(() => {
+    const t = setInterval(() => setTime(calculate()), 1000);
+    return () => clearInterval(t);
+  }, []);
+  return time;
+};
+
+const CdUnit = ({ n, u }: { n: number; u: string }) => (
+  <div className="text-center min-w-[44px]">
+    <div className="font-['Montserrat'] text-[1.5rem] font-extrabold text-white leading-none">
+      {String(n).padStart(2, "0")}
+    </div>
+    <div className="text-[0.56rem] font-semibold tracking-[0.12em] uppercase text-white/45 mt-0.5">
+      {u}
+    </div>
+  </div>
+);
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { days, hrs, min, sec } = useCountdown("2027-12-14T06:00:00");
+
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Background Image */}
+    <section className="relative min-h-screen flex items-end overflow-hidden pt-[70px]">
+      {/* Background photo */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-background/30"></div>
-      </div>
+      />
+
+      {/* Dark gradient overlay — left-heavy */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(11,30,61,0.90) 0%, rgba(11,30,61,0.60) 55%, rgba(11,30,61,0.15) 100%)",
+        }}
+      />
+      {/* Bottom fade to navy */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-[220px] pointer-events-none"
+        style={{
+          background: "linear-gradient(to top, #0B1E3D 0%, transparent 100%)",
+        }}
+      />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-32">
-        <div className="max-w-4xl">
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              SKF Goa River
-            </span>
-            <br />
-            <span className="text-foreground font-extrabold italic tracking-wide">
-              Marathon 2026
-            </span>
-          </h1>
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-[5vw] pb-20">
+        {/* Pre-line */}
+        <div className="flex items-center gap-4 mb-6">
+          <span className="inline-block bg-[#F47B20]/15 border border-[#F47B20]/30 text-[#FF9748] font-['Montserrat'] text-[0.68rem] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full">
+            16th Edition · Dec 14, 2027
+          </span>
+          <div className="w-px h-[18px] bg-white/25" />
+          <span className="font-['Montserrat'] text-[0.72rem] font-semibold tracking-[0.10em] uppercase text-white/40">
+            AIMS Certified
+          </span>
+        </div>
 
-          {/* Vasco Sports Club Badge */}
-          <div className="inline-flex flex-col justify-center  gap-2 text-red-500 px-4 py-2 rounded-full mb-10">
-            <span className="text-sm font-medium">
-              Run the River. Feel the Festival
-            </span>
+        {/* Headline */}
+        <h1
+          className="font-['Montserrat'] font-black uppercase leading-[1.02] text-white mb-6 max-w-[700px]"
+          style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)" }}
+        >
+          Run Along
+          <br />
+          <span className="text-[#5BB8F5]">Goa's</span>
+          <span className="text-[#F47B20]"> Beautiful</span>
+          <br />
+          Rivers
+        </h1>
 
-            <div className="font-bold flex gap-2 items-center justify-between text-red-500 text-3xl">
-              {/* <Calendar className="w-7 h-7 text-red-500" /> */}
-              <span>December 13th, Sunday</span>
-            </div>
-          </div>
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-800 mb-8 max-w-2xl leading-relaxed">
-            Experience India’s most stunning fitness festival - where adrenaline
-            meets elegance. For 15 years, runners from across the globe have
-            raced, recovered, and reveled by Goa’s Zuari river. This 15th Goa
-            River Marathon takes it to another level: electrifying runs, live
-            music, recovery and wellness zones, fitness challenges, culinary
-            experiences by top chefs, and signature cocktails from the best
-            mixologists. It’s where sport, wellness, and community collide - and
-            you don't want to miss it!
-          </p>
+        {/* Tagline */}
+        <p className="font-['Montserrat'] text-[1.05rem] font-semibold tracking-[0.25em] uppercase text-white/55 mb-10">
+          Breathe.&nbsp;
+          <span className="text-[#2E8FD8]">Run.</span>
+          &nbsp;
+          <span className="text-[#F47B20]">Inspire.</span>
+        </p>
 
-          {/* Event Details */}
-          <div className="flex flex-wrap gap-6 mb-6">
-            <div className="flex items-center gap-2 text-gray-800">
-              <Calendar className="w-5 h-5 text-primary" />
-              <span>December 13th, 2026</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-800">
-              <MapPin className="w-5 h-5 text-primary" />
-              <span>Vasco Da Gama, Goa</span>
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+        {/* CTAs + Countdown row */}
+        <div className="flex items-center flex-wrap gap-8 mb-10">
+          {/* Actions */}
+          <div className="flex items-center gap-3 flex-wrap">
             <GetRegisterButton />
-            <Button
-              variant="outline"
-              size="lg"
-              className="text-lg px-8 py-4 group"
+            <button
               onClick={() => setIsOpen(true)}
+              className="flex items-center gap-2 font-['Montserrat'] text-[0.92rem] font-bold tracking-[0.06em] uppercase px-[1.8rem] py-[1rem] rounded-[8px] border border-white/20 text-white hover:bg-white/[0.07] transition-all duration-150"
             >
-              <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+              <Play className="w-4 h-4" />
               Watch Glimpses
-            </Button>
+            </button>
+          </div>
 
-            {isOpen && (
-              <div
-                className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 animate-in fade-in"
-                onClick={() => setIsOpen(false)}
-              >
-                <div
-                  className="relative w-full max-w-5xl bg-background rounded-lg overflow-hidden shadow-2xl animate-in zoom-in-95"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {/* Close Button */}
-                  <button
-                    onClick={() => setIsOpen(false)}
-                    className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
+          {/* Countdown */}
+          <div className="flex items-center gap-2 bg-white/[0.06] border border-white/10 rounded-[8px] px-5 py-3">
+            <CdUnit n={days} u="Days" />
+            <span className="font-['Montserrat'] text-[1.3rem] font-extrabold text-[#F47B20] self-start mt-0.5">
+              :
+            </span>
+            <CdUnit n={hrs} u="Hrs" />
+            <span className="font-['Montserrat'] text-[1.3rem] font-extrabold text-[#F47B20] self-start mt-0.5">
+              :
+            </span>
+            <CdUnit n={min} u="Min" />
+            <span className="font-['Montserrat'] text-[1.3rem] font-extrabold text-[#F47B20] self-start mt-0.5">
+              :
+            </span>
+            <CdUnit n={sec} u="Sec" />
+          </div>
+        </div>
 
-                  {/* Video Container */}
-                  <div
-                    className="relative w-full"
-                    style={{ paddingBottom: "56.25%" }}
-                  >
-                    <iframe
-                      src="https://drive.google.com/file/d/1y59jYDiGUkOTR_qxt5P9Gl5Wls5c1DxQ/preview"
-                      className="absolute inset-0 w-full h-full"
-                      allow="autoplay"
-                      allowFullScreen
-                    />
-                  </div>
+        {/* Meta strip */}
+        <div className="flex flex-wrap gap-8">
+          {[
+            {
+              icon: <Calendar className="w-4 h-4 text-[#5BB8F5]" />,
+              label: "Race Day",
+              value: "Sunday, 14 December 2027",
+            },
+            {
+              icon: <MapPin className="w-4 h-4 text-[#5BB8F5]" />,
+              label: "Location",
+              value: "Vasco Da Gama, South Goa",
+            },
+            {
+              icon: <Medal className="w-4 h-4 text-[#5BB8F5]" />,
+              label: "Distances",
+              value: "5K · 10K · 21K · 32K · 42K",
+            },
+          ].map(({ icon, label, value }) => (
+            <div key={label} className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-[6px] bg-[#5BB8F5]/12 flex items-center justify-center shrink-0">
+                {icon}
+              </div>
+              <div>
+                <div className="text-[0.68rem] font-semibold tracking-[0.10em] uppercase text-white/45">
+                  {label}
+                </div>
+                <div className="font-['Montserrat'] text-[0.92rem] font-bold text-white">
+                  {value}
                 </div>
               </div>
-            )}
-          </div>
-
-          {/* Tech Features Preview */}
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* Video modal */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setIsOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-5xl bg-[#0B1E3D] rounded-[16px] overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div
+              className="relative w-full"
+              style={{ paddingBottom: "56.25%" }}
+            >
+              <iframe
+                src="https://drive.google.com/file/d/1y59jYDiGUkOTR_qxt5P9Gl5Wls5c1DxQ/preview"
+                className="absolute inset-0 w-full h-full"
+                allow="autoplay"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

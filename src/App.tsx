@@ -195,11 +195,11 @@ const App = () => {
         </Suspense>
       )}
 
-      {!location.pathname.startsWith("/registration") && (
+      {/* {!location.pathname.startsWith("/registration") && (
         <Suspense fallback={<Loader />}>
           <PricingFooter />
         </Suspense>
-      )}
+      )} */}
     </TooltipProvider>
   );
 };
