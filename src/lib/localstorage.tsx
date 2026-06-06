@@ -152,7 +152,11 @@ export const GetRegisterButtonForEvent = (eventName: string) => {
 
   return (
     <a href={sourceConfig.redirectUrl} target="_blank">
-      <Button variant="cta" size="lg">
+      <Button
+        variant="cta"
+        size="lg"
+        className="bg-[#F47B20] hover:bg-[#F47B40]"
+      >
         Register for {eventName}
       </Button>
     </a>
