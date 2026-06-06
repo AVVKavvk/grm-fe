@@ -73,14 +73,6 @@ const Header = () => {
 
         {/* Right actions */}
         <div className="hidden lg:flex items-center gap-[0.8rem] shrink-0">
-          {/* Days counter */}
-          <div className="font-['Montserrat'] text-[0.65rem] font-bold tracking-[0.08em] uppercase text-[#5BB8F5]">
-            <span className="text-[1rem] font-extrabold text-white">
-              {daysRemaining}
-            </span>{" "}
-            days to go
-          </div>
-
           <GetRegisterButton />
         </div>
 
@@ -126,12 +118,6 @@ const Header = () => {
             })}
 
             <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-between">
-              <div className="font-['Montserrat'] text-[0.65rem] font-bold tracking-[0.08em] uppercase text-[#5BB8F5]">
-                <span className="text-[1rem] font-extrabold text-white">
-                  {daysRemaining}
-                </span>{" "}
-                days to go
-              </div>
               <GetRegisterButton />
             </div>
           </div>
