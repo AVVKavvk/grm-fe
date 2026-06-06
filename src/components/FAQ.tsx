@@ -4,13 +4,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 const FAQ = () => {
   const faqSections = [
@@ -115,652 +108,6 @@ const FAQ = () => {
       ],
     },
     {
-      title: "Results, Medals & Prizes",
-      items: [
-        {
-          question:
-            "What is the prize amount for each age category in the Full Marathon?",
-          answer: (
-            <div className="space-y-2">
-              <p>
-                All prizes are awarded in Indian Rupees. The prize amounts for
-                the Full Marathon are as follows:
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-gray-300 mt-3">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        Category
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        1st Prize
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        2nd Prize
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        3rd Prize
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Open Men (18–44)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹20,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹17,500
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹15,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Open Women (18–39)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹20,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹17,500
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹15,000
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Veteran Men (45–54)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹9,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹7,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Veteran Women (40–49)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹9,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹7,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Sr. Veteran Men (55–64)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹9,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹7,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Sr. Veteran Women (50–59)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹9,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹7,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Super Veteran Men (65+)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹9,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹7,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Super Veteran Women (60+)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹9,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹7,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          ),
-        },
-        {
-          question:
-            "What is the prize amount for each age category in the 20 Miler (32K)?",
-          answer: (
-            <div className="space-y-2">
-              <p>
-                All prizes are awarded in Indian Rupees. The prize amounts for
-                the 20 Miler (32 KM) are as follows:
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-gray-300 mt-3">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        Category
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        1st Prize
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        2nd Prize
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        3rd Prize
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Open Men (18–44)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹17,500
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹15,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹12,500
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Open Women (18–39)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹17,500
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹15,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹12,500
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Veteran Men (45–54)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹6,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Veteran Women (40–49)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹6,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Sr. Veteran Men (55–64)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹6,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Sr. Veteran Women (50–59)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹6,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Super Veteran Men (65+)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹6,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Super Veteran Women (60+)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹6,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          ),
-        },
-        {
-          question:
-            "What is the prize amount for each age category in the Half Marathon?",
-          answer: (
-            <div className="space-y-2">
-              <p>
-                All prizes are awarded in Indian Rupees. The prize amounts for
-                the Half Marathon are as follows:
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-gray-300 mt-3">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        Category
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        1st Prize
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        2nd Prize
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        3rd Prize
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Open Men (18–44)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹15,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹12,500
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹10,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Open Women (18–39)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹15,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹12,500
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹10,000
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Veteran Men (45–54)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Veteran Women (40–49)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Sr. Veteran Men (55–64)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Sr. Veteran Women (50–59)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Super Veteran Men (65+)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Super Veteran Women (60+)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          ),
-        },
-        {
-          question:
-            "What is the prize amount for each age category in the 10K Run?",
-          answer: (
-            <div className="space-y-2">
-              <p>
-                All prizes are awarded in Indian Rupees. The prize amounts for
-                the 10K Run are as follows:
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-gray-300 mt-3">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        Category
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        1st Prize
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        2nd Prize
-                      </th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">
-                        3rd Prize
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Open Men (18–44)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹15,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹12,500
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹10,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Open Women (18–39)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹15,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹12,500
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹10,000
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Veteran Men (45–54)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Veteran Women (40–49)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Sr. Veteran Men (55–64)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Sr. Veteran Women (50–59)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-2">
-                        Super Veteran Men (65+)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 px-4 py-2">
-                        Super Veteran Women (60+)
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹5,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹4,000
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        ₹3,000
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          ),
-        },
-        {
-          question: "What are the age categories for prizes?",
-          answer: (
-            <div className="space-y-3">
-              <p className="font-semibold">
-                The age brackets for each prize category are as follows:
-              </p>
-              <p className="text-sm italic">(Age calculated as on Race Day)</p>
-
-              <div className="space-y-2">
-                <div>
-                  <p className="font-semibold">Open Category:</p>
-                  <p>Men: 18 years and above, below 45 years</p>
-                  <p>Women: 18 years and above, below 40 years</p>
-                </div>
-
-                <div>
-                  <p className="font-semibold">Veteran Category:</p>
-                  <p>Men: 45 years and above, below 55 years</p>
-                  <p>Women: 40 years and above, below 50 years</p>
-                </div>
-
-                <div>
-                  <p className="font-semibold">Senior Veteran Category:</p>
-                  <p>Men: 55 years and above, below 65 years</p>
-                  <p>Women: 50 years and above, below 60 years</p>
-                </div>
-
-                <div>
-                  <p className="font-semibold">Super Veteran Category:</p>
-                  <p>Men: 65 years and above</p>
-                  <p>Women: 60 years and above</p>
-                </div>
-              </div>
-            </div>
-          ),
-        },
-        {
-          question: "Will I get a finisher medal?",
-          answer:
-            "Yes! Every runner who crosses the finish line earns a medal.",
-        },
-        {
-          question: "What prizes are available?",
-          answer:
-            "Prizes are awarded in Open and Age Categories. Open Category prizes are announced on race day, Age Category results are confirmed within 3 days. Prize money is subject to Indian Income Tax laws.",
-        },
-        {
-          question: "When and where will results be available?",
-          answer:
-            "Results and timing certificates will be published within a week at timingindia.com.",
-        },
-        {
-          question: "Will there be photos of me?",
-          answer:
-            "Yes. Photos will be searchable by bib number on our website within a week of the event.",
-        },
-      ],
-    },
-    {
       title: "Logistics, Transport & Facilities",
       items: [
         {
@@ -849,70 +196,173 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div
+      className="min-h-screen"
+      style={{
+        backgroundColor: "#0B1E3D",
+        fontFamily: "Open Sans, sans-serif",
+      }}
+    >
       <div className="container mx-auto px-4 py-16 md:py-32">
+        {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          <h1
+            className="text-4xl md:text-5xl font-black mb-4"
+            style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
+          >
             Frequently Asked Questions
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p
+            className="text-lg max-w-2xl mx-auto"
+            style={{ color: "rgba(255,255,255,0.70)", fontWeight: 300 }}
+          >
             Find answers to all your questions about the SKF Goa River Marathon
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
+        {/* FAQ Sections */}
+        <div className="max-w-4xl mx-auto space-y-6">
           {faqSections.map((section, sectionIndex) => (
-            <Card key={sectionIndex} className="overflow-hidden">
-              <CardHeader>
-                <CardTitle className="text-2xl text-primary">
+            <div
+              key={sectionIndex}
+              className="rounded-2xl border overflow-hidden"
+              style={{
+                backgroundColor: "#122B55",
+                borderColor: "#1A3A6B",
+                boxShadow: "0 2px 16px rgba(11,30,61,0.20)",
+              }}
+            >
+              {/* Section Header */}
+              <div
+                className="px-6 py-5"
+                style={{
+                  backgroundColor: "#1A3A6B",
+                  borderBottom: "1px solid rgba(255,255,255,0.08)",
+                }}
+              >
+                <h2
+                  className="text-2xl font-black"
+                  style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    color: "#5BB8F5",
+                  }}
+                >
                   {section.title}
-                </CardTitle>
-                <CardDescription>
+                </h2>
+                <p
+                  className="text-sm mt-1"
+                  style={{
+                    color: "rgba(255,255,255,0.50)",
+                    fontFamily: "Open Sans, sans-serif",
+                  }}
+                >
                   Essential information about {section.title.toLowerCase()}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+                </p>
+              </div>
+
+              {/* Accordion */}
+              <div className="px-6 py-2">
                 <Accordion type="single" collapsible className="w-full">
                   {section.items.map((item, itemIndex) => (
                     <AccordionItem
                       key={itemIndex}
                       value={`item-${sectionIndex}-${itemIndex}`}
+                      style={{ borderColor: "rgba(255,255,255,0.08)" }}
                     >
-                      <AccordionTrigger className="text-left">
+                      <AccordionTrigger
+                        className="text-left py-4 font-semibold hover:no-underline"
+                        style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          color: "#FFFFFF",
+                          fontSize: "0.95rem",
+                        }}
+                      >
                         {item.question}
                       </AccordionTrigger>
                       <AccordionContent>
-                        <div className="whitespace-pre-line text-muted-foreground">
+                        <div
+                          className="whitespace-pre-line pb-4 leading-relaxed"
+                          style={{
+                            color: "rgba(255,255,255,0.70)",
+                            fontFamily: "Open Sans, sans-serif",
+                            fontWeight: 300,
+                          }}
+                        >
                           {item.answer}
                         </div>
                       </AccordionContent>
                     </AccordionItem>
                   ))}
                 </Accordion>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
 
+        {/* Still have questions */}
         <div className="text-center mt-12">
-          <Card className="max-w-2xl mx-auto">
-            <CardHeader>
-              <CardTitle>Still have questions?</CardTitle>
-              <CardDescription>
-                Our team is here to help you with any additional questions
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2 text-sm">
-                <p>
-                  <strong>Email:</strong> runnersingoa@gmail.com
-                </p>
-                <p>
-                  <strong>Support:</strong> support@skfgoarivermarathon.com
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <div
+            className="max-w-2xl mx-auto rounded-2xl border p-8"
+            style={{
+              backgroundColor: "#122B55",
+              borderColor: "#1A3A6B",
+              boxShadow: "0 4px 24px rgba(11,30,61,0.25)",
+            }}
+          >
+            <h2
+              className="text-2xl font-black mb-2"
+              style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
+            >
+              Still have questions?
+            </h2>
+            <p
+              className="text-sm mb-6"
+              style={{
+                color: "rgba(255,255,255,0.55)",
+                fontFamily: "Open Sans, sans-serif",
+              }}
+            >
+              Our team is here to help you with any additional questions
+            </p>
+            <div
+              className="space-y-2 text-sm"
+              style={{
+                color: "rgba(255,255,255,0.75)",
+                fontFamily: "Open Sans, sans-serif",
+              }}
+            >
+              <p>
+                <strong style={{ color: "#FFFFFF" }}>Email:</strong>{" "}
+                <a
+                  href="mailto:runnersingoa@gmail.com"
+                  style={{ color: "#2E8FD8" }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.textDecoration = "underline")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.textDecoration = "none")
+                  }
+                >
+                  runnersingoa@gmail.com
+                </a>
+              </p>
+              <p>
+                <strong style={{ color: "#FFFFFF" }}>Support:</strong>{" "}
+                <a
+                  href="mailto:support@skfgoarivermarathon.com"
+                  style={{ color: "#2E8FD8" }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.textDecoration = "underline")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.textDecoration = "none")
+                  }
+                >
+                  support@skfgoarivermarathon.com
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

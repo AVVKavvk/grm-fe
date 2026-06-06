@@ -606,19 +606,19 @@ function Prizes() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Added text-gray-900 to all cards so the text doesn't inherit the white color from the parent section */}
-          <div className="bg-[#1A6FB4] text-gray-100 p-4 rounded shadow-sm">
+          <div className="bg-[#1A3A6B] text-gray-100 p-4 rounded shadow-sm">
             <p className="font-semibold text-lg mb-2">Open Category:</p>
             <p>Men: 18 years and above, below 45 years</p>
             <p>Women: 18 years and above, below 40 years</p>
           </div>
 
-          <div className="bg-[#1A6FB4] text-gray-100 p-4 rounded shadow-sm">
+          <div className="bg-[#1A3A6B] text-gray-100 p-4 rounded shadow-sm">
             <p className="font-semibold text-lg mb-2">Veteran Category:</p>
             <p>Men: 45 years and above, below 55 years</p>
             <p>Women: 40 years and above, below 50 years</p>
           </div>
 
-          <div className="bg-[#1A6FB4] text-gray-100 p-4 rounded shadow-sm">
+          <div className="bg-[#1A3A6B] text-gray-100 p-4 rounded shadow-sm">
             <p className="font-semibold text-lg mb-2">
               Senior Veteran Category:
             </p>
@@ -626,7 +626,7 @@ function Prizes() {
             <p>Women: 50 years and above, below 60 years</p>
           </div>
 
-          <div className="bg-[#1A6FB4] text-gray-100 p-4 rounded shadow-sm">
+          <div className="bg-[#1A3A6B] text-gray-100 p-4 rounded shadow-sm">
             <p className="font-semibold text-lg mb-2">
               Super Veteran Category:
             </p>
