@@ -274,7 +274,7 @@ const MemoriesSection = () => {
   const nextImage = () => {
     if (selectedYear && selectedYear.images.length > 0) {
       setCurrentImageIndex((prev) =>
-        prev === selectedYear.images.length - 1 ? 0 : prev + 1
+        prev === selectedYear.images.length - 1 ? 0 : prev + 1,
       );
     }
   };
@@ -282,7 +282,7 @@ const MemoriesSection = () => {
   const prevImage = () => {
     if (selectedYear && selectedYear.images.length > 0) {
       setCurrentImageIndex((prev) =>
-        prev === 0 ? selectedYear.images.length - 1 : prev - 1
+        prev === 0 ? selectedYear.images.length - 1 : prev - 1,
       );
     }
   };
@@ -303,43 +303,81 @@ const MemoriesSection = () => {
   }
 
   return (
-    <section className="py-24 md:py-16 bg-gradient-to-b from-background to-secondary/10">
-      {/* Main Content */}
-
+    <section
+      className="py-24 mt-16 md:py-16"
+      style={{ backgroundColor: "#0B1E3D" }}
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              Marathon Memories
-            </span>
+          <h2
+            className="text-4xl md:text-5xl font-black mb-6"
+            style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
+          >
+            Marathon <span className="text-[#F47B20]">Memories</span>
           </h2>
-
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p
+            className="max-w-2xl mx-auto"
+            style={{
+              color: "rgba(255,255,255,0.75)",
+              fontFamily: "Open Sans, sans-serif",
+              fontWeight: 300,
+            }}
+          >
             Relive the incredible moments from 15 years of the Goa River
             Marathon
           </p>
         </div>
 
+        {/* Info Card + CTA */}
         <div className="text-center mb-16">
-          {/* Icon Container */}
-
-          {/* Info Card */}
-          <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8 border border-gray-100 mb-4">
-            <div className="flex items-center justify-center gap-3 text-blue-600 mb-4">
+          <div
+            className="max-w-md mx-auto rounded-2xl p-8 border mb-6"
+            style={{
+              backgroundColor: "#122B55",
+              borderColor: "#1A3A6B",
+              boxShadow: "0 4px 24px rgba(11,30,61,0.25)",
+            }}
+          >
+            <div
+              className="flex items-center justify-center gap-3 mb-4"
+              style={{ color: "#5BB8F5" }}
+            >
               <Camera className="w-6 h-6" />
-              <span className="font-semibold text-lg">
+              <span
+                className="font-bold text-lg"
+                style={{
+                  fontFamily: "Montserrat, sans-serif",
+                  color: "#FFFFFF",
+                }}
+              >
                 How to Find Your Photos
               </span>
             </div>
-            <ol className="text-left text-gray-600 leading-relaxed space-y-2 list-decimal list-inside">
+            <ol
+              className="text-left leading-relaxed space-y-2 list-decimal list-inside"
+              style={{
+                color: "rgba(255,255,255,0.75)",
+                fontFamily: "Open Sans, sans-serif",
+                fontWeight: 300,
+              }}
+            >
               <li>Click the button below to visit the photo portal</li>
               <li>
-                Select <strong>SKF Goa River Marathon 2025</strong>
+                Select{" "}
+                <strong style={{ color: "#FFFFFF", fontWeight: 600 }}>
+                  SKF Goa River Marathon 2025
+                </strong>
               </li>
               <li>
-                Search by your <strong>Bib Number</strong> or upload a{" "}
-                <strong>selfie</strong>
+                Search by your{" "}
+                <strong style={{ color: "#FFFFFF", fontWeight: 600 }}>
+                  Bib Number
+                </strong>{" "}
+                or upload a{" "}
+                <strong style={{ color: "#FFFFFF", fontWeight: 600 }}>
+                  selfie
+                </strong>
               </li>
               <li>View and purchase your race photos</li>
             </ol>
@@ -350,7 +388,19 @@ const MemoriesSection = () => {
             href="https://ifinish.in/photos/searchPhotos"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-blue-600 to-orange-600 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+            className="inline-block font-bold text-lg px-8 py-4 rounded-full transition-all duration-200 hover:scale-105"
+            style={{
+              fontFamily: "Montserrat, sans-serif",
+              backgroundColor: "#F47B20",
+              color: "#FFFFFF",
+              boxShadow: "0 4px 18px rgba(244,123,32,0.40)",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "#FF9748")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = "#F47B20")
+            }
           >
             View Your Photos
           </a>
@@ -368,11 +418,26 @@ const MemoriesSection = () => {
                 {mergedYearlyData
                   .slice(rowIndex * 5, (rowIndex + 1) * 5)
                   .map((year) => (
-                    <Card
+                    <div
                       key={year.year}
-                      className="group hover:shadow-lg transition-all duration-300 overflow-hidden"
+                      // Added flex, flex-col, and h-full here
+                      className="group rounded-xl border overflow-hidden transition-all duration-300 flex flex-col h-full"
+                      style={{
+                        backgroundColor: "#122B55",
+                        borderColor: "#1A3A6B",
+                        boxShadow: "0 2px 12px rgba(11,30,61,0.15)",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.boxShadow =
+                          "0 20px 40px rgba(11,30,61,0.35)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.boxShadow =
+                          "0 2px 12px rgba(11,30,61,0.15)")
+                      }
                     >
-                      <div className="relative">
+                      {/* Image */}
+                      <div className="relative overflow-hidden">
                         <img
                           src={
                             year.images.length > 0
@@ -383,91 +448,171 @@ const MemoriesSection = () => {
                           className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute top-2 left-2">
-                          <Badge className="bg-primary text-primary-foreground font-bold text-sm px-2 py-1">
+                          <span
+                            className="text-xs font-black px-2 py-1 rounded"
+                            style={{
+                              fontFamily: "Montserrat, sans-serif",
+                              backgroundColor: "#F47B20",
+                              color: "#FFFFFF",
+                            }}
+                          >
                             {year.year}
-                          </Badge>
+                          </span>
                         </div>
                         {year.images.length > 0 && (
                           <div className="absolute top-2 right-2">
-                            <Badge variant="secondary" className="text-xs">
+                            <span
+                              className="text-xs px-2 py-1 rounded"
+                              style={{
+                                backgroundColor: "rgba(11,30,61,0.70)",
+                                color: "rgba(255,255,255,0.85)",
+                              }}
+                            >
                               {year.images.length} photos
-                            </Badge>
+                            </span>
                           </div>
                         )}
                       </div>
-                      <CardContent className="p-4">
-                        <h3 className="text-lg font-bold mb-1">{year.theme}</h3>
-                        <div className="text-xs text-muted-foreground mb-2">
+
+                      {/* Card Content */}
+                      {/* Added flex, flex-col, and flex-grow here */}
+                      <div className="p-4 flex flex-col flex-grow">
+                        <h3
+                          className="text-base font-bold mb-1"
+                          style={{
+                            fontFamily: "Montserrat, sans-serif",
+                            color: "#FFFFFF",
+                          }}
+                        >
+                          {year.theme}
+                        </h3>
+                        <div
+                          className="text-xs mb-2"
+                          style={{
+                            color: "rgba(255,255,255,0.45)",
+                            fontFamily: "Open Sans, sans-serif",
+                          }}
+                        >
                           {year.participants.toLocaleString()} runners
                         </div>
-                        <div className="space-y-1 mb-3">
+                        <div className="flex flex-wrap gap-1 mb-3">
                           {year.highlights.slice(0, 2).map((highlight, idx) => (
-                            <Badge
+                            <span
                               key={idx}
-                              variant="outline"
-                              className="text-xs mr-1"
+                              className="text-xs px-2 py-0.5 rounded-full border"
+                              style={{
+                                borderColor: "#1A6FB4",
+                                color: "#5BB8F5",
+                                fontFamily: "Open Sans, sans-serif",
+                              }}
                             >
                               {highlight}
-                            </Badge>
+                            </span>
                           ))}
                         </div>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="w-full text-xs"
+
+                        {/* Added mt-auto to push the button down */}
+                        <button
+                          className="w-full text-xs py-2 px-3 rounded-lg font-semibold border transition-all duration-200 disabled:opacity-40 mt-auto"
                           onClick={() => openGallery(year)}
                           disabled={year.images.length === 0}
+                          style={{
+                            fontFamily: "Montserrat, sans-serif",
+                            backgroundColor:
+                              year.images.length > 0
+                                ? "#F47B20"
+                                : "transparent",
+                            borderColor:
+                              year.images.length > 0
+                                ? "#F47B20"
+                                : "rgba(255,255,255,0.20)",
+                            color: "#FFFFFF",
+                          }}
+                          onMouseEnter={(e) => {
+                            if (year.images.length > 0)
+                              e.currentTarget.style.backgroundColor = "#FF9748";
+                          }}
+                          onMouseLeave={(e) => {
+                            if (year.images.length > 0)
+                              e.currentTarget.style.backgroundColor = "#F47B20";
+                          }}
                         >
                           {year.images.length > 0
                             ? "View Gallery"
                             : "Coming Soon"}
-                        </Button>
-                      </CardContent>
-                    </Card>
+                        </button>
+                      </div>
+                    </div>
                   ))}
               </div>
-            )
+            ),
           )}
         </div>
       </div>
 
       {/* Image Gallery Modal */}
       {selectedYear && selectedYear.images.length > 0 && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-4 right-4 text-white hover:bg-white/20"
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ backgroundColor: "rgba(0,0,0,0.92)" }}
+        >
+          {/* Close */}
+          <button
+            className="absolute top-28 right-4 p-2 rounded-full transition-colors"
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.20)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.10)")
+            }
             onClick={closeGallery}
           >
             <X className="w-6 h-6" />
-          </Button>
+          </button>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute left-4 text-white hover:bg-white/20"
+          {/* Prev */}
+          <button
+            className="absolute left-4 p-2 rounded-full transition-colors"
+            style={{
+              color: "#FFFFFF",
+              backgroundColor: "rgba(255,255,255,0.10)",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.20)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.10)")
+            }
             onClick={prevImage}
           >
             <ChevronLeft className="w-8 h-8" />
-          </Button>
+          </button>
 
           <div className="max-w-5xl w-full">
             <div className="text-center mb-4">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                {selectedYear.year} - {selectedYear.theme}
+              <h3
+                className="text-2xl font-black mb-2"
+                style={{
+                  fontFamily: "Montserrat, sans-serif",
+                  color: "#FFFFFF",
+                }}
+              >
+                {selectedYear.year} — {selectedYear.theme}
               </h3>
-              <p className="text-white/80">
+              <p
+                style={{
+                  color: "rgba(255,255,255,0.60)",
+                  fontFamily: "Open Sans, sans-serif",
+                }}
+              >
                 Photo {currentImageIndex + 1} of {selectedYear.images.length}
               </p>
             </div>
 
             <img
               src={selectedYear.images[currentImageIndex]}
-              alt={`${selectedYear.year} Marathon Memory ${
-                currentImageIndex + 1
-              }`}
-              className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
+              alt={`${selectedYear.year} Marathon Memory ${currentImageIndex + 1}`}
+              className="w-full h-auto max-h-[70vh] object-contain rounded-xl"
             />
 
             {/* Thumbnail Strip */}
@@ -476,11 +621,12 @@ const MemoriesSection = () => {
                 <button
                   key={idx}
                   onClick={() => setCurrentImageIndex(idx)}
-                  className={`flex-shrink-0 w-20 h-20 rounded border-2 overflow-hidden ${
-                    idx === currentImageIndex
-                      ? "border-white"
-                      : "border-transparent opacity-60"
-                  }`}
+                  className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all duration-150"
+                  style={{
+                    borderColor:
+                      idx === currentImageIndex ? "#F47B20" : "transparent",
+                    opacity: idx === currentImageIndex ? 1 : 0.55,
+                  }}
                 >
                   <img
                     src={img}
@@ -492,14 +638,23 @@ const MemoriesSection = () => {
             </div>
           </div>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute right-4 text-white hover:bg-white/20"
+          {/* Next */}
+          <button
+            className="absolute right-4 p-2 rounded-full transition-colors"
+            style={{
+              color: "#FFFFFF",
+              backgroundColor: "rgba(255,255,255,0.10)",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.20)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.10)")
+            }
             onClick={nextImage}
           >
             <ChevronRight className="w-8 h-8" />
-          </Button>
+          </button>
         </div>
       )}
     </section>

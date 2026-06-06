@@ -44,6 +44,13 @@ import RotaryLogo from "@/assets/Logo/Rotary.png";
 
 import { useEmailStore } from "@/store/emailStore";
 
+const trustItems = [
+  { num: "16", label: "Years of Excellence" },
+  { num: "7,500+", label: "Runners Annually" },
+  { num: "AIMS", label: "Certified Course" },
+  { num: "50000 ₹", label: "Equal Prize Money" },
+];
+
 const EnhancedSponsorsSection = () => {
   const { toast } = useToast();
   const [sponsorForm, setSponsorForm] = useState({
@@ -333,56 +340,117 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
   };
 
   return (
-    <section id="sponsors" className="py-16 bg-muted/30">
+    <section
+      id="sponsors"
+      className="py-16"
+      style={{ backgroundColor: "#0B1E3D" }}
+    >
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full mb-6">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+            style={{
+              backgroundColor: "rgba(244,123,32,0.15)",
+              color: "#F47B20",
+            }}
+          >
             <Heart className="w-4 h-4" />
-            <span className="text-sm font-medium">Powered By</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Official Sponsors
+            <span
+              className="text-sm font-semibold tracking-widest uppercase"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
+              Powered By
             </span>
+          </div>
+          <h2
+            className="text-3xl md:text-4xl font-black mb-4"
+            style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
+          >
+            Official <span className="text-[#F47B20]">Sponsors</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p
+            className="text-lg max-w-2xl mx-auto"
+            style={{
+              color: "rgba(255,255,255,0.75)",
+              fontFamily: "Open Sans, sans-serif",
+              fontWeight: 300,
+            }}
+          >
             Visionary partners making India's most innovative marathon possible.
           </p>
         </div>
 
         {/* Title Sponsor */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
+          <h3
+            className="text-2xl font-bold text-center mb-8 tracking-wide uppercase"
+            style={{
+              fontFamily: "Montserrat, sans-serif",
+              color: "#5BB8F5",
+              letterSpacing: "0.16em",
+            }}
+          >
             Title Sponsor
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
             {realSponsors.title.map((sponsor, index) => (
               <a
                 href={sponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
                 key={index}
-                className="bg-card p-8 rounded-xl border-2 border-primary/20 shadow-strong hover:shadow-elegant transition-smooth text-center group"
+                className="p-8 rounded-2xl border-2 text-center group transition-all duration-300"
+                style={{
+                  backgroundColor: "#122B55",
+                  borderColor: "#1A6FB4",
+                  boxShadow: "0 4px 24px rgba(11,30,61,0.18)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 20px 40px rgba(11,30,61,0.35)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 4px 24px rgba(11,30,61,0.18)")
+                }
               >
-                <div className="mb-4 group-hover:scale-110 transition-transform">
+                <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                   {sponsor.isImage ? (
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="w-48 mx-auto object-contain rounded-lg"
+                      className="w-48 mx-auto object-contain rounded-xl"
                     />
                   ) : (
                     <div className="text-6xl">{sponsor.logo}</div>
                   )}
                 </div>
-                <h4 className="text-2xl font-bold text-foreground mb-2">
+                <h4
+                  className="text-2xl font-black mb-2"
+                  style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    color: "#FFFFFF",
+                  }}
+                >
                   {sponsor.name}
                 </h4>
-                <p className="text-sm text-muted-foreground mb-3">
+                <p
+                  className="text-sm mb-3"
+                  style={{
+                    color: "rgba(255,255,255,0.75)",
+                    fontFamily: "Open Sans, sans-serif",
+                  }}
+                >
                   {sponsor.description}
                 </p>
-                <div className="inline-flex items-center gap-1 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">
+                <div
+                  className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold"
+                  style={{
+                    backgroundColor: "rgba(244,123,32,0.15)",
+                    color: "#FF9748",
+                  }}
+                >
                   <Star className="w-3 h-3" />
                   {sponsor.tier}
                 </div>
@@ -392,9 +460,15 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
         </div>
 
         {/* Featured Partners */}
-
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
+          <h3
+            className="text-2xl font-bold text-center mb-8 tracking-wide uppercase"
+            style={{
+              fontFamily: "Montserrat, sans-serif",
+              color: "#5BB8F5",
+              letterSpacing: "0.16em",
+            }}
+          >
             Featured Partners
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -404,27 +478,58 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                 target="_blank"
                 rel="noopener noreferrer"
                 key={index}
-                className="bg-card p-8 rounded-xl border border-primary/20 shadow-medium hover:shadow-strong transition-smooth text-center group flex flex-col items-center justify-between min-h-[320px]"
+                className="p-8 rounded-2xl border text-center group flex flex-col items-center justify-between min-h-[320px] transition-all duration-300"
+                style={{
+                  backgroundColor: "#122B55",
+                  borderColor: "#1A3A6B",
+                  boxShadow: "0 4px 16px rgba(11,30,61,0.15)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 20px 40px rgba(11,30,61,0.35)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 4px 16px rgba(11,30,61,0.15)")
+                }
               >
-                <div className="flex-1 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="flex-1 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   {sponsor.isImage ? (
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="w-40 h-32 object-contain rounded-lg"
+                      className="w-40 h-32 object-contain rounded-xl"
                     />
                   ) : (
                     <div className="text-6xl">{sponsor.logo}</div>
                   )}
                 </div>
                 <div className="flex-shrink-0 space-y-3">
-                  <h4 className="text-xl font-bold text-foreground">
+                  <h4
+                    className="text-xl font-black"
+                    style={{
+                      fontFamily: "Montserrat, sans-serif",
+                      color: "#FFFFFF",
+                    }}
+                  >
                     {sponsor.name}
                   </h4>
-                  <p className="text-sm text-muted-foreground">
+                  <p
+                    className="text-sm"
+                    style={{
+                      color: "rgba(255,255,255,0.75)",
+                      fontFamily: "Open Sans, sans-serif",
+                    }}
+                  >
                     {sponsor.description}
                   </p>
-                  <div className="inline-flex items-center gap-1 bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold">
+                  <div
+                    className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold"
+                    style={{
+                      backgroundColor: "rgba(244,123,32,0.15)",
+                      color: "#FF9748",
+                    }}
+                  >
                     <Star className="w-3 h-3" />
                     {sponsor.tier}
                   </div>
@@ -436,29 +541,67 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
 
         {/* Platinum Sponsors */}
         <div className="mb-16">
-          <h3 className="text-xl font-bold text-center mb-8 text-foreground">
+          <h3
+            className="text-xl font-bold text-center mb-8 tracking-wide uppercase"
+            style={{
+              fontFamily: "Montserrat, sans-serif",
+              color: "#5BB8F5",
+              letterSpacing: "0.16em",
+            }}
+          >
             Platinum Partners
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {realSponsors.platinum.map((sponsor, index) => (
               <div
                 key={index}
-                className="bg-card p-6 rounded-xl border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
+                className="p-6 rounded-xl border text-center group transition-all duration-300"
+                style={{
+                  backgroundColor: "#1A3A6B",
+                  borderColor: "rgba(255,255,255,0.10)",
+                  boxShadow: "0 2px 12px rgba(11,30,61,0.12)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 20px 40px rgba(11,30,61,0.30)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 2px 12px rgba(11,30,61,0.12)")
+                }
               >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
+                <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                   <img
                     src={sponsor.logo}
                     alt={sponsor.name}
                     className="w-32 mx-auto object-contain rounded-lg"
                   />
                 </div>
-                <h4 className="text-lg font-bold text-foreground mb-2">
+                <h4
+                  className="text-lg font-bold mb-2"
+                  style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    color: "#FFFFFF",
+                  }}
+                >
                   {sponsor.name}
                 </h4>
-                <p className="text-xs text-muted-foreground mb-3">
+                <p
+                  className="text-xs mb-3"
+                  style={{
+                    color: "rgba(255,255,255,0.75)",
+                    fontFamily: "Open Sans, sans-serif",
+                  }}
+                >
                   {sponsor.description}
                 </p>
-                <div className="text-xs bg-accent/10 text-accent px-2 py-1 rounded-full">
+                <div
+                  className="inline-block text-xs px-2 py-1 rounded-full"
+                  style={{
+                    backgroundColor: "rgba(244,123,32,0.15)",
+                    color: "#FF9748",
+                  }}
+                >
                   {sponsor.tier}
                 </div>
               </div>
@@ -468,237 +611,197 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
 
         {/* Gold Sponsors */}
         <div className="mb-16">
-          <h3 className="text-lg font-bold text-center mb-8 text-foreground">
+          <h3
+            className="text-lg font-bold text-center mb-8 tracking-wide uppercase"
+            style={{
+              fontFamily: "Montserrat, sans-serif",
+              color: "#5BB8F5",
+              letterSpacing: "0.16em",
+            }}
+          >
             Gold Partners
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {realSponsors.gold.map((sponsor, index) => (
               <div
                 key={index}
-                className="bg-card p-4 rounded-lg border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
+                className="p-4 rounded-xl border text-center group transition-all duration-300"
+                style={{
+                  backgroundColor: "#1A3A6B",
+                  borderColor: "rgba(255,255,255,0.10)",
+                  boxShadow: "0 2px 8px rgba(11,30,61,0.10)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 20px 40px rgba(11,30,61,0.25)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.boxShadow =
+                    "0 2px 8px rgba(11,30,61,0.10)")
+                }
               >
-                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
+                <div className="mb-3 group-hover:scale-110 transition-transform duration-300">
                   <img
                     src={sponsor.logo}
                     alt={sponsor.name}
                     className="w-32 mx-auto object-contain rounded-lg"
                   />
                 </div>
-                <h4 className="text-sm font-semibold text-foreground mb-1">
+                <h4
+                  className="text-sm font-semibold mb-1"
+                  style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    color: "#FFFFFF",
+                  }}
+                >
                   {sponsor.name}
                 </h4>
-                <p className="text-xs text-muted-foreground mb-2">
+                <p
+                  className="text-xs mb-2"
+                  style={{
+                    color: "rgba(255,255,255,0.75)",
+                    fontFamily: "Open Sans, sans-serif",
+                  }}
+                >
                   {sponsor.description}
                 </p>
-                <div className="text-xs text-muted-foreground">
+                <div
+                  className="text-xs"
+                  style={{ color: "rgba(255,255,255,0.45)" }}
+                >
                   {sponsor.tier}
                 </div>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Registration & Platform Partners */}
-        {/* <div className="mb-16">
-          <h3 className="text-lg font-bold text-center mb-8 text-foreground">
-            Registration & Platform Partners
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {realSponsors.registration.map((sponsor, index) => (
-              <a
-                href={sponsor.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={index}
-                className="bg-card p-4 rounded-lg border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
-              >
-                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="w-12 mx-auto object-contain rounded-lg"
-                  />
-                </div>
-                <h4 className="text-sm font-semibold text-foreground mb-1">
-                  {sponsor.name}
-                </h4>
-                <p className="text-xs text-muted-foreground mb-2">
-                  {sponsor.description}
-                </p>
-                <div className="text-xs text-muted-foreground">
-                  {sponsor.tier}
-                </div>
-              </a>
-            ))}
-          </div>
-        </div> */}
-
-        {/* Wellness Partners */}
-        {/* <div className="mb-16">
-          <h3 className="text-lg font-bold text-center mb-8 text-foreground">
-            Wellness & Nutrition Partners
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {realSponsors.wellness.map((sponsor, index) => (
-              <a
-                href={sponsor.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={index}
-                className="bg-card p-4 rounded-lg border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
-              >
-                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="w-12 mx-auto object-contain rounded-lg"
-                  />
-                </div>
-                <h4 className="text-sm font-semibold text-foreground mb-1">
-                  {sponsor.name}
-                </h4>
-                <p className="text-xs text-muted-foreground mb-2">
-                  {sponsor.description}
-                </p>
-                <div className="text-xs text-muted-foreground">
-                  {sponsor.tier}
-                </div>
-              </a>
-            ))}
-          </div>
-        </div> */}
-
-        {/* Institutional Partners */}
-        {/* <div className="mb-16">
-          <h3 className="text-lg font-bold text-center mb-8 text-foreground">
-            Institutional & Community Partners
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {realSponsors.institutional.map((sponsor, index) => (
-              <a
-                href={sponsor.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={index}
-                className="bg-card p-4 rounded-lg border border-border shadow-soft hover:shadow-medium transition-smooth text-center group"
-              >
-                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
-                  {sponsor.isBigLogo ? (
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      className="w-32 mx-auto object-contain rounded-lg"
-                    />
-                  ) : (
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      className="w-12 mx-auto object-contain rounded-lg"
-                    />
-                  )}
-                </div>
-                <h4 className="text-sm font-semibold text-foreground mb-1">
-                  {sponsor.name}
-                </h4>
-                <p className="text-xs text-muted-foreground mb-2">
-                  {sponsor.description}
-                </p>
-                <div className="text-xs text-muted-foreground">
-                  {sponsor.tier}
-                </div>
-              </a>
-            ))}
-          </div>
-        </div> */}
 
         {/* Why Partner With Us */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">
+          <h3
+            className="text-2xl font-black text-center mb-8"
+            style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
+          >
             Why Partner With SKF Goa River Marathon?
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">30K+</div>
-              <div className="text-sm text-muted-foreground">Total Reach</div>
-            </Card>
-            <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">15+</div>
-              <div className="text-sm text-muted-foreground">
-                Years Experience
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { stat: "30K+", label: "Total Reach" },
+              { stat: "15+", label: "Years Experience" },
+              { stat: "42+", label: "Countries" },
+              { stat: "100%", label: "ROI Guaranteed" },
+            ].map(({ stat, label }) => (
+              <div
+                key={label}
+                className="p-6 text-center rounded-2xl border transition-all duration-300"
+                style={{
+                  backgroundColor: "#FFFFFF",
+                  borderColor: "#e5e7eb",
+                  boxShadow: "0 2px 12px rgba(11,30,61,0.08)",
+                }}
+              >
+                <div
+                  className="text-3xl font-black mb-2"
+                  style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    color: "#1A6FB4",
+                  }}
+                >
+                  {stat}
+                </div>
+                <div
+                  className="text-sm font-medium"
+                  style={{
+                    fontFamily: "Open Sans, sans-serif",
+                    color: "#0B1E3D",
+                  }}
+                >
+                  {label}
+                </div>
               </div>
-            </Card>
-            <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">42+</div>
-              <div className="text-sm text-muted-foreground">Countries</div>
-            </Card>
-            <Card className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">100%</div>
-              <div className="text-sm text-muted-foreground">
-                ROI Guaranteed
-              </div>
-            </Card>
+            ))}
+          </div> */}
+          <div className="bg-[#F47B20] w-full">
+            <div className="max-w-[1200px] mx-auto px-[5vw] grid grid-cols-2 md:grid-cols-4">
+              {trustItems.map((item, i) => (
+                <div
+                  key={i}
+                  className={`flex flex-col items-center text-center py-6 px-4 gap-0.5
+            ${i < trustItems.length - 1 ? "border-r border-white/20" : ""}`}
+                >
+                  <div className="font-['Montserrat'] text-[2rem] font-black text-white leading-none">
+                    {item.num}
+                  </div>
+                  <div className="font-['Montserrat'] text-[0.72rem] font-semibold tracking-[0.12em] uppercase text-white/75">
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Sponsorship Packages */}
-        {/* <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">
-            Partnership Packages
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {sponsorshipBenefits.map((package_, index) => (
-              <Card
-                key={index}
-                className="p-6 hover:shadow-medium transition-smooth"
-              >
-                <div className="text-center mb-6">
-                  <h4 className="text-xl font-bold text-foreground mb-2">
-                    {package_.category}
-                  </h4>
-                  <div className="text-2xl font-bold text-primary">
-                    {package_.price}
-                  </div>
-                </div>
-                <ul className="space-y-2">
-                  {package_.benefits.map((benefit, benefitIndex) => (
-                    <li
-                      key={benefitIndex}
-                      className="flex items-start gap-2 text-sm"
-                    >
-                      <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </div>
-        </div> */}
-
-        {/* Partnership Inquiry Form */}
+        {/* Partnership Inquiry */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div>
-            <h3 className="text-2xl font-bold mb-6">Become a Partner</h3>
-            <p className="text-muted-foreground mb-6">
+            <h3
+              className="text-2xl font-black mb-6"
+              style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
+            >
+              Become a Partner
+            </h3>
+            <p
+              className="mb-6"
+              style={{
+                color: "rgba(255,255,255,0.75)",
+                fontFamily: "Open Sans, sans-serif",
+                fontWeight: 300,
+              }}
+            >
               India's most scenic and fun focused marathon experience. Join us
-              for an unforgettable journey along the beautiful ZUARI River .
+              for an unforgettable journey along the beautiful ZUARI River.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary" />
-                <span>info@goarivermarathon.com</span>
+                <Mail className="w-5 h-5" style={{ color: "#2E8FD8" }} />
+                <span
+                  style={{
+                    color: "rgba(255,255,255,0.75)",
+                    fontFamily: "Open Sans, sans-serif",
+                  }}
+                >
+                  info@goarivermarathon.com
+                </span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary" />
-                <span>+91 7020142370</span>
+                <Phone className="w-5 h-5" style={{ color: "#2E8FD8" }} />
+                <span
+                  style={{
+                    color: "rgba(255,255,255,0.75)",
+                    fontFamily: "Open Sans, sans-serif",
+                  }}
+                >
+                  +91 7020142370
+                </span>
               </div>
             </div>
           </div>
 
-          <Card className="p-6">
+          <div
+            className="p-6 rounded-2xl border"
+            style={{ backgroundColor: "#122B55", borderColor: "#1A3A6B" }}
+          >
             <form onSubmit={handleSponsorSubmit} className="space-y-4">
               <div>
-                <Label htmlFor="sponsor-name">Full Name</Label>
+                <Label
+                  htmlFor="sponsor-name"
+                  style={{
+                    color: "rgba(255,255,255,0.75)",
+                    fontFamily: "Open Sans, sans-serif",
+                  }}
+                >
+                  Full Name
+                </Label>
                 <Input
                   id="sponsor-name"
                   value={sponsorForm.name}
@@ -710,10 +813,24 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                   }
                   required
                   disabled={isSubmitting}
+                  className="mt-1 border rounded-lg"
+                  style={{
+                    backgroundColor: "#1A3A6B",
+                    borderColor: "rgba(255,255,255,0.15)",
+                    color: "#FFFFFF",
+                  }}
                 />
               </div>
               <div>
-                <Label htmlFor="sponsor-email">Email</Label>
+                <Label
+                  htmlFor="sponsor-email"
+                  style={{
+                    color: "rgba(255,255,255,0.75)",
+                    fontFamily: "Open Sans, sans-serif",
+                  }}
+                >
+                  Email
+                </Label>
                 <Input
                   id="sponsor-email"
                   type="email"
@@ -726,10 +843,24 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                   }
                   required
                   disabled={isSubmitting}
+                  className="mt-1 border rounded-lg"
+                  style={{
+                    backgroundColor: "#1A3A6B",
+                    borderColor: "rgba(255,255,255,0.15)",
+                    color: "#FFFFFF",
+                  }}
                 />
               </div>
               <div>
-                <Label htmlFor="sponsor-company">Company/Organization</Label>
+                <Label
+                  htmlFor="sponsor-company"
+                  style={{
+                    color: "rgba(255,255,255,0.75)",
+                    fontFamily: "Open Sans, sans-serif",
+                  }}
+                >
+                  Company/Organization
+                </Label>
                 <Input
                   id="sponsor-company"
                   value={sponsorForm.company}
@@ -741,10 +872,24 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                   }
                   required
                   disabled={isSubmitting}
+                  className="mt-1 border rounded-lg"
+                  style={{
+                    backgroundColor: "#1A3A6B",
+                    borderColor: "rgba(255,255,255,0.15)",
+                    color: "#FFFFFF",
+                  }}
                 />
               </div>
               <div>
-                <Label htmlFor="sponsor-message">Message</Label>
+                <Label
+                  htmlFor="sponsor-message"
+                  style={{
+                    color: "rgba(255,255,255,0.75)",
+                    fontFamily: "Open Sans, sans-serif",
+                  }}
+                >
+                  Message
+                </Label>
                 <Textarea
                   id="sponsor-message"
                   value={sponsorForm.message}
@@ -757,36 +902,84 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                   rows={3}
                   placeholder="Tell us about your sponsorship interests..."
                   disabled={isSubmitting}
+                  className="mt-1 border rounded-lg"
+                  style={{
+                    backgroundColor: "#1A3A6B",
+                    borderColor: "rgba(255,255,255,0.15)",
+                    color: "#FFFFFF",
+                  }}
                 />
               </div>
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-3 px-6 rounded-lg font-bold text-white transition-all duration-200 disabled:opacity-60"
+                style={{
+                  fontFamily: "Montserrat, sans-serif",
+                  backgroundColor: "#F47B20",
+                  boxShadow: "0 4px 14px rgba(244,123,32,0.35)",
+                }}
+                onMouseEnter={(e) =>
+                  !isSubmitting &&
+                  (e.currentTarget.style.backgroundColor = "#FF9748")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "#F47B20")
+                }
+              >
                 {isSubmitting ? (
-                  <>
-                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  <span className="flex items-center justify-center gap-2">
+                    <Loader2 className="w-4 h-4 animate-spin" />
                     Sending...
-                  </>
+                  </span>
                 ) : (
                   "Send Partnership Inquiry"
                 )}
-              </Button>
+              </button>
             </form>
-          </Card>
+          </div>
         </div>
 
         {/* Partnership CTA */}
-        <div className="bg-gradient-ocean p-8 rounded-2xl shadow-strong text-center">
-          <Building2 className="w-12 h-12 text-primary-foreground mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-primary-foreground mb-4">
+        <div className="p-8 rounded-2xl text-center bg-[#ffffff]">
+          <Building2
+            className="w-12 h-12 mx-auto mb-4"
+            style={{ color: "#5BB8F5" }}
+          />
+          <h3
+            className="text-2xl font-black mb-4"
+            style={{ fontFamily: "Montserrat, sans-serif", color: "black" }}
+          >
             Ready to Make an Impact?
           </h3>
-          <p className="text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
+          <p
+            className="mb-6 max-w-2xl mx-auto"
+            style={{
+              color: "black",
+              fontFamily: "Open Sans, sans-serif",
+              fontWeight: 300,
+            }}
+          >
             Partner with us to reach 50,000+ engaged participants, boost brand
             visibility, and be part of India's most innovative marathon
             experience.
           </p>
-          <Button variant="secondary" size="lg">
+          <button
+            className="px-8 py-3 rounded-lg font-bold text-white transition-all duration-200"
+            style={{
+              fontFamily: "Montserrat, sans-serif",
+              backgroundColor: "#F47B20",
+              boxShadow: "0 4px 14px rgba(244,123,32,0.35)",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "#FF9748")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = "#F47B20")
+            }
+          >
             Download Partnership Brochure
-          </Button>
+          </button>
         </div>
       </div>
     </section>

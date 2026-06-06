@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -43,28 +40,28 @@ const ContactFormsSection = () => {
     availability: "",
   });
 
-  // Load reCAPTCHA v3 script
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src =
-      "https://www.google.com/recaptcha/api.js?render=6LfX4NsrAAAAAEgmJaY9hCBEoF3by5k6sRNl-Rfq";
-    script.async = true;
-    script.defer = true;
-    script.onload = () => {
-      setRecaptchaLoaded(true);
-      console.log("reCAPTCHA v3 loaded successfully");
-    };
-    document.body.appendChild(script);
+  // // Load reCAPTCHA v3 script
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src =
+  //     "https://www.google.com/recaptcha/api.js?render=6LfX4NsrAAAAAEgmJaY9hCBEoF3by5k6sRNl-Rfq";
+  //   script.async = true;
+  //   script.defer = true;
+  //   script.onload = () => {
+  //     setRecaptchaLoaded(true);
+  //     console.log("reCAPTCHA v3 loaded successfully");
+  //   };
+  //   document.body.appendChild(script);
 
-    return () => {
-      const existingScript = document.querySelector(
-        'script[src*="recaptcha/api.js"]',
-      );
-      if (existingScript) {
-        document.body.removeChild(existingScript);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     const existingScript = document.querySelector(
+  //       'script[src*="recaptcha/api.js"]',
+  //     );
+  //     if (existingScript) {
+  //       document.body.removeChild(existingScript);
+  //     }
+  //   };
+  // }, []);
 
   const getFormTitle = (formType: string) => {
     const titles: { [key: string]: string } = {
@@ -249,22 +246,39 @@ const ContactFormsSection = () => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-muted/30">
+    <section className="pt-24 md:pt-32">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full mb-6">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+            style={{
+              backgroundColor: "rgba(244,123,32,0.15)",
+              color: "#F47B30",
+            }}
+          >
             <Mail className="w-4 h-4" />
-            <span className="text-sm font-medium">Get In Touch</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's
-            <span className="bg-gradient-ocean bg-clip-text text-transparent">
-              {" "}
-              Connect
+            <span
+              className="text-sm font-semibold tracking-widest uppercase"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
+              Get In Touch
             </span>
+          </div>
+          <h2
+            className="text-4xl md:text-5xl font-black mb-6"
+            style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
+          >
+            Let's <span className="text-[#F47B20]">Connect</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p
+            className="text-xl max-w-3xl mx-auto"
+            style={{
+              color: "rgba(255,255,255,0.75)",
+              fontFamily: "Open Sans, sans-serif",
+              fontWeight: 300,
+            }}
+          >
             Have questions or want to be part of our marathon family? We'd love
             to hear from you!
           </p>
@@ -273,49 +287,84 @@ const ContactFormsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Type Selection */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-4">How can we help you?</h3>
+            <h3
+              className="text-lg font-bold mb-4"
+              style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
+            >
+              How can we help you?
+            </h3>
             {contactTypes.map((type) => (
-              <Card
+              <div
                 key={type.id}
-                className={`p-4 cursor-pointer transition-smooth hover:shadow-medium ${
-                  activeForm === type.id ? "border-primary bg-primary/5" : ""
-                }`}
+                className="p-4 rounded-xl border cursor-pointer transition-all duration-200"
+                style={{
+                  backgroundColor:
+                    activeForm === type.id ? "#122B55" : "rgba(26,58,107,0.40)",
+                  borderColor:
+                    activeForm === type.id
+                      ? "#1A6FB4"
+                      : "rgba(255,255,255,0.10)",
+                  boxShadow:
+                    activeForm === type.id
+                      ? "0 4px 16px rgba(11,30,61,0.25)"
+                      : "none",
+                }}
                 onClick={() => setActiveForm(type.id)}
               >
                 <div className="flex items-start gap-3">
                   <type.icon
-                    className={`w-5 h-5 mt-1 ${
-                      activeForm === type.id
-                        ? "text-primary"
-                        : "text-muted-foreground"
-                    }`}
+                    className="w-5 h-5 mt-1"
+                    style={{
+                      color:
+                        activeForm === type.id
+                          ? "#5BB8F5"
+                          : "rgba(255,255,255,0.45)",
+                    }}
                   />
                   <div>
                     <h4
-                      className={`font-medium mb-1 ${
-                        activeForm === type.id
-                          ? "text-primary"
-                          : "text-foreground"
-                      }`}
+                      className="font-bold mb-1"
+                      style={{
+                        fontFamily: "Montserrat, sans-serif",
+                        color: activeForm === type.id ? "#5BB8F5" : "#FFFFFF",
+                      }}
                     >
                       {type.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground">
+                    <p
+                      className="text-sm"
+                      style={{
+                        color: "rgba(255,255,255,0.60)",
+                        fontFamily: "Open Sans, sans-serif",
+                      }}
+                    >
                       {type.description}
                     </p>
                   </div>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="p-8">
+            <div
+              className="p-8 rounded-2xl border"
+              style={{ backgroundColor: "#122B55", borderColor: "#1A3A6B" }}
+            >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <Label htmlFor="name">Full Name *</Label>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-semibold mb-2"
+                      style={{
+                        fontFamily: "Open Sans, sans-serif",
+                        color: "rgba(255,255,255,0.75)",
+                      }}
+                    >
+                      Full Name *
+                    </label>
                     <Input
                       id="name"
                       value={formData.name}
@@ -323,11 +372,25 @@ const ContactFormsSection = () => {
                         handleInputChange("name", e.target.value)
                       }
                       required
-                      className="mt-2"
+                      className="border rounded-lg"
+                      style={{
+                        backgroundColor: "#1A3A6B",
+                        borderColor: "rgba(255,255,255,0.15)",
+                        color: "#FFFFFF",
+                      }}
                     />
                   </div>
                   <div>
-                    <Label htmlFor="email">Email Address *</Label>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-semibold mb-2"
+                      style={{
+                        fontFamily: "Open Sans, sans-serif",
+                        color: "rgba(255,255,255,0.75)",
+                      }}
+                    >
+                      Email Address *
+                    </label>
                     <Input
                       id="email"
                       type="email"
@@ -336,33 +399,66 @@ const ContactFormsSection = () => {
                         handleInputChange("email", e.target.value)
                       }
                       required
-                      className="mt-2"
+                      className="border rounded-lg"
+                      style={{
+                        backgroundColor: "#1A3A6B",
+                        borderColor: "rgba(255,255,255,0.15)",
+                        color: "#FFFFFF",
+                      }}
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-semibold mb-2"
+                      style={{
+                        fontFamily: "Open Sans, sans-serif",
+                        color: "rgba(255,255,255,0.75)",
+                      }}
+                    >
+                      Phone Number
+                    </label>
                     <Input
                       id="phone"
                       value={formData.phone}
                       onChange={(e) =>
                         handleInputChange("phone", e.target.value)
                       }
-                      className="mt-2"
+                      className="border rounded-lg"
+                      style={{
+                        backgroundColor: "#1A3A6B",
+                        borderColor: "rgba(255,255,255,0.15)",
+                        color: "#FFFFFF",
+                      }}
                     />
                   </div>
                   {(activeForm === "sponsor" || activeForm === "vendor") && (
                     <div>
-                      <Label htmlFor="company">Company/Organization</Label>
+                      <label
+                        htmlFor="company"
+                        className="block text-sm font-semibold mb-2"
+                        style={{
+                          fontFamily: "Open Sans, sans-serif",
+                          color: "rgba(255,255,255,0.75)",
+                        }}
+                      >
+                        Company/Organization
+                      </label>
                       <Input
                         id="company"
                         value={formData.company}
                         onChange={(e) =>
                           handleInputChange("company", e.target.value)
                         }
-                        className="mt-2"
+                        className="border rounded-lg"
+                        style={{
+                          backgroundColor: "#1A3A6B",
+                          borderColor: "rgba(255,255,255,0.15)",
+                          color: "#FFFFFF",
+                        }}
                       />
                     </div>
                   )}
@@ -371,17 +467,33 @@ const ContactFormsSection = () => {
                 {activeForm === "sponsor" && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="category">Sponsorship Category</Label>
+                      <label
+                        htmlFor="category"
+                        className="block text-sm font-semibold mb-2"
+                        style={{
+                          fontFamily: "Open Sans, sans-serif",
+                          color: "rgba(255,255,255,0.75)",
+                        }}
+                      >
+                        Sponsorship Category
+                      </label>
                       <Select
                         onValueChange={(value) =>
                           handleInputChange("category", value)
                         }
                         value={formData.category}
                       >
-                        <SelectTrigger className="mt-2">
+                        <SelectTrigger
+                          className="border rounded-lg mt-0"
+                          style={{
+                            backgroundColor: "#1A3A6B",
+                            borderColor: "rgba(255,255,255,0.15)",
+                            color: "#FFFFFF",
+                          }}
+                        >
                           <SelectValue placeholder="Select category" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-white text-black cursor-pointer">
                           <SelectItem value="title">Title Sponsor</SelectItem>
                           <SelectItem value="platinum">
                             Platinum Partner
@@ -393,17 +505,33 @@ const ContactFormsSection = () => {
                       </Select>
                     </div>
                     <div>
-                      <Label htmlFor="budget">Budget Range</Label>
+                      <label
+                        htmlFor="budget"
+                        className="block text-sm font-semibold mb-2"
+                        style={{
+                          fontFamily: "Open Sans, sans-serif",
+                          color: "rgba(255,255,255,0.75)",
+                        }}
+                      >
+                        Budget Range
+                      </label>
                       <Select
                         onValueChange={(value) =>
                           handleInputChange("budget", value)
                         }
                         value={formData.budget}
                       >
-                        <SelectTrigger className="mt-2">
+                        <SelectTrigger
+                          className="border rounded-lg mt-0"
+                          style={{
+                            backgroundColor: "#1A3A6B",
+                            borderColor: "rgba(255,255,255,0.15)",
+                            color: "#FFFFFF",
+                          }}
+                        >
                           <SelectValue placeholder="Select budget range" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-white text-black cursor-pointer">
                           <SelectItem value="1-5">₹1-5 Lakhs</SelectItem>
                           <SelectItem value="5-10">₹5-10 Lakhs</SelectItem>
                           <SelectItem value="10-25">₹10-25 Lakhs</SelectItem>
@@ -416,17 +544,33 @@ const ContactFormsSection = () => {
 
                 {activeForm === "group" && (
                   <div>
-                    <Label htmlFor="eventType">Group Type</Label>
+                    <label
+                      htmlFor="eventType"
+                      className="block text-sm font-semibold mb-2"
+                      style={{
+                        fontFamily: "Open Sans, sans-serif",
+                        color: "rgba(255,255,255,0.75)",
+                      }}
+                    >
+                      Group Type
+                    </label>
                     <Select
                       onValueChange={(value) =>
                         handleInputChange("eventType", value)
                       }
                       value={formData.eventType}
                     >
-                      <SelectTrigger className="mt-2">
+                      <SelectTrigger
+                        className="border rounded-lg mt-0"
+                        style={{
+                          backgroundColor: "#1A3A6B",
+                          borderColor: "rgba(255,255,255,0.15)",
+                          color: "#FFFFFF",
+                        }}
+                      >
                         <SelectValue placeholder="Select group type" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-white text-black cursor-pointer">
                         <SelectItem value="corporate">
                           Corporate Team
                         </SelectItem>
@@ -444,19 +588,33 @@ const ContactFormsSection = () => {
                 {activeForm === "volunteer" && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="volunteerArea">
+                      <label
+                        htmlFor="volunteerArea"
+                        className="block text-sm font-semibold mb-2"
+                        style={{
+                          fontFamily: "Open Sans, sans-serif",
+                          color: "rgba(255,255,255,0.75)",
+                        }}
+                      >
                         Preferred Volunteer Area
-                      </Label>
+                      </label>
                       <Select
                         onValueChange={(value) =>
                           handleInputChange("volunteerArea", value)
                         }
                         value={formData.volunteerArea}
                       >
-                        <SelectTrigger className="mt-2">
+                        <SelectTrigger
+                          className="border rounded-lg mt-0"
+                          style={{
+                            backgroundColor: "#1A3A6B",
+                            borderColor: "rgba(255,255,255,0.15)",
+                            color: "#FFFFFF",
+                          }}
+                        >
                           <SelectValue placeholder="Select area" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-white text-black cursor-pointer">
                           <SelectItem value="registration">
                             Registration & Check-in
                           </SelectItem>
@@ -483,17 +641,33 @@ const ContactFormsSection = () => {
                       </Select>
                     </div>
                     <div>
-                      <Label htmlFor="availability">Availability</Label>
+                      <label
+                        htmlFor="availability"
+                        className="block text-sm font-semibold mb-2"
+                        style={{
+                          fontFamily: "Open Sans, sans-serif",
+                          color: "rgba(255,255,255,0.75)",
+                        }}
+                      >
+                        Availability
+                      </label>
                       <Select
                         onValueChange={(value) =>
                           handleInputChange("availability", value)
                         }
                         value={formData.availability}
                       >
-                        <SelectTrigger className="mt-2">
+                        <SelectTrigger
+                          className="border rounded-lg mt-0"
+                          style={{
+                            backgroundColor: "#1A3A6B",
+                            borderColor: "rgba(255,255,255,0.15)",
+                            color: "#FFFFFF",
+                          }}
+                        >
                           <SelectValue placeholder="Select availability" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-white text-black cursor-pointer">
                           <SelectItem value="race-day">
                             Race Day Only (Dec 15)
                           </SelectItem>
@@ -513,7 +687,16 @@ const ContactFormsSection = () => {
                 )}
 
                 <div>
-                  <Label htmlFor="message">Message *</Label>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-semibold mb-2"
+                    style={{
+                      fontFamily: "Open Sans, sans-serif",
+                      color: "rgba(255,255,255,0.75)",
+                    }}
+                  >
+                    Message *
+                  </label>
                   <Textarea
                     id="message"
                     value={formData.message}
@@ -522,34 +705,62 @@ const ContactFormsSection = () => {
                     }
                     required
                     rows={4}
-                    className="mt-2"
                     placeholder="Tell us more about your inquiry..."
+                    className="border rounded-lg"
+                    style={{
+                      backgroundColor: "#1A3A6B",
+                      borderColor: "rgba(255,255,255,0.15)",
+                      color: "#FFFFFF",
+                    }}
                   />
                 </div>
 
-                <Button
+                <button
                   type="submit"
-                  size="lg"
-                  className="w-full"
-                  disabled={isSubmitting || !recaptchaLoaded}
+                  disabled={isSubmitting}
+                  className="w-full py-3 px-6 rounded-lg font-bold text-white text-lg transition-all duration-200 disabled:opacity-50"
+                  style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    backgroundColor: "#F47B20",
+                    boxShadow: "0 4px 14px rgba(244,123,32,0.35)",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isSubmitting)
+                      e.currentTarget.style.backgroundColor = "#FF9748";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "#F47B20";
+                  }}
                 >
                   {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    <span className="flex items-center justify-center gap-2">
+                      <Loader2 className="w-4 h-4 animate-spin" />
                       Sending...
-                    </>
+                    </span>
                   ) : (
                     "Send Message"
                   )}
-                </Button>
+                </button>
 
-                <p className="text-xs text-muted-foreground text-center">
+                <p
+                  className="text-xs text-center"
+                  style={{
+                    color: "rgba(255,255,255,0.40)",
+                    fontFamily: "Open Sans, sans-serif",
+                  }}
+                >
                   This site is protected by reCAPTCHA and the Google{" "}
                   <a
                     href="https://policies.google.com/privacy"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:underline"
+                    style={{ color: "#2E8FD8" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.textDecoration = "underline")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.textDecoration = "none")
+                    }
                   >
                     Privacy Policy
                   </a>{" "}
@@ -558,52 +769,89 @@ const ContactFormsSection = () => {
                     href="https://policies.google.com/terms"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary hover:underline"
+                    style={{ color: "#2E8FD8" }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.textDecoration = "underline")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.textDecoration = "none")
+                    }
                   >
                     Terms of Service
                   </a>{" "}
                   apply.
                 </p>
               </form>
-            </Card>
+            </div>
           </div>
         </div>
 
-        {/* Contact Information */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          <Card className="p-6 text-center">
-            <Mail className="w-8 h-8 text-primary mx-auto mb-4" />
-            <h3 className="font-semibold mb-2">Email Us</h3>
-            <p className="text-sm text-muted-foreground mb-2">
-              runnersingoa@gmail.com
-            </p>
-            <p className="text-sm text-muted-foreground">
-              support@skfgoarivermarathon.com
-            </p>
-          </Card>
-
-          <Card className="p-6 text-center">
-            <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
-            <h3 className="font-semibold mb-2">Call Us</h3>
-            <p className="text-sm text-muted-foreground mb-2">+91 7020142370</p>
-            <p className="text-sm text-muted-foreground">
-              WhatsApp: +91 7020142370
-            </p>
-          </Card>
-
-          <Card className="p-6 text-center">
-            <Building2 className="w-8 h-8 text-primary mx-auto mb-4" />
-            <h3 className="font-semibold mb-2">Visit Us</h3>
-            <p className="text-sm text-muted-foreground">Vasco Sports Club</p>
-            <p className="text-sm text-muted-foreground">
-              Ground Floor, Rukmini Towers
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Opp. Tilak Maidan, Vasco da Gama
-            </p>
-            <p className="text-sm text-muted-foreground">403 802 GOA</p>
-          </Card>
-        </div>
+        {/* Contact Info Cards */}
+      </div>
+      <div className=" bg-white  grid grid-cols-1 md:grid-cols-3 py-5 gap-8 mt-20">
+        {[
+          {
+            icon: Mail,
+            title: "Email Us",
+            lines: [
+              "runnersingoa@gmail.com",
+              "support@skfgoarivermarathon.com",
+            ],
+          },
+          {
+            icon: Phone,
+            title: "Call Us",
+            lines: ["+91 7020142370", "WhatsApp: +91 7020142370"],
+          },
+          {
+            icon: Building2,
+            title: "Visit Us",
+            lines: [
+              "Vasco Sports Club",
+              "Ground Floor, Rukmini Towers",
+              "Opp. Tilak Maidan, Vasco da Gama",
+              "403 802 GOA",
+            ],
+          },
+        ].map(({ icon: Icon, title, lines }) => (
+          <div
+            key={title}
+            className="p-6 rounded-2xl border text-center text-black transition-all duration-300"
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.boxShadow =
+                "0 20px 40px rgba(11,30,61,0.30)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.boxShadow =
+                "0 2px 12px rgba(11,30,61,0.15)")
+            }
+          >
+            <Icon
+              className="w-8 h-8 mx-auto mb-4"
+              style={{ color: "#2E8FD8" }}
+            />
+            <h3
+              className="font-bold mb-3"
+              style={{
+                fontFamily: "Montserrat, sans-serif",
+              }}
+            >
+              {title}
+            </h3>
+            {lines.map((line, i) => (
+              <p
+                key={i}
+                className="text-sm"
+                style={{
+                  fontFamily: "Open Sans, sans-serif",
+                  fontWeight: 300,
+                }}
+              >
+                {line}
+              </p>
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   );
