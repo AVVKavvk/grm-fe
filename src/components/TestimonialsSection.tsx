@@ -138,14 +138,14 @@ const TestimonialsSection = () => {
 
         {/* ── Finisher photo grid ── */}
         <div>
-          <p
+          {/* <p
             className="font-['Montserrat'] text-[0.65rem] font-bold tracking-[0.18em] uppercase
                         text-[#0B1E3D]/35 text-center mb-4"
           >
             Finisher Gallery — #RunGoa
-          </p>
+          </p> */}
 
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-6">
+          {/* <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-6">
             {[...Array(6)].map((_, i) => (
               <div
                 key={i}
@@ -163,7 +163,7 @@ const TestimonialsSection = () => {
                 </span>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Gallery CTA */}
           <div className="text-center">

@@ -14,11 +14,7 @@ const courseFeatures = [
     title: "Hydration Every 1–1.5km",
     desc: "Water, electrolytes, and fruit at regular stations. Medical crew and washroom facilities on route.",
   },
-  {
-    icon: "📡",
-    title: "Live GPS Tracking for Family",
-    desc: "Share a live tracker link with family and friends. See your real-time position, splits, and pace.",
-  },
+
   {
     icon: "🌅",
     title: "Stunning Riverside Scenery",

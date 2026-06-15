@@ -88,7 +88,7 @@ export const GetRegisterButton = () => {
       <Button
         variant="cta"
         size="default"
-        className="bg-[#F47B20] hover:bg-[#F47B20]/90"
+        className="bg-[#F47B20]  font-['Montserrat'] hover:bg-[#F47B20]/90"
       >
         Register Now
       </Button>

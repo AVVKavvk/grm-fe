@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const prizeRows = [
   {
     medal: "🥇",
@@ -27,7 +29,7 @@ const prizeRows = [
 
 const HomePrizesSection = () => {
   return (
-    <section id="prizes" className="bg-[#122B55] py-24">
+    <section id="prizes" className="bg-[#0B1E3D] py-24">
       <div className="max-w-[1200px] mx-auto px-[5vw]">
         {/* ── Header ── */}
         <div className="mb-12">
@@ -65,6 +67,14 @@ const HomePrizesSection = () => {
                 Equal prize money for men &amp; women across all open categories
               </p>
             </div>
+            <Link
+              to="/faq"
+              className="mt-6 inline-flex items-center bg-white border border-gray-200 rounded-[8px] px-5 py-4 hover:border-[#F47B20] transition-colors"
+            >
+              <p className="font-['Montserrat'] text-[0.80rem] font-bold tracking-wide text-[#F47B20]">
+                FAQ for more details →
+              </p>
+            </Link>
           </div>
 
           {/* Right — prize table */}

@@ -26,7 +26,7 @@ import {
 
 const EventsSection = () => {
   // const { date, day, month, year } = getLastDateOfMonth();
-  const date = "2027-12-14T23:59:59";
+  const date = "2026-12-13T23:59:59";
 
   const heroEvents = [
     {

@@ -35,7 +35,7 @@ const milestones = [
 
 const StoryLegacySection = () => {
   return (
-    <section className="bg-[#0B1E3D] py-24">
+    <section className="bg-[#122B55] py-24">
       <div className="max-w-[1200px] mx-auto px-[5vw]">
         {/* ── Header ── */}
         <div className="text-center mb-16">

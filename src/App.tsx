@@ -72,7 +72,7 @@ const App = () => {
             }
           />
           <Route
-            path="/events"
+            path="/categories"
             element={
               <Suspense fallback={<Loader />}>
                 <Events />
@@ -193,6 +193,18 @@ const App = () => {
           {/* <ChatBot /> */}
         </Suspense>
       )}
+
+      {/* Fixed Bottom Mobile Register Button (Hidden on Desktop) */}
+      <div className="fixed lg:hidden bottom-0 left-0 right-0 z-[500] bg-[rgba(11,30,61,0.96)] backdrop-blur-[20px] border-t border-white/10 px-[5vw] py-4 pb-6">
+        <a
+          href="https://ifinish.in/running/SKF_2026"
+          target="_blank"
+          rel="noreferrer"
+          className="flex w-full items-center justify-center bg-[#F47B20] text-[0.95rem] font-bold tracking-[0.06em] uppercase px-[1.8rem] py-[1rem] rounded-[8px] text-white hover:bg-[#F47B20]/90 transition-all duration-150 shadow-[0_0_20px_rgba(244,123,32,0.3)]"
+        >
+          Register Now
+        </a>
+      </div>
 
       {/* {!location.pathname.startsWith("/registration") && (
         <Suspense fallback={<Loader />}>

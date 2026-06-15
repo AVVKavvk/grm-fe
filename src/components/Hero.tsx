@@ -1,5 +1,6 @@
 import { Play, Calendar, MapPin, Medal, X } from "lucide-react";
-import heroImage from "@/assets/bg-img.jpeg";
+// Import your webm video instead of the image
+import heroVideo from "@/assets/videos/river_run_hero.webm";
 import { useState, useEffect } from "react";
 import { GetRegisterButton } from "@/lib/localstorage";
 import { Link } from "react-router-dom";
@@ -36,23 +37,31 @@ const CdUnit = ({ n, u }: { n: number; u: string }) => (
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { days, hrs, min, sec } = useCountdown("2027-12-14T06:00:00");
+  const { days, hrs, min, sec } = useCountdown("2026-12-13T06:00:00");
 
   return (
-    <section className="relative min-h-screen flex items-end overflow-hidden pt-[70px]">
-      {/* Background photo */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
+    <section className="relative  font-['Montserrat'] min-h-screen flex items-end overflow-hidden pt-[70px]">
+      {/* Background video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+      >
+        <source src={heroVideo} type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
 
       {/* Dark gradient overlay — left-heavy */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(11,30,61,0.90) 0%, rgba(11,30,61,0.60) 55%, rgba(11,30,61,0.15) 100%)",
-        }}
+        className="absolute inset-0 pointer-events-none font-semibold"
+        style={
+          {
+            // background:
+            //   // "linear-gradient(to right, rgba(11,30,61,0.90) 0%, rgba(11,30,61,0.60) 55%, rgba(11,30,61,0.15) 100%)",
+          }
+        }
       />
       {/* Bottom fade to navy */}
       <div
@@ -67,7 +76,7 @@ const Hero = () => {
         {/* Pre-line */}
         <div className="flex items-center gap-4 mb-6">
           <span className="inline-block bg-[#F47B20]/15 border border-[#F47B20]/30 text-[#FF9748] font-['Montserrat'] text-[0.68rem] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full">
-            16th Edition · Dec 14, 2027
+            16th Edition · Dec 13, 2026
           </span>
           <div className="w-px h-[18px] bg-white/25" />
           <span className="font-['Montserrat'] text-[0.72rem] font-semibold tracking-[0.10em] uppercase text-white/40">
@@ -82,7 +91,7 @@ const Hero = () => {
         >
           Run Along
           <br />
-          <span className="text-[#5BB8F5]">Goa's</span>
+          <span className="text-[#0c8be0]">Goa's</span>
           <span className="text-[#F47B20]"> Beautiful</span>
           <br />
           Rivers
@@ -97,21 +106,28 @@ const Hero = () => {
         </p>
 
         {/* CTAs + Countdown row */}
-        <div className="flex items-center flex-wrap gap-8 mb-10">
+        <div className="flex items-stretch flex-wrap gap-8 mb-10">
           {/* Actions */}
-          <div className="flex items-center gap-3 flex-wrap">
-            <GetRegisterButton />
-            <button
-              onClick={() => setIsOpen(true)}
-              className="flex items-center gap-2 font-['Montserrat'] text-[0.92rem] font-bold tracking-[0.06em] uppercase px-[1.8rem] py-[1rem] rounded-[8px] border border-white/20 text-white hover:bg-white/[0.07] transition-all duration-150"
+          <div className="flex items-stretch font-['Montserrat'] gap-3 flex-wrap">
+            <a
+              href="https://ifinish.in/running/SKF_2026"
+              target="_blank"
+              className="flex items-center justify-center bg-[#F47B20] text-[0.92rem] font-bold tracking-[0.06em] uppercase px-[1.8rem] py-[1rem] rounded-[8px] text-white hover:bg-[#F47B20]/90 transition-all duration-150"
             >
-              <Play className="w-4 h-4" />
-              Watch Glimpses
-            </button>
+              Register Now
+            </a>
+
+            <Link
+              to="/categories"
+              className="flex items-center  bg-white/[0.06]  border-white/10 justify-center gap-2 text-[0.92rem] font-bold tracking-[0.06em] uppercase px-[1.8rem] py-[1rem] rounded-[8px] border border-white/20 text-white hover:bg-white/[0.07] transition-all duration-150"
+            >
+              {/* <Play className="w-4 h-4" /> */}
+              View Categories
+            </Link>
           </div>
 
           {/* Countdown */}
-          <div className="flex items-center gap-2 bg-white/[0.06] border border-white/10 rounded-[8px] px-5 py-3">
+          <div className="flex items-center justify-center gap-2 bg-white/[0.06] border border-white/10 rounded-[8px] px-5 py-[1rem]">
             <CdUnit n={days} u="Days" />
             <span className="font-['Montserrat'] text-[1.3rem] font-extrabold text-[#F47B20] self-start mt-0.5">
               :
@@ -134,7 +150,7 @@ const Hero = () => {
             {
               icon: <Calendar className="w-4 h-4 text-[#5BB8F5]" />,
               label: "Race Day",
-              value: "Sunday, 14 December 2027",
+              value: "Sunday, 13 December 2026",
             },
             {
               icon: <MapPin className="w-4 h-4 text-[#5BB8F5]" />,

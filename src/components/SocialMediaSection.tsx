@@ -134,7 +134,7 @@ const SocialMediaSection = () => {
         </div>
 
         {/* ── Trending hashtags ── */}
-        <div className="bg-[#122B55] border border-white/[0.08] rounded-[16px] px-8 py-7">
+        {/* <div className="bg-[#122B55] border border-white/[0.08] rounded-[16px] px-8 py-7">
           <div className="flex items-center gap-2 mb-5">
             <div className="w-8 h-8 rounded-[8px] bg-[#1A6FB4]/20 flex items-center justify-center">
               <Hash className="w-4 h-4 text-[#5BB8F5]" />
@@ -156,7 +156,7 @@ const SocialMediaSection = () => {
               </span>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
