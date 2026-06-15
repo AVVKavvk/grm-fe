@@ -23,7 +23,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed font-['Montserrat'] top-0 left-0 right-0 z-[500] h-[130px] flex items-center bg-[rgba(11,30,61,0.96)] backdrop-blur-[20px] border-b border-white/10">
+    <header className="fixed font-['Montserrat'] top-0 left-0 right-0 z-[500] md:h-[130px] h-[90px] flex items-center bg-[rgba(11,30,61,0.96)] backdrop-blur-[20px] border-b border-white/10">
       {/* Nav inner */}
       <div className="w-full max-w-[1550px] mx-auto px-[5vw] xl:px-8 flex items-center justify-between gap-4">
         {/* Left: SKF Logo & Text */}
