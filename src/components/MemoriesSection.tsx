@@ -303,10 +303,7 @@ const MemoriesSection = () => {
   }
 
   return (
-    <section
-      className="py-24 mt-16 md:py-16"
-      style={{ backgroundColor: "#0B1E3D" }}
-    >
+    <section className="py-28 md:py-36" style={{ backgroundColor: "#0B1E3D" }}>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">

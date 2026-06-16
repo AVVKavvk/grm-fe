@@ -342,7 +342,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
   return (
     <section
       id="sponsors"
-      className="py-16"
+      className="py-28 md:py-36"
       style={{ backgroundColor: "#0B1E3D" }}
     >
       <div className="container mx-auto px-4">

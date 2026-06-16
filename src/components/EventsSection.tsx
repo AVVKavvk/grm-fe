@@ -197,7 +197,7 @@ const EventsSection = () => {
   return (
     <section id="events" className="font-['Open_Sans']">
       {/* ── SECURE YOUR SPOT ── #0B1E3D navy */}
-      <div className="bg-[#0B1E3D] py-16 px-[5vw] text-center">
+      <div className="bg-[#0B1E3D] py-28 md:py-36 px-[5vw] text-center">
         <div className="inline-flex items-center gap-2 bg-[#F47B20]/15 text-[#FF9748] px-5 py-2 rounded-full mb-6 border border-[#F47B20]/30">
           <AlertTriangle className="w-4 h-4" />
           <span className="font-['Montserrat'] font-bold text-xs tracking-[0.18em] uppercase">

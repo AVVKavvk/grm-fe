@@ -190,7 +190,7 @@ const GettingThere = () => {
 
   return (
     <div
-      className="min-h-screen mt-32"
+      className="min-h-screen mt-28 md:mt-36"
       style={{
         backgroundColor: "#0B1E3D",
         fontFamily: "Open Sans, sans-serif",

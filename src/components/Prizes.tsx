@@ -3,7 +3,7 @@ import React from "react";
 function Prizes() {
   return (
     <div className="">
-      <div className="max-w-7xl mx-auto px-4 py-10">
+      <div className="max-w-7xl mx-auto px-4 mt-10 md:mt-16">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
@@ -594,7 +594,7 @@ function Prizes() {
         </div>
       </div>
 
-      <section className="bg-[#122B55] text-white p-6 md:p-20 lg:p-40">
+      <section className="bg-[#122B55] text-white p-6 mt-6 md:p-20 lg:p-40">
         <h2 className="text-2xl font-bold mb-4">Age Categories for Prizes</h2>
         <p className="font-semibold mb-2">
           The age brackets for each prize category are as follows:

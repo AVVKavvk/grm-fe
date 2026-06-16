@@ -6,6 +6,7 @@ const racesData = [
     unit: "Kilometres",
     name: "Fun Run",
     price: "₹1000",
+    scratchedPrice: null,
     features: [
       "Race bib & kit bag",
       "Finisher medal",
@@ -19,6 +20,7 @@ const racesData = [
     unit: "Kilometres",
     name: "Timed Run",
     price: "₹1,400",
+    scratchedPrice: "₹2,000",
     features: [
       "Chip-timed bib",
       "Finisher medal + T-shirt",
@@ -32,6 +34,7 @@ const racesData = [
     unit: "Kilometres",
     name: "Half Marathon",
     price: "₹2,100",
+    scratchedPrice: "₹3,000",
     features: [
       "Finisher medal + T-shirt",
       "Live analytics for family",
@@ -44,6 +47,7 @@ const racesData = [
     unit: "Kilometres",
     name: "20 Miler",
     price: "₹2,450",
+    scratchedPrice: "₹3,500",
     features: [
       "Finisher medal + T-shirt",
       "Live analytics",
@@ -56,6 +60,7 @@ const racesData = [
     unit: "Kilometres",
     name: "Full Marathon",
     price: "₹2,800",
+    scratchedPrice: "₹4,000",
     features: [
       "Finisher medal + T-shirt",
       "Memory timeline + photos",
@@ -135,13 +140,21 @@ const RaceCategories = () => {
               ></div>
 
               {/* Price */}
-              <div
-                className={`font-head text-[1.4rem] font-extrabold ${
-                  race.isFeatured ? "text-white" : "text-[#0B1E3D]"
-                }`}
-              >
-                {race.price}
+              <div className="flex items-center gap-2">
+                <span
+                  className={`font-head text-[1.4rem] font-extrabold ${
+                    race.isFeatured ? "text-white" : "text-[#0B1E3D]"
+                  }`}
+                >
+                  {race.price}
+                </span>
+                {race.scratchedPrice && (
+                  <span className="font-head text-[1rem] font-semibold text-[#8899aa] line-through">
+                    {race.scratchedPrice}
+                  </span>
+                )}
               </div>
+
               <div className="text-[0.68rem] font-semibold tracking-[0.08em] uppercase text-[#8899aa] mt-0.5">
                 per runner
               </div>

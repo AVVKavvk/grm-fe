@@ -40,7 +40,7 @@ const Hero = () => {
   const { days, hrs, min, sec } = useCountdown("2026-12-13T06:00:00");
 
   return (
-    <section className="relative  font-['Montserrat'] min-h-screen flex items-end overflow-hidden pt-[70px]">
+    <section className="relative  font-['Montserrat'] min-h-screen flex items-end overflow-hidden md:pt-[70px] pt-[80px]">
       {/* Background video */}
       <video
         autoPlay

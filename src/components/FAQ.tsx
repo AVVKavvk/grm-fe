@@ -197,7 +197,7 @@ const FAQ = () => {
 
   return (
     <div
-      className="min-h-screen"
+      className="min-h-screen md:mt-10 mt-8"
       style={{
         backgroundColor: "#0B1E3D",
         fontFamily: "Open Sans, sans-serif",
