@@ -26,6 +26,7 @@ const racesData = [
       "Event T-Shirt",
       "Digital Certificate",
       "Electronic Timing Chip",
+      "Nourishment",
     ],
     isFeatured: false,
   },

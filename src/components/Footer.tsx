@@ -30,7 +30,7 @@ const Footer = () => {
 
   const quickLinks = [
     { label: "About Marathon", link: "/" },
-    { label: "Events & Timing", link: "/events" },
+    { label: "Categories", link: "/categories" },
     { label: "FAQs", link: "/faq" },
   ];
 

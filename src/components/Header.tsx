@@ -1,8 +1,8 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import vascoLogo from "@/assets/VSG_LOGO.png";
-import skfLogo from "@/assets/grm-2026.jpeg";
+import vascoLogo from "@/assets/logos/vsc.png";
+import skfLogo from "@/assets/logos/grm.png";
 import getLastDateOfMonth from "@/lib/getDate";
 
 const navItems = [
@@ -23,18 +23,20 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed font-['Montserrat'] top-0 left-0 right-0 z-[500] md:h-[130px] h-[90px] flex items-center bg-[rgba(11,30,61,0.96)] backdrop-blur-[20px] border-b border-white/10">
+    <header className="fixed font-['Montserrat'] top-0 left-0 right-0 z-[500] md:h-[130px] h-[90px] flex items-center bg-[rgba(11,30,61,0.96)] backdrop-blur-[20px] border-b border-white/10 overflow-visible">
       {/* Nav inner */}
       <div className="w-full max-w-[1600px] mx-auto px-[5vw] xl:px-8 flex items-center justify-between gap-4">
         {/* Left: SKF Logo & Text */}
-        <Link to="/" className="flex items-center gap-[0.9rem] shrink-0">
+        <Link
+          to="/"
+          className="flex items-center gap-[0.9rem] shrink-0 relative"
+        >
           <img
             src={skfLogo}
             alt="GRM 2026"
-            className="w-[70px] md:w-[90px] object-cover"
+            className="w-[60px] md:w-[110px] object-contain mt-5 md:mt-16 drop-shadow-[0_8px_16px_rgba(0,0,0,0.5)]"
           />
 
-          {/* Text block - hidden on mobile screens, shown on md and above */}
           <div className="hidden md:block font-['Montserrat'] leading-[1.25]">
             <p className="text-[0.65rem] font-semibold tracking-[0.14em] uppercase text-[#5BB8F5]">
               SKF Presents
@@ -87,7 +89,7 @@ const Header = () => {
           <img
             src={vascoLogo}
             alt="Vasco Logo"
-            className="w-[70px] bg-white p-2 rounded md:w-[90px] object-contain"
+            className="w-[70px] p-2 rounded md:w-[90px] object-contain"
           />
 
           {/* Mobile hamburger (Only visible on Phones/Tablets) */}

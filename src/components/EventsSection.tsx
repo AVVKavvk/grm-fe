@@ -14,8 +14,13 @@ import {
 } from "lucide-react";
 import carbLoading from "@/assets/carb-loading.jpeg";
 import { GetRegisterButtonForEvent } from "@/lib/localstorage";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const EventsSection = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const heroEvents = [
     {
       name: "The Marathon Experience",
@@ -175,14 +180,31 @@ const EventsSection = () => {
   ];
 
   const scrollToSection = (id: string) => {
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    const sectionId = id.replace("#", "");
+
+    if (location.pathname === "/") {
+      // Already on home page — just scroll
+      const element = document.querySelector(id);
+      element?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      // Navigate to home with hash
+      navigate(`/categories#${sectionId}`);
     }
   };
   const handleImageClick = (image: string) => {
     window.open(image, "_blank", "noopener,noreferrer");
   };
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash; // e.g. "#marathon"
+      // Small delay to let the page render first
+      setTimeout(() => {
+        const element = document.querySelector(id);
+        element?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+  }, [location.hash]);
 
   return (
     <section id="events" className="font-['Open_Sans']">
@@ -272,12 +294,6 @@ const EventsSection = () => {
                       </h3>
                       <div className="font-['Montserrat'] font-black text-3xl text-[#1A6FB4]">
                         {event.distance}
-                        {/* 42 KM disclaimer text added */}
-                        {event.distance === "42 KM" && (
-                          <span className="block text-xs font-semibold text-gray-500 mt-1">
-                            *Previous running experience required
-                          </span>
-                        )}
                       </div>
                     </div>
                     <div className="flex flex-col items-end">
@@ -298,8 +314,8 @@ const EventsSection = () => {
                     {event.description}
                   </p>
 
-                  {/* Meta */}
-                  <div className="grid grid-cols-2 gap-2 mb-6 text-sm text-gray-500">
+                  {/* Meta - time/participants only */}
+                  <div className="grid grid-cols-2 gap-2 mb-4 text-sm text-gray-500">
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4 text-[#1A6FB4]" />
                       <span>Start: {event.startTime}</span>
@@ -312,39 +328,33 @@ const EventsSection = () => {
                       <Users className="w-4 h-4 text-[#1A6FB4]" />
                       <span>{event.participants}</span>
                     </div>
-                    <div className="col-span-2">
-                      <a
-                        href="https://maps.app.goo.gl/GyFPPhbDonhNZRaD9"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-2 hover:text-[#1A6FB4] transition-colors"
-                      >
-                        <MapPin className="w-4 h-4 text-[#1A6FB4]" />
-                        <span>Chicalim Panchayat Ground</span>
-                      </a>
-                    </div>
-                    {/* View Route turned into a button */}
-                    <div className="col-span-2 pt-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="w-full justify-start gap-2 text-[#1A6FB4] border-[#1A6FB4]/20 hover:bg-[#1A6FB4]/05 hover:text-[#1A6FB4]"
-                        asChild
-                      >
-                        <a
-                          href={(event?.googleMapRoute as string) || "#"}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Waypoints className="w-4 h-4" />
-                          View Route
-                        </a>
-                      </Button>
-                    </div>
                   </div>
 
-                  {/* Features */}
-                  <div className="mb-6">
+                  {/* Location + Route — pinned together, always same position */}
+                  <div className="flex flex-col gap-2 mb-6">
+                    <a
+                      href="https://maps.app.goo.gl/GyFPPhbDonhNZRaD9"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 bg-[#0B1E3D] border border-[#1A6FB4]/30 hover:border-[#0B1E4D] hover:bg-[#0B1E4D] text-white  px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                    >
+                      <MapPin className="w-4 h-4 flex-shrink-0" />
+                      <span>Chicalim Panchayat Ground</span>
+                    </a>
+
+                    <a
+                      href={(event?.googleMapRoute as string) || "#"}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 bg-[#F47B20]/10 border border-[#F47B20]/30 hover:border-[#F47B20] hover:bg-[#F47B20]/20 text-[#FF9748] hover:text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 w-full justify-center"
+                    >
+                      <Waypoints className="w-4 h-4 flex-shrink-0" />
+                      View Route
+                    </a>
+                  </div>
+
+                  {/* Features — pushed to bottom */}
+                  <div className="mt-auto mb-6">
                     <p className="font-['Montserrat'] font-bold text-[10px] tracking-[0.16em] uppercase text-[#0B1E3D] mb-2">
                       What's Included
                     </p>
@@ -362,12 +372,19 @@ const EventsSection = () => {
                 </div>
 
                 {/* Grouped Button and Disclaimer at the bottom */}
-                <div className="mt-auto flex flex-col gap-4 pt-4">
+                <div className="mt-auto flex flex-col gap-4">
                   {event.disclaimer && (
-                    <div className="bg-[#F47B20]/05 border border-[#F47B20]/20 rounded-lg px-4 py-3 flex gap-3 items-start">
-                      <AlertTriangle className="w-4 h-4 text-[#F47B20] flex-shrink-0 mt-0.5" />
-                      <div className="text-sm text-amber-900 leading-relaxed">
-                        {event.disclaimer}
+                    <div className="relative group flex items-center gap-2 ">
+                      <span className="text-gray-500 italic">Disclaimer</span>
+                      <AlertTriangle className="w-4 h-4 text-[#F47B20] cursor-help flex-shrink-0" />
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-[#1A3A6B] border border-[#F47B20]/30 rounded-lg px-3 py-2.5 text-xs text-white/80 leading-relaxed shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-10">
+                        <div className="flex gap-2 items-start">
+                          <AlertTriangle className="w-3 h-3 text-[#F47B20] flex-shrink-0 mt-0.5" />
+
+                          <span>{event.disclaimer}</span>
+                        </div>
+                        {/* Arrow */}
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#F47B20]/30" />
                       </div>
                     </div>
                   )}

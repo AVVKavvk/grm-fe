@@ -7,28 +7,15 @@ import bhawana1 from "@/assets/runners/bhawana_1.jpeg";
 import bhawana2 from "@/assets/runners/bhawana_2.jpeg";
 import sunilAndSneha1 from "@/assets/runners/s_and_s_1.jpeg";
 import sunilAndSneha2 from "@/assets/runners/s_and_s_2.jpeg";
+import bhaskerd from "@/assets/runners/bhaskerd.jpeg";
 
 const testimonials = [
-  {
-    initials: "KM",
-    name: "Kiran Mehta",
-    detail: "Pune · Half Marathon 2024",
-    text: "A perfect blend of sport and festival vibes. The energy along the course kept me going, and the post-run celebrations were heartwarming.",
-    images: [],
-  },
-  {
-    initials: "LB",
-    name: "Liora Bennett",
-    detail: "UK · 10K Run 2024",
-    text: "I joined the 10K while on vacation in Goa, and it turned out to be the highlight of my trip. Everything from registration to hydration stations was seamless.",
-    images: [],
-  },
   {
     initials: "BD",
     name: "Bhasker Desai",
     detail: "Runner",
-    text: "An incredible race that captures the true spirit of Goa. Highly recommend the Goa River Marathon to anyone looking for a scenic and well-organized run.",
-    images: [],
+    text: "Goa River Marathon combines two things I love deeply—running and Goa. Never missed Goa River Marathon since its inception 15 years ago. The route the serene river, the lush green surroundings and the warm Goan spirit create an experience that goes far beyond competition. The race rekindles old memories, celebrates enduring friendships, and reminds me why I started running in the first place. For me, Goa River Marathon is not just a race, it's home coming..",
+    images: [bhaskerd],
     facebook: "https://www.facebook.com/share/18cgJejW4W/",
     instagram: "https://www.instagram.com/bdesai1999?igsh=cGo3dmtkZDJlMmxu",
   },
@@ -108,13 +95,13 @@ const TestimonialsSection = () => {
                 {/* Dynamic Image Container */}
                 {t.images && t.images.length > 0 && (
                   <div
-                    className={`w-full grid gap-0.5 bg-white 
-                      ${t.images.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}
+                    className={`w-full grid gap-0.5 bg-white h-48
+      ${t.images.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}
                   >
                     {t.images.map((img, idx) => (
                       <div
                         key={idx}
-                        className="w-full aspect-[4/5] overflow-hidden relative bg-[#F4F7FB] cursor-zoom-in"
+                        className="w-full h-full overflow-hidden relative bg-[#F4F7FB] cursor-zoom-in"
                         onClick={() => setSelectedImage(img)}
                       >
                         <img

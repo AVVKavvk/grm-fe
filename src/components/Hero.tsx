@@ -75,7 +75,7 @@ const Hero = () => {
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-[5vw] pb-20">
         {/* Pre-line */}
         <div className="flex items-center gap-4 mb-6">
-          <span className="inline-block bg-[#F47B20]/15 border border-[#F47B20]/30 text-[#db680f] font-['Montserrat'] text-[0.8rem] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full">
+          <span className="inline-block bg-[#F47B20]/15 border border-[#F47B20]/30 mt-6 md:mt-0 text-[#db680f] font-['Montserrat'] text-[0.8rem] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full">
             16th Edition · Dec 13, 2026
           </span>
           <div className="w-px h-[18px] bg-white/25" />
@@ -118,7 +118,7 @@ const Hero = () => {
             </a>
 
             <Link
-              to="/categories"
+              to="/categories#marathon"
               className="flex items-center  bg-white/[0.06]  border-white/10 justify-center gap-2 text-[0.92rem] font-bold tracking-[0.06em] uppercase px-[1.8rem] py-[1rem] rounded-[8px] border border-white/20 text-white hover:bg-white/[0.07] transition-all duration-150"
             >
               {/* <Play className="w-4 h-4" /> */}
