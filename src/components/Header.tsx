@@ -12,7 +12,7 @@ const navItems = [
   { link: "/memories", label: "Gallery" },
   { link: "/contact-us", label: "Contact Us" },
   { link: "/prizes", label: "Prizes" },
-  { link: "/results", label: "Results" },
+  // { link: "/results", label: "Results" },
   { link: "/getting-there", label: "Getting There" },
   { link: "/faq", label: "FAQ" },
 ];

@@ -14,7 +14,7 @@ const FAQ = () => {
           question:
             "When and where is this year's SKF Goa River Marathon taking place?",
           answer:
-            "The 14th edition of the SKF Goa River Marathon is happening on Sunday, 13th December 2026, in Chicalim village, Vasco da Gama, Goa — right by the Zuari River.",
+            "The 16th edition of the SKF Goa River Marathon is happening on Sunday, 13th December 2026, in Chicalim village, Vasco da Gama, Goa — right by the Zuari River.",
         },
         {
           question: "What race categories can I register for?",
@@ -69,7 +69,7 @@ const FAQ = () => {
         {
           question: "I had a payment issue. What should I do?",
           answer:
-            "If your payment was debited but you didn't get a confirmation, email us at runnersingoa@gmail.com or support@skfgoarivermarathon.com with your details. Refunds (if applicable) are processed within 3 working days.",
+            "If your payment was debited but you didn't get a confirmation, email us at runnersingoa@gmail.com with your details. Refunds (if applicable) are processed within 3 working days.",
         },
       ],
     },
@@ -157,11 +157,7 @@ const FAQ = () => {
           answer:
             "A pre-race evening of carb-loading and community! Enjoy pasta, music, and motivation. Separate registration required.",
         },
-        {
-          question: "What is the Recovery Rave?",
-          answer:
-            "Our post-race celebration: ice baths, recovery rave, wellness workshops, live music, and food stalls. Open to all with a separate entry pass.",
-        },
+
         {
           question: "Will there be after-race celebrations?",
           answer:
@@ -344,21 +340,6 @@ const FAQ = () => {
                   }
                 >
                   runnersingoa@gmail.com
-                </a>
-              </p>
-              <p>
-                <strong style={{ color: "#FFFFFF" }}>Support:</strong>{" "}
-                <a
-                  href="mailto:support@skfgoarivermarathon.com"
-                  style={{ color: "#2E8FD8" }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.textDecoration = "underline")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.textDecoration = "none")
-                  }
-                >
-                  support@skfgoarivermarathon.com
                 </a>
               </p>
             </div>

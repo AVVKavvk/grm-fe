@@ -27,14 +27,14 @@ import originLogo from "@/assets/Logo/Origin.png";
 import gatacaLogo from "@/assets/Logo/gataca.webp";
 import usanaLogo from "@/assets/Logo/Usana.png";
 import sport1919Logo from "@/assets/Logo/Sport.jpg";
-import zanduLogo from "@/assets/Logo/zando-logo.jpeg";
+// import zanduLogo from "@/assets/Logo/zando-logo.jpeg";
 import fastAndUpLogo from "@/assets/Logo/Fast-up.png";
 import victorHospitalLogo from "@/assets/Logo/VictorHospital.png";
 import timingLogo from "@/assets/Logo/timing.png";
 import AddCityLogo from "@/assets/Logo/Ad-City.png";
 import royalAquvaGlobalLogo from "@/assets/Logo/RoyalAquaGlobal.jpg";
 import teachersLogo from "@/assets/Logo/Teachers.png";
-import kingfisher from "@/assets/Logo/kingfisherLogo.jpeg";
+// import kingfisher from "@/assets/Logo/kingfisherLogo.jpeg";
 import curamosLogo from "@/assets/Logo/Curamos.png";
 import AWMMLogo from "@/assets/Logo/Abbot-World-Marathon.png";
 import AIMSLogo from "@/assets/Logo/AIMS.png";
@@ -75,14 +75,14 @@ const EnhancedSponsorsSection = () => {
       },
     ],
     featured: [
-      {
-        name: "Zandu",
-        logo: zanduLogo,
-        tier: "Pain Relief Partner",
-        description: "Trusted healthcare and pain management solutions",
-        website: "https://zanducare.com/",
-        isImage: true,
-      },
+      // {
+      //   name: "Zandu",
+      //   logo: zanduLogo,
+      //   tier: "Pain Relief Partner",
+      //   description: "Trusted healthcare and pain management solutions",
+      //   website: "https://zanducare.com/",
+      //   isImage: true,
+      // },
       {
         name: "1919 Sportz",
         logo: sport1919Logo,
@@ -140,12 +140,12 @@ const EnhancedSponsorsSection = () => {
         tier: "Official Water Partner",
         description: "Premium packaged drinking water",
       },
-      {
-        name: "Kingfisher",
-        logo: kingfisher,
-        tier: "Beverage Partner",
-        description: "Local craft brewery for post-race celebrations",
-      },
+      // {
+      //   name: "Kingfisher",
+      //   logo: kingfisher,
+      //   tier: "Beverage Partner",
+      //   description: "Local craft brewery for post-race celebrations",
+      // },
     ],
     registration: [
       {
@@ -471,7 +471,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           >
             Featured Partners
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {realSponsors.featured.map((sponsor, index) => (
               <a
                 href={sponsor.website}
@@ -539,7 +539,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           </div>
         </div>
 
-        {/* Platinum Sponsors */}
+        {/* Gold Sponsors */}
         <div className="mb-16">
           <h3
             className="text-xl font-bold text-center mb-8 tracking-wide uppercase"
@@ -549,7 +549,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
               letterSpacing: "0.16em",
             }}
           >
-            Platinum Partners
+            Gold Sponsors
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {realSponsors.platinum.map((sponsor, index) => (
@@ -609,7 +609,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           </div>
         </div>
 
-        {/* Gold Sponsors */}
+        {/* Silver Partners */}
         <div className="mb-16">
           <h3
             className="text-lg font-bold text-center mb-8 tracking-wide uppercase"
@@ -619,9 +619,9 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
               letterSpacing: "0.16em",
             }}
           >
-            Gold Partners
+            Silver Partners
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {realSponsors.gold.map((sponsor, index) => (
               <div
                 key={index}
@@ -684,43 +684,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           >
             Why Partner With SKF Goa River Marathon?
           </h3>
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { stat: "30K+", label: "Total Reach" },
-              { stat: "15+", label: "Years Experience" },
-              { stat: "42+", label: "Countries" },
-              { stat: "100%", label: "ROI Guaranteed" },
-            ].map(({ stat, label }) => (
-              <div
-                key={label}
-                className="p-6 text-center rounded-2xl border transition-all duration-300"
-                style={{
-                  backgroundColor: "#FFFFFF",
-                  borderColor: "#e5e7eb",
-                  boxShadow: "0 2px 12px rgba(11,30,61,0.08)",
-                }}
-              >
-                <div
-                  className="text-3xl font-black mb-2"
-                  style={{
-                    fontFamily: "Montserrat, sans-serif",
-                    color: "#1A6FB4",
-                  }}
-                >
-                  {stat}
-                </div>
-                <div
-                  className="text-sm font-medium"
-                  style={{
-                    fontFamily: "Open Sans, sans-serif",
-                    color: "#0B1E3D",
-                  }}
-                >
-                  {label}
-                </div>
-              </div>
-            ))}
-          </div> */}
+
           <div className="bg-[#F47B20] w-full">
             <div className="max-w-[1200px] mx-auto px-[5vw] grid grid-cols-2 md:grid-cols-4">
               {trustItems.map((item, i) => (
@@ -770,7 +734,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                     fontFamily: "Open Sans, sans-serif",
                   }}
                 >
-                  info@goarivermarathon.com
+                  runnersingoa@gmail.com
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -938,48 +902,6 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
               </button>
             </form>
           </div>
-        </div>
-
-        {/* Partnership CTA */}
-        <div className="p-8 rounded-2xl text-center bg-[#ffffff]">
-          <Building2
-            className="w-12 h-12 mx-auto mb-4"
-            style={{ color: "#5BB8F5" }}
-          />
-          <h3
-            className="text-2xl font-black mb-4"
-            style={{ fontFamily: "Montserrat, sans-serif", color: "black" }}
-          >
-            Ready to Make an Impact?
-          </h3>
-          <p
-            className="mb-6 max-w-2xl mx-auto"
-            style={{
-              color: "black",
-              fontFamily: "Open Sans, sans-serif",
-              fontWeight: 300,
-            }}
-          >
-            Partner with us to reach 50,000+ engaged participants, boost brand
-            visibility, and be part of India's most innovative marathon
-            experience.
-          </p>
-          <button
-            className="px-8 py-3 rounded-lg font-bold text-white transition-all duration-200"
-            style={{
-              fontFamily: "Montserrat, sans-serif",
-              backgroundColor: "#F47B20",
-              boxShadow: "0 4px 14px rgba(244,123,32,0.35)",
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.backgroundColor = "#FF9748")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.backgroundColor = "#F47B20")
-            }
-          >
-            Download Partnership Brochure
-          </button>
         </div>
       </div>
     </section>
