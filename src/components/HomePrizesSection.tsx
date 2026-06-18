@@ -44,11 +44,11 @@ const HomePrizesSection = () => {
         </div>
 
         {/* ── Two-col layout ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-start">
           {/* Left — intro */}
           <div>
             <p className="font-['Open_Sans'] text-[0.95rem] md:text-base text-white/60 leading-relaxed max-w-[400px] mb-6">
-              Open category cash prizes are equal for men and women. Awards
+              Open category cash prizes are equal for men and women. Awards are
               based on net chip time, not gun time.
             </p>
 
@@ -68,87 +68,67 @@ const HomePrizesSection = () => {
                 Equal prize money for men &amp; women across all open categories
               </p>
             </div>
-
-            <Link
-              to="/faq"
-              className="mt-6 inline-flex items-center bg-white border border-gray-200 rounded-[8px] px-5 py-4 hover:border-[#F47B20] transition-colors w-full sm:w-auto justify-center"
-            >
-              <p className="font-['Montserrat'] text-[0.80rem] font-bold tracking-wide text-[#F47B20]">
-                FAQ for more details →
-              </p>
-            </Link>
           </div>
 
-          {/* Right — prize table */}
-          <div className="w-full overflow-hidden">
-            {/* The outer div handles rounded corners, the inner handles scrolling */}
-            <div className="bg-[#0B1E3D] border border-white/[0.08] rounded-[16px] overflow-x-auto w-full custom-scrollbar">
-              <table className="w-full border-collapse min-w-[550px]">
-                <thead>
-                  <tr className="border-b border-white/[0.08] bg-white/[0.02]">
-                    {["Position", "Full 42K", "Half 21K", "20 Miler 32K"].map(
-                      (h, i) => (
-                        <th
-                          key={i}
-                          className="font-['Montserrat'] text-[0.62rem] font-bold tracking-[0.16em] uppercase
-                                   text-white/40 text-left px-5 py-4 whitespace-nowrap"
-                        >
-                          {h}
-                        </th>
-                      ),
-                    )}
-                  </tr>
-                </thead>
-                <tbody>
-                  {prizeRows.map((row, i) => (
-                    <tr
-                      key={i}
-                      className="border-b border-white/[0.05] hover:bg-white/[0.04] transition-colors duration-150"
-                    >
-                      {/* Position */}
-                      <td className="px-5 py-4 whitespace-nowrap">
-                        <span
-                          className={`inline-flex items-center gap-1.5 font-['Montserrat'] text-[0.85rem] font-bold ${row.colorClass}`}
-                        >
-                          {row.medal} {row.place}
-                        </span>
-                      </td>
-                      {/* Amounts */}
-                      {[row.full, row.half, row.miler].map((amt, j) => (
-                        <td key={j} className="px-5 py-4 whitespace-nowrap">
-                          <span className="font-['Montserrat'] text-[0.95rem] font-extrabold text-[#F47B20]">
-                            {amt}
-                          </span>
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-
-                  {/* Age categories row */}
-                  <tr className="bg-white/[0.01]">
-                    <td className="px-5 py-4 whitespace-nowrap">
-                      <span className="font-['Open_Sans'] text-[0.78rem] text-white/40">
-                        Age Categories
-                      </span>
-                    </td>
-                    <td
-                      colSpan={3}
-                      className="px-5 py-4 font-['Open_Sans'] text-[0.78rem] text-white/40"
-                    >
-                      Trophies + certificates · Men &amp; Women equal · 5-year
-                      brackets
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+          {/* Right — Prize Highlights */}
+          <div className="bg-white/[0.03] border border-white/[0.08] rounded-[16px] p-6 md:p-8">
+            <div className="mb-6">
+              <span className="inline-flex items-center bg-[#F47B20]/10 border border-[#F47B20]/20 rounded-full px-3 py-1 text-[#F47B20] text-[0.72rem] font-bold tracking-[0.12em] uppercase">
+                Prize Highlights
+              </span>
             </div>
 
-            {/* Footnote */}
-            <p className="font-['Open_Sans'] text-[0.7rem] text-white/30 mt-4 px-2 leading-relaxed">
-              * Prize amounts subject to final confirmation. Equal prizes for
-              men and women in all open categories. Swipe table on mobile to
-              view all distances.
-            </p>
+            <h3 className="font-['Montserrat'] text-[1.8rem] md:text-[2.2rem] font-black text-white mb-8 leading-tight">
+              ₹8 Lakh+
+              <br />
+              <span className="text-[#F47B20]">Prize Purse</span>
+            </h3>
+
+            <ul className="space-y-5">
+              <li className="flex items-start gap-4">
+                <span className="text-2xl shrink-0">🏆</span>
+                <span className="text-white/85 font-medium text-[0.95rem]">
+                  ₹8,00,000 in Cash Prizes
+                </span>
+              </li>
+
+              <li className="flex items-start gap-4">
+                <span className="text-2xl shrink-0">🏃</span>
+                <span className="text-white/85 font-medium text-[0.95rem]">
+                  5 Race Categories
+                </span>
+              </li>
+
+              <li className="flex items-start gap-4">
+                <span className="text-2xl shrink-0">🎖️</span>
+                <span className="text-white/85 font-medium text-[0.95rem]">
+                  Open &amp; Age Category Awards
+                </span>
+              </li>
+
+              <li className="flex items-start gap-4">
+                <span className="text-2xl shrink-0">⚖️</span>
+                <span className="text-white/85 font-medium text-[0.95rem]">
+                  Equal prizes for men and women
+                </span>
+              </li>
+
+              <li className="flex items-start gap-4">
+                <span className="text-2xl shrink-0">💰</span>
+                <span className="text-white/85 font-medium text-[0.95rem]">
+                  96 individual cash prizes to win
+                </span>
+              </li>
+            </ul>
+
+            <div className="mt-8 pt-6 border-t border-white/[0.08]">
+              <Link
+                to="/prizes"
+                className="inline-flex items-center justify-center bg-[#F47B20] text-white font-['Montserrat'] text-[0.8rem] font-bold tracking-[0.08em] uppercase px-6 py-4 rounded-[8px] hover:bg-[#FF9748] transition-colors"
+              >
+                Prize Details →
+              </Link>
+            </div>
           </div>
         </div>
       </div>
