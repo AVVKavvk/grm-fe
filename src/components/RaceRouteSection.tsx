@@ -1,3 +1,6 @@
+import routeMap from "@/assets/routemap.jpeg";
+import { useState } from "react";
+
 const courseFeatures = [
   {
     icon: "🏅",
@@ -282,6 +285,8 @@ const CourseMap = () => (
 );
 
 const RaceRouteSection = () => {
+  const [showMapModal, setShowMapModal] = useState(false);
+
   return (
     <section id="course" className="bg-[#122B55] py-24">
       <div className="max-w-[1200px] mx-auto px-[5vw]">
@@ -303,7 +308,13 @@ const RaceRouteSection = () => {
         {/* Two-col layout: map + features */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left — map */}
-          <CourseMap />
+          <div className="cursor-zoom-in" onClick={() => setShowMapModal(true)}>
+            <img
+              src={routeMap}
+              alt="Race route map"
+              className="w-full rounded-[16px] shadow-2xl border border-white/10 hover:scale-[1.02] transition-transform duration-300"
+            />
+          </div>
 
           {/* Right — feature list */}
           <div className="flex flex-col gap-7">
@@ -327,6 +338,26 @@ const RaceRouteSection = () => {
           </div>
         </div>
       </div>
+      {showMapModal && (
+        <div
+          className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setShowMapModal(false)}
+        >
+          <button
+            className="absolute top-6 right-6 text-white text-4xl font-light hover:text-[#F47B20]"
+            onClick={() => setShowMapModal(false)}
+          >
+            ×
+          </button>
+
+          <img
+            src={routeMap}
+            alt="Race route map"
+            className="max-w-[95vw] max-h-[90vh] object-contain rounded-xl shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 };
