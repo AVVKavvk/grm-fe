@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const racesData = [
   {
@@ -8,10 +8,10 @@ const racesData = [
     price: "₹1000",
     scratchedPrice: null,
     features: [
-      "Race bib & kit bag",
-      "Finisher medal",
-      "Hydration stations",
-      "Goodie bag items",
+      "Participation Medal",
+      "Event T-Shirt",
+      "Digital Certificate",
+      "Nourishment",
     ],
     isFeatured: false,
   },
@@ -22,10 +22,10 @@ const racesData = [
     price: "₹1,400",
     scratchedPrice: "₹2,000",
     features: [
-      "Chip-timed bib",
-      "Finisher medal + T-shirt",
-      "Live tracking",
-      "Digital certificate",
+      "Finisher Medal",
+      "Event T-Shirt",
+      "Digital Certificate",
+      "Electronic Timing Chip",
     ],
     isFeatured: false,
   },
@@ -36,9 +36,11 @@ const racesData = [
     price: "₹2,100",
     scratchedPrice: "₹3,000",
     features: [
-      "Finisher medal + T-shirt",
-      "Live analytics for family",
-      "Prize pool eligible",
+      "Finisher Medal",
+      "Tech T-Shirt",
+      "Digital Certificate",
+      "Electronic Timing Chip",
+      "Nourishment",
     ],
     isFeatured: true,
   },
@@ -49,9 +51,11 @@ const racesData = [
     price: "₹2,450",
     scratchedPrice: "₹3,500",
     features: [
-      "Finisher medal + T-shirt",
-      "Live analytics",
-      "Prize pool eligible",
+      "Finisher Medal",
+      "Tech T-Shirt",
+      "Digital Certificate",
+      "Electronic Timing Chip",
+      "Nourishment",
     ],
     isFeatured: false,
   },
@@ -62,15 +66,38 @@ const racesData = [
     price: "₹2,800",
     scratchedPrice: "₹4,000",
     features: [
-      "Finisher medal + T-shirt",
-      "Memory timeline + photos",
-      "Open prize eligible",
+      "Finisher Medal",
+      "Tech T-Shirt",
+      "Digital Certificate",
+      "Electronic Timing Chip",
+      "Nourishment",
+      "Required Eligibility Submission",
     ],
     isFeatured: false,
   },
 ];
 
 const RaceCategories = () => {
+  const [showEligibilityInfo, setShowEligibilityInfo] = useState(false);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        tooltipRef.current &&
+        !tooltipRef.current.contains(event.target as Node)
+      ) {
+        setShowEligibilityInfo(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <section className="bg-[#F4F7FB] py-16 md:py-24" id="races">
       <div className="w-full max-w-[1400px] mx-auto px-[5vw] xl:px-8">
@@ -175,7 +202,51 @@ const RaceCategories = () => {
                     >
                       ✓
                     </span>
-                    {feature}
+
+                    {feature === "Required Eligibility Submission" ? (
+                      <div
+                        ref={tooltipRef}
+                        className="relative flex items-center gap-1 flex-wrap group"
+                      >
+                        <span>{feature}</span>
+
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setShowEligibilityInfo((prev) => !prev)
+                          }
+                          className={`inline-flex items-center justify-center w-4 h-4 rounded-full border text-[10px] font-bold transition-opacity ${
+                            race.isFeatured
+                              ? "border-[#5BB8F5] text-[#5BB8F5]"
+                              : "border-[#1A6FB4] text-[#1A6FB4]"
+                          }`}
+                        >
+                          ?
+                        </button>
+
+                        <div
+                          className={`
+      absolute left-0 top-6 z-50 w-[280px]
+      rounded-lg bg-[#0B1E3D]
+      p-3 text-[12px] leading-relaxed text-white
+      shadow-xl border border-white/10
+
+      ${showEligibilityInfo ? "block" : "hidden md:group-hover:block"}
+    `}
+                        >
+                          <div className="font-semibold mb-1">
+                            Full Marathon Eligibility
+                          </div>
+                          Participants must provide proof of a Full Marathon
+                          finish time of <strong>6 hours or less</strong> or a
+                          Half Marathon finish time of{" "}
+                          <strong>2 hours 45 minutes or less</strong> from a
+                          recognized event.
+                        </div>
+                      </div>
+                    ) : (
+                      feature
+                    )}
                   </li>
                 ))}
               </ul>
