@@ -7,36 +7,16 @@ import {
   Calendar,
   CheckCircle,
   Trophy,
-  Zap,
   Utensils,
-  Music,
   ChevronDown,
   AlertTriangle,
-  ExternalLink,
   Waypoints,
-  Info,
 } from "lucide-react";
-import { lazy, Suspense, useState } from "react";
-import CountdownTimer from "./CountdownTimer";
 import carbLoading from "@/assets/carb-loading.jpeg";
-import {
-  GetRegisterButton,
-  GetRegisterButtonForEvent,
-} from "@/lib/localstorage";
+import { GetRegisterButtonForEvent } from "@/lib/localstorage";
 
 const EventsSection = () => {
-  // const { date, day, month, year } = getLastDateOfMonth();
-  const date = "2026-12-13T23:59:59";
-
   const heroEvents = [
-    {
-      name: "Carb Loading Fiesta",
-      description: "Pre-race celebration & feast",
-      date: "Dec 12, 2026",
-      icon: Utensils,
-      gradient: "from-orange-500 to-red-600",
-      link: "#carb-loading",
-    },
     {
       name: "The Marathon Experience",
       description: "5 distances to choose from",
@@ -44,6 +24,14 @@ const EventsSection = () => {
       icon: Trophy,
       gradient: "from-blue-500 to-purple-600",
       link: "#marathon",
+    },
+    {
+      name: "Carb Loading Fiesta",
+      description: "Pre-race celebration & feast",
+      date: "Dec 12, 2026",
+      icon: Utensils,
+      gradient: "from-orange-500 to-red-600",
+      link: "#carb-loading",
     },
   ];
 
@@ -53,8 +41,8 @@ const EventsSection = () => {
       distance: "42 KM",
       startTime: "04:00 AM",
       cutOffTime: "6 Hours",
-      price: "₹3,440",
-      nextPrice: "₹3,510",
+      price: "₹2,800", // Updated Costing
+      nextPrice: "₹4,000",
       participants: "18+ years",
       description: "The ultimate challenge along Goa's most scenic route",
       features: [
@@ -72,16 +60,21 @@ const EventsSection = () => {
           "https://www.google.com/maps/d/u/0/viewer?mid=1nVQQTK0cUgL-puPU3SHTGs8m4ArJbYE&ll=15.396277154068239%2C73.88005525&z=14",
         interactive: "https://www.youtube.com/watch?v=gXYogR1xdT8",
       },
-      disclaimer: "It needs previous running experience.",
+      disclaimer: (
+        <div>
+          Participants must provide proof of a Full Marathon finish time of{" "}
+          <strong>6 hours or less</strong> or a Half Marathon finish time of{" "}
+          <strong>2 hours 45 minutes or less</strong> from a recognized event.
+        </div>
+      ),
     },
     {
       name: "20 Miler",
       distance: "32 KM",
       startTime: "04:30 AM",
       cutOffTime: "5 Hours",
-      price: "₹3,170",
-
-      nextPrice: "₹3,150",
+      price: "₹2,450", // Updated Costing
+      nextPrice: "₹3,500",
       participants: "18+ years",
       description:
         "A challenging distance for experienced runners on most scenic route",
@@ -107,9 +100,8 @@ const EventsSection = () => {
       distance: "21 KM",
       startTime: "05:30 AM",
       cutOffTime: "3.5 Hours",
-      price: "₹2,650",
-
-      nextPrice: "₹2,610",
+      price: "₹2,100", // Updated Costing
+      nextPrice: "₹3,000",
       participants: "18+ years",
       description: "Perfect for intermediate runners seeking a challenge",
       features: [
@@ -134,9 +126,8 @@ const EventsSection = () => {
       distance: "10 KM",
       startTime: "06:15 AM",
       cutOffTime: "90 Minutes",
-      price: "₹1,750",
-
-      nextPrice: "₹1,665",
+      price: "₹1,400", // Updated Costing
+      nextPrice: "₹2,000",
       participants: "16+ years",
       description: "Ideal for beginners and fitness enthusiasts",
       features: [
@@ -161,9 +152,8 @@ const EventsSection = () => {
       distance: "5 KM",
       startTime: "08:00 AM",
       cutOffTime: "60 Minutes",
-      price: "₹750",
-
-      nextPrice: "₹720",
+      price: "₹1000", // Updated Costing
+      nextPrice: null,
       participants: "Open for all",
       description: "Family-friendly run with stunning coastal views",
       features: [
@@ -184,13 +174,13 @@ const EventsSection = () => {
     },
   ];
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     const element = document.querySelector(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-  const handleImageClick = (image) => {
+  const handleImageClick = (image: string) => {
     window.open(image, "_blank", "noopener,noreferrer");
   };
 
@@ -209,41 +199,23 @@ const EventsSection = () => {
           Secure Your <span className="text-[#F47B20]">Spot Today</span>
         </h2>
 
-        <p className="text-white/75 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-          Join the tech revolution in marathon running. Festival offer pricing
-          ends soon – don't miss out on this incredible opportunity.
+        <p className="text-white/75 text-lg max-w-2xl mx-auto mb-2 leading-relaxed">
+          Run by the river. Festival offer ends soon.. don’t miss out on this
+          incredible opportunity.
         </p>
 
-        <div className=" border border-white/10 rounded-2xl p-6 max-w-xl mx-auto">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Clock className="w-5 h-5 text-[#F47B20]" />
-            <span className="font-['Montserrat'] font-bold text-[#F47B20] tracking-wide">
-              Festival Ends In:
-            </span>
-          </div>
-          <CountdownTimer targetDate={date} />
-        </div>
+        {/* Countdown Timer Section Removed completely based on instructions */}
       </div>
 
-      {/* ── TWO EPIC EVENTS ── #122B55 navy-mid */}
+      {/* ── TWO EPIC EVENTS ── NAVY MID (Reordered in heroEvents array) */}
       <div className=" py-10 px-[5vw]">
         <div className="max-w-[1200px] mx-auto">
-          {/* <div className="text-center mb-12">
-            <h1 className="font-['Montserrat'] font-black text-5xl md:text-6xl text-white mb-4">
-              Two <span className="text-[#F47B20]">Epic Events</span>
-            </h1>
-            <p className="text-white/75 text-xl max-w-2xl mx-auto leading-relaxed">
-              A complete marathon weekend celebration combining world-class
-              racing with unforgettable Goan experiences
-            </p>
-          </div> */}
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {heroEvents.map((event, index) => (
               <button
                 key={index}
                 onClick={() => scrollToSection(event.link)}
-                className="group bg-[#1A3A6B] border border-white/10 rounded-2xl p-10 text-center cursor-pointer hover:border-[#2E8FD8] hover:bg-[#1A3A6B]/80 hover:-translate-y-1 transition-all duration-300"
+                className="group bg-[#1A3A6B] border border-white/10 rounded-2xl p-10 text-center cursor-pointer hover:border-[#2E8FD8] hover:bg-[#1A3A6B]/80 hover:-translate-y-1 transition-all duration-300 w-full"
               >
                 <event.icon className="w-12 h-12 mx-auto mb-4 text-[#5BB8F5]" />
                 <h3 className="font-['Montserrat'] font-bold text-2xl text-white mb-2">
@@ -261,13 +233,186 @@ const EventsSection = () => {
         </div>
       </div>
 
-      {/* ── CARB LOADING FIESTA ── #122B55 navy-mid */}
+      {/* ── MARATHON EXPERIENCE ── white (Moved Top) */}
+      <div id="marathon" className="bg-white py-20 px-[5vw] scroll-mt-20">
+        <div className="max-w-[1200px] mx-auto">
+          {/* Section heading */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-[#1A6FB4]/10 text-[#1A6FB4] px-4 py-2 rounded-full mb-5 border border-[#1A6FB4]/20">
+              <Medal className="w-4 h-4" />
+              <span className="font-['Montserrat'] font-bold text-xs tracking-[0.16em] uppercase">
+                Multiple Categories
+              </span>
+            </div>
+            <h2 className="font-['Montserrat'] font-extrabold text-4xl md:text-5xl text-[#0B1E3D] mb-4">
+              The Marathon <span className="text-[#F47B20]">Experience</span>
+            </h2>
+            <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
+              From seasoned marathoners to first-time runners, we have the
+              perfect distance for every fitness level and running goal.
+            </p>
+          </div>
+
+          {/* Marathon cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {marathonEvents.map((event, index) => (
+              <div
+                key={index}
+                className="bg-white border border-[#1A6FB4]/15 rounded-2xl p-8 shadow-[0_4px_16px_rgba(11,30,61,0.06)] hover:shadow-[0_20px_40px_rgba(11,30,61,0.10)] transition-shadow duration-300 relative overflow-hidden flex flex-col h-full"
+              >
+                {/* Decorative circle */}
+                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#1A6FB4]/05 pointer-events-none" />
+
+                <div className="flex-grow">
+                  {/* Name + price */}
+                  <div className="flex justify-between items-start mb-6 relative">
+                    <div>
+                      <h3 className="font-['Montserrat'] font-bold text-xl text-[#0B1E3D] mb-1">
+                        {event.name}
+                      </h3>
+                      <div className="font-['Montserrat'] font-black text-3xl text-[#1A6FB4]">
+                        {event.distance}
+                        {/* 42 KM disclaimer text added */}
+                        {event.distance === "42 KM" && (
+                          <span className="block text-xs font-semibold text-gray-500 mt-1">
+                            *Previous running experience required
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-end">
+                      <div className="font-['Montserrat'] font-black text-2xl text-[#F47B20] text-right">
+                        {event.price}
+                      </div>
+                      <div className="font-['Montserrat'] font-black text-2xl text-[#F47B20] text-right">
+                        {event.nextPrice && (
+                          <span className="font-head text-[1rem] font-semibold text-[#8899aa] line-through">
+                            {event.nextPrice}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6 h-10">
+                    {event.description}
+                  </p>
+
+                  {/* Meta */}
+                  <div className="grid grid-cols-2 gap-2 mb-6 text-sm text-gray-500">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-[#1A6FB4]" />
+                      <span>Start: {event.startTime}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-[#1A6FB4]" />
+                      <span>Cut-off: {event.cutOffTime}</span>
+                    </div>
+                    <div className="flex items-center gap-2 col-span-2">
+                      <Users className="w-4 h-4 text-[#1A6FB4]" />
+                      <span>{event.participants}</span>
+                    </div>
+                    <div className="col-span-2">
+                      <a
+                        href="https://maps.app.goo.gl/GyFPPhbDonhNZRaD9"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2 hover:text-[#1A6FB4] transition-colors"
+                      >
+                        <MapPin className="w-4 h-4 text-[#1A6FB4]" />
+                        <span>Chicalim Panchayat Ground</span>
+                      </a>
+                    </div>
+                    {/* View Route turned into a button */}
+                    <div className="col-span-2 pt-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full justify-start gap-2 text-[#1A6FB4] border-[#1A6FB4]/20 hover:bg-[#1A6FB4]/05 hover:text-[#1A6FB4]"
+                        asChild
+                      >
+                        <a
+                          href={(event?.googleMapRoute as string) || "#"}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Waypoints className="w-4 h-4" />
+                          View Route
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div className="mb-6">
+                    <p className="font-['Montserrat'] font-bold text-[10px] tracking-[0.16em] uppercase text-[#0B1E3D] mb-2">
+                      What's Included
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {event.features.map((feature, idx) => (
+                        <span
+                          key={idx}
+                          className="text-xs bg-[#1A6FB4]/10 text-[#1A6FB4] px-3 py-1 rounded-full border border-[#1A6FB4]/15 font-semibold"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Grouped Button and Disclaimer at the bottom */}
+                <div className="mt-auto flex flex-col gap-4 pt-4">
+                  {event.disclaimer && (
+                    <div className="bg-[#F47B20]/05 border border-[#F47B20]/20 rounded-lg px-4 py-3 flex gap-3 items-start">
+                      <AlertTriangle className="w-4 h-4 text-[#F47B20] flex-shrink-0 mt-0.5" />
+                      <div className="text-sm text-amber-900 leading-relaxed">
+                        {event.disclaimer}
+                      </div>
+                    </div>
+                  )}
+                  <div>{GetRegisterButtonForEvent(event.name as string)}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* ── LIMITED SEATS CTA ── */}
+          <div id="recovery-rave" className="mt-16 scroll-mt-20">
+            <section className="bg-[#0B1E3D] rounded-2xl py-14 px-8 text-center border border-[#1A3A6B]">
+              <div className="max-w-2xl mx-auto">
+                <h3 className="font-['Montserrat'] font-black text-3xl md:text-4xl text-white mb-4">
+                  Limited Seats Available!
+                </h3>
+                <p className="text-white/75 text-lg leading-relaxed mb-8">
+                  The{" "}
+                  <span className="text-[#5BB8F5] font-semibold">
+                    Carb-Loading Fiesta
+                  </span>{" "}
+                  has limited capacity. With{" "}
+                  <span className="text-[#FF9748] font-bold">7,500</span>{" "}
+                  runners expected this year, we can only accommodate{" "}
+                  <span className="text-[#FF9748] font-bold">1,500</span> at
+                  these exclusive events. Registrations will open soon to secure
+                  your spot and make the most of your marathon weekend.
+                </p>
+                {/* Register Now changed to static text opening soon */}
+                <div className="inline-block bg-white/10 text-white/70 font-['Montserrat'] font-bold py-3 px-8 rounded-full border border-white/20 uppercase tracking-wider text-sm cursor-not-allowed">
+                  Registrations Opening Soon
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      {/* ── CARB LOADING FIESTA ── #122B55 navy-mid (Moved below Marathon) */}
       <div
         id="carb-loading"
         className="bg-[#122B55] py-20 px-[5vw] scroll-mt-20"
       >
         <div className="max-w-[1200px] mx-auto">
-          <div className=" p-8 md:p-10">
+          <div className=" p-8 md:p-10 border border-white/10 rounded-2xl bg-[#0B1E3D]">
             {/* Header */}
             <div className="flex items-start gap-4 mb-6">
               <span className="text-4xl">🍝</span>
@@ -278,7 +423,7 @@ const EventsSection = () => {
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-2 text-white/45 text-sm">
                     <Calendar className="w-4 h-4" />
-                    <span>December 13, 2027</span>
+                    <span>December 12, 2026</span>
                   </div>
                   <div className="flex items-center gap-2 text-white/45 text-sm">
                     <Clock className="w-4 h-4" />
@@ -326,163 +471,13 @@ const EventsSection = () => {
               </div>
             </div>
 
-            {/* Stay tuned pill */}
+            {/* Stay tuned pill updated */}
             <div className="text-center pt-2">
               <div className="inline-flex items-center gap-2 bg-[#F47B20]/10 border border-[#F47B20]/25 text-[#FF9748] rounded-full px-6 py-2.5 text-sm font-['Montserrat'] font-semibold">
                 <span>✨</span>
-                Stay tuned for more exciting events!
+                Stay Tuned – Carb Loading Fiesta Registrations will open in July
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── MARATHON EXPERIENCE ── white */}
-      <div id="marathon" className="bg-white py-20 px-[5vw] scroll-mt-20">
-        <div className="max-w-[1200px] mx-auto">
-          {/* Section heading */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-[#1A6FB4]/10 text-[#1A6FB4] px-4 py-2 rounded-full mb-5 border border-[#1A6FB4]/20">
-              <Medal className="w-4 h-4" />
-              <span className="font-['Montserrat'] font-bold text-xs tracking-[0.16em] uppercase">
-                Multiple Categories
-              </span>
-            </div>
-            <h2 className="font-['Montserrat'] font-extrabold text-4xl md:text-5xl text-[#0B1E3D] mb-4">
-              The Marathon <span className="text-[#F47B20]">Experience</span>
-            </h2>
-            <p className="text-gray-500 text-xl max-w-2xl mx-auto leading-relaxed">
-              From seasoned marathoners to first-time runners, we have the
-              perfect distance for every fitness level and running goal.
-            </p>
-          </div>
-
-          {/* Marathon cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {marathonEvents.map((event, index) => (
-              <div
-                key={index}
-                // Added flex, flex-col, and h-full to make the card a flex container
-                className="bg-white border border-[#1A6FB4]/15 rounded-2xl p-8 shadow-[0_4px_16px_rgba(11,30,61,0.06)] hover:shadow-[0_20px_40px_rgba(11,30,61,0.10)] transition-shadow duration-300 relative overflow-hidden flex flex-col h-full"
-              >
-                {/* Decorative circle */}
-                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#1A6FB4]/05 pointer-events-none" />
-
-                {/* Added flex-grow wrapper so this section takes up all available vertical space */}
-                <div className="flex-grow">
-                  {/* Name + price */}
-                  <div className="flex justify-between items-start mb-6 relative">
-                    <div>
-                      <h3 className="font-['Montserrat'] font-bold text-xl text-[#0B1E3D] mb-1">
-                        {event.name}
-                      </h3>
-                      <div className="font-['Montserrat'] font-black text-3xl text-[#1A6FB4]">
-                        {event.distance}
-                      </div>
-                    </div>
-                    <div className="font-['Montserrat'] font-black text-2xl text-[#F47B20] text-right">
-                      {event.price}
-                    </div>
-                  </div>
-
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                    {event.description}
-                  </p>
-
-                  {/* Meta */}
-                  <div className="grid grid-cols-2 gap-2 mb-6 text-sm text-gray-500">
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-[#1A6FB4]" />
-                      <span>Start: {event.startTime}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-[#1A6FB4]" />
-                      <span>Cut-off: {event.cutOffTime}</span>
-                    </div>
-                    <div className="flex items-center gap-2 col-span-2">
-                      <Users className="w-4 h-4 text-[#1A6FB4]" />
-                      <span>{event.participants}</span>
-                    </div>
-                    <div className="col-span-2">
-                      <a
-                        href="https://maps.app.goo.gl/GyFPPhbDonhNZRaD9"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-2 hover:text-[#1A6FB4] transition-colors"
-                      >
-                        <MapPin className="w-4 h-4 text-[#1A6FB4]" />
-                        <span>Chicalim Panchayat Ground</span>
-                      </a>
-                    </div>
-                    <div className="col-span-2">
-                      <a
-                        href={(event?.googleMapRoute as string) || "#"}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-2 hover:text-[#1A6FB4] transition-colors"
-                      >
-                        <Waypoints className="w-4 h-4 text-[#1A6FB4]" />
-                        <span>View Route</span>
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div className="mb-6">
-                    <p className="font-['Montserrat'] font-bold text-[10px] tracking-[0.16em] uppercase text-[#0B1E3D] mb-2">
-                      What's Included
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {event.features.map((feature, idx) => (
-                        <span
-                          key={idx}
-                          className="text-xs bg-[#1A6FB4]/10 text-[#1A6FB4] px-3 py-1 rounded-full border border-[#1A6FB4]/15 font-semibold"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Grouped Button and Disclaimer at the bottom with mt-auto */}
-                <div className="mt-auto flex flex-col gap-4 pt-4">
-                  {event.disclaimer && (
-                    <div className="bg-[#F47B20]/05 border border-[#F47B20]/20 rounded-lg px-4 py-3 mb-5 flex gap-3 items-start">
-                      <AlertTriangle className="w-4 h-4 text-[#F47B20] flex-shrink-0 mt-0.5" />
-                      <div className="text-sm text-amber-900 leading-relaxed">
-                        {event.disclaimer}
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <div>{GetRegisterButtonForEvent(event.name as string)}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* ── LIMITED SEATS CTA ── navy inside white section */}
-          <div id="recovery-rave" className="mt-16 scroll-mt-20">
-            <section className="bg-[#0B1E3D] rounded-2xl py-14 px-8 text-center border border-[#1A3A6B]">
-              <div className="max-w-2xl mx-auto">
-                <h3 className="font-['Montserrat'] font-black text-3xl md:text-4xl text-white mb-4">
-                  Limited Seats Available!
-                </h3>
-                <p className="text-white/75 text-lg leading-relaxed mb-8">
-                  The{" "}
-                  <span className="text-[#5BB8F5] font-semibold">
-                    Carb-Loading Fiesta
-                  </span>{" "}
-                  has limited capacity. With{" "}
-                  <span className="text-[#FF9748] font-bold">7,500</span>{" "}
-                  runners expected this year, we can only accommodate{" "}
-                  <span className="text-[#FF9748] font-bold">1,500</span> at
-                  these exclusive events. Book your festival pass now to secure
-                  your spot and make the most of your marathon weekend.
-                </p>
-                <GetRegisterButton />
-              </div>
-            </section>
           </div>
         </div>
       </div>
