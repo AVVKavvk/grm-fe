@@ -25,13 +25,13 @@ const Header = () => {
   return (
     <header className="fixed font-['Montserrat'] top-0 left-0 right-0 z-[500] md:h-[130px] h-[90px] flex items-center bg-[rgba(11,30,61,0.96)] backdrop-blur-[20px] border-b border-white/10">
       {/* Nav inner */}
-      <div className="w-full max-w-[1550px] mx-auto px-[5vw] xl:px-8 flex items-center justify-between gap-4">
+      <div className="w-full max-w-[1600px] mx-auto px-[5vw] xl:px-8 flex items-center justify-between gap-4">
         {/* Left: SKF Logo & Text */}
         <Link to="/" className="flex items-center gap-[0.9rem] shrink-0">
           <img
             src={skfLogo}
             alt="GRM 2026"
-            className="w-[60px] md:w-[80px] object-cover"
+            className="w-[70px] md:w-[90px] object-cover"
           />
 
           {/* Text block - hidden on mobile screens, shown on md and above */}
@@ -87,7 +87,7 @@ const Header = () => {
           <img
             src={vascoLogo}
             alt="Vasco Logo"
-            className="w-[60px] md:w-[80px] object-contain"
+            className="w-[70px] bg-white p-2 rounded md:w-[90px] object-contain"
           />
 
           {/* Mobile hamburger (Only visible on Phones/Tablets) */}

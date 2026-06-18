@@ -1,6 +1,6 @@
 import { Play, Calendar, MapPin, Medal, X } from "lucide-react";
 // Import your webm video instead of the image
-import heroVideo from "@/assets/videos/river_run_hero.webm";
+import heroVideo from "@/assets/videos/hero-video.webm";
 import { useState, useEffect } from "react";
 import { GetRegisterButton } from "@/lib/localstorage";
 import { Link } from "react-router-dom";
@@ -75,7 +75,7 @@ const Hero = () => {
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-[5vw] pb-20">
         {/* Pre-line */}
         <div className="flex items-center gap-4 mb-6">
-          <span className="inline-block bg-[#F47B20]/15 border border-[#F47B20]/30 text-[#FF9748] font-['Montserrat'] text-[0.68rem] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full">
+          <span className="inline-block bg-[#F47B20]/15 border border-[#F47B20]/30 text-[#db680f] font-['Montserrat'] text-[0.8rem] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full">
             16th Edition · Dec 13, 2026
           </span>
           <div className="w-px h-[18px] bg-white/25" />
@@ -146,12 +146,20 @@ const Hero = () => {
 
         {/* Meta strip */}
         <div className="flex flex-wrap gap-8">
+          <div className="inline-flex items-center gap-4  bg-[#F47B20]/12  rounded-[10px] px-2 py-3">
+            <Calendar className="w-5 h-5 text-[#F47B20]" />
+
+            <div>
+              <div className="text-[0.65rem] font-bold tracking-[0.14em] uppercase text-white/60">
+                Race Day
+              </div>
+
+              <div className="font-['Montserrat'] text-[1.15rem] md:text-[1.35rem] font-black text-white">
+                Sunday, <span className="text-[#F47B20]">13 December 2026</span>
+              </div>
+            </div>
+          </div>
           {[
-            {
-              icon: <Calendar className="w-4 h-4 text-[#5BB8F5]" />,
-              label: "Race Day",
-              value: "Sunday, 13 December 2026",
-            },
             {
               icon: <MapPin className="w-4 h-4 text-[#5BB8F5]" />,
               label: "Location",
