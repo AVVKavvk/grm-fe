@@ -20,7 +20,7 @@ const panels = [
     borderColor: "rgba(244,123,32,0.2)",
     num: "02 / THE ENERGY",
     title: "7,500 Runners.\nOne Heartbeat.",
-    desc: "Cheering zones, pacemakers, a buzzing finish line, and a community that celebrates every finisher.",
+    desc: "Kick off with a lively Zumba warm-up and run through electrifying cheering zones featuring live music, bands, and enthusiastic supporters.",
     video: energyVideo,
   },
   {
@@ -28,7 +28,7 @@ const panels = [
     borderColor: "rgba(26,111,180,0.2)",
     num: "03 / THE MEMORY",
     title: "Your Race.\nRelived Forever.",
-    desc: "GPS timing, instant split notifications, a personal memory timeline and photo reel — all on your phone.",
+    desc: "Professional photography, photo booths, timing chips, and instant timing updates—every milestone recorded, every memory preserved.",
     video: memoryVideo,
   },
 ];
