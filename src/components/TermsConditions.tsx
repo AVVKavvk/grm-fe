@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const TermsConditions = () => {
   return (
     <div className="min-h-screen bg-background">
-      <main className="container mx-auto px-4 py-24">
+      <main className="container mx-auto px-4 mt-40">
         <Card className="max-w-5xl mx-auto">
           <CardContent className="p-8 md:p-12">
             <h1 className="text-4xl font-bold mb-8 text-center">

@@ -8,7 +8,7 @@ import getLastDateOfMonth from "@/lib/getDate";
 const navItems = [
   { link: "/", label: "Home" },
   { link: "/categories", label: "Categories" },
-  { link: "/sponsors", label: "Sponsors" },
+  { link: "/partners", label: "Partners" },
   { link: "/memories", label: "Gallery" },
   { link: "/contact-us", label: "Contact Us" },
   { link: "/prizes", label: "Prizes" },

@@ -12,6 +12,7 @@ import HomePrizesSection from "@/components/HomePrizesSection";
 // import HomeFAQSection from "@/components/HomeFAQSection";
 import { TrustBar } from "@/components/TrustBar";
 import RaceCategories from "@/components/RaceCategories";
+import { HighlightsSection } from "@/components/HeighlightSection";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <TrustBar />
       <RaceCategories />
       <RaceRouteSection />
+      <HighlightsSection />
       <HomePrizesSection />
       {/*  <FestivalHighlights /> */}
       {/* <AboutSection /> */}

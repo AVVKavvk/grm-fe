@@ -48,6 +48,7 @@ const trustItems = [
   { num: "16", label: "Years of Excellence" },
   { num: "7,500+", label: "Runners Annually" },
   { num: "AIMS", label: "Certified Course" },
+  { num: "Abbott", label: "WMM Qualifier" },
   { num: "50000 ₹", label: "Equal Prize Money" },
 ];
 
@@ -316,7 +317,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
 
       if (result) {
         toast({
-          title: "Sponsorship Inquiry Submitted!",
+          title: "Partners Inquiry Submitted!",
           description:
             "Thank you for your interest. Our partnerships team will contact you within 24 hours.",
         });
@@ -367,7 +368,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
             className="text-3xl md:text-4xl font-black mb-4"
             style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
           >
-            Official <span className="text-[#F47B20]">Sponsors</span>
+            Official <span className="text-[#F47B20]">Partners</span>
           </h2>
           <p
             className="text-lg max-w-2xl mx-auto"
@@ -539,7 +540,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           </div>
         </div>
 
-        {/* Gold Sponsors */}
+        {/* Platinum Partners */}
         <div className="mb-16">
           <h3
             className="text-xl font-bold text-center mb-8 tracking-wide uppercase"
@@ -549,7 +550,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
               letterSpacing: "0.16em",
             }}
           >
-            Gold Sponsors
+            Platinum Partners
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {realSponsors.platinum.map((sponsor, index) => (
@@ -609,7 +610,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           </div>
         </div>
 
-        {/* Silver Partners */}
+        {/* Gold Partners */}
         <div className="mb-16">
           <h3
             className="text-lg font-bold text-center mb-8 tracking-wide uppercase"
@@ -619,7 +620,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
               letterSpacing: "0.16em",
             }}
           >
-            Silver Partners
+            Gold Partners
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {realSponsors.gold.map((sponsor, index) => (
@@ -686,12 +687,20 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           </h3>
 
           <div className="bg-[#F47B20] w-full">
-            <div className="max-w-[1200px] mx-auto px-[5vw] grid grid-cols-2 md:grid-cols-4">
+            <div className="max-w-[1200px] mx-auto px-[5vw] grid grid-cols-2 md:grid-cols-5">
               {trustItems.map((item, i) => (
                 <div
                   key={i}
-                  className={`flex flex-col items-center text-center py-6 px-4 gap-0.5
-            ${i < trustItems.length - 1 ? "border-r border-white/20" : ""}`}
+                  className={`flex flex-col items-center justify-center text-center py-6 px-4 gap-0.5 border-white/20
+            ${/* Mobile: 5th item spans 2 columns. Desktop: 5th item spans 1 column */ ""}
+            ${i === 4 ? "col-span-2 md:col-span-1" : ""}
+            
+            ${/* Mobile: Only the left items (index 0 and 2) get a right border */ ""}
+            ${i % 2 === 0 && i !== 4 ? "border-r" : ""}
+            
+            ${/* Desktop: First 4 items get a right border, last item gets none */ ""}
+            ${i < 4 ? "md:border-r" : "md:border-r-0"}
+          `}
                 >
                   <div className="font-['Montserrat'] text-[2rem] font-black text-white leading-none">
                     {item.num}

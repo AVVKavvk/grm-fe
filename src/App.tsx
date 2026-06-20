@@ -120,7 +120,7 @@ const App = () => {
             }
           />
           <Route
-            path="/sponsors"
+            path="/partners"
             element={
               <Suspense fallback={<Loader />}>
                 <EnhancedSponsors />

@@ -74,14 +74,23 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-[5vw] pb-20">
         {/* Pre-line */}
-        <div className="flex items-center gap-4 mb-6">
-          <span className="inline-block bg-[#F47B20]/15 border border-[#F47B20]/30 mt-6 md:mt-0 text-[#db680f] font-['Montserrat'] text-[0.8rem] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full">
+        <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
+          <span className="inline-block bg-white/10 border border-white/20 mt-6 md:mt-0 text-white font-['Montserrat'] text-[0.8rem] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full">
             16th Edition · Dec 13, 2026
           </span>
-          <div className="w-px h-[18px] bg-white/25" />
-          <span className="font-['Montserrat'] text-[0.72rem] font-semibold tracking-[0.10em] uppercase text-white/40">
-            AIMS Certified
-          </span>
+
+          <div className="w-px hidden md:block h-[18px] bg-white/40" />
+
+          <div className="flex items-center gap-4">
+            <span className="font-['Montserrat'] text-[0.72rem] font-semibold tracking-[0.10em] uppercase text-white/80">
+              AIMS Certified
+            </span>
+            <div className="w-px  h-[18px] bg-white/40" />
+
+            <span className="font-['Montserrat'] text-[0.72rem] font-semibold tracking-[0.10em] uppercase text-white/80">
+              Abbott WMM Qualifier
+            </span>
+          </div>
         </div>
 
         {/* Headline */}

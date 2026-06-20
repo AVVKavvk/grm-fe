@@ -36,7 +36,7 @@ const Footer = () => {
 
   const supportLinks = [
     { label: "Contact Us", link: "/contact-us" },
-    { label: "Sponsorship", link: "/sponsors" },
+    { label: "Partners", link: "/partners" },
     { label: "Terms & Conditions", link: "/term-and-conditions" },
   ];
 

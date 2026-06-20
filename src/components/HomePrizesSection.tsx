@@ -71,57 +71,57 @@ const HomePrizesSection = () => {
           </div>
 
           {/* Right — Prize Highlights */}
-          <div className="bg-white/[0.03] border border-white/[0.08] rounded-[16px] p-6 md:p-8">
-            <div className="mb-6">
+          <div className="bg-white/[0.03] border border-white/[0.08] rounded-[16px] p-6 md:p-7">
+            <div className="mb-4">
               <span className="inline-flex items-center bg-[#F47B20]/10 border border-[#F47B20]/20 rounded-full px-3 py-1 text-[#F47B20] text-[0.72rem] font-bold tracking-[0.12em] uppercase">
                 Prize Highlights
               </span>
             </div>
 
-            <h3 className="font-['Montserrat'] text-[1.8rem] md:text-[2.2rem] font-black text-white mb-8 leading-tight">
+            <h3 className="font-['Montserrat'] text-[1.8rem] md:text-[2.2rem] font-black text-white mb-5 leading-tight">
               ₹8 Lakh+
               <br />
               <span className="text-[#F47B20]">Prize Purse</span>
             </h3>
 
-            <ul className="space-y-5">
-              <li className="flex items-start gap-4">
-                <span className="text-2xl shrink-0">🏆</span>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <span className="text-xl shrink-0">🏆</span>
                 <span className="text-white/85 font-medium text-[0.95rem]">
                   ₹8,00,000 in Cash Prizes
                 </span>
               </li>
 
-              <li className="flex items-start gap-4">
-                <span className="text-2xl shrink-0">🏃</span>
+              <li className="flex items-start gap-3">
+                <span className="text-xl shrink-0">🏃</span>
                 <span className="text-white/85 font-medium text-[0.95rem]">
                   5 Race Categories
                 </span>
               </li>
 
-              <li className="flex items-start gap-4">
-                <span className="text-2xl shrink-0">🎖️</span>
+              <li className="flex items-start gap-3">
+                <span className="text-xl shrink-0">🎖️</span>
                 <span className="text-white/85 font-medium text-[0.95rem]">
                   Open &amp; Age Category Awards
                 </span>
               </li>
 
-              <li className="flex items-start gap-4">
-                <span className="text-2xl shrink-0">⚖️</span>
+              <li className="flex items-start gap-3">
+                <span className="text-xl shrink-0">⚖️</span>
                 <span className="text-white/85 font-medium text-[0.95rem]">
                   Equal prizes for men and women
                 </span>
               </li>
 
-              <li className="flex items-start gap-4">
-                <span className="text-2xl shrink-0">💰</span>
+              <li className="flex items-start gap-3">
+                <span className="text-xl shrink-0">💰</span>
                 <span className="text-white/85 font-medium text-[0.95rem]">
                   96 individual cash prizes to win
                 </span>
               </li>
             </ul>
 
-            <div className="mt-8 pt-6 border-t border-white/[0.08]">
+            <div className="mt-6 pt-5 border-t border-white/[0.08]">
               <Link
                 to="/prizes"
                 className="inline-flex items-center justify-center bg-[#F47B20] text-white font-['Montserrat'] text-[0.8rem] font-bold tracking-[0.08em] uppercase px-6 py-4 rounded-[8px] hover:bg-[#FF9748] transition-colors"
