@@ -463,7 +463,7 @@ function Prizes() {
           </p>
         </div>
 
-        <div className="border-l-4 border-blue-500 pl-4">
+        {/* <div className="border-l-4 border-blue-500 pl-4">
           <h3 className="text-xl font-semibold mb-2">
             What prizes are available?
           </h3>
@@ -472,7 +472,7 @@ function Prizes() {
             are announced on race day, Age Category results are confirmed within
             3 days. Prize money is subject to Indian Income Tax laws.
           </p>
-        </div>
+        </div> */}
 
         <div className="border-l-4 border-blue-500 pl-4">
           <h3 className="text-xl font-semibold mb-2">
@@ -481,16 +481,6 @@ function Prizes() {
           <p className="text-gray-600">
             Results and timing certificates will be published within a week at
             timingindia.com.
-          </p>
-        </div>
-
-        <div className="border-l-4 border-blue-500 pl-4">
-          <h3 className="text-xl font-semibold mb-2">
-            Will there be photos of me?
-          </h3>
-          <p className="text-gray-600">
-            Yes. Photos will be searchable by bib number on our website within a
-            week of the event.
           </p>
         </div>
       </section>

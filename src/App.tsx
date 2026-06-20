@@ -29,6 +29,7 @@ const Photos = lazy(() => import("@/components/Photos"));
 const Feedback = lazy(() => import("@/components/Feedback"));
 const Prizes = lazy(() => import("@/components/Prizes"));
 const Results = lazy(() => import("@/pages/Results"));
+const PrivacyPolicy = lazy(() => import("@/components/PrivacyPolicy"));
 
 const App = () => {
   const [showPersistentComponents, setShowPersistentComponents] =
@@ -156,6 +157,14 @@ const App = () => {
             element={
               <Suspense fallback={<Loader />}>
                 <FAQ />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/privacy-policy"
+            element={
+              <Suspense fallback={<Loader />}>
+                <PrivacyPolicy />
               </Suspense>
             }
           />

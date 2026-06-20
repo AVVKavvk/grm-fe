@@ -66,7 +66,7 @@ const faqData = [
       {
         question: "I had a payment issue. What should I do?",
         answer:
-          "If your payment was debited but you didn't get a confirmation, email us at runnersingoa@gmail.com or support@skfgoarivermarathon.com with your details. Refunds (if applicable) are processed within 3 working days.",
+          "If your payment was debited but you didn't get a confirmation, email us at runnersingoa@gmail.com with your details. Refunds (if applicable) are processed within 3 working days.",
       },
     ],
   },

@@ -346,14 +346,12 @@ const Footer = () => {
             color: "rgba(255,255,255,0.25)",
           }}
         >
-          <span>© 2027 SKF Goa River Marathon. All rights reserved.</span>
+          <span>© 2026 SKF Goa River Marathon. All rights reserved.</span>
 
           <div className="flex flex-wrap gap-5">
             {[
-              { label: "Privacy Policy", link: "#" },
+              { label: "Privacy Policy", link: "/privacy-policy" },
               { label: "Terms & Conditions", link: "/term-and-conditions" },
-              { label: "Refund Policy", link: "#" },
-              { label: "Sitemap", link: "#" },
             ].map((l, i) => (
               <Link
                 key={i}

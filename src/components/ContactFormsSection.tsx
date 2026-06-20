@@ -793,10 +793,7 @@ const ContactFormsSection = () => {
           {
             icon: Mail,
             title: "Email Us",
-            lines: [
-              "runnersingoa@gmail.com",
-              "support@skfgoarivermarathon.com",
-            ],
+            lines: ["runnersingoa@gmail.com"],
           },
           {
             icon: Phone,

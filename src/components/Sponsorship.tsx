@@ -446,7 +446,7 @@ Budget: ${data.amountRange}${data.additionalInfo ? `\n\nMessage:\n${data.additio
           <p className="font-['Open_Sans'] text-white/35">
             Urgent inquiries:{" "}
             <a
-              href="mailto:sponsors@skfgoarivermarathon.com"
+              href="mailto:runnersingoa@gmail.com"
               className="text-[#5BB8F5] hover:text-white transition-colors"
             >
               runnersingoa@gmail.com

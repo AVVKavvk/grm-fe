@@ -27,9 +27,48 @@ const FAQ = () => {
             "The SKF Goa River Marathon route runs parallel to Goa's stunning Zuari River. It's AIMS-certified, traffic-free for 6+ hours, and fully supported with hydration, medical stations, and cheering zones. Race officials, emergency vehicles, and photographers will be on hand to keep you safe and capture your best moments.",
         },
         {
+          question: "Will race photographs be available after the event?",
+          answer:
+            "Absolutely! Our professional photography team will be stationed at multiple locations along the course, capturing your race journey—from the excitement at the start line and action shots along the route to your triumphant finish-line moment. These high-quality photographs will be available for viewing and purchase on the SKF Goa River Marathon website a few days after the event, giving you a lasting memory of your achievement. ",
+        },
+        {
           question: "Will the marathon take place if it rains?",
           answer:
             "Absolutely! Rain only adds to the adventure. The event will be held, rain or shine.",
+        },
+        {
+          question: "Where can I see timing results of my previous races?",
+          answer: (
+            <>
+              You can find previous results at{" "}
+              <a
+                href="https://ifinish.in/eventresult"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#F47B20] underline"
+              >
+                ifinish.in/eventresult
+              </a>{" "}
+              by searching for year and event name "SKF Goa".
+            </>
+          ),
+        },
+        {
+          question: "Where can I find previous years photos?",
+          answer: (
+            <>
+              You can find last year's photos at{" "}
+              <a
+                href="https://ifinish.in/photos/searchPhotos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#F47B20] underline"
+              >
+                ifinish.in/photos/searchPhotos
+              </a>
+              .
+            </>
+          ),
         },
         {
           question: "What is the expected weather?",
@@ -61,6 +100,7 @@ const FAQ = () => {
           answer:
             "Registration is available online through the official website. Simply pick your race, fill in your details, and you're in!",
         },
+
         {
           question: "What discounts are available?",
           answer:
@@ -72,9 +112,10 @@ const FAQ = () => {
             "Online registrations close on 25th November 2025. For the 5K Fun Walk, limited spot registrations will be available at the Expo (12th & 13th December).",
         },
         {
-          question: "Can I cancel, transfer, or change my registration?",
+          question:
+            "Can I cancel my registration, transfer it to another participant, defer it to a future event, or receive a refund?",
           answer:
-            "• Cancellations/Transfers: Not allowed.\n• Category Change: Yes, until 14th November 2025. Upgrades require a fee difference + processing charge; downgrades are free but non-refundable.",
+            "No. All registrations for the SKF Goa River Marathon are final. Registrations cannot be cancelled, transferred to another participant, deferred to a future edition of the event, or refunded under any circumstances. \n This policy is necessary because significant event-related costs are incurred immediately after registration, including race planning, participant services, bib and timing chip allocation, medals, T-shirts, hydration and medical arrangements, venue and logistics commitments, and other operational expenses. These costs are planned and committed based on confirmed participant numbers well in advance of race day. \n\n  By completing your registration, you acknowledge and accept this no-transfer, no-deferment, and no-refund policy. We encourage participants to register only when reasonably certain of their ability to attend and participate.",
         },
         {
           question: "I had a payment issue. What should I do?",
@@ -95,6 +136,12 @@ const FAQ = () => {
           question: "Where and when do I collect my bib and kit?",
           answer:
             "At the Marathon Expo (12th & 13th December 2025) in Chicalim. Bring your photo ID and confirmation email. Please note: no race-day bib collection.",
+        },
+        {
+          question:
+            "Will all prize winners be announced and awarded on race day?",
+          answer:
+            "No. Only the Open Category winners will be tabulated, announced, and awarded on race day. Please note that these results can only be finalized after all events have concluded and the necessary timing data has been processed. \n For all other categories, results will be subject to post-race verification, including age-category eligibility and other checks. Once verification is complete, winners will be notified directly regarding prize collection.",
         },
         {
           question: "Can someone else collect my bib for me?",

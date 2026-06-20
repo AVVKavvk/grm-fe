@@ -644,13 +644,6 @@ const TermsConditions = () => {
                   >
                     runnersingoa@gmail.com
                   </a>{" "}
-                  or{" "}
-                  <a
-                    href="mailto:support@skfgoarivermarathon.com"
-                    className="text-primary hover:underline"
-                  >
-                    support@skfgoarivermarathon.com
-                  </a>
                 </p>
               </section>
 
