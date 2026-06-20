@@ -44,6 +44,16 @@ const FAQ = () => {
       ],
     },
     {
+      title: "Start Times & Cut-Offs",
+      items: [
+        {
+          question: "What are the start times and cut-offs for each race?",
+          answer:
+            "• 42K Marathon: 4:00 AM (Cut-off: 6 hrs / Prize cut-off: 5:30 hrs)\n• 32K (20 Miler): 4:30 AM (Cut-off: 5 hrs / Prize cut-off: 4:30 hrs)\n• 21K Half Marathon: 5:30 AM (Cut-off: 3:30 hrs / Prize cut-off: 2:45 hrs)\n• 10K Run: 6:15 AM (Cut-off: 90 mins / Prize cut-off: 75 mins)\n• 5K Fun Walk: No timing, just fun!",
+        },
+      ],
+    },
+    {
       title: "Registration & Discounts",
       items: [
         {
@@ -98,12 +108,18 @@ const FAQ = () => {
       ],
     },
     {
-      title: "Start Times & Cut-Offs",
+      title: "Festival Add-Ons",
       items: [
         {
-          question: "What are the start times and cut-offs for each race?",
+          question: "What is the Carb Loading Fiesta?",
           answer:
-            "• 42K Marathon: 4:00 AM (Cut-off: 6 hrs / Prize cut-off: 5:30 hrs)\n• 32K (20 Miler): 4:30 AM (Cut-off: 5 hrs / Prize cut-off: 4:30 hrs)\n• 21K Half Marathon: 5:30 AM (Cut-off: 3:30 hrs / Prize cut-off: 2:45 hrs)\n• 10K Run: 6:15 AM (Cut-off: 90 mins / Prize cut-off: 75 mins)\n• 5K Fun Walk: No timing, just fun!",
+            "A pre-race evening of carb-loading and community! Enjoy pasta, music, and motivation. Separate registration required.",
+        },
+
+        {
+          question: "Will there be after-race celebrations?",
+          answer:
+            "Yes! From prize distribution to cultural performances, the celebrations keep going.",
         },
       ],
     },
@@ -149,22 +165,7 @@ const FAQ = () => {
         },
       ],
     },
-    {
-      title: "Festival Add-Ons",
-      items: [
-        {
-          question: "What is the Carb Loading Fiesta?",
-          answer:
-            "A pre-race evening of carb-loading and community! Enjoy pasta, music, and motivation. Separate registration required.",
-        },
 
-        {
-          question: "Will there be after-race celebrations?",
-          answer:
-            "Yes! From prize distribution to cultural performances, the celebrations keep going.",
-        },
-      ],
-    },
     {
       title: "Participation Rules",
       items: [
@@ -193,156 +194,196 @@ const FAQ = () => {
 
   return (
     <div
-      className="min-h-screen md:mt-10 mt-8"
+      className="min-h-screen md:mt-20 mt-16"
       style={{
-        backgroundColor: "#0B1E3D",
+        backgroundColor: "#FFFFFF",
         fontFamily: "Open Sans, sans-serif",
       }}
     >
-      <div className="container mx-auto px-4 py-16 md:py-32">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1
-            className="text-4xl md:text-5xl font-black mb-4"
-            style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
-          >
-            Frequently Asked Questions
-          </h1>
+      {/* Hero Header */}
+      <div className="bg-[#0B1E3D] py-16 md:py-20 px-4 text-center">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-['Montserrat'] font-extrabold text-4xl md:text-5xl text-white mb-5">
+            Frequently Asked <span className="text-[#F47B20]">Questions</span>
+          </h2>
+
           <p
-            className="text-lg max-w-2xl mx-auto"
-            style={{ color: "rgba(255,255,255,0.70)", fontWeight: 300 }}
+            className="text-lg font-light"
+            style={{ color: "rgba(255,255,255,0.75)" }}
           >
             Find answers to all your questions about the SKF Goa River Marathon
           </p>
         </div>
+      </div>
 
-        {/* FAQ Sections */}
-        <div className="max-w-4xl mx-auto space-y-6">
-          {faqSections.map((section, sectionIndex) => (
+      {/* Alternating FAQ Sections */}
+      <div className="flex flex-col w-full">
+        {faqSections.map((section, sectionIndex) => {
+          // Alternates between dark and light themes based on index
+          const isDark = Math.floor(sectionIndex / 2) % 2 === 0;
+
+          return (
             <div
               key={sectionIndex}
-              className="rounded-2xl border overflow-hidden"
+              className="w-full py-8 px-4"
               style={{
-                backgroundColor: "#122B55",
-                borderColor: "#1A3A6B",
-                boxShadow: "0 2px 16px rgba(11,30,61,0.20)",
+                backgroundColor: isDark ? "#0B1E3D" : "#F4F7FB",
               }}
             >
-              {/* Section Header */}
-              <div
-                className="px-6 py-5"
-                style={{
-                  backgroundColor: "#1A3A6B",
-                  borderBottom: "1px solid rgba(255,255,255,0.08)",
-                }}
-              >
-                <h2
-                  className="text-2xl font-black"
-                  style={{
-                    fontFamily: "Montserrat, sans-serif",
-                    color: "#5BB8F5",
-                  }}
-                >
-                  {section.title}
-                </h2>
-                <p
-                  className="text-sm mt-1"
-                  style={{
-                    color: "rgba(255,255,255,0.50)",
-                    fontFamily: "Open Sans, sans-serif",
-                  }}
-                >
-                  Essential information about {section.title.toLowerCase()}
-                </p>
-              </div>
+              <div className="max-w-6xl mx-auto">
+                {/* Section Title */}
+                <div className="mb-8">
+                  <h2
+                    className="text-3xl font-black"
+                    style={{
+                      color: isDark ? "#5BB8F5" : "#122B55",
+                    }}
+                  >
+                    {section.title}
+                  </h2>
+                  <p
+                    className="text-sm mt-2"
+                    style={{
+                      color: isDark
+                        ? "rgba(255,255,255,0.60)"
+                        : "rgba(11,30,61,0.60)",
+                    }}
+                  >
+                    Essential information about {section.title.toLowerCase()}
+                  </p>
+                </div>
 
-              {/* Accordion */}
-              <div className="px-6 py-2">
-                <Accordion type="single" collapsible className="w-full">
-                  {section.items.map((item, itemIndex) => (
-                    <AccordionItem
-                      key={itemIndex}
-                      value={`item-${sectionIndex}-${itemIndex}`}
-                      style={{ borderColor: "rgba(255,255,255,0.08)" }}
-                    >
-                      <AccordionTrigger
-                        className="text-left py-4 font-semibold hover:no-underline"
+                {/* Accordion Container */}
+                <div
+                  className="rounded-2xl border overflow-hidden"
+                  style={{
+                    backgroundColor: isDark ? "#122B55" : "#FFFFFF",
+                    borderColor: isDark
+                      ? "rgba(255,255,255,0.1)"
+                      : "rgba(11,30,61,0.1)",
+                    boxShadow: isDark
+                      ? "0 4px 20px rgba(0,0,0,0.3)"
+                      : "0 4px 20px rgba(11,30,61,0.05)",
+                  }}
+                >
+                  <Accordion
+                    type="single"
+                    collapsible
+                    className="w-full px-6 py-2"
+                  >
+                    {section.items.map((item, itemIndex) => (
+                      <AccordionItem
+                        key={itemIndex}
+                        value={`item-${sectionIndex}-${itemIndex}`}
                         style={{
-                          fontFamily: "Montserrat, sans-serif",
-                          color: "#FFFFFF",
-                          fontSize: "0.95rem",
+                          borderColor: isDark
+                            ? "rgba(255,255,255,0.08)"
+                            : "rgba(11,30,61,0.08)",
                         }}
                       >
-                        {item.question}
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <div
-                          className="whitespace-pre-line pb-4 leading-relaxed"
+                        <AccordionTrigger
+                          className="text-left py-5 font-semibold hover:no-underline text-[1rem]"
                           style={{
-                            color: "rgba(255,255,255,0.70)",
-                            fontFamily: "Open Sans, sans-serif",
-                            fontWeight: 300,
+                            fontFamily: "Montserrat, sans-serif",
+                            color: isDark ? "#FFFFFF" : "#0B1E3D",
                           }}
                         >
-                          {item.answer}
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
+                          {item.question}
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div
+                            className="whitespace-pre-line pb-6 leading-relaxed"
+                            style={{
+                              color: isDark
+                                ? "rgba(255,255,255,0.75)"
+                                : "rgba(11,30,61,0.75)",
+                              fontWeight: 400,
+                            }}
+                          >
+                            {item.answer}
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
+      </div>
 
-        {/* Still have questions */}
-        <div className="text-center mt-12">
-          <div
-            className="max-w-2xl mx-auto rounded-2xl border p-8"
+      {/* Still have questions - Matches the final alternating band pattern */}
+      <div
+        className="w-full py-16 px-4 text-center"
+        style={{
+          backgroundColor:
+            Math.floor((faqSections.length - 1) / 2) % 2 === 0
+              ? "#0B1E3D"
+              : "#F4F7FB",
+        }}
+      >
+        <div
+          className="max-w-2xl mx-auto rounded-2xl border p-8"
+          style={{
+            backgroundColor: "#F47B20",
+
+            borderColor:
+              Math.floor((faqSections.length - 1) / 2) % 2 === 0
+                ? "rgba(255,255,255,0.1)"
+                : "rgba(11,30,61,0.1)",
+            boxShadow: "0 4px 24px rgba(11,30,61,0.1)",
+          }}
+        >
+          <h2
+            className="text-2xl font-black mb-2"
             style={{
-              backgroundColor: "#122B55",
-              borderColor: "#1A3A6B",
-              boxShadow: "0 4px 24px rgba(11,30,61,0.25)",
+              fontFamily: "Montserrat, sans-serif",
+              color: "#FFFFFF",
             }}
           >
-            <h2
-              className="text-2xl font-black mb-2"
-              style={{ fontFamily: "Montserrat, sans-serif", color: "#FFFFFF" }}
-            >
-              Still have questions?
-            </h2>
+            Still have questions?
+          </h2>
+          <p
+            className="text-sm mb-6"
+            style={{
+              color: "",
+            }}
+          >
+            Our team is here to help you with any additional questions
+          </p>
+          <div className="space-y-2 text-sm">
             <p
-              className="text-sm mb-6"
               style={{
-                color: "rgba(255,255,255,0.55)",
-                fontFamily: "Open Sans, sans-serif",
+                color:
+                  Math.floor((faqSections.length - 1) / 2) % 2 === 0
+                    ? "rgba(255,255,255,0.8)"
+                    : "rgba(11,30,61,0.8)",
               }}
             >
-              Our team is here to help you with any additional questions
+              <strong
+                style={{
+                  color:
+                    Math.floor((faqSections.length - 1) / 2) % 2 === 0
+                      ? "#FFFFFF"
+                      : "#0B1E3D",
+                }}
+              >
+                Email:
+              </strong>{" "}
+              <a
+                href="mailto:runnersingoa@gmail.com"
+                style={{ color: "#FFFFFF", fontWeight: 900 }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.textDecoration = "underline")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.textDecoration = "none")
+                }
+              >
+                runnersingoa@gmail.com
+              </a>
             </p>
-            <div
-              className="space-y-2 text-sm"
-              style={{
-                color: "rgba(255,255,255,0.75)",
-                fontFamily: "Open Sans, sans-serif",
-              }}
-            >
-              <p>
-                <strong style={{ color: "#FFFFFF" }}>Email:</strong>{" "}
-                <a
-                  href="mailto:runnersingoa@gmail.com"
-                  style={{ color: "#2E8FD8" }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.textDecoration = "underline")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.textDecoration = "none")
-                  }
-                >
-                  runnersingoa@gmail.com
-                </a>
-              </p>
-            </div>
           </div>
         </div>
       </div>

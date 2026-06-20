@@ -2,607 +2,422 @@ import React from "react";
 
 function Prizes() {
   return (
-    <div className="">
-      <div className="max-w-7xl mx-auto px-4 mt-10 md:mt-16">
+    <div className="font-['Montserrat']">
+      <div className=" mx-auto px-4 mt-28 md:mt-40">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              Results, Medals & Prizes
-            </span>
+          <h2 className="font-extrabold text-4xl md:text-5xl text-white mb-5">
+            Medals & <span className="text-[#F47B20]">Prizes</span>
           </h2>
-        </div>
-        <div className="space-y-12">
-          {/* Full Marathon Prizes */}
-          <section>
-            <h2 className="text-2xl font-bold mb-4">
-              Prize amounts for Full Marathon
-            </h2>
-            <p className="mb-4 text-gray-300">
-              All prizes are awarded in Indian Rupees. The prize amounts for the
-              Full Marathon are as follows:
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-[#1A3A6B]">
-                <thead>
-                  <tr className="bg-[#1A6FB4]">
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      Category
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      1st Prize
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      2nd Prize
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      3rd Prize
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Open Men (18–44)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹20,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹17,500
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹15,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Open Women (18–39)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹20,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹17,500
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹15,000
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Veteran Men (45–54)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹9,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹7,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Veteran Women (40–49)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹9,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹7,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Sr. Veteran Men (55–64)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹9,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹7,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Sr. Veteran Women (50–59)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹9,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹7,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Super Veteran Men (65+)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹9,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹7,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Super Veteran Women (60+)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹9,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹7,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* 20 Miler Prizes */}
-          <section>
-            <h2 className="text-2xl font-bold mb-4">
-              Prize amounts for 20 Miler (32K)
-            </h2>
-            <p className="mb-4 text-gray-300">
-              All prizes are awarded in Indian Rupees. The prize amounts for the
-              20 Miler (32 KM) are as follows:
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-[#1A3A6B]">
-                <thead>
-                  <tr className="bg-[#1A6FB4]">
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      Category
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      1st Prize
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      2nd Prize
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      3rd Prize
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Open Men (18–44)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹17,500
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹15,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹12,500
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Open Women (18–39)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹17,500
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹15,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹12,500
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Veteran Men (45–54)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹6,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Veteran Women (40–49)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹6,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Sr. Veteran Men (55–64)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹6,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Sr. Veteran Women (50–59)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹6,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Super Veteran Men (65+)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹6,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Super Veteran Women (60+)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹6,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* Half Marathon Prizes */}
-          <section>
-            <h2 className="text-2xl font-bold mb-4">
-              Prize amounts for Half Marathon
-            </h2>
-            <p className="mb-4 text-gray-300">
-              All prizes are awarded in Indian Rupees. The prize amounts for the
-              Half Marathon are as follows:
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-[#1A3A6B]">
-                <thead>
-                  <tr className="bg-[#1A6FB4]">
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      Category
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      1st Prize
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      2nd Prize
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      3rd Prize
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Open Men (18–44)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹15,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹12,500
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹10,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Open Women (18–39)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹15,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹12,500
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹10,000
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Veteran Men (45–54)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Veteran Women (40–49)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Sr. Veteran Men (55–64)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Sr. Veteran Women (50–59)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Super Veteran Men (65+)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Super Veteran Women (60+)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* 10K Run Prizes */}
-          <section>
-            <h2 className="text-2xl font-bold mb-4">
-              Prize amounts for 10K Run
-            </h2>
-            <p className="mb-4 text-gray-300">
-              All prizes are awarded in Indian Rupees. The prize amounts for the
-              10K Run are as follows:
-            </p>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-[#1A3A6B]">
-                <thead>
-                  <tr className="bg-[#1A6FB4]">
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      Category
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      1st Prize
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      2nd Prize
-                    </th>
-                    <th className="border border-[#1A3A6B] px-4 py-2 text-left">
-                      3rd Prize
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Open Men (18–44)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹15,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹12,500
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹10,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Open Women (18–39)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹15,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹12,500
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹10,000
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Veteran Men (45–54)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Veteran Women (40–49)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Sr. Veteran Men (55–64)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Sr. Veteran Women (50–59)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Super Veteran Men (65+)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                  <tr className="bg-[#122B55]">
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      Super Veteran Women (60+)
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹5,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹4,000
-                    </td>
-                    <td className="border border-[#1A3A6B] px-4 py-2">
-                      ₹3,000
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
         </div>
       </div>
 
-      <section className="bg-[#122B55] text-white p-6 mt-6 md:p-20 lg:p-40">
-        <h2 className="text-2xl font-bold mb-4">Age Categories for Prizes</h2>
-        <p className="font-semibold mb-2">
-          The age brackets for each prize category are as follows:
-        </p>
-        {/* Changed text-gray-600 to text-gray-300 for better visibility on dark blue */}
-        <p className="text-sm italic mb-4 text-gray-300">
-          (Age calculated as on Race Day)
-        </p>
+      {/* Full Marathon Prizes */}
+      <div className="py-12">
+        <section className="mx-auto max-w-[1200px] px-4">
+          <h2 className="text-2xl font-bold mb-4">
+            Prize amounts for Full Marathon
+          </h2>
+          <p className="mb-4 text-gray-300">
+            All prizes are awarded in Indian Rupees. The prize amounts for the
+            Full Marathon are as follows:
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse border border-[#1A3A6B]">
+              <thead>
+                <tr className="bg-[#1A6FB4]">
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    Category
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    1st Prize
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    2nd Prize
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    3rd Prize
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Open Men (18–44)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹20,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹17,500</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹15,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Open Women (18–39)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹20,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹17,500</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹15,000</td>
+                </tr>
+                <tr>
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Veteran Men (45–54)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹9,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹7,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Veteran Women (40–49)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹9,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹7,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                </tr>
+                <tr>
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Sr. Veteran Men (55–64)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹9,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹7,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Sr. Veteran Women (50–59)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹9,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹7,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                </tr>
+                <tr>
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Super Veteran Men (65+)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹9,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹7,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Super Veteran Women (60+)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹9,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹7,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      {/* 20 Miler Prizes */}
+      <div className="bg-white py-12">
+        <section className="mx-auto max-w-[1200px] px-4">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            Prize amounts for 20 Miler (32K)
+          </h2>
+          <p className="mb-4 text-gray-800">
+            All prizes are awarded in Indian Rupees. The prize amounts for the
+            20 Miler (32 KM) are as follows:
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse border border-[#1A3A6B]">
+              <thead>
+                <tr className="bg-[#1A6FB4]">
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    Category
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    1st Prize
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    2nd Prize
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    3rd Prize
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="text-gray-800 font-semibold">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Open Men (18–44)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹17,500</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹15,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹12,500</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Open Women (18–39)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹17,500</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹15,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹12,500</td>
+                </tr>
+                <tr className="text-gray-800 font-semibold">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Veteran Men (45–54)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹6,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Veteran Women (40–49)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹6,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                </tr>
+                <tr className="text-gray-800 font-semibold">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Sr. Veteran Men (55–64)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹6,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Sr. Veteran Women (50–59)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹6,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                </tr>
+                <tr className="text-gray-800 font-semibold">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Super Veteran Men (65+)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹6,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Super Veteran Women (60+)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹6,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      {/* Half Marathon Prizes */}
+      <div className=" py-12">
+        <section className="mx-auto max-w-[1200px] px-4">
+          <h2 className="text-2xl font-bold mb-4">
+            Prize amounts for Half Marathon
+          </h2>
+          <p className="mb-4 text-gray-300">
+            All prizes are awarded in Indian Rupees. The prize amounts for the
+            Half Marathon are as follows:
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse border border-[#1A3A6B]">
+              <thead>
+                <tr className="bg-[#1A6FB4]">
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    Category
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    1st Prize
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    2nd Prize
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    3rd Prize
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Open Men (18–44)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹15,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹12,500</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹10,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Open Women (18–39)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹15,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹12,500</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹10,000</td>
+                </tr>
+                <tr>
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Veteran Men (45–54)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Veteran Women (40–49)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+                <tr>
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Sr. Veteran Men (55–64)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Sr. Veteran Women (50–59)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+                <tr>
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Super Veteran Men (65+)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Super Veteran Women (60+)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      {/* 10K Run Prizes */}
+      <div className="bg-white py-12">
+        <section className="mx-auto max-w-[1200px] px-4">
+          <h2 className="text-2xl text-gray-800 font-bold mb-4">
+            Prize amounts for 10K Run
+          </h2>
+          <p className="mb-4 text-gray-800">
+            All prizes are awarded in Indian Rupees. The prize amounts for the
+            10K Run are as follows:
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse border border-[#1A3A6B]">
+              <thead>
+                <tr className="bg-[#1A6FB4]">
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    Category
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    1st Prize
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    2nd Prize
+                  </th>
+                  <th className="border border-[#1A3A6B] px-4 py-2 text-left">
+                    3rd Prize
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="text-gray-800 font-semibold">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Open Men (18–44)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹15,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹12,500</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹10,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Open Women (18–39)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹15,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹12,500</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹10,000</td>
+                </tr>
+                <tr className="text-gray-800 font-semibold">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Veteran Men (45–54)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Veteran Women (40–49)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+                <tr className="text-gray-800 font-semibold">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Sr. Veteran Men (55–64)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Sr. Veteran Women (50–59)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+                <tr className="text-gray-800 font-semibold">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Super Veteran Men (65+)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+                <tr className="bg-[#122B55]">
+                  <td className="border border-[#1A3A6B] px-4 py-2">
+                    Super Veteran Women (60+)
+                  </td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹5,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹4,000</td>
+                  <td className="border border-[#1A3A6B] px-4 py-2">₹3,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <section className="bg-[#122B55] text-white p-6 md:p-20 lg:p-40">
+        <div className="">
+          <h2 className="text-2xl font-bold mb-4">Age Categories for Prizes</h2>
+          <p className="font-semibold mb-2">
+            The age brackets for each prize category are as follows:
+          </p>
+          {/* Changed text-gray-600 to text-gray-300 for better visibility on dark blue */}
+          <p className="text-sm italic mb-4 text-gray-300">
+            (Age calculated as on Race Day)
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Added text-gray-900 to all cards so the text doesn't inherit the white color from the parent section */}

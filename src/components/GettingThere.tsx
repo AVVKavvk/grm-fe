@@ -190,7 +190,7 @@ const GettingThere = () => {
 
   return (
     <div
-      className="min-h-screen mt-28 md:mt-36"
+      className="min-h-screen mt-28 md:mt-40"
       style={{
         backgroundColor: "#0B1E3D",
         fontFamily: "Open Sans, sans-serif",
@@ -323,193 +323,147 @@ const GettingThere = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Hotels Section */}
-          <div
-            className="rounded-2xl border overflow-hidden"
-            style={{
-              backgroundColor: "#122B55",
-              borderColor: "#1A3A6B",
-              boxShadow: "0 4px 24px rgba(11,30,61,0.25)",
-            }}
-          >
-            <div
-              className="px-6 py-5 flex items-center gap-3"
+      <div className="bg-gray-50 p-5 md:p-10">
+        {/* Hotels Section */}
+        <div className="rounded-2xl mx-auto max-w-[1400px] border border-gray-200 bg-white shadow-lg shadow-gray-200/50 overflow-hidden">
+          {/* Section Header */}
+          <div className="px-6 py-5 flex items-center gap-3 bg-white border-b border-gray-100">
+            <Hotel className="h-8 w-8" style={{ color: "#F47B20" }} />
+            <h2
+              className="text-3xl font-black"
               style={{
-                backgroundColor: "#1A3A6B",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
+                fontFamily: "Montserrat, sans-serif",
+                color: "#122B55", // Brand Dark Blue
               }}
             >
-              <Hotel className="h-8 w-8" style={{ color: "#F47B20" }} />
-              <h2
-                className="text-3xl font-black"
+              Places to Stay
+            </h2>
+          </div>
+
+          <div className="p-6 md:p-8">
+            <p className="text-lg mb-8 text-gray-600 font-light">
+              Convenient accommodation options at various distances from the
+              start point.
+            </p>
+
+            {/* Featured Hotels */}
+            <div className="mb-12">
+              <h3
+                className="text-2xl font-bold mb-6 flex items-center gap-2"
                 style={{
                   fontFamily: "Montserrat, sans-serif",
-                  color: "#FFFFFF",
+                  color: "#122B55",
                 }}
               >
-                Places to Stay
-              </h2>
+                <Sparkles className="h-6 w-6" style={{ color: "#F47B20" }} />
+                Featured Hotels
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {hotels.featured.map((hotel, index) => (
+                  <div
+                    key={index}
+                    className="p-6 rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.borderColor = "#2E8FD8")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.borderColor = "#E5E7EB")
+                    } // Tailwind gray-200
+                  >
+                    <p
+                      className="font-black text-xl mb-3"
+                      style={{
+                        fontFamily: "Montserrat, sans-serif",
+                        color: "#122B55",
+                      }}
+                    >
+                      {hotel.name}
+                    </p>
+                    <p className="text-gray-600 leading-relaxed">
+                      {hotel.content}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="p-6">
-              <p
-                className="text-lg mb-8"
-                style={{ color: "rgba(255,255,255,0.75)", fontWeight: 300 }}
-              >
-                Convenient accommodation options at various distances from the
-                start point.
-              </p>
 
-              {/* Featured Hotels */}
-              <div className="mb-10">
+            {/* Distance Sections */}
+            {hotelSections.map(({ title, list }) => (
+              <div key={title} className="mb-10">
                 <h3
                   className="text-2xl font-bold mb-6 flex items-center gap-2"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    color: "#FFFFFF",
+                    color: "#122B55",
                   }}
                 >
-                  <Sparkles className="h-6 w-6" style={{ color: "#FF9748" }} />
-                  Featured Hotels
+                  <MapPin className="h-6 w-6 text-blue-500" />
+                  {title}
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {hotels.featured.map((hotel, index) => (
+                <div
+                  className={`grid grid-cols-1 md:grid-cols-2 ${
+                    list.length > 2 ? "lg:grid-cols-3" : ""
+                  } gap-4`}
+                >
+                  {list.map((hotel, index) => (
                     <div
                       key={index}
-                      className="p-6 rounded-xl border transition-all duration-200"
-                      style={{
-                        backgroundColor: "#1A3A6B",
-                        borderColor: "rgba(255,255,255,0.12)",
-                      }}
+                      className="p-4 rounded-xl border border-gray-200 bg-gray-50 flex items-center gap-2 transition-colors duration-200 hover:bg-white"
                       onMouseEnter={(e) =>
                         (e.currentTarget.style.borderColor = "#2E8FD8")
                       }
                       onMouseLeave={(e) =>
-                        (e.currentTarget.style.borderColor =
-                          "rgba(255,255,255,0.12)")
+                        (e.currentTarget.style.borderColor = "#E5E7EB")
                       }
                     >
                       <p
-                        className="font-black text-xl mb-3"
-                        style={{
-                          fontFamily: "Montserrat, sans-serif",
-                          color: "#5BB8F5",
-                        }}
+                        className="font-semibold flex-1 text-gray-800"
+                        style={{ fontFamily: "Open Sans, sans-serif" }}
                       >
-                        {hotel.name}
+                        {hotel}
                       </p>
-                      <p
-                        style={{
-                          color: "rgba(255,255,255,0.70)",
-                          lineHeight: "1.7",
-                        }}
-                      >
-                        {hotel.content}
-                      </p>
+                      {isOnShuttleRoute(hotel) && (
+                        <Bus
+                          className="h-5 w-5 flex-shrink-0"
+                          style={{ color: "#F47B20" }}
+                        />
+                      )}
                     </div>
                   ))}
                 </div>
               </div>
+            ))}
 
-              {/* Distance Sections */}
-              {hotelSections.map(({ title, list }) => (
-                <div key={title} className="mb-10">
-                  <h3
-                    className="text-2xl font-bold mb-6 flex items-center gap-2"
-                    style={{
-                      fontFamily: "Montserrat, sans-serif",
-                      color: "#FFFFFF",
-                    }}
-                  >
-                    <MapPin className="h-6 w-6" style={{ color: "#5BB8F5" }} />
-                    {title}
-                  </h3>
-                  <div
-                    className={`grid grid-cols-1 md:grid-cols-2 ${list.length > 2 ? "lg:grid-cols-3" : ""} gap-4`}
-                  >
-                    {list.map((hotel, index) => (
-                      <div
-                        key={index}
-                        className="p-4 rounded-xl border flex items-center gap-2 transition-all duration-200"
-                        style={{
-                          backgroundColor: "#1A3A6B",
-                          borderColor: "rgba(255,255,255,0.10)",
-                        }}
-                        onMouseEnter={(e) =>
-                          (e.currentTarget.style.borderColor = "#1A6FB4")
-                        }
-                        onMouseLeave={(e) =>
-                          (e.currentTarget.style.borderColor =
-                            "rgba(255,255,255,0.10)")
-                        }
-                      >
-                        <p
-                          className="font-semibold flex-1"
-                          style={{
-                            color: "#FFFFFF",
-                            fontFamily: "Open Sans, sans-serif",
-                          }}
-                        >
-                          {hotel}
-                        </p>
-                        {isOnShuttleRoute(hotel) && (
-                          <Bus
-                            className="h-4 w-4 flex-shrink-0"
-                            style={{ color: "#F47B20" }}
-                          />
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+            {/* Legend */}
+            <div className="mb-8 p-4 rounded-xl border border-orange-200 bg-orange-50 flex items-center gap-3">
+              <Bus className="h-5 w-5" style={{ color: "#F47B20" }} />
+              <span className="text-sm font-semibold text-gray-800">
+                Hotel on the free shuttle pickup route
+              </span>
+            </div>
 
-              {/* Legend */}
-              <div
-                className="mb-6 p-4 rounded-xl border flex items-center gap-2"
-                style={{
-                  backgroundColor: "rgba(244,123,32,0.08)",
-                  borderColor: "rgba(244,123,32,0.25)",
-                }}
-              >
-                <Bus className="h-4 w-4" style={{ color: "#F47B20" }} />
-                <span
-                  className="text-sm font-semibold"
-                  style={{ color: "rgba(255,255,255,0.80)" }}
-                >
-                  Hotel on the free shuttle pickup route
-                </span>
-              </div>
-
-              {/* Disclaimer */}
-              <div
-                className="p-4 rounded-xl border"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.04)",
-                  borderColor: "rgba(255,255,255,0.10)",
-                }}
-              >
-                <p
-                  className="text-sm italic"
-                  style={{ color: "rgba(255,255,255,0.45)", lineHeight: "1.7" }}
-                >
-                  <strong style={{ color: "rgba(255,255,255,0.65)" }}>
-                    Disclaimer:
-                  </strong>{" "}
-                  The hotels listed are provided for the convenience of
-                  participants and are not affiliated with or endorsed by the
-                  organizers of the SKF Goa River Marathon. Participants are
-                  advised to verify details such as rates, availability,
-                  amenities, and cancellation policies directly with the
-                  respective hotels before making any bookings. The organizers
-                  do not assume responsibility for any issues, disputes, or
-                  inconveniences arising from such arrangements.
-                </p>
-              </div>
+            {/* Disclaimer */}
+            <div className="p-5 rounded-xl border border-gray-200 bg-gray-50">
+              <p className="text-sm italic text-gray-500 leading-relaxed">
+                <strong className="text-gray-700 font-semibold mr-1">
+                  Disclaimer:
+                </strong>
+                The hotels listed are provided for the convenience of
+                participants and are not affiliated with or endorsed by the
+                organizers of the SKF Goa River Marathon. Participants are
+                advised to verify details such as rates, availability,
+                amenities, and cancellation policies directly with the
+                respective hotels before making any bookings. The organizers do
+                not assume responsibility for any issues, disputes, or
+                inconveniences arising from such arrangements.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
