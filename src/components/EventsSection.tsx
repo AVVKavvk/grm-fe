@@ -46,7 +46,7 @@ const EventsSection = () => {
       distance: "42 KM",
       startTime: "04:00 AM",
       cutOffTime: "6 Hours",
-      price: "₹2,800", // Updated Costing
+      price: "₹3,200", // Updated Costing
       nextPrice: "₹4,000",
       participants: "18+ years",
       description: "The ultimate challenge along Goa's most scenic route",
@@ -78,7 +78,7 @@ const EventsSection = () => {
       distance: "32 KM",
       startTime: "04:30 AM",
       cutOffTime: "5 Hours",
-      price: "₹2,450", // Updated Costing
+      price: "₹2,800", // Updated Costing
       nextPrice: "₹3,500",
       participants: "18+ years",
       description:
@@ -105,7 +105,7 @@ const EventsSection = () => {
       distance: "21 KM",
       startTime: "05:30 AM",
       cutOffTime: "3.5 Hours",
-      price: "₹2,100", // Updated Costing
+      price: "₹2,400", // Updated Costing
       nextPrice: "₹3,000",
       participants: "18+ years",
       description: "Perfect for intermediate runners seeking a challenge",
@@ -131,7 +131,7 @@ const EventsSection = () => {
       distance: "10 KM",
       startTime: "06:15 AM",
       cutOffTime: "90 Minutes",
-      price: "₹1,400", // Updated Costing
+      price: "₹1,600", // Updated Costing
       nextPrice: "₹2,000",
       participants: "16+ years",
       description: "Ideal for beginners and fitness enthusiasts",
