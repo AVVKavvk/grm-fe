@@ -30,14 +30,14 @@ const EventsSection = () => {
       gradient: "from-blue-500 to-purple-600",
       link: "#marathon",
     },
-    {
-      name: "Carb Loading Fiesta",
-      description: "Pre-race celebration & feast",
-      date: "Dec 12, 2026",
-      icon: Utensils,
-      gradient: "from-orange-500 to-red-600",
-      link: "#carb-loading",
-    },
+    // {
+    //   name: "Carb Loading Fiesta",
+    //   description: "Pre-race celebration & feast",
+    //   date: "Dec 12, 2026",
+    //   icon: Utensils,
+    //   gradient: "from-orange-500 to-red-600",
+    //   link: "#carb-loading",
+    // },
   ];
 
   const marathonEvents = [
@@ -232,7 +232,7 @@ const EventsSection = () => {
       {/* ── TWO EPIC EVENTS ── NAVY MID (Reordered in heroEvents array) */}
       <div className=" py-10 px-[5vw]">
         <div className="max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 max-w-4xl mx-auto">
             {heroEvents.map((event, index) => (
               <button
                 key={index}
@@ -393,109 +393,6 @@ const EventsSection = () => {
               </div>
             ))}
           </div>
-
-          {/* ── LIMITED SEATS CTA ── */}
-          <div id="recovery-rave" className="mt-16 scroll-mt-20">
-            <section className="bg-[#0B1E3D] rounded-2xl py-14 px-8 text-center border border-[#1A3A6B]">
-              <div className="max-w-2xl mx-auto">
-                <h3 className="font-['Montserrat'] font-black text-3xl md:text-4xl text-white mb-4">
-                  Limited Seats Available!
-                </h3>
-                <p className="text-white/75 text-lg leading-relaxed mb-8">
-                  The{" "}
-                  <span className="text-[#5BB8F5] font-semibold">
-                    Carb-Loading Fiesta
-                  </span>{" "}
-                  has limited capacity. With{" "}
-                  <span className="text-[#FF9748] font-bold">7,500</span>{" "}
-                  runners expected this year, we can only accommodate{" "}
-                  <span className="text-[#FF9748] font-bold">1,500</span> at
-                  these exclusive events. Registrations will open soon to secure
-                  your spot and make the most of your marathon weekend.
-                </p>
-                {/* Register Now changed to static text opening soon */}
-                <div className="inline-block bg-white/10 text-white/70 font-['Montserrat'] font-bold py-3 px-8 rounded-full border border-white/20 uppercase tracking-wider text-sm cursor-not-allowed">
-                  Registrations Opening Soon
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-
-      {/* ── CARB LOADING FIESTA ── #122B55 navy-mid (Moved below Marathon) */}
-      <div
-        id="carb-loading"
-        className="bg-[#122B55] py-20 px-[5vw] scroll-mt-20"
-      >
-        <div className="max-w-[1200px] mx-auto">
-          <div className=" p-8 md:p-10 border border-white/10 rounded-2xl bg-[#0B1E3D]">
-            {/* Header */}
-            <div className="flex items-start gap-4 mb-6">
-              <span className="text-4xl">🍝</span>
-              <div>
-                <h2 className="font-['Montserrat'] font-extrabold text-3xl text-white mb-2">
-                  Carb Loading Fiesta
-                </h2>
-                <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2 text-white/45 text-sm">
-                    <Calendar className="w-4 h-4" />
-                    <span>December 12, 2026</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-white/45 text-sm">
-                    <Clock className="w-4 h-4" />
-                    <span>6:00 PM – 9:00 PM</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="flex flex-col md:flex-row gap-8 mb-8">
-              <img
-                src={carbLoading}
-                onClick={() => handleImageClick(carbLoading)}
-                alt="Carb Loading Fiesta"
-                className="h-[280px] object-contain rounded-xl border border-white/10 cursor-pointer"
-              />
-              <div className="flex-1">
-                <p className="text-white/75 leading-relaxed mb-6">
-                  Kick off your marathon weekend with a feast designed to power
-                  your run. The Carb-Loading Fiesta brings together Goa's top
-                  chefs, artisanal bakers, and nutrition experts, serving up
-                  hearty pastas, wood-fired breads, fresh salads, and
-                  high-energy dishes crafted for performance.
-                </p>
-                <p className="font-['Montserrat'] font-bold text-[10px] tracking-[0.16em] uppercase text-[#5BB8F5] mb-3">
-                  Event Highlights
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {[
-                    "Gourmet pasta",
-                    "Traditional Goan carb-rich dishes",
-                    "Nutritionist-approved menu",
-                    "Live DJ & entertainment",
-                    "Meet fellow runners",
-                    "Race day briefing by experts",
-                    "Craco's nutrition workshop",
-                  ].map((highlight, idx) => (
-                    <div key={idx} className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#5BB8F5] mt-0.5 flex-shrink-0" />
-                      <span className="text-white/75 text-sm">{highlight}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Stay tuned pill updated */}
-            <div className="text-center pt-2">
-              <div className="inline-flex items-center gap-2 bg-[#F47B20]/10 border border-[#F47B20]/25 text-[#FF9748] rounded-full px-6 py-2.5 text-sm font-['Montserrat'] font-semibold">
-                <span>✨</span>
-                Stay Tuned – Carb Loading Fiesta Registrations will open in July
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -549,5 +446,108 @@ const EventsSection = () => {
     </section>
   );
 };
+
+// {/* ── LIMITED SEATS CTA ── */}
+//         <div id="recovery-rave" className="mt-16 scroll-mt-20">
+//           <section className="bg-[#0B1E3D] rounded-2xl py-14 px-8 text-center border border-[#1A3A6B]">
+//             <div className="max-w-2xl mx-auto">
+//               <h3 className="font-['Montserrat'] font-black text-3xl md:text-4xl text-white mb-4">
+//                 Limited Seats Available!
+//               </h3>
+//               <p className="text-white/75 text-lg leading-relaxed mb-8">
+//                 The{" "}
+//                 <span className="text-[#5BB8F5] font-semibold">
+//                   Carb-Loading Fiesta
+//                 </span>{" "}
+//                 has limited capacity. With{" "}
+//                 <span className="text-[#FF9748] font-bold">7,500</span>{" "}
+//                 runners expected this year, we can only accommodate{" "}
+//                 <span className="text-[#FF9748] font-bold">1,500</span> at
+//                 these exclusive events. Registrations will open soon to secure
+//                 your spot and make the most of your marathon weekend.
+//               </p>
+//               {/* Register Now changed to static text opening soon */}
+//               <div className="inline-block bg-white/10 text-white/70 font-['Montserrat'] font-bold py-3 px-8 rounded-full border border-white/20 uppercase tracking-wider text-sm cursor-not-allowed">
+//                 Registrations Opening Soon
+//               </div>
+//             </div>
+//           </section>
+//         </div>
+
+// {/* ── CARB LOADING FIESTA ── #122B55 navy-mid (Moved below Marathon) */}
+//       <div
+//         id="carb-loading"
+//         className="bg-[#122B55] py-20 px-[5vw] scroll-mt-20"
+//       >
+//         <div className="max-w-[1200px] mx-auto">
+//           <div className=" p-8 md:p-10 border border-white/10 rounded-2xl bg-[#0B1E3D]">
+//             {/* Header */}
+//             <div className="flex items-start gap-4 mb-6">
+//               <span className="text-4xl">🍝</span>
+//               <div>
+//                 <h2 className="font-['Montserrat'] font-extrabold text-3xl text-white mb-2">
+//                   Carb Loading Fiesta
+//                 </h2>
+//                 <div className="flex flex-col gap-1">
+//                   <div className="flex items-center gap-2 text-white/45 text-sm">
+//                     <Calendar className="w-4 h-4" />
+//                     <span>December 12, 2026</span>
+//                   </div>
+//                   <div className="flex items-center gap-2 text-white/45 text-sm">
+//                     <Clock className="w-4 h-4" />
+//                     <span>6:00 PM – 9:00 PM</span>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Content */}
+//             <div className="flex flex-col md:flex-row gap-8 mb-8">
+//               <img
+//                 src={carbLoading}
+//                 onClick={() => handleImageClick(carbLoading)}
+//                 alt="Carb Loading Fiesta"
+//                 className="h-[280px] object-contain rounded-xl border border-white/10 cursor-pointer"
+//               />
+//               <div className="flex-1">
+//                 <p className="text-white/75 leading-relaxed mb-6">
+//                   Kick off your marathon weekend with a feast designed to power
+//                   your run. The Carb-Loading Fiesta brings together Goa's top
+//                   chefs, artisanal bakers, and nutrition experts, serving up
+//                   hearty pastas, wood-fired breads, fresh salads, and
+//                   high-energy dishes crafted for performance.
+//                 </p>
+//                 <p className="font-['Montserrat'] font-bold text-[10px] tracking-[0.16em] uppercase text-[#5BB8F5] mb-3">
+//                   Event Highlights
+//                 </p>
+//                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+//                   {[
+//                     "Gourmet pasta",
+//                     "Traditional Goan carb-rich dishes",
+//                     "Nutritionist-approved menu",
+//                     "Live DJ & entertainment",
+//                     "Meet fellow runners",
+//                     "Race day briefing by experts",
+//                     "Craco's nutrition workshop",
+//                   ].map((highlight, idx) => (
+//                     <div key={idx} className="flex items-start gap-2">
+//                       <CheckCircle className="w-4 h-4 text-[#5BB8F5] mt-0.5 flex-shrink-0" />
+//                       <span className="text-white/75 text-sm">{highlight}</span>
+//                     </div>
+//                   ))}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Stay tuned pill updated */}
+//             <div className="text-center pt-2">
+//               <div className="inline-flex items-center gap-2 bg-[#F47B20]/10 border border-[#F47B20]/25 text-[#FF9748] rounded-full px-6 py-2.5 text-sm font-['Montserrat'] font-semibold">
+//                 <span>✨</span>
+//                 Stay Tuned – Carb Loading Fiesta Registrations will open in July
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
 
 export default EventsSection;

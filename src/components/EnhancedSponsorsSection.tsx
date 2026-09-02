@@ -27,6 +27,7 @@ import originLogo from "@/assets/Logo/Origin.png";
 import gatacaLogo from "@/assets/Logo/gataca.webp";
 import usanaLogo from "@/assets/Logo/Usana.png";
 import sport1919Logo from "@/assets/Logo/Sport.jpg";
+import gomatiLogo from "@/assets/Logo/gomati-logo.png";
 // import zanduLogo from "@/assets/Logo/zando-logo.jpeg";
 import fastAndUpLogo from "@/assets/Logo/Fast-up.png";
 import victorHospitalLogo from "@/assets/Logo/VictorHospital.png";
@@ -99,6 +100,15 @@ const EnhancedSponsorsSection = () => {
         tier: "Tourism Partner",
         description: "Official tourism promotion partner",
         website: "#",
+        isImage: true,
+      },
+      {
+        name: "Gomati Foundation",
+        logo: gomatiLogo,
+        tier: "NGO Partner",
+        description:
+          "Dedicated to supporting education, healthcare, and community welfare",
+        website: "https://gomatifoundation.com/",
         isImage: true,
       },
     ],
@@ -472,7 +482,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           >
             Featured Partners
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {realSponsors.featured.map((sponsor, index) => (
               <a
                 href={sponsor.website}
