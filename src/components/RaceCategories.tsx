@@ -19,7 +19,7 @@ const racesData = [
     dist: "10",
     unit: "Kilometres",
     name: "Timed Run",
-    price: "₹1,600",
+    price: "₹1,800",
     scratchedPrice: "₹2,000",
     features: [
       "Finisher Medal",
@@ -34,7 +34,7 @@ const racesData = [
     dist: "21",
     unit: "Kilometres",
     name: "Half Marathon",
-    price: "₹2,400",
+    price: "₹2,700",
     scratchedPrice: "₹3,000",
     features: [
       "Finisher Medal",
@@ -49,7 +49,7 @@ const racesData = [
     dist: "32",
     unit: "Kilometres",
     name: "20 Miler",
-    price: "₹2,800",
+    price: "₹3,150",
     scratchedPrice: "₹3,500",
     features: [
       "Finisher Medal",
@@ -64,7 +64,7 @@ const racesData = [
     dist: "42",
     unit: "Kilometres",
     name: "Full Marathon",
-    price: "₹3,200",
+    price: "₹3,600",
     scratchedPrice: "₹4,000",
     features: [
       "Finisher Medal",
