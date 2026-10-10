@@ -35,7 +35,7 @@ const GettingThere = () => {
         ),
       },
       {
-        name: "The Fern Kesarval Hotel",
+        name: "Kesarval The Fern Verna Goa - Series by Marriott",
         content: (
           <>
             Please call{" "}
@@ -53,7 +53,7 @@ const GettingThere = () => {
             </a>{" "}
             or write to{" "}
             <a
-              href="mailto:sales.fr.kesarval@fernhotels.com"
+              href="mailto:sales.tf.kesarval@fernhotels.com"
               style={{ color: "#2E8FD8", fontWeight: 600 }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.textDecoration = "underline")
@@ -62,7 +62,7 @@ const GettingThere = () => {
                 (e.currentTarget.style.textDecoration = "none")
               }
             >
-              sales.fr.kesarval@fernhotels.com
+              sales.tf.kesarval@fernhotels.com
             </a>{" "}
             for exciting offers
           </>

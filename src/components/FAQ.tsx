@@ -154,22 +154,22 @@ const FAQ = () => {
         },
       ],
     },
-    {
-      title: "Festival Add-Ons",
-      items: [
-        {
-          question: "What is the Carb Loading Fiesta?",
-          answer:
-            "A pre-race evening of carb-loading and community! Enjoy pasta, music, and motivation. Separate registration required.",
-        },
+    // {
+    //   title: "Festival Add-Ons",
+    //   items: [
+    //     {
+    //       question: "What is the Carb Loading Fiesta?",
+    //       answer:
+    //         "A pre-race evening of carb-loading and community! Enjoy pasta, music, and motivation. Separate registration required.",
+    //     },
 
-        {
-          question: "Will there be after-race celebrations?",
-          answer:
-            "Yes! From prize distribution to cultural performances, the celebrations keep going.",
-        },
-      ],
-    },
+    //     {
+    //       question: "Will there be after-race celebrations?",
+    //       answer:
+    //         "Yes! From prize distribution to cultural performances, the celebrations keep going.",
+    //     },
+    //   ],
+    // },
     {
       title: "Logistics, Transport & Facilities",
       items: [
@@ -220,6 +220,16 @@ const FAQ = () => {
           question: "What are the participation rules?",
           answer:
             "• Spectators: Welcome at cheering zones.\n• Wheelchair / Differently-abled categories: Not currently, but please contact organizers for support.\n• Prams/Strollers: Not allowed in 5K.\n• Pets: Not allowed at the venue or route for safety reasons.\n• Minimum Age:\n  - 42K / 32K / 21K: 18+\n  - 10K: 16+\n  - 5K: Open (children under 12 must be accompanied).",
+        },
+        {
+          question:
+            "What are the eligibility requirements for registering for the Full Marathon?",
+          answer: `The qualifying time requirement applies only to Full Marathon (42 km) participants. To be eligible, participants must provide proof of a finish time from a recognised event meeting either one of the following criteria:
+
+          - Full Marathon (42 km): 6 hours or less.
+          - Half Marathon (21 km) or higher: 2 hours 45 minutes or less.
+
+          Please note: These eligibility requirements do not apply to participants registering for the 32 kms, Half Marathon, 10K, or 5K events.`,
         },
       ],
     },

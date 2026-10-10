@@ -28,7 +28,7 @@ import gatacaLogo from "@/assets/Logo/gataca.webp";
 import usanaLogo from "@/assets/Logo/Usana.png";
 import sport1919Logo from "@/assets/Logo/Sport.jpg";
 import gomatiLogo from "@/assets/Logo/gomati-logo.png";
-// import zanduLogo from "@/assets/Logo/zando-logo.jpeg";
+import zanduLogo from "@/assets/Logo/zando-logo.jpeg";
 import fastAndUpLogo from "@/assets/Logo/Fast-up.png";
 import victorHospitalLogo from "@/assets/Logo/VictorHospital.png";
 import timingLogo from "@/assets/Logo/timing.png";
@@ -38,6 +38,9 @@ import teachersLogo from "@/assets/Logo/Teachers.png";
 // import kingfisher from "@/assets/Logo/kingfisherLogo.jpeg";
 import curamosLogo from "@/assets/Logo/Curamos.png";
 import AWMMLogo from "@/assets/Logo/Abbot-World-Marathon.png";
+import adcityLogo from "@/assets/images/adcity-logo.png";
+import gcciLogo from "@/assets/images/gcci-logo.png";
+import fly91Logo from "@/assets/images/fly91.svg";
 import AIMSLogo from "@/assets/Logo/AIMS.png";
 import GoaTorisumLogo from "@/assets/Logo/Goa-Tourism.png";
 import GCCILogo from "@/assets/Logo/GCCI.png";
@@ -114,10 +117,16 @@ const EnhancedSponsorsSection = () => {
     ],
     platinum: [
       {
-        name: "Fast & Up",
-        logo: fastAndUpLogo,
-        tier: "Energy Partner",
-        description: "Premium sports nutrition and wellness brand",
+        name: "Zandu Fast Relief",
+        logo: zanduLogo,
+        tier: "Pain Relief Partner",
+        description: "Trusted healthcare and pain management solutions",
+      },
+      {
+        name: "Fly91",
+        logo: fly91Logo,
+        tier: "Airline Partner",
+        description: "Regional airline connecting Goa to the rest of India",
       },
       {
         name: "Victor Hospital",
@@ -126,13 +135,31 @@ const EnhancedSponsorsSection = () => {
         description: "Leading healthcare provider ensuring runner safety",
       },
       {
+        name: "Fast & Up",
+        logo: fastAndUpLogo,
+        tier: "Energy Partner",
+        description: "Premium sports nutrition and wellness brand",
+      },
+    ],
+    gold: [
+      {
         name: "Timing Technologies",
         logo: timingLogo,
         tier: "Timing Partner",
         description: "Professional race timing and chip technology",
       },
-    ],
-    gold: [
+      {
+        name: "IFinish",
+        logo: ifinishLogo,
+        tier: "Registration Partner",
+        description: "Marathon timing and event management services",
+      },
+      {
+        name: "GCCI",
+        logo: GCCILogo,
+        tier: "Industry Partner",
+        description: "Goa Chamber of Commerce & Industry",
+      },
       {
         name: "Ad City",
         logo: AddCityLogo,
@@ -413,13 +440,13 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                 key={index}
                 className="p-8 rounded-2xl border-2 text-center group transition-all duration-300"
                 style={{
-                  backgroundColor: "#122B55",
-                  borderColor: "#1A6FB4",
+                  backgroundColor: "#FFFFFF",
+                  borderColor: "#F47B20",
                   boxShadow: "0 4px 24px rgba(11,30,61,0.18)",
                 }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.boxShadow =
-                    "0 20px 40px rgba(11,30,61,0.35)")
+                    "0 20px 40px rgba(0,0,0,0.35)")
                 }
                 onMouseLeave={(e) =>
                   (e.currentTarget.style.boxShadow =
@@ -441,7 +468,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                   className="text-2xl font-black mb-2"
                   style={{
                     fontFamily: "Montserrat, sans-serif",
-                    color: "#FFFFFF",
+                    color: "#0B1E3D",
                   }}
                 >
                   {sponsor.name}
@@ -449,7 +476,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                 <p
                   className="text-sm mb-3"
                   style={{
-                    color: "rgba(255,255,255,0.75)",
+                    color: "#4A5568",
                     fontFamily: "Open Sans, sans-serif",
                   }}
                 >
@@ -458,8 +485,8 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                 <div
                   className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold"
                   style={{
-                    backgroundColor: "rgba(244,123,32,0.15)",
-                    color: "#FF9748",
+                    backgroundColor: "rgba(244,123,32,0.12)",
+                    color: "#D9650F",
                   }}
                 >
                   <Star className="w-3 h-3" />
@@ -562,7 +589,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           >
             Platinum Partners
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {realSponsors.platinum.map((sponsor, index) => (
               <div
                 key={index}
@@ -632,7 +659,7 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
           >
             Gold Partners
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {realSponsors.gold.map((sponsor, index) => (
               <div
                 key={index}
