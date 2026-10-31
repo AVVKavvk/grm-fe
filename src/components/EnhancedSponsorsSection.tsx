@@ -159,6 +159,7 @@ const EnhancedSponsorsSection = () => {
         logo: GCCILogo,
         tier: "Industry Partner",
         description: "Goa Chamber of Commerce & Industry",
+        whiteLogo: true,
       },
       {
         name: "Ad City",
@@ -166,18 +167,18 @@ const EnhancedSponsorsSection = () => {
         tier: "Outdoor Media Partner",
         description: "Creative advertising and media solutions",
       },
-      {
-        name: "Royal Aqua Global",
-        logo: royalAquvaGlobalLogo,
-        tier: "Hydration Partner",
-        description: "Premium water solutions for hydration stations",
-      },
-      {
-        name: "Teachers",
-        logo: teachersLogo,
-        tier: "Official Water Partner",
-        description: "Premium packaged drinking water",
-      },
+      // {
+      //   name: "Royal Aqua Global",
+      //   logo: royalAquvaGlobalLogo,
+      //   tier: "Hydration Partner",
+      //   description: "Premium water solutions for hydration stations",
+      // },
+      // {
+      //   name: "Teachers",
+      //   logo: teachersLogo,
+      //   tier: "Official Water Partner",
+      //   description: "Premium packaged drinking water",
+      // },
       // {
       //   name: "Kingfisher",
       //   logo: kingfisher,
@@ -682,7 +683,9 @@ This email was automatically generated from the SKF Goa River Marathon partnersh
                   <img
                     src={sponsor.logo}
                     alt={sponsor.name}
-                    className="w-32 mx-auto object-contain rounded-lg"
+                    className={`w-32 mx-auto object-contain rounded-lg ${
+                      sponsor.whiteLogo ? "brightness-0 invert" : ""
+                    }`}
                   />
                 </div>
                 <h4
