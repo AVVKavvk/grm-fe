@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
+const REGISTER_URL = "https://ifinish.in/running/SKF_2026";
+
 const racesData = [
   {
     dist: "5",
@@ -14,13 +16,14 @@ const racesData = [
       "Nourishment",
     ],
     isFeatured: false,
+    isOpen: true,
   },
   {
     dist: "10",
     unit: "Kilometres",
     name: "Timed Run",
     price: "₹2,000",
-    // scratchedPrice: "₹2,000",
+    scratchedPrice: null,
     features: [
       "Finisher Medal",
       "Event T-Shirt",
@@ -29,13 +32,14 @@ const racesData = [
       "Nourishment",
     ],
     isFeatured: false,
+    isOpen: false,
   },
   {
     dist: "21",
     unit: "Kilometres",
     name: "Half Marathon",
     price: "₹3,000",
-    // scratchedPrice: "₹3,000",
+    scratchedPrice: null,
     features: [
       "Finisher Medal",
       "Tech T-Shirt",
@@ -44,13 +48,14 @@ const racesData = [
       "Nourishment",
     ],
     isFeatured: true,
+    isOpen: false,
   },
   {
     dist: "32",
     unit: "Kilometres",
     name: "20 Miler",
     price: "₹3,500",
-    // scratchedPrice: "₹3,500",
+    scratchedPrice: null,
     features: [
       "Finisher Medal",
       "Tech T-Shirt",
@@ -59,13 +64,14 @@ const racesData = [
       "Nourishment",
     ],
     isFeatured: false,
+    isOpen: false,
   },
   {
     dist: "42",
     unit: "Kilometres",
     name: "Full Marathon",
     price: "₹4,000",
-    // scratchedPrice: "₹4,000",
+    scratchedPrice: null,
     features: [
       "Finisher Medal",
       "Tech T-Shirt",
@@ -75,6 +81,7 @@ const racesData = [
       "Required Eligibility Submission",
     ],
     isFeatured: false,
+    isOpen: false,
   },
 ];
 
@@ -102,6 +109,37 @@ const RaceCategories = () => {
   return (
     <section className="bg-[#F4F7FB] py-16 md:py-24" id="races">
       <div className="w-full max-w-[1400px] mx-auto px-[5vw] xl:px-8">
+        {/* Announcement Banner */}
+        <div className="max-w-[820px] mx-auto mb-12 rounded-[16px] border-[2px] border-[#F47B20] bg-white p-6 md:p-8 text-center shadow-[0_10px_30px_rgba(11,30,61,0.08)]">
+          <h3 className="font-head text-xl md:text-2xl font-extrabold text-[#0B1E3D]">
+            Thank You, Runners! 🙌
+          </h3>
+          <p className="mt-3 text-[0.95rem] leading-[1.7] text-[#0B1E3D]/75">
+            A big thank you to all our participants for the overwhelming
+            response to Goa River Marathon 2026!
+          </p>
+          <p className="mt-3 text-[0.95rem] leading-[1.7] text-[#0B1E3D]">
+            Registrations for all competitive categories – 10K, 21K, 32K and 42K
+            – are now <strong className="text-[#D62828]">CLOSED</strong>!
+          </p>
+          <p className="mt-3 text-[0.95rem] leading-[1.7] text-[#0B1E3D]">
+            The <strong>5K Fun Run/Walk</strong> is still{" "}
+            <strong className="text-[#1B9E4B]">OPEN</strong>. Grab your spot and
+            be part of the excitement!
+          </p>
+          <p className="mt-4 font-head text-sm font-bold tracking-[0.08em] uppercase text-[#F47B20]">
+            See you at the starting line on December 13th!
+          </p>
+          <a
+            href={REGISTER_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block mt-5 px-6 py-[0.7rem] rounded-[8px] bg-[#F47B20] text-white font-head text-[0.72rem] font-bold tracking-[0.1em] uppercase hover:bg-[#FF9748] transition-colors"
+          >
+            Register for 5K &rarr;
+          </a>
+        </div>
+
         {/* Header Section */}
         <div className="text-center mb-12">
           <span className="inline-block font-head text-[0.68rem] font-bold tracking-[0.22em] uppercase text-[#F47B20] mb-3">
@@ -132,8 +170,12 @@ const RaceCategories = () => {
             >
               {/* Badge for Featured */}
               {race.isFeatured && (
-                <div className="absolute top-[-2px] right-5 bg-[#F47B20] text-white font-head text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-b-[6px]">
-                  Most Popular
+                <div
+                  className={`absolute top-[-2px] right-5 text-white font-head text-[0.62rem] font-bold tracking-[0.12em] uppercase px-3 py-1 rounded-b-[6px] ${
+                    race.isOpen ? "bg-[#F47B20]" : "bg-[#D62828]"
+                  }`}
+                >
+                  {race.isOpen ? "Most Popular" : "Closed"}
                 </div>
               )}
 
@@ -253,20 +295,34 @@ const RaceCategories = () => {
               </ul>
 
               {/* CTA Button */}
-              <a
-                href="https://ifinish.in/running/SKF_2026"
-                target="_blank"
-                rel="noreferrer"
-                className={`block w-full text-center mt-6 py-[0.7rem] rounded-[8px] font-head text-[0.72rem] font-bold tracking-[0.1em] uppercase transition-all duration-200
-                  ${
+              {race.isOpen ? (
+                <a
+                  href={REGISTER_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`block w-full text-center mt-6 py-[0.7rem] rounded-[8px] font-head text-[0.72rem] font-bold tracking-[0.1em] uppercase transition-all duration-200
+                    ${
+                      race.isFeatured
+                        ? "bg-[#F47B20] text-white hover:bg-[#FF9748]"
+                        : "bg-[#1A6FB4] text-white hover:bg-[#2E8FD8]"
+                    }
+                  `}
+                >
+                  Register &rarr;
+                </a>
+              ) : (
+                <button
+                  type="button"
+                  disabled
+                  className={`block w-full text-center mt-6 py-[0.7rem] rounded-[8px] font-head text-[0.72rem] font-bold tracking-[0.1em] uppercase cursor-not-allowed ${
                     race.isFeatured
-                      ? "bg-[#F47B20] text-white hover:bg-[#FF9748]"
-                      : "bg-[#1A6FB4] text-white hover:bg-[#2E8FD8]"
-                  }
-                `}
-              >
-                Register &rarr;
-              </a>
+                      ? "bg-white/10 text-white/50"
+                      : "bg-[#8899aa]/20 text-[#8899aa]"
+                  }`}
+                >
+                  Registration Closed
+                </button>
+              )}
             </div>
           ))}
         </div>
