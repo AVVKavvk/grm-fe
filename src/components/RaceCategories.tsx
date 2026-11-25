@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import HomeAnnouncement from "./HomeAnnouncement";
 
 const REGISTER_URL = "https://ifinish.in/running/SKF_2026";
 
@@ -16,7 +17,7 @@ const racesData = [
       "Nourishment",
     ],
     isFeatured: false,
-    isOpen: false,
+    isOpen: true,
   },
   {
     dist: "10",
@@ -110,7 +111,7 @@ const RaceCategories = () => {
     <section className="bg-[#F4F7FB] py-16 md:py-24" id="races">
       <div className="w-full max-w-[1400px] mx-auto px-[5vw] xl:px-8">
         {/* Announcement Banner */}
-        <div className="max-w-[820px] mx-auto mb-12 rounded-[16px] border-[2px] border-[#F47B20] bg-white p-6 md:p-8 text-center shadow-[0_10px_30px_rgba(11,30,61,0.08)]">
+        {/* <div className="max-w-[820px] mx-auto mb-12 rounded-[16px] border-[2px] border-[#F47B20] bg-white p-6 md:p-8 text-center shadow-[0_10px_30px_rgba(11,30,61,0.08)]">
           <h3 className="font-head text-xl md:text-2xl font-extrabold text-[#0B1E3D]">
             Thank You, Runners! 🙌
           </h3>
@@ -119,22 +120,28 @@ const RaceCategories = () => {
             response to Goa River Marathon 2026!
           </p>
           <p className="mt-3 text-[0.95rem] leading-[1.7] text-[#0B1E3D]">
-            Registrations for all events are currently{" "}
-            <strong className="text-[#D62828]">CLOSED</strong>.
+            Registrations for all competitive categories – 10K, 21K, 32K and 42K
+            – are now <strong className="text-[#D62828]">CLOSED</strong>!
           </p>
           <p className="mt-3 text-[0.95rem] leading-[1.7] text-[#0B1E3D]">
-            Limited registrations will reopen on{" "}
-            <strong>Friday, 27th November at 9:00 AM</strong> for a short
-            period.
-          </p>
-          <p className="mt-3 text-[0.95rem] leading-[1.7] text-[#0B1E3D]/75">
-            Slots will be allotted on a first come, first served basis. T-shirt
-            sizes are not guaranteed for late registrations.
+            The <strong>5K Fun Run/Walk</strong> is still{" "}
+            <strong className="text-[#1B9E4B]">OPEN</strong>. Grab your spot and
+            be part of the excitement!
           </p>
           <p className="mt-4 font-head text-sm font-bold tracking-[0.08em] uppercase text-[#F47B20]">
             See you at the starting line on December 13th!
           </p>
-        </div>
+          <a
+            href={REGISTER_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block mt-5 px-6 py-[0.7rem] rounded-[8px] bg-[#F47B20] text-white font-head text-[0.72rem] font-bold tracking-[0.1em] uppercase hover:bg-[#FF9748] transition-colors"
+          >
+            Register for 5K &rarr;
+          </a>
+        </div> */}
+
+        <HomeAnnouncement />
 
         {/* Header Section */}
         <div className="text-center mb-12">

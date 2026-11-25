@@ -169,7 +169,7 @@ const EventsSection = () => {
       nextPrice: null as string | null,
       participants: "Open for all",
       description: "Family-friendly run with stunning coastal views",
-      isOpen: false,
+      isOpen: true,
       features: [
         "Participation Medal",
         "Event T-Shirt",
@@ -236,21 +236,14 @@ const EventsSection = () => {
         </p>
 
         <p className="text-white/90 text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
-          Registrations for all events are currently{" "}
-          <strong className="text-[#FF6B6B]">CLOSED</strong>.
+          Registrations for all competitive categories – 10K, 21K, 32K and 42K –
+          are now <strong className="text-[#FF6B6B]">CLOSED</strong>!
         </p>
 
         <p className="text-white/90 text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
-          Limited registrations will reopen on{" "}
-          <strong className="text-[#FF9748]">
-            Friday, 27th November at 9:00 AM
-          </strong>{" "}
-          for a short period.
-        </p>
-
-        <p className="text-white/75 text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
-          Slots will be allotted on a first come, first served basis. T-shirt
-          sizes are not guaranteed for late registrations.
+          The <strong>5K Fun Run/Walk</strong> is still{" "}
+          <strong className="text-[#4ADE80]">OPEN</strong>. Grab your spot and
+          be part of the excitement!
         </p>
 
         <p className="font-['Montserrat'] font-bold text-sm tracking-[0.08em] uppercase text-[#F47B20] mb-2">
