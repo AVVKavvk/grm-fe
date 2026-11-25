@@ -16,6 +16,7 @@ import carbLoading from "@/assets/carb-loading.jpeg";
 import { GetRegisterButtonForEvent } from "@/lib/localstorage";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import HomeAnnouncement from "./HomeAnnouncement";
 
 const EventsSection = () => {
   const navigate = useNavigate();
@@ -225,34 +226,8 @@ const EventsSection = () => {
             Registration Update
           </span>
         </div>
-
-        <h2 className="font-['Montserrat'] font-extrabold text-4xl md:text-5xl text-white mb-5">
-          Thank You, <span className="text-[#F47B20]">Runners!</span> 🙌
-        </h2>
-
-        <p className="text-white/75 text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
-          A big thank you to all our participants for the overwhelming response
-          to Goa River Marathon 2026!
-        </p>
-
-        <p className="text-white/90 text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
-          Registrations for all competitive categories – 10K, 21K, 32K and 42K –
-          are now <strong className="text-[#FF6B6B]">CLOSED</strong>!
-        </p>
-
-        <p className="text-white/90 text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
-          The <strong>5K Fun Run/Walk</strong> is still{" "}
-          <strong className="text-[#4ADE80]">OPEN</strong>. Grab your spot and
-          be part of the excitement!
-        </p>
-
-        <p className="font-['Montserrat'] font-bold text-sm tracking-[0.08em] uppercase text-[#F47B20] mb-2">
-          See you at the starting line on December 13th!
-        </p>
-
-        {/* Countdown Timer Section Removed completely based on instructions */}
+        <HomeAnnouncement />
       </div>
-
       {/* ── TWO EPIC EVENTS ── NAVY MID (Reordered in heroEvents array) */}
       <div className=" py-10 px-[5vw]">
         <div className="max-w-[1200px] mx-auto">
