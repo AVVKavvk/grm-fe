@@ -35,6 +35,7 @@ import timingLogo from "@/assets/Logo/timing.png";
 import AddCityLogo from "@/assets/Logo/Ad-City.png";
 import royalAquvaGlobalLogo from "@/assets/Logo/RoyalAquaGlobal.jpg";
 import teachersLogo from "@/assets/Logo/teachers-logo.png";
+import yogaBar from "@/assets/Logo/yoga-bar.png";
 // import kingfisher from "@/assets/Logo/kingfisherLogo.jpeg";
 import curamosLogo from "@/assets/Logo/Curamos.png";
 import AWMMLogo from "@/assets/Logo/Abbot-World-Marathon.png";
@@ -178,6 +179,13 @@ const EnhancedSponsorsSection = () => {
         logo: teachersLogo,
         tier: "Official Hydration Partner",
         description: "Premium packaged drinking water",
+      },
+      {
+        name: "Yoga Bar",
+        logo: yogaBar,
+        tier: "Protein Partner",
+        description:
+          "Delivering high-protein nutrition to fuel runners before and after the race",
       },
       // {
       //   name: "Kingfisher",

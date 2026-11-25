@@ -16,7 +16,7 @@ const racesData = [
       "Nourishment",
     ],
     isFeatured: false,
-    isOpen: true,
+    isOpen: false,
   },
   {
     dist: "10",
@@ -119,25 +119,21 @@ const RaceCategories = () => {
             response to Goa River Marathon 2026!
           </p>
           <p className="mt-3 text-[0.95rem] leading-[1.7] text-[#0B1E3D]">
-            Registrations for all competitive categories – 10K, 21K, 32K and 42K
-            – are now <strong className="text-[#D62828]">CLOSED</strong>!
+            Registrations for all events are currently{" "}
+            <strong className="text-[#D62828]">CLOSED</strong>.
           </p>
           <p className="mt-3 text-[0.95rem] leading-[1.7] text-[#0B1E3D]">
-            The <strong>5K Fun Run/Walk</strong> is still{" "}
-            <strong className="text-[#1B9E4B]">OPEN</strong>. Grab your spot and
-            be part of the excitement!
+            Limited registrations will reopen on{" "}
+            <strong>Friday, 27th November at 9:00 AM</strong> for a short
+            period.
+          </p>
+          <p className="mt-3 text-[0.95rem] leading-[1.7] text-[#0B1E3D]/75">
+            Slots will be allotted on a first come, first served basis. T-shirt
+            sizes are not guaranteed for late registrations.
           </p>
           <p className="mt-4 font-head text-sm font-bold tracking-[0.08em] uppercase text-[#F47B20]">
             See you at the starting line on December 13th!
           </p>
-          <a
-            href={REGISTER_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block mt-5 px-6 py-[0.7rem] rounded-[8px] bg-[#F47B20] text-white font-head text-[0.72rem] font-bold tracking-[0.1em] uppercase hover:bg-[#FF9748] transition-colors"
-          >
-            Register for 5K &rarr;
-          </a>
         </div>
 
         {/* Header Section */}
