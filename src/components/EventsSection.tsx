@@ -52,7 +52,7 @@ const EventsSection = () => {
       nextPrice: null as string | null,
       participants: "18+ years",
       description: "The ultimate challenge along Goa's most scenic route",
-      isOpen: true,
+      isOpen: false,
       features: [
         "Finisher Medal",
         "Tech T-Shirt",
@@ -87,7 +87,7 @@ const EventsSection = () => {
       participants: "18+ years",
       description:
         "A challenging distance for experienced runners on most scenic route",
-      isOpen: true,
+      isOpen: false,
       features: [
         "Finisher Medal",
         "Tech T-Shirt",
@@ -115,7 +115,7 @@ const EventsSection = () => {
       nextPrice: null as string | null,
       participants: "18+ years",
       description: "Perfect for intermediate runners seeking a challenge",
-      isOpen: true,
+      isOpen: false,
       features: [
         "Finisher Medal",
         "Tech T-Shirt",
@@ -143,7 +143,7 @@ const EventsSection = () => {
       nextPrice: null as string | null,
       participants: "16+ years",
       description: "Ideal for beginners and fitness enthusiasts",
-      isOpen: true,
+      isOpen: false,
       features: [
         "Finisher Medal",
         "Event T-Shirt",

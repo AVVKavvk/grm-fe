@@ -33,7 +33,7 @@ const racesData = [
       "Nourishment",
     ],
     isFeatured: false,
-    isOpen: true,
+    isOpen: false,
   },
   {
     dist: "21",
@@ -49,7 +49,7 @@ const racesData = [
       "Nourishment",
     ],
     isFeatured: true,
-    isOpen: true,
+    isOpen: false,
   },
   {
     dist: "32",
@@ -65,7 +65,7 @@ const racesData = [
       "Nourishment",
     ],
     isFeatured: false,
-    isOpen: true,
+    isOpen: false,
   },
   {
     dist: "42",
@@ -82,7 +82,7 @@ const racesData = [
       "Required Eligibility Submission",
     ],
     isFeatured: false,
-    isOpen: true,
+    isOpen: false,
   },
 ];
 
